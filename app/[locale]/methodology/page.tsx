@@ -96,6 +96,11 @@ export default async function MethodologyPage({ params }: { params: Promise<{ lo
           </li>
           <li>
             {loc === 'zh'
+              ? '· 可选的实时行情由 Finnhub 提供（经 Cloudflare Pages Function 代理），报价有延迟、仅供参考；未配置密钥时显示「—」。'
+              : '· Optional live quotes are provided by Finnhub (proxied via a Cloudflare Pages Function); quotes are delayed and for reference only, showing “—” when no key is configured.'}
+          </li>
+          <li>
+            {loc === 'zh'
               ? '· 全站为教育用途，不提供个性化建议或交易信号。'
               : '· The entire site is educational; it offers no personalized advice or trading signals.'}
           </li>

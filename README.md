@@ -40,18 +40,30 @@ app/
     layout.tsx                # 语言布局：Navbar + Footer
     page.tsx                  # 首页
     market/                   # AI 行情
-    investors/                # 传奇人物列表
+    investors/                # 传奇人物列表（8 位，含立场徽标）
     investors/[slug]/         # 投资人详情（持仓 + 逻辑 + 来源）
+    consensus/                # AI 持仓共识 / 分歧 / 矩阵
+    news/                     # AI 行情动态时间线
     long-term/                # 长期投资原则 + 检查清单
     methodology/              # 竞品调研 + 数据方法 + 免责声明
-components/                   # Navbar / Footer / 卡片 / 表格 / 免责声明 等
+components/                   # Navbar / Footer / 卡片 / 表格 / LiveQuote / 免责声明 等
 lib/
   i18n/                       # locale 配置与 UI 文案字典
-  data/                       # types / investors / themes / principles / competitors
+  data/                       # types / investors / themes / principles / competitors / consensus / updates / quotes
   data/provider.ts            # MarketDataProvider 接口 + StaticProvider（预留 LiveApiProvider）
+functions/api/quote.ts        # Cloudflare Pages Function：实时行情代理（Finnhub）
 docs/competitor-research.md   # 竞品调研全文（含来源）
 public/_redirects, _headers   # Cloudflare Pages 边缘配置
 ```
+
+### 实时行情（可选）· Live quotes (optional)
+
+行情为**可选增强**：站点在**没有任何密钥**时也完全可用——价格列显示「—」，构建与渲染不受影响。
+
+- 浏览器中的 `LiveQuote` 组件向 `/api/quote`（可用 `NEXT_PUBLIC_QUOTE_ENDPOINT` 覆盖）批量请求报价；任何失败都优雅降级。
+- 生产端由 Cloudflare Pages Function `functions/api/quote.ts` 用 **`FINNHUB_API_KEY`**（在 Cloudflare 后台设为 Secret）代理 Finnhub，密钥不暴露给前端。
+- 本地联调：`npm run build && npx wrangler pages dev out`，并在本地设置 `FINNHUB_API_KEY`。
+- 配置见 [`.env.example`](.env.example)。报价有延迟，仅供参考。
 
 ### 接入实时数据 · Going live with real data
 

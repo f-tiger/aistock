@@ -17,9 +17,10 @@ export function generateStaticParams() {
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const loc = locale as Locale;
-  const [themes, investors] = await Promise.all([
+  const [themes, investors, updates] = await Promise.all([
     provider.getThemes(),
     provider.getInvestors(),
+    provider.getUpdates(),
   ]);
 
   return (
@@ -56,6 +57,25 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {themes.map((theme) => (
             <ThemeCard key={theme.id} theme={theme} locale={loc} href={`/${loc}/market#${theme.id}`} />
+          ))}
+        </div>
+      </section>
+
+      {/* Latest updates */}
+      <section className="container-page py-12">
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="section-title">{dict.labels.latestUpdates[loc]}</h2>
+          <Link href={`/${loc}/news`} className="hidden whitespace-nowrap text-sm font-medium text-accent hover:text-accent-soft sm:inline">
+            {dict.nav.news[loc]} →
+          </Link>
+        </div>
+        <div className="mt-6 grid gap-5 md:grid-cols-3">
+          {updates.slice(0, 3).map((u) => (
+            <Link key={u.id} href={`/${loc}/news`} className="card block">
+              <time className="font-mono text-xs text-slate-500" dateTime={u.date}>{u.date}</time>
+              <h3 className="mt-2 text-base font-bold text-white">{u.title[loc]}</h3>
+              <p className="mt-2 line-clamp-3 text-sm text-slate-400">{u.summary[loc]}</p>
+            </Link>
           ))}
         </div>
       </section>

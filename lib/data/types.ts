@@ -13,6 +13,9 @@ export type Holding = {
   note: Localized;
 };
 
+/** An investor's overall stance toward the AI trade. */
+export type Stance = 'bull' | 'cautious' | 'bear';
+
 /** A legendary investor and their AI-related positioning. */
 export type Investor = {
   slug: string;
@@ -20,6 +23,8 @@ export type Investor = {
   firm: Localized;
   style: Localized;
   horizon: Localized;
+  /** Overall posture toward AI — drives a small badge. Defaults to bull. */
+  stance?: Stance;
   /** One-line summary shown on cards. */
   summary: Localized;
   /** Longer narrative of their AI thesis. */

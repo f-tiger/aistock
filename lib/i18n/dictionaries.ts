@@ -12,6 +12,8 @@ const dict = {
     market: { zh: 'AI 行情', en: 'AI Market' },
     investors: { zh: '传奇人物', en: 'Investors' },
     longTerm: { zh: '长期投资', en: 'Long-Term' },
+    consensus: { zh: '持仓共识', en: 'Consensus' },
+    news: { zh: '行情动态', en: 'Updates' },
     methodology: { zh: '方法与竞品', en: 'Method & Rivals' },
   },
   cta: {
@@ -38,6 +40,20 @@ const dict = {
     marketSnapshot: { zh: 'AI 行情速览', en: 'AI market snapshot' },
     themes: { zh: 'AI 细分赛道', en: 'AI sub-sectors' },
     relatedThemes: { zh: '相关赛道', en: 'Related themes' },
+    latestUpdates: { zh: '最新动态', en: 'Latest updates' },
+    consensusHoldings: { zh: '共识持仓', en: 'Consensus holdings' },
+    divergence: { zh: '分歧标的', en: 'Where they disagree' },
+    holdingsMatrix: { zh: '持仓矩阵', en: 'Holdings matrix' },
+    heldBy: { zh: '持有人', en: 'Held by' },
+    holders: { zh: '位投资人', en: 'investors' },
+    livePrice: { zh: '实时价', en: 'Live' },
+    priceDelayed: { zh: '行情延迟，仅供参考', en: 'Quotes delayed; for reference only' },
+    stance: { zh: '立场', en: 'Stance' },
+  },
+  stance: {
+    bull: { zh: '看多', en: 'Bullish' },
+    cautious: { zh: '谨慎', en: 'Cautious' },
+    bear: { zh: '看空', en: 'Bearish' },
   },
   disclaimer: {
     short: {

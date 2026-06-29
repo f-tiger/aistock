@@ -54,6 +54,13 @@ export const themes: AiTheme[] = [
         bull: { zh: '所有 AI 芯片的共同瓶颈与受益者。', en: 'The common bottleneck — and beneficiary — for every AI chip.' },
         risk: { zh: '地缘政治与资本开支周期。', en: 'Geopolitics and capex cyclicality.' },
       },
+      {
+        ticker: 'MU',
+        name: { zh: '美光科技', en: 'Micron' },
+        role: { zh: '高带宽内存（HBM）', en: 'High-bandwidth memory (HBM)' },
+        bull: { zh: 'AI 加速器离不开 HBM，需求紧俏、量价齐升。', en: 'AI accelerators depend on HBM; tight supply lifts both volume and price.' },
+        risk: { zh: '强周期性，记忆体价格波动大。', en: 'Highly cyclical; memory pricing swings sharply.' },
+      },
     ],
     asOf: '2026-06',
     sources: [
@@ -204,6 +211,62 @@ export const themes: AiTheme[] = [
     asOf: '2026-06',
     sources: [
       { label: 'TheStreet — Wood invests in X-Energy (nuclear)', url: 'https://www.thestreet.com/investing/cathie-wood-buys-another-72m-of-mega-cap-amazon-stock' },
+    ],
+  },
+  {
+    id: 'china-ai',
+    name: { zh: '中概 AI', en: 'China AI' },
+    summary: {
+      zh: '中国互联网巨头的 AI 故事：自研大模型 + 云 + 电商/广告变现。估值通常低于美股同行，但承担政策与地缘风险。',
+      en: 'The AI story at China’s internet giants: in-house models + cloud + e-commerce/ad monetization. Usually cheaper than U.S. peers, but carrying policy and geopolitical risk.',
+    },
+    bullCase: [
+      {
+        zh: '估值相对低、现金流强；部分被段永平、David Tepper 等价值/宏观投资者配置（如拼多多、阿里）。',
+        en: 'Relatively low valuations with strong cash flow; held by value/macro investors such as Duan Yongping and David Tepper (e.g., PDD, Alibaba).',
+      },
+      {
+        zh: '本土大模型与云需求自成生态，受美国出口管制的影响相对隔离。',
+        en: 'Domestic model and cloud demand form a self-contained ecosystem, relatively insulated from U.S. export controls.',
+      },
+    ],
+    risks: [
+      {
+        zh: '监管与地缘政治不确定性高；ADR 退市与审计风险长期存在。',
+        en: 'High regulatory and geopolitical uncertainty; ADR delisting and audit risks persist.',
+      },
+      {
+        zh: '先进算力获取受限，可能拖累训练前沿模型的能力。',
+        en: 'Constrained access to advanced compute may hamper frontier-model training.',
+      },
+    ],
+    stocks: [
+      {
+        ticker: 'PDD',
+        name: { zh: '拼多多', en: 'PDD Holdings' },
+        role: { zh: '电商 + AI 推荐', en: 'E-commerce + AI recommendation' },
+        bull: { zh: '高增长、强现金流，估值偏低。', en: 'High growth, strong cash flow, modest valuation.' },
+        risk: { zh: '竞争与监管、海外扩张不确定。', en: 'Competition, regulation, overseas-expansion risk.' },
+      },
+      {
+        ticker: 'BABA',
+        name: { zh: '阿里巴巴', en: 'Alibaba' },
+        role: { zh: '云 + 通义大模型', en: 'Cloud + Qwen models' },
+        bull: { zh: '中国云与开源模型领先者，估值低。', en: 'Leader in China cloud and open models, cheaply valued.' },
+        risk: { zh: '政策与增长波动。', en: 'Policy and growth volatility.' },
+      },
+      {
+        ticker: 'BIDU',
+        name: { zh: '百度', en: 'Baidu' },
+        role: { zh: '文心大模型 + 自动驾驶', en: 'Ernie models + autonomous driving' },
+        bull: { zh: '早期押注大模型与 Robotaxi。', en: 'Early bet on LLMs and robotaxi.' },
+        risk: { zh: '广告承压、变现节奏慢。', en: 'Ad pressure; slow monetization.' },
+      },
+    ],
+    asOf: '2026-06',
+    sources: [
+      { label: '腾讯新闻 — 段永平加仓拼多多、英伟达', url: 'https://news.qq.com/rain/a/20260521A043DX00' },
+      { label: 'Seeking Alpha — Tepper Appaloosa Q1 2026', url: 'https://seekingalpha.com/article/4908974-tracking-david-teppers-appaloosa-management-portfolio-q1-2026-update' },
     ],
   },
 ];

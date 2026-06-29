@@ -8,6 +8,7 @@ import { provider } from '@/lib/data/provider';
 import { investors } from '@/lib/data/investors';
 import AsOfBadge from '@/components/AsOfBadge';
 import ThemeCard from '@/components/ThemeCard';
+import StanceBadge from '@/components/StanceBadge';
 
 export const dynamicParams = false;
 
@@ -51,7 +52,8 @@ export default async function InvestorDetailPage({
         <div>
           <h1 className="text-3xl font-extrabold text-white">{investor.name[loc]}</h1>
           <p className="mt-1 text-slate-400">{investor.firm[loc]}</p>
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            {investor.stance && <StanceBadge stance={investor.stance} locale={loc} />}
             <span className="pill">{dict.labels.style[loc]}: {investor.style[loc]}</span>
             <span className="pill">{dict.labels.horizon[loc]}: {investor.horizon[loc]}</span>
           </div>

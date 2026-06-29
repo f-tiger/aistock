@@ -8,6 +8,8 @@ export default function Navbar({ locale }: { locale: Locale }) {
   const links = [
     { href: `${base}/market`, label: dict.nav.market[locale] },
     { href: `${base}/investors`, label: dict.nav.investors[locale] },
+    { href: `${base}/consensus`, label: dict.nav.consensus[locale] },
+    { href: `${base}/news`, label: dict.nav.news[locale] },
     { href: `${base}/long-term`, label: dict.nav.longTerm[locale] },
     { href: `${base}/methodology`, label: dict.nav.methodology[locale] },
   ];
