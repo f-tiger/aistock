@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects. The client redirect in app/page.tsx is the
+# cross-host fallback; this handles the bare root at the edge.
+/                /zh/    302
