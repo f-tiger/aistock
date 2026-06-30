@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink-950 text-slate-200 antialiased;
+  background-image:
+    radial-gradient(60rem 60rem at 80% -10%, rgba(56, 189, 248, 0.08), transparent),
+    radial-gradient(50rem 50rem at -10% 10%, rgba(14, 165, 233, 0.06), transparent);
+  background-attachment: fixed;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/10 bg-ink-900/60 p-6 backdrop-blur transition
+      hover:border-accent/40 hover:bg-ink-800/60;
+  }
+
+  .pill {
+    @apply inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5
+      px-3 py-1 text-xs font-medium text-slate-300;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-lg bg-accent px-5 py-2.5 text-sm
+      font-semibold text-ink-950 transition hover:bg-accent-soft;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-lg border border-white/15 px-5 py-2.5
+      text-sm font-semibold text-slate-200 transition hover:border-accent/50 hover:text-white;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold tracking-tight text-white sm:text-3xl;
+  }
+
+  .link-accent {
+    @apply text-accent transition hover:text-accent-soft;
+  }
+}
