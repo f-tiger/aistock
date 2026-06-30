@@ -9,6 +9,8 @@ import { investors } from '@/lib/data/investors';
 import AsOfBadge from '@/components/AsOfBadge';
 import ThemeCard from '@/components/ThemeCard';
 import StanceBadge from '@/components/StanceBadge';
+import LiveQuote from '@/components/LiveQuote';
+import StockLink from '@/components/StockLink';
 
 export const dynamicParams = false;
 
@@ -92,10 +94,13 @@ export default async function InvestorDetailPage({
           <div className="mt-4 space-y-3">
             {investor.holdings.map((h) => (
               <div key={h.ticker} className="card p-4">
-                <div className="flex items-baseline justify-between">
-                  <span className="font-mono font-bold text-white">{h.ticker}</span>
+                <div className="flex items-baseline justify-between gap-2">
+                  <span className="font-mono font-bold text-white">
+                    <StockLink ticker={h.ticker} locale={loc} />
+                  </span>
                   <span className="text-xs text-slate-500">{h.name[loc]}</span>
                 </div>
+                <div className="mt-1 text-sm"><LiveQuote ticker={h.ticker} /></div>
                 <p className="mt-1 text-sm text-slate-300">{h.note[loc]}</p>
               </div>
             ))}

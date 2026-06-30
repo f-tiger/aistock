@@ -6,6 +6,8 @@ import dict from '@/lib/i18n/dictionaries';
 import { provider } from '@/lib/data/provider';
 import { consensusOnly } from '@/lib/data/consensus';
 import ConsensusMatrix from '@/components/ConsensusMatrix';
+import LiveQuote from '@/components/LiveQuote';
+import StockLink from '@/components/StockLink';
 import Disclaimer from '@/components/Disclaimer';
 
 export function generateStaticParams() {
@@ -52,13 +54,16 @@ export default async function ConsensusPage({ params }: { params: Promise<{ loca
             <div key={entry.ticker} className="card">
               <div className="flex items-baseline justify-between">
                 <div>
-                  <span className="font-mono text-lg font-bold text-white">{entry.ticker}</span>
+                  <span className="font-mono text-lg font-bold text-white">
+                    <StockLink ticker={entry.ticker} locale={loc} />
+                  </span>
                   <span className="ml-2 text-sm text-slate-400">{entry.name[loc]}</span>
                 </div>
                 <span className="pill">
                   {dict.labels.heldBy[loc]} {entry.holders.length} {dict.labels.holders[loc]}
                 </span>
               </div>
+              <div className="mt-1 text-sm"><LiveQuote ticker={entry.ticker} /></div>
               <ul className="mt-3 space-y-1.5 text-sm">
                 {entry.holders.map((h) => (
                   <li key={h.slug} className="flex items-start gap-2">

@@ -3,6 +3,7 @@ import { themes, getTheme } from './themes';
 import { investors, getInvestor } from './investors';
 import { buildConsensus, type ConsensusEntry } from './consensus';
 import { updates, type MarketUpdate } from './updates';
+import { getStocks, getStock, type StockDetail } from './stocks';
 
 /**
  * Data access boundary for the whole site.
@@ -19,6 +20,8 @@ export interface MarketDataProvider {
   getInvestor(slug: string): Promise<Investor | undefined>;
   getConsensus(): Promise<ConsensusEntry[]>;
   getUpdates(): Promise<MarketUpdate[]>;
+  getStocks(): Promise<StockDetail[]>;
+  getStock(ticker: string): Promise<StockDetail | undefined>;
 }
 
 /** Default provider: serves the curated static content in lib/data/*. */
@@ -40,6 +43,12 @@ export class StaticProvider implements MarketDataProvider {
   }
   async getUpdates() {
     return [...updates].sort((a, b) => b.date.localeCompare(a.date));
+  }
+  async getStocks() {
+    return getStocks();
+  }
+  async getStock(ticker: string) {
+    return getStock(ticker);
   }
 }
 

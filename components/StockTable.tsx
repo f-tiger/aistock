@@ -2,6 +2,7 @@ import dict from '@/lib/i18n/dictionaries';
 import type { Locale } from '@/lib/i18n/config';
 import type { AiStock } from '@/lib/data/types';
 import LiveQuote from './LiveQuote';
+import StockLink from './StockLink';
 
 export default function StockTable({ stocks, locale }: { stocks: AiStock[]; locale: Locale }) {
   return (
@@ -20,7 +21,9 @@ export default function StockTable({ stocks, locale }: { stocks: AiStock[]; loca
           {stocks.map((s) => (
             <tr key={s.ticker} className="align-top hover:bg-white/[0.03]">
               <td className="px-4 py-3">
-                <div className="font-mono font-semibold text-white">{s.ticker}</div>
+                <div className="font-mono font-semibold text-white">
+                  <StockLink ticker={s.ticker} locale={locale} />
+                </div>
                 <div className="text-xs text-slate-500">{s.name[locale]}</div>
               </td>
               <td className="px-4 py-3"><LiveQuote ticker={s.ticker} /></td>

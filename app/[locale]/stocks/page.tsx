@@ -3,7 +3,7 @@ import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
 import { provider } from '@/lib/data/provider';
-import InvestorBrowser from '@/components/InvestorBrowser';
+import StockBrowser from '@/components/StockBrowser';
 import Disclaimer from '@/components/Disclaimer';
 
 export function generateStaticParams() {
@@ -12,23 +12,23 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.investors[locale as Locale] };
+  return { title: dict.nav.stocks[locale as Locale] };
 }
 
-export default async function InvestorsPage({ params }: { params: Promise<{ locale: string }> }) {
+export default async function StocksPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const loc = locale as Locale;
-  const [investors, themes] = await Promise.all([provider.getInvestors(), provider.getThemes()]);
+  const [stocks, themes] = await Promise.all([provider.getStocks(), provider.getThemes()]);
   const themeOptions = themes.map((t) => ({ id: t.id, label: t.name[loc] }));
 
   return (
     <div className="container-page py-12">
       <header className="max-w-3xl">
-        <h1 className="section-title">{dict.labels.featuredInvestors[loc]}</h1>
+        <h1 className="section-title">{dict.labels.allStocks[loc]}</h1>
         <p className="mt-3 text-slate-300">
           {loc === 'zh'
-            ? '基于公开 13F 披露与公开报道，整理传奇投资人在 AI 上的具体布局与投资逻辑——而非罗列其全部持仓。'
-            : 'Drawn from public 13F filings and reporting, these profiles focus on each legend’s AI positioning and reasoning — not their entire portfolio.'}
+            ? '本站收录的 AI 相关个股：所属赛道、多/空逻辑、哪些大佬持有，以及可选的实时价。点击查看详情。'
+            : 'AI-related stocks featured here: their themes, bull/risk view, which legends hold them, and optional live prices. Click for details.'}
         </p>
         <div className="mt-4">
           <Disclaimer locale={loc} />
@@ -36,7 +36,7 @@ export default async function InvestorsPage({ params }: { params: Promise<{ loca
       </header>
 
       <div className="mt-8">
-        <InvestorBrowser investors={investors} themeOptions={themeOptions} locale={loc} />
+        <StockBrowser stocks={stocks} themeOptions={themeOptions} locale={loc} />
       </div>
     </div>
   );

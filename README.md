@@ -40,8 +40,10 @@ app/
     layout.tsx                # 语言布局：Navbar + Footer
     page.tsx                  # 首页
     market/                   # AI 行情
-    investors/                # 传奇人物列表（8 位，含立场徽标）
-    investors/[slug]/         # 投资人详情（持仓 + 逻辑 + 来源）
+    investors/                # 传奇人物列表（8 位，搜索 + 立场/赛道筛选）
+    investors/[slug]/         # 投资人详情（持仓 + 实时价 + 逻辑 + 来源）
+    stocks/                   # 个股索引（搜索 + 按赛道筛选）
+    stocks/[ticker]/          # 个股详情（实时价 + 走势示意 + 持有人 + 赛道）
     consensus/                # AI 持仓共识 / 分歧 / 矩阵
     news/                     # AI 行情动态时间线
     long-term/                # 长期投资原则 + 检查清单
