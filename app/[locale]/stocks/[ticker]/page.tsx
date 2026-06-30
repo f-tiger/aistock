@@ -9,7 +9,7 @@ import { getStocks } from '@/lib/data/stocks';
 import { buildConsensus } from '@/lib/data/consensus';
 import { investors } from '@/lib/data/investors';
 import { getTheme } from '@/lib/data/themes';
-import Sparkline from '@/components/Sparkline';
+import PriceChart from '@/components/PriceChart';
 import LiveQuote from '@/components/LiveQuote';
 import ThemeCard from '@/components/ThemeCard';
 import Disclaimer from '@/components/Disclaimer';
@@ -63,10 +63,7 @@ export default async function StockDetailPage({
             <LiveQuote ticker={stock.ticker} />
           </div>
         </div>
-        <div className="text-right">
-          <Sparkline data={stock.trend} width={180} height={56} />
-          <div className="mt-1 text-xs text-slate-600">{dict.labels.illustrativeTrend[loc]}</div>
-        </div>
+        <PriceChart ticker={stock.ticker} fallback={stock.trend} locale={loc} width={200} height={64} />
       </header>
 
       {/* Bull / risk */}

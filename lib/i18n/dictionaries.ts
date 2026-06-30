@@ -9,12 +9,14 @@ const dict = {
   },
   nav: {
     home: { zh: '首页', en: 'Home' },
+    guide: { zh: '入门指南', en: 'Start Here' },
     market: { zh: 'AI 行情', en: 'AI Market' },
     investors: { zh: '传奇人物', en: 'Investors' },
     stocks: { zh: '个股', en: 'Stocks' },
     longTerm: { zh: '长期投资', en: 'Long-Term' },
     consensus: { zh: '持仓共识', en: 'Consensus' },
     news: { zh: '行情动态', en: 'Updates' },
+    glossary: { zh: '术语表', en: 'Glossary' },
     methodology: { zh: '方法与竞品', en: 'Method & Rivals' },
   },
   cta: {

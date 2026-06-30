@@ -39,21 +39,25 @@ app/
   [locale]/
     layout.tsx                # 语言布局：Navbar + Footer
     page.tsx                  # 首页
+    guide/                    # 入门指南（六步引导 + 三条铁律）
     market/                   # AI 行情
     investors/                # 传奇人物列表（8 位，搜索 + 立场/赛道筛选）
     investors/[slug]/         # 投资人详情（持仓 + 实时价 + 逻辑 + 来源）
     stocks/                   # 个股索引（搜索 + 按赛道筛选）
-    stocks/[ticker]/          # 个股详情（实时价 + 走势示意 + 持有人 + 赛道）
+    stocks/[ticker]/          # 个股详情（实时价 + 历史/示意走势 + 持有人 + 赛道）
     consensus/                # AI 持仓共识 / 分歧 / 矩阵
     news/                     # AI 行情动态时间线
     long-term/                # 长期投资原则 + 检查清单
+    glossary/                 # 投资术语表（中英）
     methodology/              # 竞品调研 + 数据方法 + 免责声明
+  sitemap.ts / robots.ts      # SEO（静态生成 sitemap.xml / robots.txt）
 components/                   # Navbar / Footer / 卡片 / 表格 / LiveQuote / 免责声明 等
 lib/
   i18n/                       # locale 配置与 UI 文案字典
   data/                       # types / investors / themes / principles / competitors / consensus / updates / quotes
   data/provider.ts            # MarketDataProvider 接口 + StaticProvider（预留 LiveApiProvider）
 functions/api/quote.ts        # Cloudflare Pages Function：实时行情代理（Finnhub）
+functions/api/candles.ts      # Cloudflare Pages Function：历史 K 线代理（Finnhub）
 docs/competitor-research.md   # 竞品调研全文（含来源）
 public/_redirects, _headers   # Cloudflare Pages 边缘配置
 ```

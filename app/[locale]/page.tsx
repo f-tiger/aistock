@@ -35,7 +35,8 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {homeCopy.heroSubtitle[loc]}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href={`/${loc}/market`} className="btn-primary">{dict.cta.explore[loc]}</Link>
+          <Link href={`/${loc}/guide`} className="btn-primary">{dict.nav.guide[loc]} →</Link>
+          <Link href={`/${loc}/market`} className="btn-ghost">{dict.cta.explore[loc]}</Link>
           <Link href={`/${loc}/investors`} className="btn-ghost">{dict.cta.seeInvestors[loc]}</Link>
         </div>
         <div className="mt-8 max-w-2xl">

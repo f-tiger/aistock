@@ -1,19 +1,12 @@
 import Link from 'next/link';
 import dict from '@/lib/i18n/dictionaries';
 import type { Locale } from '@/lib/i18n/config';
+import { primaryLinks } from '@/lib/nav';
 import LocaleSwitcher from './LocaleSwitcher';
 
 export default function Navbar({ locale }: { locale: Locale }) {
   const base = `/${locale}`;
-  const links = [
-    { href: `${base}/market`, label: dict.nav.market[locale] },
-    { href: `${base}/investors`, label: dict.nav.investors[locale] },
-    { href: `${base}/stocks`, label: dict.nav.stocks[locale] },
-    { href: `${base}/consensus`, label: dict.nav.consensus[locale] },
-    { href: `${base}/news`, label: dict.nav.news[locale] },
-    { href: `${base}/long-term`, label: dict.nav.longTerm[locale] },
-    { href: `${base}/methodology`, label: dict.nav.methodology[locale] },
-  ];
+  const links = primaryLinks(locale);
 
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-ink-950/80 backdrop-blur">
