@@ -5,6 +5,7 @@ import dict from '@/lib/i18n/dictionaries';
 import { provider } from '@/lib/data/provider';
 import { getTheme } from '@/lib/data/themes';
 import Disclaimer from '@/components/Disclaimer';
+import NewsletterSignup from '@/components/NewsletterSignup';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -64,6 +65,10 @@ export default async function NewsPage({ params }: { params: Promise<{ locale: s
           </li>
         ))}
       </ol>
+
+      <div className="mx-auto mt-12 max-w-2xl">
+        <NewsletterSignup locale={loc} />
+      </div>
     </div>
   );
 }

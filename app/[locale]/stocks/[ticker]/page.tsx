@@ -12,6 +12,7 @@ import { getTheme } from '@/lib/data/themes';
 import PriceChart from '@/components/PriceChart';
 import LiveQuote from '@/components/LiveQuote';
 import ThemeCard from '@/components/ThemeCard';
+import BrokerCTA from '@/components/BrokerCTA';
 import Disclaimer from '@/components/Disclaimer';
 
 export const dynamicParams = false;
@@ -111,7 +112,12 @@ export default async function StockDetailPage({
         </section>
       )}
 
-      <div className="mt-12 max-w-3xl">
+      {/* Conversion: broker referral */}
+      <div className="mt-12">
+        <BrokerCTA locale={loc} />
+      </div>
+
+      <div className="mt-8 max-w-3xl">
         <Disclaimer locale={loc} />
       </div>
     </div>

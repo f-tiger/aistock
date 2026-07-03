@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { siteUrl } from '@/lib/site';
 import JsonLd from '@/components/JsonLd';
+import Analytics from '@/components/Analytics';
 import './globals.css';
 
 const title = 'AI 投资罗盘 · AI Investing Compass';
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="zh">
       <body>{children}</body>
       <JsonLd />
+      <Analytics />
     </html>
   );
 }

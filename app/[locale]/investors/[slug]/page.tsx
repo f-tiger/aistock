@@ -11,6 +11,7 @@ import ThemeCard from '@/components/ThemeCard';
 import StanceBadge from '@/components/StanceBadge';
 import LiveQuote from '@/components/LiveQuote';
 import StockLink from '@/components/StockLink';
+import BrokerCTA from '@/components/BrokerCTA';
 
 export const dynamicParams = false;
 
@@ -119,6 +120,11 @@ export default async function InvestorDetailPage({
           </div>
         </section>
       )}
+
+      {/* Conversion: broker referral */}
+      <div className="mt-12">
+        <BrokerCTA locale={loc} />
+      </div>
     </div>
   );
 }

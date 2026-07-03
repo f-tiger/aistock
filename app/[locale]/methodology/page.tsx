@@ -104,6 +104,11 @@ export default async function MethodologyPage({ params }: { params: Promise<{ lo
               ? '· 全站为教育用途，不提供个性化建议或交易信号。'
               : '· The entire site is educational; it offers no personalized advice or trading signals.'}
           </li>
+          <li>
+            {loc === 'zh'
+              ? '· 变现披露:站内「开户」区域含推广链接,经由链接开户本站可能获得返佣;这不影响内容独立性。Newsletter 邮箱仅用于发送更新,不出售、不共享。'
+              : '· Monetization disclosure: the “open an account” sections contain referral links, and we may earn a commission from sign-ups; this does not influence our content. Newsletter emails are used only to send updates — never sold or shared.'}
+          </li>
         </ul>
       </section>
 
