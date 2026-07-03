@@ -1,0 +1,7 @@
+# Cloudflare config. Enables one-command static deploys:
+#   npm run build && npx wrangler pages deploy out
+# (Also works with the dashboard Git integration — Cloudflare reads
+# pages_build_output_dir from here.)
+name = "ai-investing-compass"
+pages_build_output_dir = "out"
+compatibility_date = "2026-06-30"

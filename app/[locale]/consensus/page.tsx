@@ -8,6 +8,7 @@ import { consensusOnly } from '@/lib/data/consensus';
 import ConsensusMatrix from '@/components/ConsensusMatrix';
 import LiveQuote from '@/components/LiveQuote';
 import StockLink from '@/components/StockLink';
+import BrokerCTA from '@/components/BrokerCTA';
 import Disclaimer from '@/components/Disclaimer';
 
 export function generateStaticParams() {
@@ -115,6 +116,11 @@ export default async function ConsensusPage({ params }: { params: Promise<{ loca
           <ConsensusMatrix entries={consensus} investors={investors} locale={loc} />
         </div>
       </section>
+
+      {/* Conversion: broker referral */}
+      <div className="mt-12">
+        <BrokerCTA locale={loc} />
+      </div>
     </div>
   );
 }

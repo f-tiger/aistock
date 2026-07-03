@@ -71,6 +71,14 @@ public/_redirects, _headers   # Cloudflare Pages 边缘配置
 - 本地联调：`npm run build && npx wrangler pages dev out`，并在本地设置 `FINNHUB_API_KEY`。
 - 配置见 [`.env.example`](.env.example)。报价有延迟，仅供参考。
 
+### 转化漏斗 · Conversion funnel
+
+站点自带三个转化件,全部**未配置也不影响运行**:
+
+1. **Newsletter 订阅**(首页/动态页)——表单提交到 `functions/api/subscribe.ts`,需在 Cloudflare Pages 绑定一个 **KV namespace,绑定名 `SUBSCRIBERS`**(Settings → Bindings → KV);导出订阅者:`npx wrangler kv key list --binding SUBSCRIBERS`。也可用 `NEXT_PUBLIC_SUBSCRIBE_ENDPOINT` 指向 Buttondown/Mailchimp 等外部服务。
+2. **券商联盟位**(个股/投资人/共识页)——编辑 `lib/data/brokers.ts` 把官方链接换成你的**返佣链接**即可开始产生收入;所有链接带 `rel="sponsored"` 且区域内有披露声明。
+3. **Cloudflare Web Analytics**(免费、无 Cookie)——设置构建环境变量 `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` 后自动注入;用它观察「访问 → 订阅/点击开户」漏斗,决定是否加大投入。
+
 ### 接入实时数据 · Going live with real data
 
 页面只依赖 `lib/data/provider.ts` 的 `MarketDataProvider` 接口。要接入实时行情 / 13F：
@@ -78,18 +86,30 @@ public/_redirects, _headers   # Cloudflare Pages 边缘配置
 
 ## 部署到 Cloudflare Pages · Deploy to Cloudflare Pages
 
-本项目为**纯静态导出**，最适合 GitHub + Cloudflare Pages：
+本项目为**纯静态导出**，最适合 Cloudflare Pages。`.node-version`(=20)已固定 Node 版本(Next 16 需 Node ≥ 20),`wrangler.toml` 已声明产物目录 `out`——避免最常见的部署失败。
 
-1. 把仓库推到 GitHub（本项目仓库：`f-tiger/aistock`）。
-2. Cloudflare 控制台 → **Workers & Pages → Create → Pages → Connect to Git**，选择本仓库与分支。
-3. 构建设置：
-   - **Framework preset**: `Next.js (Static HTML Export)`（或 None）
+### 方式一：Git 集成（推荐，自动持续部署）
+
+1. Cloudflare 控制台 → **Workers & Pages → Create → Pages → Connect to Git**,选择仓库 `f-tiger/aistock` 与分支 `main`。
+2. 构建设置:
+   - **Framework preset**: `Next.js (Static HTML Export)`(或 None)
    - **Build command**: `npx next build`
    - **Build output directory**: `out`
-   - **Node version**: 20+（可设环境变量 `NODE_VERSION=20`）
-4. 保存并部署。`public/_redirects` 会把 `/` 跳转到 `/zh/`，`public/_headers` 提供安全/缓存头。
+   - Node 版本由 `.node-version` 自动识别为 20(无需手动设)。
+3. 保存并部署。`public/_redirects` 把 `/` 跳转到 `/zh/`,`public/_headers` 提供安全/缓存头,`functions/` 被自动识别为 Pages Functions。
+4. （可选）实时行情:Pages 项目 → **Settings → Environment variables** 添加 Secret `FINNHUB_API_KEY`。不加也能正常运行(价格显示「—」)。
 
-> 后续每次 push 到所连分支，Cloudflare Pages 会自动重新构建并发布。
+> 之后每次 push 到 `main`,Cloudflare 会自动重新构建并发布。
+
+### 方式二：Wrangler 直传（一次性 / 本地）
+
+```bash
+npm ci
+npm run build                       # 生成 ./out
+npx wrangler pages deploy out       # 首次会提示登录并创建项目
+```
+
+需先 `npx wrangler login`(或设置 `CLOUDFLARE_API_TOKEN` + `CLOUDFLARE_ACCOUNT_ID`)。项目名取自 `wrangler.toml` 的 `name`(`ai-investing-compass`)。
 
 ## 免责声明 · Disclaimer
 

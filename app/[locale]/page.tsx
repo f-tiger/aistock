@@ -8,6 +8,7 @@ import ThemeCard from '@/components/ThemeCard';
 import InvestorCard from '@/components/InvestorCard';
 import PrincipleCard from '@/components/PrincipleCard';
 import Disclaimer from '@/components/Disclaimer';
+import NewsletterSignup from '@/components/NewsletterSignup';
 import { principles } from '@/lib/data/principles';
 
 export function generateStaticParams() {
@@ -114,6 +115,13 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           {principles.slice(0, 3).map((principle, i) => (
             <PrincipleCard key={principle.id} principle={principle} index={i} locale={loc} />
           ))}
+        </div>
+      </section>
+
+      {/* Newsletter capture */}
+      <section className="container-page py-12">
+        <div className="mx-auto max-w-2xl">
+          <NewsletterSignup locale={loc} />
         </div>
       </section>
     </>
