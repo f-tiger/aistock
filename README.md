@@ -11,6 +11,7 @@ A **bilingual (中文/EN), education-focused** site that unifies AI market trend
 > ⚠️ 仅供教育与信息参考，**不构成投资建议**。For education only — **not investment advice**.
 
 竞品调研见 [`docs/competitor-research.md`](docs/competitor-research.md)（市场上有很多相邻工具，但没有一个聚焦整合这三块——这是本项目的定位）。
+**自动化运营方案**见 [`docs/operations.md`](docs/operations.md)（内容流水线 = Claude Routines,守护 = GitHub Actions,度量 = Cloudflare;平台帖模板与成品在 [`content/`](content/)）。
 
 ---
 
