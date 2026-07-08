@@ -1,0 +1,43 @@
+name: 13F season checklist
+
+on:
+  schedule:
+    # 13F 截止日(季度结束后 45 天)次日: 2/16, 5/16, 8/15, 11/15 06:43 UTC
+    - cron: '43 6 16 2,5 *'
+    - cron: '43 6 15 8,11 *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  checklist:
+    name: Open quarterly ops issue
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const now = new Date();
+            const quarterMap = { 2: 'Q4(上年)', 5: 'Q1', 8: 'Q2', 11: 'Q3' };
+            const quarter = quarterMap[now.getUTCMonth() + 1] ?? '本季';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📊 ${now.getUTCFullYear()} ${quarter} 13F 更新窗口开启`,
+              body: [
+                '@claude 13F 披露截止日已过,请执行季度深度更新(规范见 docs/operations.md),完成后开 PR、不要自行合并:',
+                '',
+                '- [ ] 核对 8 位投资人的最新 13F(HedgeFollow / 公开报道),更新 `lib/data/investors.ts`(holdings/thesis/asOf/sources)',
+                '- [ ] 更新 `lib/data/updates.ts`(本季 2–4 条要闻,附来源)',
+                '- [ ] 检查 `lib/data/themes.ts` 数据点是否过期(份额/资本开支预测等)',
+                '- [ ] 按 `content/templates/` 产出本季内容(共识复盘长文 + 分歧解读 + 小红书 + X thread),存入 `content/drafts/<年-月>/`',
+                '- [ ] `npm run lint && npm run build` 通过,开 PR',
+                '- [ ] 将内容发布到 雪球 / 公众号 / 小红书 / X(人工)',
+                '- [ ] 记录漏斗数据:订阅数(KV)、开户点击、周访问量(Web Analytics)(人工)',
+                '',
+                '红线:数字必须有出处;宁可不更新,不可编造。',
+                '',
+                '> 未安装 Claude GitHub App 时,本清单可粘贴进任意 Claude Code 会话执行。参考:docs/operations.md',
+              ].join('\n'),
+            });
