@@ -9,14 +9,16 @@
 ## 架构:三层自动化
 
 ```
-┌─ 第一层 内容生产(Claude Routines,定时唤起 AI 会话)
-│   · 每周一:搜集本周 AI 板块/大佬持仓要闻 → 更新站内数据 → 产出平台帖草稿 → 开 PR
-│   · 每季 13F 后:核对 8 位投资人最新持仓 → 深度更新数据与逻辑 → 产出季度内容包 → 开 PR
+┌─ 第一层 内容生产(GitHub Actions 定时开「执行型 Issue」+ Claude)
+│   · ops-weekly.yml  每周一:自动开一个含完整执行提示词的运营 Issue 并 @claude
+│                     —— 安装了 Claude GitHub App 时由 Claude 自动执行:
+│                        搜要闻 → 更新站内数据 → 产出平台帖草稿 → 开 PR
+│                     —— 未安装时,Issue 即 runbook:粘贴进任意 Claude 会话执行
+│   · ops-13f.yml     每季 13F 截止日后:同上,开季度深度更新的清单 Issue
 │
 ├─ 第二层 确定性守护(GitHub Actions)
-│   · ci.yml         每次 push/PR:lint + 静态构建 + 产物校验(已有)
-│   · health.yml     每周一:构建健康 + 线上站点可达性;失败自动开 Issue
-│   · ops-13f.yml    每季 13F 截止日后:自动开带清单的运营 Issue(审计轨迹)
+│   · ci.yml          每次 push/PR:lint + 静态构建 + 产物校验
+│   · health.yml      每周一:构建健康 + 线上站点可达性;失败自动开 Issue
 │
 └─ 第三层 度量与转化(Cloudflare,零代码)
     · Web Analytics  访问 → 订阅/点击开户 漏斗
@@ -24,14 +26,16 @@
     · 联盟链接        开户返佣(lib/data/brokers.ts)
 ```
 
+> 全自动化的开关:在仓库安装 **Claude GitHub App**(github.com/apps/claude)。装上后,每周/每季 Issue 中的 @claude 会自动执行内容生产并开 PR;人工只剩「合并 PR + 把草稿贴到平台」。
+
 ## 运营节奏日历
 
 | 频率 | 触发 | 执行者 | 动作 | 产物 |
 |---|---|---|---|---|
 | 每次 push | ci.yml | GitHub Actions | lint + 构建 + 校验 | 绿/红检查 |
-| **每周一** | Claude Routine「周内容运营」 | AI 会话(全自动) | 搜要闻→更新 `updates.ts`→产出 1–2 篇平台帖 | PR + 草稿 |
+| **每周一** | ops-weekly.yml → 执行型 Issue @claude | Claude(装 App 后全自动) | 搜要闻→更新 `updates.ts`→产出 1–2 篇平台帖 | PR + 草稿 |
 | 每周一 | health.yml | GitHub Actions | 构建 + 站点 Ping | 失败则 Issue |
-| **每季 13F 后**(2/16、5/16、8/15、11/15) | Claude Routine「季度 13F 更新」+ ops-13f.yml | AI 会话 + Actions | 核对 8 人持仓→深度更新→季度内容包 | PR + 内容包 + 审计 Issue |
+| **每季 13F 后**(2/16、5/16、8/15、11/15) | ops-13f.yml → 清单 Issue @claude | Claude + Actions | 核对 8 人持仓→深度更新→季度内容包 | PR + 内容包 + 审计 Issue |
 | 随时 | 人工(约每周 15 分钟) | 你 | 合并 PR;把 `content/drafts/` 里的帖子贴到雪球/公众号/小红书/X | 平台曝光 → 回流 |
 
 ## 内容体系
@@ -58,15 +62,15 @@
 ## 人工保留项(无法/不应自动化)
 
 1. **发布**:把草稿贴到雪球/公众号/小红书/X(平台风控不允许机器人发帖)——每周约 15 分钟
-2. **合并 PR**:Routine 产出的 PR 建议人工扫一眼再合(数字准确性是这个站的生命线)
+2. **合并 PR**:自动产出的 PR 建议人工扫一眼再合(数字准确性是这个站的生命线)
 3. **商务**:申请券商联盟资格、替换返佣链接(一次性)
 
 ## 故障与例外处理
 
 - 构建/站点挂了 → health.yml 自动开 Issue(标题含日期与运行链接)
-- Routine 没跑或产出质量差 → 会话有通知;可在 claude.ai 的 Routines 面板暂停/调整 prompt
+- 周/季 Issue 无人执行 → Issue 本身就是提醒;可手动把内容粘贴进 Claude 会话执行,或在 Actions 页手动 `workflow_dispatch` 重开
 - 数据出错(最严重) → 立即修复并在下一篇内容中更正;所有数字必须可溯源到 `sources`
-- 想停一切自动化 → 删除两个 Routine + 禁用两个 workflow,站点照常运行
+- 想停一切自动化 → 在仓库 Settings → Actions 禁用四个 workflow,站点照常运行
 
 ## 一次性配置清单(激活全链路)
 
@@ -76,3 +80,4 @@
 - [ ] 设 `NEXT_PUBLIC_CF_ANALYTICS_TOKEN`(启用漏斗度量)
 - [ ] 替换 `lib/data/brokers.ts` 为返佣链接(启用收入)
 - [ ] 注册雪球/小红书/公众号账号,主页放站点链接
+- [ ] 在仓库安装 **Claude GitHub App**(启用周/季 Issue 的 @claude 全自动执行)
