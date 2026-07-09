@@ -5,3 +5,9 @@
 name = "ai-investing-compass"
 pages_build_output_dir = "out"
 compatibility_date = "2026-06-30"
+
+# Newsletter subscriber store (functions/api/subscribe.ts).
+# Namespace created in the account as "aistock-subscribers".
+[[kv_namespaces]]
+binding = "SUBSCRIBERS"
+id = "8aba65b34a574604bb34d3b623ca8c68"
