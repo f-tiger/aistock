@@ -1,9 +1,0 @@
-# Netlify deploy config (interim host; Cloudflare Pages remains the documented
-# primary — see README). public/_redirects and _headers are Netlify-native.
-[build]
-  command = "npm run build"
-  publish = "out"
-
-[build.environment]
-  NODE_VERSION = "20"
-  NEXT_PUBLIC_SITE_URL = "https://ai-investing-compass.netlify.app"
