@@ -1,0 +1,54 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  netlify:
+    name: Deploy to Netlify
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check deploy token
+        id: token
+        env:
+          TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          if [ -n "$TOKEN" ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::NETLIFY_AUTH_TOKEN secret 未设置——跳过部署。到 https://app.netlify.com/user/applications#personal-access-tokens 创建 token,存为仓库 Secret 即启用自动部署。"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.token.outputs.present == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.token.outputs.present == 'true'
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        if: steps.token.outputs.present == 'true'
+        run: npm ci
+
+      - name: Build (static export)
+        if: steps.token.outputs.present == 'true'
+        env:
+          NEXT_PUBLIC_SITE_URL: https://ai-investing-compass.netlify.app
+        run: npm run build
+
+      - name: Deploy to Netlify (production)
+        if: steps.token.outputs.present == 'true'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          # Site "ai-investing-compass" — the ID is an identifier, not a secret.
+          NETLIFY_SITE_ID: 90fef8fa-091b-4b93-ad73-1db39475e3f9
+        run: npx -y netlify-cli@latest deploy --prod --dir=out --message "GitHub Actions: ${{ github.sha }}"
