@@ -36,11 +36,14 @@ export default function CompassGauge({
   ticker,
   locale,
   size = 240,
+  label,
 }: {
   score: number;
   ticker: string;
   locale: Locale;
   size?: number;
+  /** Overrides the band label shown under the number (e.g. a conviction band). */
+  label?: string;
 }) {
   // n animates 0 → score on mount; the fill and dot are derived from it so the
   // dial "counts up" and fills in one motion (no synchronous effect setState).
@@ -129,7 +132,7 @@ export default function CompassGauge({
         {Math.round(n)}
       </text>
       <text x={CX} y={140} textAnchor="middle" fontSize={11} fill="#94a3b8">
-        {dict.score.bands[band][locale]}
+        {label ?? dict.score.bands[band][locale]}
       </text>
     </svg>
   );

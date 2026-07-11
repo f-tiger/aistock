@@ -1,4 +1,4 @@
-import { computeScores, scoreBand } from '@/lib/data/score';
+import { computeScores, scoreBand, convictionIndex } from '@/lib/data/score';
 import { investors } from '@/lib/data/investors';
 import { siteUrl } from '@/lib/site';
 
@@ -17,6 +17,7 @@ const BAND_EN: Record<string, string> = {
 export function GET() {
   const scores = computeScores();
   const top = scores.slice(0, 10);
+  const conv = convictionIndex();
 
   const scoreLines = top
     .map((s) => {
@@ -43,6 +44,9 @@ CCS = holdersScore + actionScore + diversityBonus, clamped to 0–100, where
 - actionScore = sum of action points (new +12, add +10, hold +4, trim −8, exit −12), clamped to [−20, +40];
 - diversityBonus = +12 when holders span 3+ investing styles (value/growth/macro).
 Bands: 80–100 strong consensus, 60–79 consensus, 40–59 split, 0–39 weak. Full methodology: ${siteUrl}/en/methodology
+
+## AI Conviction Index (current quarter)
+${conv.index}/100 — a single read on how strongly the tracked legends collectively back AI this quarter (the mean CCS across ${conv.breadth} consensus names held by 2+ investors), net action ${conv.netTilt >= 0 ? 'adding' : 'trimming'}. Educational summary of disclosed positioning, not a market forecast. See ${siteUrl}/en/consensus
 
 ## Top consensus AI stocks (current quarter)
 ${scoreLines}

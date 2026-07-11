@@ -122,6 +122,38 @@ export function getScore(ticker: string): StockScore | undefined {
   return computeScores().find((s) => s.ticker === ticker.trim());
 }
 
+export type ConvictionBand = 'high' | 'balanced' | 'cautious';
+
+export type Conviction = {
+  /** 0–100: mean CCS across consensus names (held by 2+ legends). */
+  index: number;
+  /** How many names reach consensus (2+ holders) — the breadth of agreement. */
+  breadth: number;
+  /** Net action tilt: Σ action points across all holdings (+ = net adding). */
+  netTilt: number;
+  band: ConvictionBand;
+};
+
+/**
+ * AI Conviction Index — a single site-wide read on how strongly the tracked
+ * legends collectively agree on AI this quarter. Not a market forecast: it
+ * summarizes disclosed positioning, nothing more. Published for citation on
+ * /consensus and in llms.txt — a metric no 13F aggregator offers.
+ */
+export function convictionIndex(set: Investor[] = investors): Conviction {
+  const scores = computeScores(set);
+  const consensus = scores.filter((s) => s.holders >= 2);
+  const index = consensus.length
+    ? Math.round(consensus.reduce((sum, s) => sum + s.score, 0) / consensus.length)
+    : 0;
+  const netTilt = scores.reduce(
+    (sum, s) => sum + s.contributions.reduce((a, c) => a + c.points, 0),
+    0,
+  );
+  const band: ConvictionBand = index >= 70 ? 'high' : index >= 50 ? 'balanced' : 'cautious';
+  return { index, breadth: consensus.length, netTilt, band };
+}
+
 /**
  * Quarterly score history — appended each 13F season by the ops pipeline.
  * This accumulating series is the dataset nobody else has; period keys use

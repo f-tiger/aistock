@@ -99,6 +99,25 @@ const dict = {
       zh: '基于公开 13F 与报道的教育性分析指标,方法论完全公开;非投资建议。',
       en: 'An educational analytic from public filings with a fully published methodology; not investment advice.',
     },
+    conviction: {
+      title: { zh: 'AI 共识温度计', en: 'AI Conviction Index' },
+      desc: {
+        zh: '8 位传奇投资人本季对 AI 的集体信念强度——取共识标的(≥2 人持有)的平均共识分。这不是行情预测,只是对公开持仓的汇总。',
+        en: 'How strongly the 8 legends collectively back AI this quarter — the mean Consensus Score across consensus names (2+ holders). Not a market forecast; a summary of disclosed positioning.',
+      },
+      breadth: { zh: '共识标的', en: 'consensus names' },
+      netAdding: { zh: '本季净增持', en: 'net adding this quarter' },
+      netTrimming: { zh: '本季净减持', en: 'net trimming this quarter' },
+      bands: {
+        high: { zh: '高信念', en: 'High conviction' },
+        balanced: { zh: '中性', en: 'Balanced' },
+        cautious: { zh: '偏谨慎', en: 'Cautious' },
+      },
+      share: {
+        zh: 'AI 共识温度计:{n}/100 —— 8 位传奇投资人本季对 AI 的集体信念 · AI 投资罗盘',
+        en: 'AI Conviction Index: {n}/100 — how strongly 8 legendary investors back AI this quarter · AI Investing Compass',
+      },
+    },
   },
   moves: {
     buys: { zh: '买入侧:新建 / 增持', en: 'Buy side: new & added' },
