@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { glossary } from '@/lib/data/glossary';
 
 export function generateStaticParams() {
@@ -10,7 +11,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.glossary[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.glossary[loc],
+    description: loc === 'zh'
+      ? '投资术语速查:13F、资本开支、HBM、护城河、定投、核心卫星等关键概念,中英双语解释。'
+      : 'A bilingual glossary of key investing terms: 13F, capex, HBM, moats, dollar-cost averaging, core-satellite, and more.',
+    alternates: localeAlternates(loc, '/glossary'),
+  };
 }
 
 export default async function GlossaryPage({ params }: { params: Promise<{ locale: string }> }) {

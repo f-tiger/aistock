@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates, itemListJsonLd } from '@/lib/seo';
 import { provider } from '@/lib/data/provider';
 import { consensusOnly } from '@/lib/data/consensus';
 import { computeScores } from '@/lib/data/score';
@@ -20,7 +21,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.consensus[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.consensus[loc],
+    description: loc === 'zh'
+      ? '罗盘共识分排行榜:8 位大佬的 AI 持仓共识与分歧一目了然——亚马逊 98 强共识,英伟达 42 分歧。每季随 13F 更新。'
+      : 'The Consensus Score leaderboard: where eight legends agree and disagree on AI stocks - AMZN 98 strong consensus, NVDA 42 split. Updated each 13F season.',
+    alternates: localeAlternates(loc, '/consensus'),
+  };
 }
 
 export default async function ConsensusPage({ params }: { params: Promise<{ locale: string }> }) {
@@ -35,6 +43,16 @@ export default async function ConsensusPage({ params }: { params: Promise<{ loca
 
   return (
     <div className="container-page py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: itemListJsonLd(
+            loc,
+            dict.score.leaderboard[loc],
+            computeScores().slice(0, 8).map((s) => ({ name: `${s.ticker} — ${s.score}`, path: `/stocks/${s.ticker}` })),
+          ),
+        }}
+      />
       <header className="max-w-3xl">
         <h1 className="section-title">{dict.nav.consensus[loc]}</h1>
         <p className="mt-3 text-slate-300">

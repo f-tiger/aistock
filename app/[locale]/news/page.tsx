@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { provider } from '@/lib/data/provider';
 import { getTheme } from '@/lib/data/themes';
 import Disclaimer from '@/components/Disclaimer';
@@ -13,7 +14,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.news[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.news[loc],
+    description: loc === 'zh'
+      ? 'AI 板块与传奇投资人的关键动态时间线:带日期、附来源,每周更新。'
+      : 'A dated, sourced timeline of key AI-market and legendary-investor developments, updated weekly.',
+    alternates: localeAlternates(loc, '/news'),
+  };
 }
 
 export default async function NewsPage({ params }: { params: Promise<{ locale: string }> }) {

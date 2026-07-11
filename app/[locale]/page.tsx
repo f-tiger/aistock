@@ -1,6 +1,8 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
+import { localeAlternates } from '@/lib/seo';
 import dict from '@/lib/i18n/dictionaries';
 import { homeCopy } from '@/lib/content/home';
 import { provider } from '@/lib/data/provider';
@@ -15,6 +17,17 @@ import { principles } from '@/lib/data/principles';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const loc = locale as Locale;
+  return {
+    description: loc === 'zh'
+      ? '罗盘共识分把巴菲特、段永平、Cathie Wood 等 8 位大佬的 AI 持仓量化为 0-100 评分。共识榜、本季动作、对比工具,每季随 13F 更新,中英双语。'
+      : 'The Compass Consensus Score turns eight legendary investors AI bets into a 0-100 score per stock. Leaderboard, quarterly moves, comparison tools - bilingual, refreshed each 13F season.',
+    alternates: localeAlternates(loc, ''),
+  };
 }
 
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {

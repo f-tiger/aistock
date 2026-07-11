@@ -6,6 +6,7 @@ import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
 import { provider } from '@/lib/data/provider';
 import { investors } from '@/lib/data/investors';
+import { localeAlternates, breadcrumbJsonLd } from '@/lib/seo';
 import AsOfBadge from '@/components/AsOfBadge';
 import ThemeCard from '@/components/ThemeCard';
 import StanceBadge from '@/components/StanceBadge';
@@ -29,7 +30,14 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const investor = await provider.getInvestor(slug);
   if (!investor) return {};
-  return { title: investor.name[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: investor.name[loc],
+    description: loc === 'zh'
+      ? `${investor.name.zh}(${investor.firm.zh})的 AI 持仓与投资逻辑:持有哪些标的、最近的增减动作、以及为什么。基于公开 13F,附来源。`
+      : `${investor.name.en} (${investor.firm.en}): AI holdings, recent actions, and the reasoning behind them. From public 13F filings, with sources.`,
+    alternates: localeAlternates(loc, `/investors/${slug}`),
+  };
 }
 
 export default async function InvestorDetailPage({
@@ -47,6 +55,15 @@ export default async function InvestorDetailPage({
 
   return (
     <div className="container-page py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: breadcrumbJsonLd(loc, [
+            { name: dict.nav.investors[loc], path: '/investors' },
+            { name: investor.name[loc], path: `/investors/${investor.slug}` },
+          ]),
+        }}
+      />
       <Link href={`/${loc}/investors`} className="text-sm text-slate-400 hover:text-white">
         ← {dict.cta.back[loc]}
       </Link>

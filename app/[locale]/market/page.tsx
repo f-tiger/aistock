@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { provider } from '@/lib/data/provider';
 import StockTable from '@/components/StockTable';
 import AsOfBadge from '@/components/AsOfBadge';
@@ -13,7 +14,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.market[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.market[loc],
+    description: loc === 'zh'
+      ? '五大 AI 赛道(算力/基建/应用/能源/中概)的多空逻辑、主要风险与代表标的,基于公开 13F 与报道,每季更新。'
+      : 'Bull cases, risks, and key names across five AI layers - compute, infrastructure, applications, energy, and China AI. From public filings, updated quarterly.',
+    alternates: localeAlternates(loc, '/market'),
+  };
 }
 
 export default async function MarketPage({ params }: { params: Promise<{ locale: string }> }) {
