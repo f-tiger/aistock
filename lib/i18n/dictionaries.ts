@@ -254,6 +254,23 @@ const dict = {
       en: 'Pro provides analytics and tracking tools (from public 13F data and reporting), not buy/sell signals or investment advice. Pricing and features may change before launch.',
     },
   },
+  follow: {
+    hubTitle: { zh: '跟投传奇投资人', en: 'Copy a legendary investor' },
+    hubIntro: {
+      zh: '选一位大佬,一键把 TA 的 AI 持仓放进「组合共识体检」——看清这套组合的共识分与跨大佬重合度。教育用途,非荐股。',
+      en: 'Pick a legend and load their AI sleeve into the Portfolio Check — see the sleeve’s Consensus Score and cross-legend overlap. Educational, not a recommendation.',
+    },
+    title: { zh: '跟投 {name} 的 AI 持仓', en: 'Copy {name}’s AI sleeve' },
+    intro: {
+      zh: '{name}({firm})当前的 AI 相关持仓一览,以及这套「组合」的罗盘共识分。仅供教育与信息参考,不构成投资建议或荐股。',
+      en: '{name}’s ({firm}) current AI-related holdings, with the Compass Consensus Score of this "sleeve." For education and information only — not advice or a recommendation.',
+    },
+    sleeveScore: { zh: '这套持仓的组合共识分', en: 'This sleeve’s Consensus Score' },
+    holdings: { zh: 'AI 相关持仓', en: 'AI-related holdings' },
+    openInTool: { zh: '在组合体检中打开这套持仓', en: 'Open this sleeve in Portfolio Check' },
+    fullProfile: { zh: '查看 TA 的完整逻辑与来源', en: 'See full thesis & sources' },
+    view: { zh: '跟投 TA', en: 'Copy this legend' },
+  },
   disclaimer: {
     short: {
       zh: '仅供教育与信息参考，不构成投资建议。',

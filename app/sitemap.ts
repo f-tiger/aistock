@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     for (const inv of investors) {
       entries.push({ url: `${siteUrl}/${locale}/investors/${inv.slug}`, priority: 0.6 });
+      entries.push({ url: `${siteUrl}/${locale}/follow/${inv.slug}`, priority: 0.55 });
     }
     for (const s of getStocks()) {
       entries.push({ url: `${siteUrl}/${locale}/stocks/${s.ticker}`, priority: 0.6 });
