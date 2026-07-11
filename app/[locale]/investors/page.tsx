@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { provider } from '@/lib/data/provider';
 import InvestorBrowser from '@/components/InvestorBrowser';
 import Disclaimer from '@/components/Disclaimer';
@@ -12,7 +13,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.investors[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.investors[loc],
+    description: loc === 'zh'
+      ? '巴菲特、段永平、Cathie Wood 等 8 位传奇投资人的 AI 持仓与投资逻辑,基于公开 13F 披露,附来源与截至日期。'
+      : 'The AI positioning and reasoning of eight legendary investors - Buffett, Duan Yongping, Cathie Wood and more - from public 13F filings, sourced and dated.',
+    alternates: localeAlternates(loc, '/investors'),
+  };
 }
 
 export default async function InvestorsPage({ params }: { params: Promise<{ locale: string }> }) {

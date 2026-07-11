@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { locales, type Localized } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { faq } from '@/lib/data/faq';
 import Disclaimer from '@/components/Disclaimer';
 
@@ -12,7 +13,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.guide[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.guide[loc],
+    description: loc === 'zh'
+      ? '六步看懂 AI 投资:行情分层→大佬布局→共识对比→个股研究→长期纪律→术语速查,附常见问题解答。'
+      : 'A six-step path into AI investing: market layers, the legends bets, consensus, stock research, long-term discipline, and a glossary - plus FAQ.',
+    alternates: localeAlternates(loc, '/guide'),
+  };
 }
 
 type Step = { href: string; title: Localized; body: Localized };

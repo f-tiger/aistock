@@ -9,6 +9,7 @@ import { getStocks } from '@/lib/data/stocks';
 import { buildConsensus } from '@/lib/data/consensus';
 import { investors } from '@/lib/data/investors';
 import { getScore, computeScores } from '@/lib/data/score';
+import { localeAlternates, breadcrumbJsonLd } from '@/lib/seo';
 import { pairSlug } from '@/lib/data/pairs';
 import { hasStockPage } from '@/lib/data/stocks';
 import ScorePanel from '@/components/ScorePanel';
@@ -36,7 +37,14 @@ export async function generateMetadata({
   const { locale, ticker } = await params;
   const stock = await provider.getStock(ticker);
   if (!stock) return {};
-  return { title: `${stock.ticker} · ${stock.name[locale as Locale]}` };
+  const loc = locale as Locale;
+  return {
+    title: `${stock.ticker} · ${stock.name[loc]}`,
+    description: loc === 'zh'
+      ? `${stock.name.zh}(${stock.ticker})的罗盘共识分、传奇投资人持有动作、多空逻辑与实时行情。基于公开 13F,每季更新。`
+      : `${stock.name.en} (${stock.ticker}): Compass Consensus Score, legendary investor actions, bull and risk views, and live quotes. From public 13F data, updated quarterly.`,
+    alternates: localeAlternates(loc, `/stocks/${stock.ticker}`),
+  };
 }
 
 export default async function StockDetailPage({
@@ -55,6 +63,15 @@ export default async function StockDetailPage({
 
   return (
     <div className="container-page py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: breadcrumbJsonLd(loc, [
+            { name: dict.nav.stocks[loc], path: '/stocks' },
+            { name: stock.ticker, path: `/stocks/${stock.ticker}` },
+          ]),
+        }}
+      />
       <Link href={`/${loc}/stocks`} className="text-sm text-slate-400 hover:text-white">
         ← {dict.nav.stocks[loc]}
       </Link>

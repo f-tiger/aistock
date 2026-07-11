@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { getBuys, getSells, type Move } from '@/lib/data/moves';
 import { getScore } from '@/lib/data/score';
 import StockLink from '@/components/StockLink';
@@ -16,7 +17,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.moves[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.moves[loc],
+    description: loc === 'zh'
+      ? '本季 13F 大动作:传奇投资人在 AI 标的上的全部新建、增持、减持与清仓——新建与清仓是最强信号。'
+      : 'The latest 13F moves: every new position, add, trim, and exit by the tracked legends across AI stocks. New positions and exits are the strongest signals.',
+    alternates: localeAlternates(loc, '/moves'),
+  };
 }
 
 function MoveRow({ move, locale }: { move: Move; locale: Locale }) {

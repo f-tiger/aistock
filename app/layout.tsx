@@ -14,7 +14,8 @@ export const metadata: Metadata = {
   description,
   keywords: ['AI 投资', 'AI 行情', '巴菲特', 'Cathie Wood', '长期投资', 'AI stocks', 'investing'],
   applicationName: 'AI Investing Compass',
-  alternates: { canonical: '/zh', languages: { zh: '/zh', en: '/en' } },
+  // NOTE: canonical/hreflang are set PER PAGE via lib/seo.ts localeAlternates —
+  // a global canonical here would mark every page as a duplicate of one URL.
   openGraph: {
     type: 'website',
     siteName: 'AI 投资罗盘 · AI Investing Compass',

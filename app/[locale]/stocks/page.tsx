@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { provider } from '@/lib/data/provider';
 import StockBrowser from '@/components/StockBrowser';
 import Disclaimer from '@/components/Disclaimer';
@@ -12,7 +13,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.stocks[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.stocks[loc],
+    description: loc === 'zh'
+      ? '12+ 只 AI 核心标的档案:罗盘共识分、传奇投资人持有动作、多空逻辑与实时行情,支持搜索与赛道筛选。'
+      : 'Profiles of core AI stocks: Consensus Score, legendary investor actions, bull and risk views, and live quotes, with search and filters.',
+    alternates: localeAlternates(loc, '/stocks'),
+  };
 }
 
 export default async function StocksPage({ params }: { params: Promise<{ locale: string }> }) {

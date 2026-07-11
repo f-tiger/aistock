@@ -5,6 +5,7 @@ import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
 import { getPairs, getPair } from '@/lib/data/pairs';
+import { localeAlternates } from '@/lib/seo';
 import { getScore, type StockScore } from '@/lib/data/score';
 import type { StockDetail } from '@/lib/data/stocks';
 import ScoreBadge from '@/components/ScoreBadge';
@@ -36,7 +37,7 @@ export async function generateMetadata({
     loc === 'zh'
       ? `${p.a.name.zh}与${p.b.name.zh}的共识分、大佬持仓动作、多空逻辑并排对比,数据来自公开 13F,每季更新。`
       : `${p.a.name.en} vs ${p.b.name.en}: Consensus Scores, legendary investors' actions, and bull/risk views side by side. From public 13F data, refreshed quarterly.`;
-  return { title, description };
+  return { title, description, alternates: localeAlternates(loc, `/vs/${p.slug}`) };
 }
 
 function verdict(a: StockDetail, b: StockDetail, sa: StockScore | undefined, sb: StockScore | undefined, loc: Locale): string {

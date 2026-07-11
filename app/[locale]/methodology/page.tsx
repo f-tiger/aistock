@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { competitorCategories, differentiation } from '@/lib/data/competitors';
 import Disclaimer from '@/components/Disclaimer';
 
@@ -11,7 +12,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.methodology[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.methodology[loc],
+    description: loc === 'zh'
+      ? '罗盘共识分完整方法论、数据来源与竞品对照:公式公开、逐季更新、非投资建议。'
+      : 'The full Compass Consensus Score methodology, data sources, and competitive landscape - public formula, quarterly updates, not advice.',
+    alternates: localeAlternates(loc, '/methodology'),
+  };
 }
 
 export default async function MethodologyPage({ params }: { params: Promise<{ locale: string }> }) {

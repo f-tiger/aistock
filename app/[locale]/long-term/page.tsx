@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/lib/i18n/config';
 import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { localeAlternates } from '@/lib/seo';
 import { principles } from '@/lib/data/principles';
 import PrincipleCard from '@/components/PrincipleCard';
 import Disclaimer from '@/components/Disclaimer';
@@ -12,7 +13,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
-  return { title: dict.nav.longTerm[locale as Locale] };
+  const loc = locale as Locale;
+  return {
+    title: dict.nav.longTerm[loc],
+    description: loc === 'zh'
+      ? '六条经得起时间检验的长期投资原则,每条附应用到 AI 的具体角度,外加可执行的检查清单。'
+      : 'Six time-tested long-term investing principles, each with a concrete AI application, plus an actionable checklist.',
+    alternates: localeAlternates(loc, '/long-term'),
+  };
 }
 
 const checklist: { zh: string; en: string }[] = [
