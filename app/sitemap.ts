@@ -3,6 +3,7 @@ import { locales } from '@/lib/i18n/config';
 import { siteUrl, staticPaths } from '@/lib/site';
 import { investors } from '@/lib/data/investors';
 import { getStocks } from '@/lib/data/stocks';
+import { getPairs } from '@/lib/data/pairs';
 
 // Required for `output: 'export'` — emit a static sitemap.xml at build.
 export const dynamic = 'force-static';
@@ -23,6 +24,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     for (const s of getStocks()) {
       entries.push({ url: `${siteUrl}/${locale}/stocks/${s.ticker}`, priority: 0.6 });
+    }
+    for (const p of getPairs()) {
+      entries.push({ url: `${siteUrl}/${locale}/vs/${p.slug}`, priority: 0.5 });
     }
   }
 
