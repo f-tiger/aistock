@@ -67,6 +67,24 @@ Verdict: many adjacent tools exist, but **none** focus and integrate “AI marke
 
 ---
 
+## 成功站点经验(2026-07 补充调研)· What makes the incumbents work
+
+对 WhaleWisdom / Dataroma 等成功 13F 站点的复盘,以及本站的对应落地:
+
+| 成功模式 | 证据 | 本站落地 |
+|---|---|---|
+| 「本季大买/大卖」动态页 | Dataroma 的 activity 页是其访问量最高的功能 | `/moves` 本季动作(买入侧 vs 卖出侧) |
+| 对比工具 | WhaleWisdom 将 fund comparison 放在 $25/月付费档 | `/compare` 免费开放(差异化) |
+| 专有评分 + 模型组合 | WhaleScore / WhaleIndex 是其付费核心 | 罗盘共识分 CCS(方法论公开) |
+| 数据之上的编辑解读层 | WhaleWisdom 胜过纯数据站 Dataroma 的关键 | 投资人 thesis / 行情动态 / 周报内容 |
+| Freemium:免费引流 + 订阅解锁历史与工具 | WhaleWisdom Premium $25/月 | Newsletter=Pro 抢先名单;评分历史逐季积累为未来付费资产 |
+
+来源:
+- https://whalewisdom.com/ · https://whalewisdom.com/info/investing_13f
+- https://www.findmymoat.com/vs/dataroma-vs-whalewisdom
+- https://www.tikr.com/blog/7-best-free-websites-to-track-hedge-fund-portfolios
+- https://www.dataroma.com/m/m_activity.php
+
 ## 差异化定位 · Differentiation
 
 1. **聚焦整合 / Focused integration** — ①AI 行情赛道 + ②传奇投资人 AI 布局与逻辑 + ③长期投资教育，三合一结构化中枢。

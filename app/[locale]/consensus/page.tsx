@@ -8,6 +8,7 @@ import { consensusOnly } from '@/lib/data/consensus';
 import { computeScores } from '@/lib/data/score';
 import ConsensusMatrix from '@/components/ConsensusMatrix';
 import ScoreBadge from '@/components/ScoreBadge';
+import ShareBar from '@/components/ShareBar';
 import LiveQuote from '@/components/LiveQuote';
 import StockLink from '@/components/StockLink';
 import BrokerCTA from '@/components/BrokerCTA';
@@ -71,6 +72,16 @@ export default async function ConsensusPage({ params }: { params: Promise<{ loca
           ))}
         </div>
         <p className="mt-3 text-xs text-slate-500">{dict.score.note[loc]}</p>
+        <div className="mt-3">
+          <ShareBar
+            locale={loc}
+            text={
+              loc === 'zh'
+                ? '8 位传奇投资人的 AI 持仓共识榜(罗盘共识分)· AI 投资罗盘'
+                : 'The AI Consensus Leaderboard of 8 legendary investors (Compass Consensus Score) · AI Investing Compass'
+            }
+          />
+        </div>
       </section>
 
       {/* Consensus holdings */}

@@ -11,6 +11,8 @@ export const staticPaths = [
   '/stocks',
   '/investors',
   '/consensus',
+  '/moves',
+  '/compare',
   '/news',
   '/long-term',
   '/glossary',

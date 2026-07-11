@@ -13,6 +13,7 @@ import ScorePanel from '@/components/ScorePanel';
 import { getTheme } from '@/lib/data/themes';
 import PriceChart from '@/components/PriceChart';
 import LiveQuote from '@/components/LiveQuote';
+import ShareBar from '@/components/ShareBar';
 import ThemeCard from '@/components/ThemeCard';
 import BrokerCTA from '@/components/BrokerCTA';
 import Disclaimer from '@/components/Disclaimer';
@@ -74,6 +75,16 @@ export default async function StockDetailPage({
       {ccs && (
         <div className="mt-8">
           <ScorePanel score={ccs} locale={loc} />
+          <div className="mt-3">
+            <ShareBar
+              locale={loc}
+              text={
+                loc === 'zh'
+                  ? `${stock.ticker} 罗盘共识分 ${ccs.score}(${ccs.holders} 位传奇投资人持有)· AI 投资罗盘`
+                  : `${stock.ticker} Compass Consensus Score: ${ccs.score} (held by ${ccs.holders} legends) · AI Investing Compass`
+              }
+            />
+          </div>
         </div>
       )}
 
