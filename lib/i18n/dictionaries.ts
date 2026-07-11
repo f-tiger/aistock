@@ -20,6 +20,8 @@ const dict = {
     news: { zh: '行情动态', en: 'Updates' },
     glossary: { zh: '术语表', en: 'Glossary' },
     methodology: { zh: '方法与竞品', en: 'Method & Rivals' },
+    tools: { zh: '工具', en: 'Tools' },
+    pro: { zh: 'Pro', en: 'Pro' },
   },
   cta: {
     explore: { zh: '浏览 AI 行情', en: 'Explore AI Market' },
@@ -139,6 +141,90 @@ const dict = {
     disclosure: {
       zh: '本区域含推广链接,若你经由链接开户,本站可能获得返佣;这不影响内容独立性,也不构成投资建议。',
       en: 'This section contains referral links; we may earn a commission if you open an account through them. This does not affect our content and is not investment advice.',
+    },
+  },
+  tools: {
+    hubTitle: { zh: '工具箱', en: 'Tools' },
+    hubIntro: {
+      zh: '把「大佬共识」变成你能直接用的判断工具——免费、即用、可分享。',
+      en: 'Turn legendary-investor consensus into tools you can actually use — free, instant, shareable.',
+    },
+    portfolioTitle: { zh: '组合共识体检', en: 'Portfolio Consensus Check' },
+    portfolioTagline: {
+      zh: '贴上你的 AI 持仓,一键看清:8 位传奇投资人和你有多大共识。',
+      en: 'Paste your AI holdings and instantly see how much 8 legendary investors agree with you.',
+    },
+    compareTagline: {
+      zh: '任意两只 AI 标的并排对比:共识分、大佬动作、多空逻辑。',
+      en: 'Compare any two AI stocks: Consensus Scores, investor actions, bull/risk views.',
+    },
+    open: { zh: '打开工具', en: 'Open tool' },
+    inputLabel: { zh: '输入你的持仓代码(空格或逗号分隔)', en: 'Enter your tickers (space or comma separated)' },
+    placeholder: { zh: '例如:NVDA AMZN GOOGL TSLA', en: 'e.g. NVDA AMZN GOOGL TSLA' },
+    analyze: { zh: '体检', en: 'Check' },
+    tryExample: { zh: '试试示例', en: 'Try an example' },
+    empty: {
+      zh: '输入几个代码,看看你的组合与 8 位传奇投资人的共识度。',
+      en: 'Enter a few tickers to see how your mix aligns with 8 legendary investors.',
+    },
+    scoreLabel: { zh: '组合共识分', en: 'Portfolio Consensus' },
+    scoreNote: {
+      zh: '你已收录持仓的罗盘共识分均值——越高,代表你的组合越贴近大佬当季的集体动作。',
+      en: 'The average Compass Consensus Score of your tracked holdings — higher means your mix sits closer to the legends’ collective actions this quarter.',
+    },
+    coveragePrefix: { zh: '你的持仓中有', en: '' },
+    coverageSuffix: { zh: '只被本站投资人覆盖', en: 'of your holdings are covered by our investors' },
+    alignTitle: { zh: '与你最合拍的投资人', en: 'Legends most aligned with you' },
+    alignNote: {
+      zh: '与你重合持仓最多的投资人——可以顺着他们的逻辑深入研究。',
+      en: 'The investors who share the most names with you — a good place to study their thesis.',
+    },
+    overlap: { zh: '重合', en: 'overlap' },
+    breakdownTitle: { zh: '逐只拆解', en: 'Stock-by-stock' },
+    notTrackedNote: {
+      zh: '以下代码暂不在本站收录投资人的持仓中(不计入组合分):',
+      en: 'These aren’t currently held by our tracked investors (excluded from the score):',
+    },
+    shareText: {
+      zh: '我的 AI 组合共识分是 {score}——用「AI 投资罗盘」测测你的。',
+      en: 'My AI portfolio consensus score is {score} — check yours on AI Investing Compass.',
+    },
+    checkerDisclaimer: {
+      zh: '仅为教育性分析,不是对你持仓的评价,也不构成投资建议。',
+      en: 'An educational analytic — not a rating of your holdings and not investment advice.',
+    },
+    proTeaser: {
+      zh: '想保存多个组合、导出 CSV、在共识分变动时收到预警?',
+      en: 'Want to save portfolios, export CSV, and get alerts when the consensus shifts?',
+    },
+    proTeaserCta: { zh: '看看 Pro →', en: 'See Pro →' },
+  },
+  pro: {
+    badge: { zh: '即将推出 · 早鸟招募中', en: 'Coming soon · early-bird open' },
+    title: { zh: 'AI 投资罗盘 Pro', en: 'AI Investing Compass Pro' },
+    subtitle: {
+      zh: '把「看清共识」升级为「不错过变化」。免费版帮你研究,Pro 帮你持续跟踪、及时行动。',
+      en: 'Go from “seeing the consensus” to “never missing the shift.” Free helps you research; Pro keeps you tracking and acting.',
+    },
+    freeTitle: { zh: '免费版', en: 'Free' },
+    freePrice: { zh: '¥0', en: '$0' },
+    freeNote: { zh: '一直免费', en: 'Always free' },
+    proTitle: { zh: 'Pro', en: 'Pro' },
+    proPrice: { zh: '$6/月', en: '$6/mo' },
+    proNote: { zh: '早鸟价 · 限前 500 名(正式价 $12/月)', en: 'Early-bird · first 500 seats (list $12/mo)' },
+    ctaFree: { zh: '免费开始', en: 'Start free' },
+    ctaPro: { zh: '加入早鸟候补', en: 'Join the early-bird list' },
+    featuresHead: { zh: '功能对比', en: 'What you get' },
+    included: { zh: '包含', en: 'Included' },
+    notIncluded: { zh: '—', en: '—' },
+    waitlistTitle: { zh: '锁定早鸟价', en: 'Lock in the early-bird price' },
+    waitlistDesc: {
+      zh: '留个邮箱,Pro 上线时第一时间通知你,并为你锁定前 500 名早鸟价。免费,随时退订。',
+      en: 'Drop your email — we’ll notify you first when Pro launches and hold your early-bird seat. Free, unsubscribe anytime.',
+    },
+    disclosure: {
+      zh: 'Pro 提供的是分析与跟踪工具(基于公开 13F 与报道),不是买卖信号或投资建议。定价与功能在正式发布前可能调整。',
+      en: 'Pro provides analytics and tracking tools (from public 13F data and reporting), not buy/sell signals or investment advice. Pricing and features may change before launch.',
     },
   },
   disclaimer: {

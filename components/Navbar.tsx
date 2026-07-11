@@ -28,7 +28,15 @@ export default function Navbar({ locale }: { locale: Locale }) {
           ))}
         </div>
 
-        <LocaleSwitcher locale={locale} />
+        <div className="flex items-center gap-2">
+          <Link
+            href={`${base}/pro`}
+            className="rounded-lg border border-accent/40 bg-accent/10 px-3 py-1.5 text-sm font-semibold text-accent transition hover:bg-accent/20"
+          >
+            {dict.nav.pro[locale]}
+          </Link>
+          <LocaleSwitcher locale={locale} />
+        </div>
       </nav>
 
       {/* compact link row for mobile */}
@@ -42,6 +50,12 @@ export default function Navbar({ locale }: { locale: Locale }) {
             {link.label}
           </Link>
         ))}
+        <Link
+          href={`${base}/pro`}
+          className="whitespace-nowrap rounded-lg border border-accent/40 bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent"
+        >
+          {dict.nav.pro[locale]}
+        </Link>
       </div>
     </header>
   );

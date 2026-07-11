@@ -15,7 +15,7 @@ type Status = 'idle' | 'submitting' | 'success' | 'invalid' | 'error';
  * Degrades honestly: if the endpoint is unconfigured, it reports a soft error
  * instead of pretending to subscribe.
  */
-export default function NewsletterSignup({ locale }: { locale: Locale }) {
+export default function NewsletterSignup({ locale, source = 'newsletter' }: { locale: Locale; source?: string }) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<Status>('idle');
   const t = dict.newsletter;
@@ -32,7 +32,7 @@ export default function NewsletterSignup({ locale }: { locale: Locale }) {
       const res = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email: value, locale }),
+        body: JSON.stringify({ email: value, locale, source }),
       });
       setStatus(res.ok ? 'success' : 'error');
     } catch {

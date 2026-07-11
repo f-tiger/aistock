@@ -9,7 +9,7 @@ export function primaryLinks(locale: Locale): NavLink[] {
   return [
     { href: `${base}/consensus`, label: dict.nav.consensus[locale] },
     { href: `${base}/moves`, label: dict.nav.moves[locale] },
-    { href: `${base}/compare`, label: dict.nav.compare[locale] },
+    { href: `${base}/tools`, label: dict.nav.tools[locale] },
     { href: `${base}/stocks`, label: dict.nav.stocks[locale] },
     { href: `${base}/investors`, label: dict.nav.investors[locale] },
     { href: `${base}/market`, label: dict.nav.market[locale] },
@@ -21,6 +21,7 @@ export function secondaryLinks(locale: Locale): NavLink[] {
   const base = `/${locale}`;
   return [
     { href: `${base}/guide`, label: dict.nav.guide[locale] },
+    { href: `${base}/compare`, label: dict.nav.compare[locale] },
     { href: `${base}/long-term`, label: dict.nav.longTerm[locale] },
     { href: `${base}/news`, label: dict.nav.news[locale] },
     { href: `${base}/glossary`, label: dict.nav.glossary[locale] },
