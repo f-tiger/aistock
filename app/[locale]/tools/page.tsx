@@ -34,6 +34,12 @@ export default async function ToolsHubPage({ params }: { params: Promise<{ local
       badge: loc === 'zh' ? '新' : 'New',
     },
     {
+      href: `/${loc}/follow`,
+      title: dict.follow.hubTitle[loc],
+      tagline: dict.follow.hubIntro[loc],
+      badge: loc === 'zh' ? '新' : 'New',
+    },
+    {
       href: `/${loc}/compare`,
       title: dict.compare.title[loc],
       tagline: dict.tools.compareTagline[loc],
