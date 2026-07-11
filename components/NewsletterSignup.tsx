@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import dict from '@/lib/i18n/dictionaries';
 import type { Locale } from '@/lib/i18n/config';
 
 const ENDPOINT = process.env.NEXT_PUBLIC_SUBSCRIBE_ENDPOINT || '/api/subscribe';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// Only surface the count once it is persuasive — never advertise "0 subscribers".
+const SOCIAL_PROOF_FLOOR = 20;
 
 type Status = 'idle' | 'submitting' | 'success' | 'invalid' | 'error';
 
@@ -18,7 +20,22 @@ type Status = 'idle' | 'submitting' | 'success' | 'invalid' | 'error';
 export default function NewsletterSignup({ locale, source = 'newsletter' }: { locale: Locale; source?: string }) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<Status>('idle');
+  const [count, setCount] = useState<number | null>(null);
   const t = dict.newsletter;
+
+  // Live subscriber count for social proof (async → not a sync effect setState).
+  useEffect(() => {
+    let alive = true;
+    fetch(ENDPOINT, { method: 'GET' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (alive && d && typeof d.count === 'number') setCount(d.count);
+      })
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -70,6 +87,12 @@ export default function NewsletterSignup({ locale, source = 'newsletter' }: { lo
       </form>
       {status === 'invalid' && <p className="mt-2 text-xs text-amber-300">{t.invalid[locale]}</p>}
       {status === 'error' && <p className="mt-2 text-xs text-loss">{t.error[locale]}</p>}
+      {count !== null && count >= SOCIAL_PROOF_FLOOR && (
+        <p className="mt-3 flex items-center gap-1.5 text-xs text-slate-400">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-gain" />
+          {t.joined[locale].replace('{n}', count.toLocaleString())}
+        </p>
+      )}
     </div>
   );
 }
