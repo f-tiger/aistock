@@ -19,7 +19,7 @@ jobs:
           script: |
             const today = new Date().toISOString().slice(0, 10);
             const body = [
-              '@claude 请执行本周内容运营(完整规范见 docs/operations.md):',
+              '@claude 请执行本周内容运营(完整规范见 docs/operations.md)。写作前先加载项目 skills(.claude/skills/):用 content-engine 与 crosspost 做平台适配,用 article-writing 保证长文质量,用 brand-voice 保持声音一致,涉及 SEO 判断时用 seo:',
               '',
               '1. 阅读 `docs/operations.md` 与 `content/templates/`;阅读 `lib/data/updates.ts` 了解已有条目。',
               '2. 搜集过去 7 天 AI 板块与 8 位传奇投资人(巴菲特/Cathie Wood/Druckenmiller/Ackman/段永平/David Tepper/Philippe Laffont/Michael Burry)的持仓与行情要闻,筛出 1–3 条重要且可溯源的。',
