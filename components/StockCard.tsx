@@ -3,10 +3,13 @@ import dict from '@/lib/i18n/dictionaries';
 import type { Locale } from '@/lib/i18n/config';
 import type { StockDetail } from '@/lib/data/stocks';
 import { getTheme } from '@/lib/data/themes';
+import { getScore } from '@/lib/data/score';
 import Sparkline from './Sparkline';
 import LiveQuote from './LiveQuote';
+import ScoreBadge from './ScoreBadge';
 
 export default function StockCard({ stock, locale }: { stock: StockDetail; locale: Locale }) {
+  const ccs = getScore(stock.ticker);
   return (
     <Link href={`/${locale}/stocks/${stock.ticker}`} className="card group flex flex-col">
       <div className="flex items-start justify-between gap-3">
@@ -17,8 +20,9 @@ export default function StockCard({ stock, locale }: { stock: StockDetail; local
         </div>
         <Sparkline data={stock.trend} className="shrink-0 opacity-80" />
       </div>
-      <div className="mt-3">
+      <div className="mt-3 flex items-center justify-between gap-2">
         <LiveQuote ticker={stock.ticker} />
+        {ccs && <ScoreBadge score={ccs.score} locale={locale} />}
       </div>
       <div className="mt-3 flex flex-wrap gap-1.5">
         {stock.themeIds.map((id) => {

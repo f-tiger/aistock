@@ -6,11 +6,16 @@ export type Source = {
   url: string;
 };
 
+/** The most recent disclosed action on a holding (feeds the Consensus Score). */
+export type HoldingAction = 'new' | 'add' | 'hold' | 'trim' | 'exit';
+
 /** A holding tied to a theme, with a short rationale. */
 export type Holding = {
   ticker: string;
   name: Localized;
   note: Localized;
+  /** Latest disclosed action; defaults to 'hold' when omitted. */
+  action?: HoldingAction;
 };
 
 /** An investor's overall stance toward the AI trade. */
@@ -25,6 +30,8 @@ export type Investor = {
   horizon: Localized;
   /** Overall posture toward AI — drives a small badge. Defaults to bull. */
   stance?: Stance;
+  /** Broad style bucket; cross-style consensus earns a score bonus. */
+  styleTag?: 'value' | 'growth' | 'macro' | 'contrarian';
   /** One-line summary shown on cards. */
   summary: Localized;
   /** Longer narrative of their AI thesis. */

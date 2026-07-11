@@ -9,6 +9,8 @@ import InvestorCard from '@/components/InvestorCard';
 import PrincipleCard from '@/components/PrincipleCard';
 import Disclaimer from '@/components/Disclaimer';
 import NewsletterSignup from '@/components/NewsletterSignup';
+import ScoreBadge from '@/components/ScoreBadge';
+import { computeScores } from '@/lib/data/score';
 import { principles } from '@/lib/data/principles';
 
 export function generateStaticParams() {
@@ -27,19 +29,49 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       {/* Hero */}
-      <section className="container-page pt-16 pb-12 sm:pt-24">
+      <section className="container-page pt-16 pb-10 sm:pt-24">
         <span className="pill">{dict.tagline[loc]}</span>
-        <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-          {homeCopy.heroTitle[loc]}
+        <h1 className="mt-5 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl">
+          <span className="bg-gradient-to-r from-white via-accent-soft to-accent bg-clip-text text-transparent">
+            {homeCopy.heroTitle[loc]}
+          </span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-300">
           {homeCopy.heroSubtitle[loc]}
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href={`/${loc}/guide`} className="btn-primary">{dict.nav.guide[loc]} →</Link>
-          <Link href={`/${loc}/market`} className="btn-ghost">{dict.cta.explore[loc]}</Link>
+          <Link href={`/${loc}/consensus`} className="btn-primary">{dict.score.leaderboard[loc]} →</Link>
+          <Link href={`/${loc}/guide`} className="btn-ghost">{dict.nav.guide[loc]}</Link>
           <Link href={`/${loc}/investors`} className="btn-ghost">{dict.cta.seeInvestors[loc]}</Link>
         </div>
+
+        {/* stat band */}
+        <div className="mt-10 grid grid-cols-2 gap-4 rounded-2xl border border-white/10 bg-ink-900/60 p-6 sm:grid-cols-4">
+          {homeCopy.stats.map((s) => (
+            <div key={s.label.en}>
+              <div className="text-2xl font-extrabold text-accent">{s.value[loc]}</div>
+              <div className="mt-1 text-xs text-slate-400">{s.label[loc]}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* top consensus strip */}
+        <div className="mt-6 flex flex-wrap items-center gap-2">
+          <span className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            {dict.score.name[loc]}
+          </span>
+          {computeScores().slice(0, 4).map((s) => (
+            <Link
+              key={s.ticker}
+              href={`/${loc}/stocks/${s.ticker}`}
+              className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 transition hover:border-accent/50"
+            >
+              <span className="font-mono text-sm font-bold text-white">{s.ticker}</span>
+              <ScoreBadge score={s.score} locale={loc} />
+            </Link>
+          ))}
+        </div>
+
         <div className="mt-8 max-w-2xl">
           <Disclaimer locale={loc} />
         </div>

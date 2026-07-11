@@ -8,6 +8,8 @@
 
 A **bilingual (中文/EN), education-focused** site that unifies AI market trends, how legendary investors are positioned in AI (with reasoning), and long-term investing principles.
 
+核心差异化:**罗盘共识分(Compass Consensus Score)**——把 8 位大佬的公开持仓动作量化为每只 AI 股票的 0–100 可解释评分(方法论公开,见 `/methodology#ccs`),每季随 13F 更新并积累历史序列。
+
 > ⚠️ 仅供教育与信息参考，**不构成投资建议**。For education only — **not investment advice**.
 
 竞品调研见 [`docs/competitor-research.md`](docs/competitor-research.md)（市场上有很多相邻工具，但没有一个聚焦整合这三块——这是本项目的定位）。
