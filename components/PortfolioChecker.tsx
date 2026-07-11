@@ -123,6 +123,25 @@ export default function PortfolioChecker({
             {t.tryExample[locale]}: {EXAMPLE}
           </button>
         </div>
+
+        {/* quick-load a legend's whole AI sleeve */}
+        <div className="mt-4 border-t border-white/5 pt-3">
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{t.quickLoad[locale]}</p>
+          <div className="mt-2 flex flex-wrap gap-2">
+            {investors
+              .filter((inv) => inv.tickers.length > 0)
+              .map((inv) => (
+                <button
+                  key={inv.slug}
+                  type="button"
+                  onClick={() => setRaw(inv.tickers.join(' '))}
+                  className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300 transition hover:border-accent/40 hover:text-white"
+                >
+                  {inv.name[locale]}
+                </button>
+              ))}
+          </div>
+        </div>
       </div>
 
       {!result && (
