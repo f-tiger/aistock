@@ -6,8 +6,9 @@ import dict from '@/lib/i18n/dictionaries';
 import { localeAlternates, itemListJsonLd } from '@/lib/seo';
 import { provider } from '@/lib/data/provider';
 import { consensusOnly } from '@/lib/data/consensus';
-import { computeScores } from '@/lib/data/score';
+import { computeScores, convictionIndex } from '@/lib/data/score';
 import ConsensusMatrix from '@/components/ConsensusMatrix';
+import ConvictionMeter from '@/components/ConvictionMeter';
 import ScoreBadge from '@/components/ScoreBadge';
 import ShareBar from '@/components/ShareBar';
 import LiveQuote from '@/components/LiveQuote';
@@ -64,6 +65,11 @@ export default async function ConsensusPage({ params }: { params: Promise<{ loca
           <Disclaimer locale={loc} />
         </div>
       </header>
+
+      {/* AI Conviction Index — flagship single-number read */}
+      <section className="mt-8">
+        <ConvictionMeter conviction={convictionIndex()} locale={loc} />
+      </section>
 
       {/* Consensus Leaderboard — CCS ranked */}
       <section className="mt-10">
