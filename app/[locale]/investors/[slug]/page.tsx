@@ -53,6 +53,10 @@ export default async function InvestorDetailPage({
   const allThemes = await provider.getThemes();
   const relatedThemes = allThemes.filter((theme) => investor.themeIds.includes(theme.id));
 
+  const IGNORE = new Set(['—', 'theme', '']);
+  const sleeve = [...new Set(investor.holdings.map((h) => h.ticker.trim()).filter((t) => !IGNORE.has(t)))];
+  const sleeveHref = `/${loc}/tools/portfolio?p=${sleeve.join(',')}`;
+
   return (
     <div className="container-page py-12">
       <script
@@ -123,6 +127,16 @@ export default async function InvestorDetailPage({
               </div>
             ))}
           </div>
+
+          {sleeve.length > 0 && (
+            <div className="mt-4 rounded-2xl border border-accent/25 bg-accent/5 p-4">
+              <p className="text-sm font-bold text-white">{dict.tools.followTitle[loc]}</p>
+              <p className="mt-1 text-xs text-slate-400">{dict.tools.followDesc[loc]}</p>
+              <Link href={sleeveHref} className="btn-primary mt-3 inline-block w-full text-center">
+                {dict.tools.followCta[loc]} →
+              </Link>
+            </div>
+          )}
         </aside>
       </div>
 

@@ -199,6 +199,13 @@ const dict = {
       en: 'Want to save portfolios, export CSV, and get alerts when the consensus shifts?',
     },
     proTeaserCta: { zh: '看看 Pro →', en: 'See Pro →' },
+    quickLoad: { zh: '快速载入大佬持仓', en: 'Quick-load a legend’s holdings' },
+    followTitle: { zh: '跟投 TA 的 AI 持仓?', en: 'Copy this legend’s AI sleeve?' },
+    followDesc: {
+      zh: '一键把 TA 的全部 AI 持仓放进「组合共识体检」,看看整体共识分与跨大佬重合度。',
+      en: 'Load all of their AI holdings into the Portfolio Consensus Check to see the overall score and cross-legend overlap.',
+    },
+    followCta: { zh: '在组合体检中打开', en: 'Open in Portfolio Check' },
   },
   pro: {
     badge: { zh: '即将推出 · 早鸟招募中', en: 'Coming soon · early-bird open' },
