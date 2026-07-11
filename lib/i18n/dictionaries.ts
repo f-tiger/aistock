@@ -128,6 +128,7 @@ const dict = {
     button: { zh: '订阅', en: 'Subscribe' },
     submitting: { zh: '提交中…', en: 'Submitting…' },
     success: { zh: '订阅成功!下次 13F 更新时见。', en: 'Subscribed! See you at the next 13F update.' },
+    joined: { zh: '已有 {n}+ 位读者订阅', en: 'Join {n}+ subscribers' },
     invalid: { zh: '请输入有效的邮箱地址。', en: 'Please enter a valid email address.' },
     error: { zh: '暂时无法订阅,请稍后再试。', en: 'Subscription is unavailable right now — please try again later.' },
   },
