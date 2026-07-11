@@ -8,7 +8,9 @@ import { provider } from '@/lib/data/provider';
 import { getStocks } from '@/lib/data/stocks';
 import { buildConsensus } from '@/lib/data/consensus';
 import { investors } from '@/lib/data/investors';
-import { getScore } from '@/lib/data/score';
+import { getScore, computeScores } from '@/lib/data/score';
+import { pairSlug } from '@/lib/data/pairs';
+import { hasStockPage } from '@/lib/data/stocks';
 import ScorePanel from '@/components/ScorePanel';
 import { getTheme } from '@/lib/data/themes';
 import PriceChart from '@/components/PriceChart';
@@ -120,6 +122,23 @@ export default async function StockDetailPage({
           <p className="mt-3 text-sm text-slate-500">{dict.labels.noHolders[loc]}</p>
         )}
       </section>
+
+      {/* popular comparisons — internal links into the programmatic vs-pages */}
+      <div className="mt-8 flex flex-wrap items-center gap-2 text-sm">
+        <span className="text-slate-500">{loc === 'zh' ? '热门对比:' : 'Popular comparisons:'}</span>
+        {computeScores()
+          .filter((s) => s.ticker !== stock.ticker && hasStockPage(s.ticker))
+          .slice(0, 3)
+          .map((s) => (
+            <Link
+              key={s.ticker}
+              href={`/${loc}/vs/${pairSlug(stock.ticker, s.ticker)}`}
+              className="pill font-mono hover:border-accent/50 hover:text-white"
+            >
+              {stock.ticker} vs {s.ticker}
+            </Link>
+          ))}
+      </div>
 
       {/* Related themes */}
       {relatedThemes.length > 0 && (

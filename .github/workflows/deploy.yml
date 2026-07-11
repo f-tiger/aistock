@@ -61,3 +61,8 @@ jobs:
         # wrangler reads wrangler.toml: output dir, SUBSCRIBERS KV binding, and
         # bundles functions/ as Pages Functions automatically.
         run: npx -y wrangler@latest pages deploy out --project-name ai-investing-compass --branch main --commit-hash "${{ github.sha }}"
+
+      - name: Ping IndexNow (fast search indexing)
+        if: steps.token.outputs.present == 'true'
+        continue-on-error: true
+        run: node scripts/indexnow.mjs
