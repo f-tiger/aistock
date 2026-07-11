@@ -89,7 +89,12 @@ public/_redirects, _headers   # Cloudflare Pages 边缘配置
 
 本项目为**纯静态导出**，最适合 Cloudflare Pages。`.node-version`(=20)已固定 Node 版本(Next 16 需 Node ≥ 20),`wrangler.toml` 已声明产物目录 `out`——避免最常见的部署失败。
 
-### 方式一：Git 集成（推荐，自动持续部署）
+### 方式〇：GitHub Actions 自动部署（已内置,推荐）
+
+仓库自带 `.github/workflows/deploy.yml`:每次合并到 `main` 自动构建并 `wrangler pages deploy` 到 Cloudflare Pages(项目 `ai-investing-compass`,KV 绑定与 `functions/` 自动生效)。
+一次性启用:在 [dash.cloudflare.com/profile/api-tokens](https://dash.cloudflare.com/profile/api-tokens) 创建含 **Cloudflare Pages: Edit** 权限的 API Token → 仓库 Settings → Secrets 添加 `CLOUDFLARE_API_TOKEN`(建议同时加 `CLOUDFLARE_ACCOUNT_ID`)→ 任意 push 或手动 Run workflow 即上线。
+
+### 方式一：Git 集成（控制台点击,零 token）
 
 1. Cloudflare 控制台 → **Workers & Pages → Create → Pages → Connect to Git**,选择仓库 `f-tiger/aistock` 与分支 `main`。
 2. 构建设置:
