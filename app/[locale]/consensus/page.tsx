@@ -5,7 +5,9 @@ import { locales } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
 import { provider } from '@/lib/data/provider';
 import { consensusOnly } from '@/lib/data/consensus';
+import { computeScores } from '@/lib/data/score';
 import ConsensusMatrix from '@/components/ConsensusMatrix';
+import ScoreBadge from '@/components/ScoreBadge';
 import LiveQuote from '@/components/LiveQuote';
 import StockLink from '@/components/StockLink';
 import BrokerCTA from '@/components/BrokerCTA';
@@ -43,6 +45,33 @@ export default async function ConsensusPage({ params }: { params: Promise<{ loca
           <Disclaimer locale={loc} />
         </div>
       </header>
+
+      {/* Consensus Leaderboard — CCS ranked */}
+      <section className="mt-10">
+        <h2 className="text-xl font-bold text-white">
+          {dict.score.leaderboard[loc]}
+          <span className="ml-2 text-sm font-normal text-slate-400">· {dict.score.name[loc]}</span>
+        </h2>
+        <div className="mt-5 space-y-2">
+          {computeScores().slice(0, 8).map((s, i) => (
+            <div key={s.ticker} className="flex items-center gap-3 rounded-xl border border-white/10 bg-ink-900/60 px-4 py-2.5">
+              <span className="w-6 font-mono text-sm text-slate-500">{i + 1}</span>
+              <span className="w-16 font-mono font-bold text-white">
+                <StockLink ticker={s.ticker} locale={loc} />
+              </span>
+              <span className="hidden w-24 truncate text-xs text-slate-500 sm:block">{s.name[loc]}</span>
+              <div className="h-2 flex-1 overflow-hidden rounded-full bg-white/10">
+                <div
+                  className="h-full rounded-full bg-gradient-to-r from-accent-deep to-accent"
+                  style={{ width: `${s.score}%` }}
+                />
+              </div>
+              <ScoreBadge score={s.score} locale={loc} />
+            </div>
+          ))}
+        </div>
+        <p className="mt-3 text-xs text-slate-500">{dict.score.note[loc]}</p>
+      </section>
 
       {/* Consensus holdings */}
       <section className="mt-10">

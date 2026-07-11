@@ -26,6 +26,7 @@ jobs:
               '3. 若无值得记录的要闻:在本 Issue 评论说明并关闭,不做改动。',
               '4. 否则:按现有格式把要闻加入 `lib/data/updates.ts`(双语、date、themeIds、tickers、sources 齐全真实);若涉及持仓重大变化,同步更新 `lib/data/investors.ts`(holdings/thesis/asOf/sources)。',
               '5. 按 `content/templates/` 用新数据写 1–2 篇平台帖草稿,存入 `content/drafts/' + today.slice(0, 7) + '/`。数字必须可溯源、带截至日期与免责声明。',
+              '5b. 若数据更新导致「罗盘共识分」(lib/data/score.ts,由 holdings 的 action 字段驱动)发生变动,优先用共识分变动做钩子(例:「NVDA 共识分从 42 跌到 34:又一位大佬减持」),并在帖尾引导到 /zh/consensus 共识榜。这是本站独有指标,是推广的差异化武器。',
               '6. `npm ci && npm run lint && npm run build` 通过后,在新分支提交并开 PR 到 main,标题「周运营更新 ' + today + '」,正文列出要闻来源、改动文件、草稿清单。不要自行合并。',
               '',
               '红线:数字必须有出处;宁可不更新,不可编造;只动数据与内容文件,不改站点代码结构。',

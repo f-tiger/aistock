@@ -8,6 +8,8 @@ import { provider } from '@/lib/data/provider';
 import { getStocks } from '@/lib/data/stocks';
 import { buildConsensus } from '@/lib/data/consensus';
 import { investors } from '@/lib/data/investors';
+import { getScore } from '@/lib/data/score';
+import ScorePanel from '@/components/ScorePanel';
 import { getTheme } from '@/lib/data/themes';
 import PriceChart from '@/components/PriceChart';
 import LiveQuote from '@/components/LiveQuote';
@@ -46,6 +48,7 @@ export default async function StockDetailPage({
 
   const holders = buildConsensus(investors).find((e) => e.ticker === stock.ticker)?.holders ?? [];
   const relatedThemes = stock.themeIds.map((id) => getTheme(id)).filter((t) => t !== undefined);
+  const ccs = getScore(stock.ticker);
 
   return (
     <div className="container-page py-12">
@@ -66,6 +69,13 @@ export default async function StockDetailPage({
         </div>
         <PriceChart ticker={stock.ticker} fallback={stock.trend} locale={loc} width={200} height={64} />
       </header>
+
+      {/* Consensus Score — the proprietary lens */}
+      {ccs && (
+        <div className="mt-8">
+          <ScorePanel score={ccs} locale={loc} />
+        </div>
+      )}
 
       {/* Bull / risk */}
       <div className="mt-8 grid gap-5 md:grid-cols-2">

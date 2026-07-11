@@ -80,6 +80,41 @@ export default async function MethodologyPage({ params }: { params: Promise<{ lo
         </div>
       </section>
 
+      {/* Consensus Score methodology */}
+      <section id="ccs" className="mt-12 scroll-mt-24">
+        <h2 className="text-xl font-bold text-white">
+          {loc === 'zh' ? '罗盘共识分(CCS)方法论' : 'Compass Consensus Score (CCS) methodology'}
+        </h2>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-300">
+          {loc === 'zh'
+            ? 'CCS 把本站追踪的传奇投资人对每只股票的公开持仓动作,量化为 0–100 的可解释评分。公式完全公开:'
+            : 'CCS quantifies the tracked legends’ disclosed positioning on each stock into an explainable 0–100 score. The formula is fully public:'}
+        </p>
+        <div className="mt-4 overflow-x-auto rounded-xl border border-white/10 bg-ink-900/60 p-4 font-mono text-sm text-slate-300">
+          CCS = holdersScore + actionScore + diversityBonus&nbsp;&nbsp;(0–100)
+          <br />· holdersScore&nbsp;&nbsp;= 12 × {loc === 'zh' ? '持有人数' : 'holders'} (≤48)
+          <br />· actionScore&nbsp;&nbsp;&nbsp;= Σ [{loc === 'zh' ? '新建仓' : 'new'} +12 · {loc === 'zh' ? '增持' : 'add'} +10 · {loc === 'zh' ? '持有' : 'hold'} +4 · {loc === 'zh' ? '减持' : 'trim'} −8 · {loc === 'zh' ? '清仓' : 'exit'} −12] ∈ [−20, +40]
+          <br />· diversityBonus = +12 {loc === 'zh' ? '当持有人横跨 ≥3 种风格(价值/成长/宏观)' : 'when holders span ≥3 style buckets (value/growth/macro)'}
+        </div>
+        <ul className="mt-4 max-w-3xl space-y-2 text-sm leading-relaxed text-slate-300">
+          <li>
+            {loc === 'zh'
+              ? '· 分档:≥80 强共识 / 60–79 共识 / 40–59 分歧 / <40 弱共识。跨风格共识(如价值派与成长派同时持有)比单一流派内部的一致更有信息量,故设加成。'
+              : '· Bands: ≥80 strong / 60–79 consensus / 40–59 split / <40 weak. Cross-style agreement (e.g. value and growth investors holding the same name) carries more information than one school agreeing with itself — hence the bonus.'}
+          </li>
+          <li>
+            {loc === 'zh'
+              ? '· 数据每季随 13F 更新;每期评分快照会被保留,逐季积累成可回溯的共识分时间序列——这是本站独有的数据资产。'
+              : '· Data refreshes each 13F season; every period’s snapshot is retained, accumulating a back-testable consensus time series — this site’s proprietary data asset.'}
+          </li>
+          <li>
+            {loc === 'zh'
+              ? '· CCS 是教育性分析指标,反映的是"大佬们的集体动作",不预测股价,不构成投资建议。'
+              : '· CCS is an educational analytic reflecting the legends’ collective actions; it does not predict prices and is not investment advice.'}
+          </li>
+        </ul>
+      </section>
+
       {/* Data method */}
       <section className="mt-12">
         <h2 className="text-xl font-bold text-white">{loc === 'zh' ? '数据与方法' : 'Data & method'}</h2>
