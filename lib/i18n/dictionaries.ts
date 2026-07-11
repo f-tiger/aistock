@@ -15,6 +15,8 @@ const dict = {
     stocks: { zh: '个股', en: 'Stocks' },
     longTerm: { zh: '长期投资', en: 'Long-Term' },
     consensus: { zh: '持仓共识', en: 'Consensus' },
+    moves: { zh: '本季动作', en: 'Moves' },
+    compare: { zh: '对比工具', en: 'Compare' },
     news: { zh: '行情动态', en: 'Updates' },
     glossary: { zh: '术语表', en: 'Glossary' },
     methodology: { zh: '方法与竞品', en: 'Method & Rivals' },
@@ -95,6 +97,24 @@ const dict = {
       zh: '基于公开 13F 与报道的教育性分析指标,方法论完全公开;非投资建议。',
       en: 'An educational analytic from public filings with a fully published methodology; not investment advice.',
     },
+  },
+  moves: {
+    buys: { zh: '买入侧:新建 / 增持', en: 'Buy side: new & added' },
+    sells: { zh: '卖出侧:减持 / 清仓', en: 'Sell side: trimmed & exited' },
+    empty: { zh: '本季暂无记录。', en: 'No records this quarter.' },
+  },
+  compare: {
+    title: { zh: '标的对比', en: 'Stock comparison' },
+    pickA: { zh: '标的 A', en: 'Stock A' },
+    pickB: { zh: '标的 B', en: 'Stock B' },
+    holders: { zh: '持有人数', en: 'Holders' },
+    noScore: { zh: '暂无共识分(未被收录投资人持有)', en: 'No score (not held by tracked investors)' },
+  },
+  share: {
+    label: { zh: '分享', en: 'Share' },
+    copy: { zh: '复制链接', en: 'Copy link' },
+    copied: { zh: '已复制 ✓', en: 'Copied ✓' },
+    toX: { zh: '分享到 X', en: 'Share on X' },
   },
   newsletter: {
     title: { zh: '订阅季度 13F 更新', en: 'Get quarterly 13F updates' },

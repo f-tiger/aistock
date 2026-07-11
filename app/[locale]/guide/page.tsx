@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n/config';
 import { locales, type Localized } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
+import { faq } from '@/lib/data/faq';
 import Disclaimer from '@/components/Disclaimer';
 
 export function generateStaticParams() {
@@ -125,6 +126,36 @@ export default async function GuidePage({ params }: { params: Promise<{ locale: 
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* FAQ — with FAQPage structured data for search rich results */}
+      <section className="mt-12">
+        <h2 className="text-xl font-bold text-white">FAQ</h2>
+        <div className="mt-5 space-y-3">
+          {faq.map((item) => (
+            <details key={item.q.en} className="card group">
+              <summary className="cursor-pointer list-none font-semibold text-white">
+                <span className="mr-2 text-accent transition group-open:rotate-90 inline-block">›</span>
+                {item.q[loc]}
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-slate-300">{item.a[loc]}</p>
+            </details>
+          ))}
+        </div>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: faq.map((item) => ({
+                '@type': 'Question',
+                name: item.q[loc],
+                acceptedAnswer: { '@type': 'Answer', text: item.a[loc] },
+              })),
+            }),
+          }}
+        />
       </section>
 
       <div className="mt-10 flex flex-wrap gap-3">
