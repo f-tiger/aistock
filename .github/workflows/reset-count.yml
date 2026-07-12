@@ -1,0 +1,58 @@
+name: Reset subscriber count
+
+# One-click cleanup of the subscriber KV before the public launch:
+#   - delete the pipeline test emails (email:*pipeline-test*)
+#   - set stat:count to the chosen value (default 0)
+#   - clear the stale stat:last_notify test record
+# Reuses the existing CLOUDFLARE_API_TOKEN secret (same one deploy.yml uses).
+# Real subscribers are never touched (only keys matching the test prefix).
+
+on:
+  workflow_dispatch:
+    inputs:
+      set_count:
+        description: 'Value to set stat:count to after cleanup'
+        required: false
+        default: '0'
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      NS: '8aba65b34a574604bb34d3b623ca8c68'
+    steps:
+      - name: Guard on token
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "::error::CLOUDFLARE_API_TOKEN not set — cannot access KV."; exit 1
+          fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Clean test data & reset count
+        run: |
+          set -e
+          echo "== current keys =="
+          npx -y wrangler@latest kv key list --namespace-id="$NS" > keys.json
+          echo "total keys: $(jq 'length' keys.json)"
+
+          echo "== deleting test emails =="
+          jq -r '.[].name | select(test("^email:.*pipeline-test"))' keys.json > todel.txt || true
+          if [ -s todel.txt ]; then
+            while IFS= read -r k; do
+              echo "delete $k"
+              npx -y wrangler@latest kv key delete "$k" --namespace-id="$NS" || true
+            done < todel.txt
+          else
+            echo "(no test emails found)"
+          fi
+
+          echo "== reset counters =="
+          npx -y wrangler@latest kv key put "stat:count" "${{ github.event.inputs.set_count }}" --namespace-id="$NS"
+          npx -y wrangler@latest kv key delete "stat:last_notify" --namespace-id="$NS" || true
+
+          echo "== remaining real subscribers =="
+          npx -y wrangler@latest kv key list --namespace-id="$NS" \
+            | jq -r '.[].name | select(startswith("email:"))' || true
+          echo "== done: stat:count = ${{ github.event.inputs.set_count }} =="
