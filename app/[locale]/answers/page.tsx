@@ -78,6 +78,25 @@ export default async function AnswersPage({ params }: { params: Promise<{ locale
           {dict.follow.hubTitle[loc]}
         </Link>
       </div>
+
+      {/* Embeddable live badge — each embed is a backlink pointing here */}
+      <section className="mt-14 max-w-3xl">
+        <h2 className="text-lg font-bold text-white">
+          {loc === 'zh' ? '嵌入实时徽章' : 'Embed the live badge'}
+        </h2>
+        <p className="mt-2 text-sm text-slate-400">
+          {loc === 'zh'
+            ? '把当前「AI 共识温度计」放进你的博客、README 或帖子——每次嵌入都会链接回本站,数据每季自动更新。'
+            : 'Drop the live AI Conviction Index into your blog, README, or post — each embed links back here and updates every quarter.'}
+        </p>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/badge.svg" width={320} height={64} alt="AI Conviction Index badge" className="mt-4" />
+        <div className="mt-4 overflow-x-auto rounded-lg border border-white/10 bg-ink-950 p-3">
+          <code className="whitespace-pre text-xs text-slate-300">
+            {`[![AI Conviction Index](https://ai-investing-compass.pages.dev/badge.svg)](https://ai-investing-compass.pages.dev/${loc}/consensus)`}
+          </code>
+        </div>
+      </section>
     </div>
   );
 }
