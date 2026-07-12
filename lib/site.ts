@@ -16,6 +16,7 @@ export const staticPaths = [
   '/tools',
   '/tools/portfolio',
   '/follow',
+  '/answers',
   '/pro',
   '/news',
   '/long-term',

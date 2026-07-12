@@ -21,6 +21,7 @@ export function secondaryLinks(locale: Locale): NavLink[] {
   const base = `/${locale}`;
   return [
     { href: `${base}/guide`, label: dict.nav.guide[locale] },
+    { href: `${base}/answers`, label: dict.nav.answers[locale] },
     { href: `${base}/compare`, label: dict.nav.compare[locale] },
     { href: `${base}/long-term`, label: dict.nav.longTerm[locale] },
     { href: `${base}/news`, label: dict.nav.news[locale] },
