@@ -1,0 +1,47 @@
+name: Auto-verify Telegram loop
+
+# Hands-off verification: polls the live health endpoint on a schedule and, the
+# moment the owner has pressed Start on the bot (telegram_chat resolves), fires
+# ONE confirmation subscription so a real Telegram DM is delivered and
+# last_notify flips to "sent". Idempotent — once verified it's a no-op health
+# check; before Start it only reads health (no test posts). Safe to delete once
+# you've received the confirmation DM.
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Confirm the Telegram loop once the owner has started the bot
+        run: |
+          BASE='https://ai-investing-compass.pages.dev'
+          H=$(curl -sS "$BASE/api/subscribe?health=1" || true); echo "health: $H"
+
+          if echo "$H" | grep -q '"status":"sent"'; then
+            echo "::notice::✅ Telegram loop already verified (last_notify = sent). No action."
+            exit 0
+          fi
+          if ! echo "$H" | grep -q '"telegram_token":true'; then
+            echo "TELEGRAM_BOT_TOKEN not live yet — nothing to verify. Retrying next run."
+            exit 0
+          fi
+          if ! echo "$H" | grep -q '"telegram_chat":true'; then
+            echo "Owner hasn't pressed Start on the bot yet (no resolvable chat). Retrying next run."
+            exit 0
+          fi
+
+          echo "Chat resolved — sending one confirmation DM..."
+          curl -sS -X POST "$BASE/api/subscribe" -H 'content-type: application/json' \
+            -d "{\"email\":\"verify+${{ github.run_id }}@ai-investing-compass.dev\",\"locale\":\"zh\",\"source\":\"auto-verify\"}" || true
+          echo
+          sleep 2
+          H2=$(curl -sS "$BASE/api/subscribe?health=1" || true); echo "health: $H2"
+          if echo "$H2" | grep -q '"status":"sent"'; then
+            echo "::notice::✅ Telegram loop verified live — owner DM delivered. You can delete this workflow."
+          else
+            echo "::warning::Chat resolved but send not confirmed — check the bot was Started (Telegram blocks DMs until then)."
+          fi
