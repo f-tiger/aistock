@@ -8,9 +8,13 @@
 
 A **bilingual (中文/EN), education-focused** site that unifies AI market trends, how legendary investors are positioned in AI (with reasoning), and long-term investing principles.
 
-核心差异化:**罗盘共识分(Compass Consensus Score)**——把 8 位大佬的公开持仓动作量化为每只 AI 股票的 0–100 可解释评分(方法论公开,见 `/methodology#ccs`),每季随 13F 更新并积累历史序列。
+核心差异化:**罗盘共识分(Compass Consensus Score)**——把 8 位大佬的公开持仓动作量化为每只 AI 股票的 0–100 可解释评分(方法论公开,见 `/methodology#ccs`),每季随 13F 更新并积累历史序列。在其之上派生**AI 共识温度计(AI Conviction Index)**——一个单一、可引用的站点级指标(竞品都没有)。
+
+配套:**组合共识体检**(贴上持仓看整体共识分,`/tools/portfolio`)、**跟投大佬**落地页(`/follow`)、**Pro** 变现与早鸟候补(`/pro`)、GEO 问答页(`/answers`)、`llms.txt`。
 
 > ⚠️ 仅供教育与信息参考，**不构成投资建议**。For education only — **not investment advice**.
+
+> 🚀 **上线只差两步**(加 Telegram 密钥 + 首发引流):照 [`docs/go-live.md`](docs/go-live.md) 做,约 5–10 分钟。
 
 竞品调研见 [`docs/competitor-research.md`](docs/competitor-research.md)（市场上有很多相邻工具，但没有一个聚焦整合这三块——这是本项目的定位）。
 **自动化运营方案**见 [`docs/operations.md`](docs/operations.md)（内容流水线 = Claude Routines,守护 = GitHub Actions,度量 = Cloudflare;平台帖模板与成品在 [`content/`](content/)）。
