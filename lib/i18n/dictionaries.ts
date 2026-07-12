@@ -219,6 +219,10 @@ const dict = {
       en: 'Want to save portfolios, export CSV, and get alerts when the consensus shifts?',
     },
     proTeaserCta: { zh: '看看 Pro →', en: 'See Pro →' },
+    alertTitle: {
+      zh: '你的组合共识分是 {n}——每季它怎么变,第一时间告诉你',
+      en: 'Your portfolio consensus is {n} — get told the moment it shifts',
+    },
     quickLoad: { zh: '快速载入大佬持仓', en: 'Quick-load a legend’s holdings' },
     followTitle: { zh: '跟投 TA 的 AI 持仓?', en: 'Copy this legend’s AI sleeve?' },
     followDesc: {

@@ -8,6 +8,7 @@ import { scoreBand } from '@/lib/data/score';
 import ScoreBadge from '@/components/ScoreBadge';
 import CompassGauge from '@/components/CompassGauge';
 import ShareBar from '@/components/ShareBar';
+import NewsletterSignup from '@/components/NewsletterSignup';
 
 export type ScoreLite = {
   ticker: string;
@@ -260,6 +261,17 @@ export default function PortfolioChecker({
             <span className="font-mono text-slate-300">{result.unrecognized.join(', ')}</span>
           </p>
         </div>
+      )}
+
+      {result && result.rows.length > 0 && (
+        <section className="mt-8">
+          <h3 className="mb-3 text-center text-sm font-semibold text-slate-200">
+            {t.alertTitle[locale].replace('{n}', String(result.avg))}
+          </h3>
+          <div className="mx-auto max-w-2xl">
+            <NewsletterSignup locale={locale} source="portfolio" />
+          </div>
+        </section>
       )}
 
       {result && (
