@@ -20,6 +20,21 @@ export type MarketUpdate = {
  */
 export const updates: MarketUpdate[] = [
   {
+    id: 'physical-ai-wave',
+    date: '2026-07-11',
+    title: { zh: '物理 AI 成市场新主线:人形机器人被称 40 万亿美元赛道', en: 'Physical AI is the market’s new theme: humanoids called a $40T arena' },
+    summary: {
+      zh: '黄仁勋称人形机器人对应约 40 万亿美元市场、是英伟达“AI 之后的第二增长曲线”;英伟达 6 月发布机器人全栈安全系统 Halos;软银孙正义称物理 AI 是下一个万亿美元公司的诞生地。公开市场纯玩家稀缺(Figure、Unitree 等未上市),敞口集中在英伟达、特斯拉、UBTECH、小米、现代与 ETF(KraneShares KOID)。',
+      en: 'Jensen Huang calls humanoids a ~$40T market and robotics Nvidia’s second growth curve after AI; Nvidia launched Halos (a full-stack robotics safety system) in June; SoftBank’s Son calls physical AI the next trillion-dollar birthplace. Listed pure-plays are scarce (Figure, Unitree private), with exposure concentrated in Nvidia, Tesla, UBTECH, Xiaomi, Hyundai, and an ETF (KraneShares KOID).',
+    },
+    themeIds: ['physical-ai', 'compute'],
+    tickers: ['NVDA', 'TSLA'],
+    sources: [
+      { label: '24/7 Wall St. — Huang: humanoid robots a $40T market', url: 'https://247wallst.com/investing/2026/05/31/jensen-huang-just-called-humanoid-robots-a-40-trillion-market-heres-why-wall-street-is-loading-up-on-physical-ai-stocks/' },
+      { label: 'CNBC — Humanoid robots touted as next AI investment opportunity', url: 'https://www.cnbc.com/2026/06/03/humanoid-robots-trillion-dollar-ai-market.html' },
+    ],
+  },
+  {
     id: 'tepper-doubles-amazon',
     date: '2026-06-22',
     title: { zh: 'Tepper 减英伟达、加倍亚马逊，押注 AI 变现端', en: 'Tepper trims Nvidia, doubles Amazon — betting on AI monetization' },

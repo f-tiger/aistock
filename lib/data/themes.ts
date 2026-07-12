@@ -69,6 +69,56 @@ export const themes: AiTheme[] = [
     ],
   },
   {
+    id: 'physical-ai',
+    name: { zh: '物理 AI 与机器人', en: 'Physical AI & Robotics' },
+    summary: {
+      zh: 'AI 从“屏幕里”走进物理世界:具身智能与人形机器人。黄仁勋称人形机器人是约 40 万亿美元级市场、是英伟达“AI 之后的第二增长曲线”;软银孙正义称物理 AI 是下一个万亿美元公司的诞生地。上市纯玩家仍稀缺,龙头多未上市——叙事与估值领先于落地。',
+      en: 'AI steps out of the screen into the physical world: embodied intelligence and humanoid robots. Jensen Huang calls humanoids a ~$40T market and robotics Nvidia’s second growth curve after AI; SoftBank’s Son calls physical AI the birthplace of the next trillion-dollar company. Listed pure-plays are scarce and the leaders are mostly private — narrative and valuation run ahead of deployment.',
+    },
+    bullCase: [
+      {
+        zh: '黄仁勋称人形机器人 TAM 约 40 万亿美元;2026 年 6 月英伟达发布 Halos——面向物理 AI 的全栈安全系统,卡位工厂/仓储的规模化部署。',
+        en: 'Huang pegs the humanoid TAM near $40T; in June 2026 Nvidia launched Halos, a full-stack safety system for physical AI, positioning for scaled factory and warehouse deployment.',
+      },
+      {
+        zh: '算力与“大脑”(英伟达 Isaac/GR00T)、整车与量产(特斯拉 Optimus、现代/波士顿动力、小米、UBTECH)形成“从仿真到量产”的产业链。',
+        en: 'Compute and the “brain” (Nvidia Isaac/GR00T) plus vehicles and manufacturing scale (Tesla Optimus, Hyundai/Boston Dynamics, Xiaomi, UBTECH) form a “sim-to-scale” value chain.',
+      },
+    ],
+    risks: [
+      {
+        zh: '龙头多未上市(Figure、Unitree、1X、Apptronik、Agility 等),公开市场纯玩家稀缺;“概念股”常是间接敞口。',
+        en: 'The leaders are mostly private (Figure, Unitree, 1X, Apptronik, Agility …); listed pure-plays are scarce, and many “robot stocks” are only indirect exposure.',
+      },
+      {
+        zh: '量产、成本、安全与监管仍是硬约束;主题波动极大,ETF(如 KraneShares KOID)分散但不消除风险。',
+        en: 'Mass production, cost, safety, and regulation remain hard constraints; the theme is highly volatile, and an ETF (e.g., KraneShares KOID) diversifies but doesn’t remove the risk.',
+      },
+    ],
+    stocks: [
+      {
+        ticker: 'NVDA',
+        name: { zh: '英伟达', en: 'Nvidia' },
+        role: { zh: '机器人算力与平台(Isaac/GR00T/Halos)', en: 'Robotics compute & platform (Isaac/GR00T/Halos)' },
+        bull: { zh: '把 AI 加速器优势复制到机器人“大脑”与安全栈。', en: 'Extends its AI-accelerator edge into the robot “brain” and safety stack.' },
+        risk: { zh: '机器人营收占比仍小,兑现需要时间。', en: 'Robotics is still a small revenue share; monetization takes time.' },
+      },
+      {
+        ticker: 'TSLA',
+        name: { zh: '特斯拉', en: 'Tesla' },
+        role: { zh: '人形机器人 Optimus + 量产能力', en: 'Optimus humanoid + manufacturing scale' },
+        bull: { zh: '整车制造与 AI/FSD 数据反哺 Optimus 的量产潜力。', en: 'Auto manufacturing and AI/FSD data feed Optimus’s path to scale.' },
+        risk: { zh: 'Optimus 商业化时间表不确定,估值已含高预期。', en: 'Optimus’s timeline is uncertain; the valuation already prices in a lot.' },
+      },
+    ],
+    asOf: '2026-06',
+    sources: [
+      { label: '24/7 Wall St. — Huang: humanoid robots a $40T market', url: 'https://247wallst.com/investing/2026/05/31/jensen-huang-just-called-humanoid-robots-a-40-trillion-market-heres-why-wall-street-is-loading-up-on-physical-ai-stocks/' },
+      { label: 'CNBC — Humanoid robots touted as next AI investment opportunity', url: 'https://www.cnbc.com/2026/06/03/humanoid-robots-trillion-dollar-ai-market.html' },
+      { label: 'KraneShares — Humanoid Robotics in 2026', url: 'https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/' },
+    ],
+  },
+  {
     id: 'infrastructure',
     name: { zh: '云与 AI 基础设施', en: 'Cloud & AI Infrastructure' },
     summary: {

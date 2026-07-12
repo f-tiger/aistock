@@ -124,6 +124,18 @@ export default async function InsightPage({ params }: { params: Promise<{ locale
           ))}
         </div>
 
+        {post.sources && post.sources.length > 0 && (
+          <p className="mt-8 text-xs text-slate-500">
+            {dict.cta.sources[loc]}:{' '}
+            {post.sources.map((s, i) => (
+              <span key={s.url}>
+                {i > 0 && ' · '}
+                <a href={s.url} target="_blank" rel="noopener noreferrer" className="link-accent">{s.label}</a>
+              </span>
+            ))}
+          </p>
+        )}
+
         {/* funnel */}
         <div className="mt-10 flex flex-wrap gap-3">
           <Link href={`/${loc}/tools/portfolio`} className="btn-primary">{dict.tools.portfolioTitle[loc]} →</Link>
