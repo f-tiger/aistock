@@ -57,6 +57,7 @@ ${investorLines}
 ## Key pages
 - Consensus leaderboard: ${siteUrl}/en/consensus
 - This quarter's moves (buys & sells): ${siteUrl}/en/moves
+- AI investing insights (articles): ${siteUrl}/en/insights
 - Free tool — Portfolio Consensus Check: ${siteUrl}/en/tools/portfolio
 - Compare any two AI stocks: ${siteUrl}/en/compare
 - AI market sub-sectors: ${siteUrl}/en/market

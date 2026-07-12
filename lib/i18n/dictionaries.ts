@@ -23,6 +23,7 @@ const dict = {
     tools: { zh: '工具', en: 'Tools' },
     pro: { zh: 'Pro', en: 'Pro' },
     answers: { zh: '常见问题', en: 'Answers' },
+    insights: { zh: 'AI 洞察', en: 'Insights' },
   },
   cta: {
     explore: { zh: '浏览 AI 行情', en: 'Explore AI Market' },

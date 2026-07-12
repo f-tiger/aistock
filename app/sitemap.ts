@@ -4,6 +4,7 @@ import { siteUrl, staticPaths } from '@/lib/site';
 import { investors } from '@/lib/data/investors';
 import { getStocks } from '@/lib/data/stocks';
 import { getPairs } from '@/lib/data/pairs';
+import { insights } from '@/lib/content/insights';
 
 // Required for `output: 'export'` — emit a static sitemap.xml at build.
 export const dynamic = 'force-static';
@@ -28,6 +29,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
     for (const p of getPairs()) {
       entries.push({ url: `${siteUrl}/${locale}/vs/${p.slug}`, priority: 0.5 });
+    }
+    for (const i of insights) {
+      entries.push({ url: `${siteUrl}/${locale}/insights/${i.slug}`, changeFrequency: 'monthly', priority: 0.6 });
     }
   }
 
