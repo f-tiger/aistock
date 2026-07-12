@@ -45,6 +45,11 @@ function Check({ on }: { on: boolean }) {
   );
 }
 
+// Optional hosted checkout (Gumroad / Lemon Squeezy / Stripe Payment Link / Ko-fi …).
+// When set, the Pro CTA becomes a real "subscribe" button; otherwise it collects
+// the early-bird waitlist. Public by design (a shareable checkout URL).
+const CHECKOUT_URL = process.env.NEXT_PUBLIC_PRO_CHECKOUT_URL || '';
+
 export default async function ProPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const loc = locale as Locale;
@@ -77,9 +82,25 @@ export default async function ProPage({ params }: { params: Promise<{ locale: st
             <span className="text-3xl font-extrabold text-accent">{t.proPrice[loc]}</span>
           </div>
           <p className="mt-1 text-xs text-slate-400">{t.proNote[loc]}</p>
-          <a href="#waitlist" className="btn-primary mt-5 inline-block w-full text-center">
-            {t.ctaPro[loc]}
-          </a>
+          {CHECKOUT_URL ? (
+            <>
+              <a
+                href={CHECKOUT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary mt-5 inline-block w-full text-center"
+              >
+                {t.buyNow[loc]} →
+              </a>
+              <a href="#waitlist" className="mt-3 block text-center text-xs link-accent">
+                {t.orWaitlist[loc]}
+              </a>
+            </>
+          ) : (
+            <a href="#waitlist" className="btn-primary mt-5 inline-block w-full text-center">
+              {t.ctaPro[loc]}
+            </a>
+          )}
         </div>
       </div>
 
