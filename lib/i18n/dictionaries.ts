@@ -22,6 +22,7 @@ const dict = {
     methodology: { zh: '方法与竞品', en: 'Method & Rivals' },
     tools: { zh: '工具', en: 'Tools' },
     pro: { zh: 'Pro', en: 'Pro' },
+    answers: { zh: '常见问题', en: 'Answers' },
   },
   cta: {
     explore: { zh: '浏览 AI 行情', en: 'Explore AI Market' },
