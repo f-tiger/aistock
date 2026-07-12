@@ -1,0 +1,47 @@
+name: Test subscribe → Telegram
+
+# Manually-triggerable end-to-end test of the live subscription pipeline.
+# GitHub runners have open egress (unlike some dev sandboxes), so this POSTs a
+# test subscription to the deployed /api/subscribe, which — if the KV binding
+# and TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID secrets are set on the Cloudflare
+# Pages project (and it has been redeployed since) — sends a Telegram DM to the
+# owner. Prints the HTTP status so the result is diagnosable either way.
+
+on:
+  workflow_dispatch:
+    inputs:
+      email:
+        description: 'Test email to submit (triggers one owner Telegram DM)'
+        required: false
+        default: 'pipeline-test@ai-investing-compass.dev'
+      base_url:
+        description: 'Site base URL'
+        required: false
+        default: 'https://ai-investing-compass.pages.dev'
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: POST /api/subscribe
+        run: |
+          EMAIL='${{ github.event.inputs.email }}'
+          BASE='${{ github.event.inputs.base_url }}'
+          echo "Submitting $EMAIL to $BASE/api/subscribe ..."
+          code=$(curl -sS -o /tmp/resp.json -w "%{http_code}" -X POST \
+            "$BASE/api/subscribe" \
+            -H "content-type: application/json" \
+            -d "{\"email\":\"$EMAIL\",\"locale\":\"zh\",\"source\":\"pipeline-test\"}") || true
+          echo "HTTP $code"
+          echo "Response body:"; cat /tmp/resp.json 2>/dev/null; echo
+          echo "---"
+          echo "Current subscriber count:"
+          curl -sS "$BASE/api/subscribe" || true
+          echo
+          if [ "$code" = "200" ]; then
+            echo "::notice::200 OK — if TELEGRAM_* secrets are set and the site was redeployed, an owner DM was sent. Re-run with the same email → { \"already\": true } and no new DM (dedup works)."
+          elif [ "$code" = "503" ]; then
+            echo "::warning::503 not-configured — bind a KV namespace named SUBSCRIBERS on the Pages project."
+          else
+            echo "::warning::HTTP $code — check the base URL / deployment."
+          fi
