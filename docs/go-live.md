@@ -54,7 +54,7 @@
 ## 变现开关(可选,随时开)
 
 - **券商返佣**:把 `lib/data/brokers.ts` 里的链接换成你的联盟/返佣链接即生效。
-- **Pro 订阅**:`/pro` 已在收集早鸟候补名单(`source=pro`,存 KV);等名单够了再决定接支付(Stripe/Lemon Squeezy)。
+- **Pro 订阅(真实收款)**:`/pro` 默认收集早鸟候补名单(`source=pro`,存 KV)。想**直接开卖**,在任一平台建一个托管收款链接(Gumroad / Lemon Squeezy / Stripe Payment Link / Ko-fi,几分钟搞定),把链接填到 Cloudflare 环境变量 `NEXT_PUBLIC_PRO_CHECKOUT_URL` 再重部署——`/pro` 的按钮就变成「立即订阅 Pro」直达收款页,**真实营收即刻打开**。不填则继续走候补名单。
 
 ---
 

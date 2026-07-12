@@ -246,6 +246,8 @@ const dict = {
     proNote: { zh: '早鸟价 · 限前 500 名(正式价 $12/月)', en: 'Early-bird · first 500 seats (list $12/mo)' },
     ctaFree: { zh: '免费开始', en: 'Start free' },
     ctaPro: { zh: '加入早鸟候补', en: 'Join the early-bird list' },
+    buyNow: { zh: '立即订阅 Pro', en: 'Subscribe to Pro' },
+    orWaitlist: { zh: '或先加入候补名单', en: 'or join the waitlist first' },
     featuresHead: { zh: '功能对比', en: 'What you get' },
     included: { zh: '包含', en: 'Included' },
     notIncluded: { zh: '—', en: '—' },
