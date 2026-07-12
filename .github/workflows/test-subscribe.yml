@@ -1,19 +1,19 @@
 name: Test subscribe → Telegram
 
 # Manually-triggerable end-to-end test of the live subscription pipeline.
-# GitHub runners have open egress (unlike some dev sandboxes), so this POSTs a
-# test subscription to the deployed /api/subscribe, which — if the KV binding
-# and TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID secrets are set on the Cloudflare
-# Pages project (and it has been redeployed since) — sends a Telegram DM to the
-# owner. Prints the HTTP status so the result is diagnosable either way.
+# GitHub runners have open egress, so this hits the deployed /api/subscribe:
+#   1. GET ?health=1  → wiring booleans (kv / telegram_token / telegram_chat / resend)
+#   2. POST a UNIQUE test email → fires one owner Telegram DM (new subscriber)
+#   3. GET ?health=1  → last_notify status straight from the Telegram send result
+# So the log alone tells you whether a DM was actually delivered — no secrets printed.
 
 on:
   workflow_dispatch:
     inputs:
       email:
-        description: 'Test email to submit (triggers one owner Telegram DM)'
+        description: 'Test email (blank = unique per run, which always fires a DM)'
         required: false
-        default: 'pipeline-test@ai-investing-compass.dev'
+        default: ''
       base_url:
         description: 'Site base URL'
         required: false
@@ -23,25 +23,32 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: POST /api/subscribe
+      - name: End-to-end pipeline test
         run: |
-          EMAIL='${{ github.event.inputs.email }}'
           BASE='${{ github.event.inputs.base_url }}'
-          echo "Submitting $EMAIL to $BASE/api/subscribe ..."
+          EMAIL='${{ github.event.inputs.email }}'
+          [ -z "$EMAIL" ] && EMAIL="pipeline-test+${{ github.run_id }}@ai-investing-compass.dev"
+
+          echo "== 1) health before =="
+          curl -sS "$BASE/api/subscribe?health=1"; echo
+
+          echo "== 2) POST $EMAIL =="
           code=$(curl -sS -o /tmp/resp.json -w "%{http_code}" -X POST \
-            "$BASE/api/subscribe" \
-            -H "content-type: application/json" \
+            "$BASE/api/subscribe" -H "content-type: application/json" \
             -d "{\"email\":\"$EMAIL\",\"locale\":\"zh\",\"source\":\"pipeline-test\"}") || true
-          echo "HTTP $code"
-          echo "Response body:"; cat /tmp/resp.json 2>/dev/null; echo
+          echo "HTTP $code"; cat /tmp/resp.json 2>/dev/null; echo
+
+          echo "== 3) health after (last_notify = actual Telegram send result) =="
+          sleep 2
+          H=$(curl -sS "$BASE/api/subscribe?health=1"); echo "$H"
+
           echo "---"
-          echo "Current subscriber count:"
-          curl -sS "$BASE/api/subscribe" || true
-          echo
-          if [ "$code" = "200" ]; then
-            echo "::notice::200 OK — if TELEGRAM_* secrets are set and the site was redeployed, an owner DM was sent. Re-run with the same email → { \"already\": true } and no new DM (dedup works)."
-          elif [ "$code" = "503" ]; then
-            echo "::warning::503 not-configured — bind a KV namespace named SUBSCRIBERS on the Pages project."
+          if echo "$H" | grep -q '"status":"sent"'; then
+            echo "::notice::✅ Telegram DM delivered (last_notify.status = sent). The loop is live."
+          elif echo "$H" | grep -q '"telegram_token":false'; then
+            echo "::warning::TELEGRAM_BOT_TOKEN not set on the deployment (or not redeployed since)."
+          elif echo "$H" | grep -q '"telegram_chat":false'; then
+            echo "::warning::Bot token present but no chat id resolvable — message your bot once, then re-run."
           else
-            echo "::warning::HTTP $code — check the base URL / deployment."
+            echo "::warning::last_notify not 'sent' — see health JSON above."
           fi

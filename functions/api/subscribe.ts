@@ -34,21 +34,70 @@ const JSON_HEADERS: Record<string, string> = {
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-async function notifyTelegram(env: Env, text: string): Promise<void> {
-  if (!env.TELEGRAM_BOT_TOKEN || !env.TELEGRAM_CHAT_ID) return;
+/**
+ * Resolve the owner chat id with the least possible setup:
+ *   explicit TELEGRAM_CHAT_ID  →  KV cache (stat:chat_id)  →  auto-discover via
+ *   getUpdates (the owner just has to message the bot once), then cache it.
+ * So configuring the bot token alone is enough — no manual chat-id step.
+ */
+async function resolveChatId(env: Env): Promise<string | null> {
+  if (env.TELEGRAM_CHAT_ID) return env.TELEGRAM_CHAT_ID;
+  if (env.SUBSCRIBERS) {
+    const cached = await env.SUBSCRIBERS.get('stat:chat_id');
+    if (cached) return cached;
+  }
+  if (!env.TELEGRAM_BOT_TOKEN) return null;
   try {
-    await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    const r = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/getUpdates?limit=10`);
+    const j = (await r.json()) as { result?: Array<Record<string, { chat?: { id?: number | string } }>> };
+    const updates = Array.isArray(j.result) ? j.result : [];
+    for (let i = updates.length - 1; i >= 0; i--) {
+      const u = updates[i];
+      const chat =
+        u?.message?.chat ?? u?.edited_message?.chat ?? u?.channel_post?.chat ?? u?.my_chat_member?.chat;
+      if (chat && chat.id != null) {
+        const id = String(chat.id);
+        if (env.SUBSCRIBERS) await env.SUBSCRIBERS.put('stat:chat_id', id);
+        return id;
+      }
+    }
+  } catch {
+    /* getUpdates unavailable (e.g. a webhook is set) — fall through */
+  }
+  return null;
+}
+
+type NotifyStatus = 'sent' | 'no-token' | 'no-chat' | 'error';
+
+async function notifyTelegram(env: Env, text: string): Promise<NotifyStatus> {
+  if (!env.TELEGRAM_BOT_TOKEN) return 'no-token';
+  const chatId = await resolveChatId(env);
+  if (!chatId) {
+    await recordNotify(env, 'no-chat');
+    return 'no-chat';
+  }
+  try {
+    const resp = await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: env.TELEGRAM_CHAT_ID,
-        text,
-        parse_mode: 'HTML',
-        disable_web_page_preview: true,
-      }),
+      body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'HTML', disable_web_page_preview: true }),
     });
+    const jr = (await resp.json().catch(() => ({}))) as { ok?: boolean; description?: string };
+    const status: NotifyStatus = jr.ok ? 'sent' : 'error';
+    await recordNotify(env, status, jr.description);
+    return status;
   } catch {
-    /* never let notification failure break a subscription */
+    await recordNotify(env, 'error');
+    return 'error';
+  }
+}
+
+async function recordNotify(env: Env, status: NotifyStatus, description?: string): Promise<void> {
+  if (!env.SUBSCRIBERS) return;
+  try {
+    await env.SUBSCRIBERS.put('stat:last_notify', JSON.stringify({ status, description: description ?? '' }));
+  } catch {
+    /* best-effort */
   }
 }
 
@@ -148,8 +197,30 @@ export async function onRequestPost(context: { request: Request; env: Env }): Pr
   });
 }
 
-export async function onRequestGet(context: { env: Env }): Promise<Response> {
-  const { env } = context;
+export async function onRequestGet(context: { request: Request; env: Env }): Promise<Response> {
+  const { request, env } = context;
+  const url = new URL(request.url);
+
+  // Non-sensitive wiring diagnostic (booleans + last notify status; no secrets).
+  if (url.searchParams.get('health') === '1') {
+    const chat = env.TELEGRAM_BOT_TOKEN ? await resolveChatId(env).catch(() => null) : null;
+    let lastNotify: unknown = null;
+    if (env.SUBSCRIBERS) {
+      const raw = await env.SUBSCRIBERS.get('stat:last_notify');
+      lastNotify = raw ? JSON.parse(raw) : null;
+    }
+    return new Response(
+      JSON.stringify({
+        kv: !!env.SUBSCRIBERS,
+        telegram_token: !!env.TELEGRAM_BOT_TOKEN,
+        telegram_chat: !!chat,
+        resend: !!(env.RESEND_API_KEY && env.RESEND_FROM),
+        last_notify: lastNotify,
+      }),
+      { status: 200, headers: { ...JSON_HEADERS, 'cache-control': 'no-store' } },
+    );
+  }
+
   let count = 0;
   if (env.SUBSCRIBERS) {
     const raw = await env.SUBSCRIBERS.get('stat:count');
