@@ -33,8 +33,10 @@ jobs:
       - name: Clean test data & reset count
         run: |
           set -e
-          echo "== current keys =="
-          npx -y wrangler@latest kv key list --namespace-id="$NS" > keys.json
+          # NOTE: wrangler 4 defaults kv ops to the LOCAL store — --remote is
+          # required to touch the production KV bound to Cloudflare Pages.
+          echo "== current keys (remote) =="
+          npx -y wrangler@latest kv key list --namespace-id="$NS" --remote > keys.json
           echo "total keys: $(jq 'length' keys.json)"
 
           echo "== deleting test emails =="
@@ -42,17 +44,17 @@ jobs:
           if [ -s todel.txt ]; then
             while IFS= read -r k; do
               echo "delete $k"
-              npx -y wrangler@latest kv key delete "$k" --namespace-id="$NS" || true
+              npx -y wrangler@latest kv key delete "$k" --namespace-id="$NS" --remote || true
             done < todel.txt
           else
             echo "(no test emails found)"
           fi
 
           echo "== reset counters =="
-          npx -y wrangler@latest kv key put "stat:count" "${{ github.event.inputs.set_count }}" --namespace-id="$NS"
-          npx -y wrangler@latest kv key delete "stat:last_notify" --namespace-id="$NS" || true
+          npx -y wrangler@latest kv key put "stat:count" "${{ github.event.inputs.set_count }}" --namespace-id="$NS" --remote
+          npx -y wrangler@latest kv key delete "stat:last_notify" --namespace-id="$NS" --remote || true
 
           echo "== remaining real subscribers =="
-          npx -y wrangler@latest kv key list --namespace-id="$NS" \
+          npx -y wrangler@latest kv key list --namespace-id="$NS" --remote \
             | jq -r '.[].name | select(startswith("email:"))' || true
           echo "== done: stat:count = ${{ github.event.inputs.set_count }} =="
