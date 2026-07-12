@@ -14,6 +14,8 @@ export type Insight = {
   description: Localized;
   keywords: string[];
   body: { h: Localized; p: Localized }[];
+  /** Optional external sources, rendered at the foot of the article. */
+  sources?: { label: string; url: string }[];
 };
 
 export const insights: Insight[] = [
@@ -339,6 +341,88 @@ export const insights: Insight[] = [
           en: 'Tepper adding Amazon while trimming Nvidia captures a core fault line in AI: buy the “shovel sellers” (compute) or the “monetizers” (apps and cloud)? No standard answer — but seeing which side each legend stands on helps you clarify your own. Put Amazon and Nvidia side by side on the compare page.',
         },
       },
+    ],
+  },
+  {
+    slug: 'physical-ai-explained',
+    date: '2026-07-11',
+    title: {
+      zh: '物理 AI(具身智能)是什么?为什么黄仁勋说它是 40 万亿美元市场',
+      en: 'What is Physical AI (embodied intelligence)? Why Huang calls it a $40T market',
+    },
+    description: {
+      zh: 'AI 正从"屏幕里"走进物理世界:具身智能与人形机器人。黄仁勋称人形机器人是约 40 万亿美元市场、是英伟达"AI 之后的第二增长曲线";软银孙正义称物理 AI 是下一个万亿美元公司诞生地。用投资人共识的视角看这条最新主线。',
+      en: 'AI is stepping out of the screen into the physical world: embodied intelligence and humanoid robots. Jensen Huang calls humanoid robots a ~$40T market and robotics Nvidia’s second growth curve after AI; SoftBank’s Son calls physical AI the birthplace of the next trillion-dollar company. We view this newest theme through the investor-consensus lens.',
+    },
+    keywords: ['物理 AI', '具身智能', '人形机器人', 'physical AI', 'embodied AI', 'humanoid robots'],
+    body: [
+      {
+        h: { zh: '"物理 AI"到底指什么', en: 'What “Physical AI” actually means' },
+        p: {
+          zh: '过去两年的 AI 主要活在屏幕里——生成文字、图片、代码。"物理 AI"(又称具身智能)是让 AI 拥有身体:感知、行动、在真实世界里干活,最典型的载体就是人形机器人。黄仁勋反复强调,人形机器人对应约 40 万亿美元的劳动自动化市场,是英伟达在 AI 之后的第二大增长机会。',
+          en: 'For two years, AI mostly lived on screens — generating text, images, code. “Physical AI” (embodied intelligence) gives AI a body: to perceive, act, and do work in the real world, most visibly through humanoid robots. Jensen Huang keeps repeating that humanoids map to a ~$40T labor-automation market — Nvidia’s second-biggest growth opportunity after AI.',
+        },
+      },
+      {
+        h: { zh: '从"仿真"到"量产"的产业链', en: 'The “sim-to-scale” value chain' },
+        p: {
+          zh: '这条链分几层:算力与"大脑"(英伟达的 Isaac/GR00T 平台,以及 2026 年 6 月发布的机器人全栈安全系统 Halos);整车与量产能力(特斯拉 Optimus、现代/波士顿动力、小米、UBTECH);以及仍未上市的纯玩家龙头(Figure、Unitree、1X、Apptronik、Agility)。对公开市场投资者来说,英伟达是最"顺"的一层——它同时是 AI 与机器人的算力底座。',
+          en: 'The chain has layers: compute and the “brain” (Nvidia’s Isaac/GR00T platform, plus Halos, a full-stack robotics safety system launched June 2026); vehicles and manufacturing scale (Tesla Optimus, Hyundai/Boston Dynamics, Xiaomi, UBTECH); and the still-private pure-play leaders (Figure, Unitree, 1X, Apptronik, Agility). For public-market investors, Nvidia is the smoothest layer — the compute base for both AI and robots.',
+        },
+      },
+      {
+        h: { zh: '用共识视角看这条新主线', en: 'The consensus lens on the newest theme' },
+        p: {
+          zh: '物理 AI 叙事很性感,但纯玩家龙头多未上市、估值领先于落地。这正是"投资人共识"视角有用的地方:与其追最热的机器人概念,不如看传奇投资人真金白银押注了哪些**已上市**的敞口——英伟达就是被多位大佬跨风格持有的那一层。本站已把"物理 AI 与机器人"单列为一个赛道,你可以在 AI 行情页看它的多空逻辑与关键标的。',
+          en: 'The physical-AI story is seductive, but the pure-play leaders are mostly private and valuation runs ahead of deployment. That’s exactly where the consensus lens helps: rather than chase the hottest robot name, see which **listed** exposures the legends actually back with real money — Nvidia is the layer several of them hold across styles. The site now breaks out “Physical AI & Robotics” as its own layer; see its bull/risk and key names on the AI market page.',
+        },
+      },
+    ],
+    sources: [
+      { label: '24/7 Wall St. — Huang: humanoid robots a $40T market', url: 'https://247wallst.com/investing/2026/05/31/jensen-huang-just-called-humanoid-robots-a-40-trillion-market-heres-why-wall-street-is-loading-up-on-physical-ai-stocks/' },
+      { label: 'CNBC — Humanoid robots touted as next AI investment opportunity', url: 'https://www.cnbc.com/2026/06/03/humanoid-robots-trillion-dollar-ai-market.html' },
+      { label: 'KraneShares — Humanoid Robotics in 2026', url: 'https://kraneshares.com/humanoid-robotics-in-2026-the-race-from-pilot-to-platform/' },
+    ],
+  },
+  {
+    slug: 'humanoid-robot-stocks-how-to-invest',
+    date: '2026-07-11',
+    title: {
+      zh: '人形机器人概念股:普通投资者在公开市场怎么参与?(附大佬敞口)',
+      en: 'Humanoid robot stocks: how to get public-market exposure (and who the legends back)',
+    },
+    description: {
+      zh: '龙头 Figure、Unitree、1X 都还没上市,普通人怎么参与物理 AI?梳理公开市场的敞口:英伟达、特斯拉、UBTECH、小米、现代,以及 ETF(KraneShares KOID)——并用共识分看哪些真被传奇投资人持有。',
+      en: 'The leaders — Figure, Unitree, 1X — aren’t public. So how do you get physical-AI exposure? A map of listed plays: Nvidia, Tesla, UBTECH, Xiaomi, Hyundai, plus an ETF (KraneShares KOID) — and which of them the legends actually hold, via the Consensus Score.',
+    },
+    keywords: ['人形机器人 概念股', '机器人 股票', '物理 AI 股票', 'humanoid robot stocks', 'robotics stocks 2026'],
+    body: [
+      {
+        h: { zh: '最大的坑:龙头还没上市', en: 'The big catch: the leaders are private' },
+        p: {
+          zh: '人形机器人最受关注的公司——Figure、Unitree(宇树)、1X、Apptronik、Agility——目前都未上市,散户买不到。这意味着"人形机器人概念股"里,很多是蹭概念的间接敞口,而非纯玩家。先认清这一点,才不会被"概念"带着追高。',
+          en: 'The most-hyped humanoid companies — Figure, Unitree, 1X, Apptronik, Agility — are all private, so retail can’t buy them. That means many “humanoid robot stocks” are indirect, concept-adjacent exposure, not pure plays. Recognize this first, so you don’t chase the label.',
+        },
+      },
+      {
+        h: { zh: '公开市场的几种敞口', en: 'The listed ways in' },
+        p: {
+          zh: '大致三类:①算力与平台——英伟达(Isaac/GR00T/Halos);②整车与量产——特斯拉(Optimus)、现代(波士顿动力)、小米、UBTECH(港股最直接的人形纯玩家之一);③一篮子——ETF 如 KraneShares KOID(全球人形机器人与物理 AI 指数)。越"纯"的敞口,通常波动越大、越依赖叙事。',
+          en: 'Roughly three buckets: 1) compute and platform — Nvidia (Isaac/GR00T/Halos); 2) vehicles and scale — Tesla (Optimus), Hyundai (Boston Dynamics), Xiaomi, UBTECH (one of the most direct listed humanoid pure-plays, in Hong Kong); 3) a basket — an ETF such as KraneShares KOID (global humanoid & physical-AI index). The “purer” the exposure, the more volatile and narrative-dependent it usually is.',
+        },
+      },
+      {
+        h: { zh: '哪些真被传奇投资人持有?', en: 'Which do the legends actually hold?' },
+        p: {
+          zh: '把"概念"和"共识"分开:在这些敞口里,真正被多位传奇投资人跨风格持有的,主要是英伟达——它同时是 AI 与机器人的算力底座。用免费的"组合共识体检"贴上你关注的机器人票,一眼看清哪些有大佬真金白银背书、哪些只是热度。教育用途,非荐股。',
+          en: 'Separate “concept” from “consensus”: among these exposures, the one several legends hold across styles is mainly Nvidia — the compute base for both AI and robots. Drop the robot names you’re watching into the free Portfolio Consensus Check to see which have real legend backing and which are just heat. Educational, not a recommendation.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'CNBC — Humanoid robots touted as next AI investment opportunity', url: 'https://www.cnbc.com/2026/06/03/humanoid-robots-trillion-dollar-ai-market.html' },
+      { label: 'The Motley Fool — Best robotics stocks to buy in 2026', url: 'https://www.fool.com/investing/stock-market/market-sectors/information-technology/robotics-stocks/' },
+      { label: 'EVS Insight — Publicly traded humanoid robot companies 2026', url: 'https://www.evsint.com/publicly-traded-humanoid-robot-companies-2026-investor-guide/' },
     ],
   },
 ];
