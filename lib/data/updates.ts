@@ -20,6 +20,36 @@ export type MarketUpdate = {
  */
 export const updates: MarketUpdate[] = [
   {
+    id: 'agentic-ai-enterprise',
+    date: '2026-07-12',
+    title: { zh: 'AI 智能体成企业软件新前沿:Agentforce ARR 增长约 330%', en: 'AI agents are enterprise software’s new frontier: Agentforce ARR up ~330%' },
+    summary: {
+      zh: '"智能体"(自主完成多步任务)成 2026 企业软件最热主线:Salesforce 的 Agentforce ARR 同比约 +330%、达约 5.4 亿美元;微软(Copilot/Azure AI Foundry)、谷歌与英伟达是主要敞口。但 CFO 们正收紧 AI 预算,从"无限实验"转向"要 ROI"——将拉开"变现"与"讲故事"的差距。',
+      en: 'AI agents (autonomous multi-step task completion) are 2026’s hottest enterprise-software theme: Salesforce’s Agentforce grew ARR ~330% to about $540M; Microsoft (Copilot/Azure AI Foundry), Alphabet, and Nvidia are the main exposures. But CFOs are tightening AI budgets — from open-ended experiments to “show me the ROI” — which will separate monetization from storytelling.',
+    },
+    themeIds: ['applications', 'compute'],
+    tickers: ['NVDA', 'GOOGL'],
+    sources: [
+      { label: 'US News — Best agentic AI stocks & ETFs to buy in 2026', url: 'https://money.usnews.com/investing/articles/best-agentic-ai-stocks-etfs-to-buy' },
+      { label: 'MarketScale — CFOs tighten AI budgets as agentic platforms reshape enterprise AI', url: 'https://www.marketscale.com/industries/software-and-technology/cfos-tighten-ai-budgets-as-agentic-platforms-and-hardware-deals-reshape-enterprise-ai-in-2026' },
+    ],
+  },
+  {
+    id: 'ai-power-nuclear-gap',
+    date: '2026-07-12',
+    title: { zh: 'AI 电力缺口把核电推上风口:数据中心用电冲向全美 12%', en: 'AI’s power gap lifts nuclear: data centers racing toward 12% of U.S. electricity' },
+    summary: {
+      zh: '数据中心用电占全美比例预计从 2023 年底约 4.4% 升至约 12%;风光间歇性满足不了 AI 基载需求,核电被重新定价。微软、亚马逊、谷歌、Meta 已签核电购电协议,铀价维持约 86 美元/磅;电网互联排队达八年、近半在建 AI 数据中心因输电短缺延期。属典型"二阶"AI 主线。',
+      en: 'Data centers are seen rising from ~4.4% of U.S. electricity at end-2023 toward ~12%; solar/wind intermittency can’t meet AI’s baseload need, so nuclear is repriced. Microsoft, Amazon, Google, and Meta have signed nuclear PPAs; uranium holds near $86/lb; grid queues stretch eight years and nearly half of planned AI data centers face transmission delays. A classic second-order AI theme.',
+    },
+    themeIds: ['energy', 'infrastructure'],
+    tickers: ['AMZN', 'GOOGL'],
+    sources: [
+      { label: 'The Motley Fool — AI is creating a nuclear power renaissance (2026)', url: 'https://www.fool.com/investing/2026/03/16/artificial-intelligence-ai-is-creating-a-nuclear/' },
+      { label: 'MarketWise — Best nuclear energy stocks as AI drains the grid', url: 'https://marketwise.com/investing/best-nuclear-energy-stocks/' },
+    ],
+  },
+  {
     id: 'physical-ai-wave',
     date: '2026-07-11',
     title: { zh: '物理 AI 成市场新主线:人形机器人被称 40 万亿美元赛道', en: 'Physical AI is the market’s new theme: humanoids called a $40T arena' },
