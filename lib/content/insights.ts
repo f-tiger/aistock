@@ -425,6 +425,129 @@ export const insights: Insight[] = [
       { label: 'EVS Insight — Publicly traded humanoid robot companies 2026', url: 'https://www.evsint.com/publicly-traded-humanoid-robot-companies-2026-investor-guide/' },
     ],
   },
+  {
+    slug: 'agentic-ai-stocks-2026',
+    date: '2026-07-12',
+    title: {
+      zh: 'AI Agent(智能体)概念股:从 Copilot 到 Agentforce,谁在真正变现?',
+      en: 'Agentic AI stocks: from Copilot to Agentforce, who’s actually monetizing?',
+    },
+    description: {
+      zh: '2026 最热的企业软件叙事是"AI 智能体"——你给目标,它自己跨多步完成。但热度背后,CFO 们正在收紧 AI 预算。梳理公开市场敞口(微软、Salesforce、英伟达、谷歌),并用共识视角看谁真被大佬持有。',
+      en: 'The hottest enterprise-software story of 2026 is “AI agents” — give a goal, they execute across steps. But behind the hype, CFOs are tightening AI budgets. We map the listed exposures (Microsoft, Salesforce, Nvidia, Alphabet) and apply the consensus lens.',
+    },
+    keywords: ['AI Agent 概念股', '智能体 股票', 'AI agent stocks', 'agentic AI stocks', 'Agentforce'],
+    body: [
+      {
+        h: { zh: '"智能体"和聊天机器人有什么不同', en: 'How agents differ from chatbots' },
+        p: {
+          zh: 'AI 智能体不是"你问一句它答一句",而是**你给一个目标,它自己拆解成多步、调用工具、出错了还会调整**——这是企业软件的下一个前沿。落地信号很直接:Salesforce 的 Agentforce 平台 ARR 同比增长约 330%、达约 5.4 亿美元,是"智能体真能变现"的早期证据。',
+          en: 'An AI agent isn’t “ask and answer” — you give it a goal and it breaks it into steps, calls tools, and adapts when things go wrong: the next frontier in enterprise software. The monetization signal is concrete: Salesforce’s Agentforce grew ARR ~330% to about $540M — early proof that agents can actually be sold.',
+        },
+      },
+      {
+        h: { zh: '公开市场怎么参与', en: 'The listed ways in' },
+        p: {
+          zh: '几层敞口:平台与分发——微软(Copilot、Azure AI Foundry)、Salesforce(Agentforce)、谷歌;算力底座——英伟达(约 90% AI 芯片份额、约 5000 亿美元订单积压)。注意一个反向信号:2026 年 CFO 们正对 AI 项目"收紧钱袋",从"无限实验"转向"要 ROI"——这会拉开"能变现"和"只讲故事"的差距。',
+          en: 'Layers of exposure: platforms and distribution — Microsoft (Copilot, Azure AI Foundry), Salesforce (Agentforce), Alphabet; the compute base — Nvidia (~90% AI-chip share, a ~$500B order backlog). Note a countersignal: in 2026 CFOs are tightening budgets on AI projects, shifting from open-ended experimentation to “show me the ROI” — which will separate real monetization from storytelling.',
+        },
+      },
+      {
+        h: { zh: '用共识把"故事"和"变现"分开', en: 'Use consensus to separate story from monetization' },
+        p: {
+          zh: '"智能体"标签下什么都能装,但真金白银的检验是:哪些是被多位传奇投资人跨风格持有的?在这些敞口里,谷歌与英伟达是本站共识数据里的常客;纯"智能体"新贵则大多缺乏跨风格背书。用免费的组合体检把你关注的智能体票贴进去,一眼看清共识分。教育用途,非荐股。',
+          en: 'Anything can wear the “agent” label; the real-money test is which names several legends hold across styles. Among these exposures, Alphabet and Nvidia are regulars in the site’s consensus data, while pure-agent upstarts mostly lack cross-style backing. Drop the agent names you watch into the free Portfolio Check to see their scores. Educational, not a recommendation.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'The Motley Fool — Best AI stocks to buy in 2026', url: 'https://www.fool.com/investing/stock-market/market-sectors/information-technology/ai-stocks/' },
+      { label: 'US News — Best agentic AI stocks & ETFs to buy in 2026', url: 'https://money.usnews.com/investing/articles/best-agentic-ai-stocks-etfs-to-buy' },
+      { label: 'MarketScale — CFOs tighten AI budgets as agentic platforms reshape enterprise AI in 2026', url: 'https://www.marketscale.com/industries/software-and-technology/cfos-tighten-ai-budgets-as-agentic-platforms-and-hardware-deals-reshape-enterprise-ai-in-2026' },
+    ],
+  },
+  {
+    slug: 'ai-power-nuclear-gap-2026',
+    date: '2026-07-12',
+    title: {
+      zh: 'AI 的电力缺口:为什么核电成了 2026 最硬的 AI 二阶主线',
+      en: 'AI’s power gap: why nuclear became 2026’s hardest second-order AI theme',
+    },
+    description: {
+      zh: '数据中心用电占美国比例正冲向 12%(2023 年底约 4.4%);风光间歇性满足不了 AI 的基载需求,核电因此被重新定价。微软、亚马逊、谷歌、Meta 已签核电购电协议,铀价维持在约 86 美元/磅。用长期与共识视角看这条最硬的二阶主线。',
+      en: 'Data centers are racing toward 12% of U.S. electricity (from ~4.4% at end-2023); solar/wind intermittency can’t meet AI’s baseload need, so nuclear is being repriced. Microsoft, Amazon, Google, and Meta have signed nuclear PPAs; uranium holds near $86/lb. We view this hardest second-order theme through a long-term, consensus lens.',
+    },
+    keywords: ['AI 核电', 'AI 电力缺口', '核电 概念股', 'AI nuclear stocks', 'datacenter power'],
+    body: [
+      {
+        h: { zh: '算力的尽头是电力', en: 'Compute ends at electricity' },
+        p: {
+          zh: '数据中心用电占全美电力的比例,预计从 2023 年底约 4.4% 升到约 12%;美国数据中心电力需求预计从 2023 年的 19 GW 升到 2030 年的 35 GW。电网互联排队长达八年、超算设施附近批发电价一度飙涨 267%,近半数在建 AI 数据中心因输电与变压器短缺而延期——电力从"配角"变成了 AI 扩张的硬约束。',
+          en: 'Data centers are projected to move from ~4.4% of U.S. electricity at end-2023 toward ~12%; U.S. data-center demand is seen rising from 19 GW in 2023 to 35 GW by 2030. Grid-interconnection queues stretch eight years, wholesale power spiked as much as 267% near hyperscale sites, and nearly half of planned AI data centers face delays from transmission and transformer shortages — power has gone from supporting act to hard constraint.',
+        },
+      },
+      {
+        h: { zh: '为什么是核电', en: 'Why nuclear' },
+        p: {
+          zh: '风电、光伏有个对 AI 致命的缺陷:间歇性——数据中心不能"风停就断电"。AI 需要 24 小时不间断的基载电力,而核电正好满足。2025–2026 年,微软、亚马逊、谷歌、Meta 纷纷签下或宣布核电购电协议;铀价在 AI 需求驱动下维持约 86 美元/磅。核电的投资叙事,在这一年几乎被彻底改写。',
+          en: 'Solar and wind have a fatal flaw for AI: intermittency — a data center can’t go dark when the wind stops. AI needs 24/7 baseload power, which nuclear fits. Across 2025–2026, Microsoft, Amazon, Google, and Meta signed or announced nuclear power-purchase agreements; uranium holds near $86/lb on AI-driven demand. The nuclear investment narrative was almost completely rewritten this year.',
+        },
+      },
+      {
+        h: { zh: '二阶主线,更适合长期资金', en: 'A second-order theme, better for patient capital' },
+        p: {
+          zh: '核电/能源是典型的"二阶"AI 受益者:不直接卖 AI,却被 AI 的电力需求托底。它比追芯片慢,但也更实——适合长期、耐得住波动的资金。本站把它归入"AI 能源与电力"赛道;想看云厂商这条线,也能在共识数据里看到微软/亚马逊/谷歌这些"既买 AI 又买电"的名字。',
+          en: 'Nuclear/energy is a classic second-order AI beneficiary: it doesn’t sell AI but is underpinned by AI’s power demand. Slower than chasing chips, but sturdier — suited to patient capital. The site groups it under the “AI energy & power” layer; for the cloud angle, the consensus data also surfaces the Microsoft/Amazon/Alphabet names that “buy both AI and power.”',
+        },
+      },
+    ],
+    sources: [
+      { label: 'The Motley Fool — AI is creating a nuclear power renaissance (2026)', url: 'https://www.fool.com/investing/2026/03/16/artificial-intelligence-ai-is-creating-a-nuclear/' },
+      { label: 'MarketWise — Best nuclear energy stocks as AI drains the grid', url: 'https://marketwise.com/investing/best-nuclear-energy-stocks/' },
+      { label: 'Yahoo Finance — Nuclear power stocks set to flourish on AI data-center boom', url: 'https://finance.yahoo.com/news/3-nuclear-power-stocks-set-132100209.html' },
+    ],
+  },
+  {
+    slug: 'stablecoins-rwa-ai-2026',
+    date: '2026-07-12',
+    title: {
+      zh: 'AI × 稳定币/RWA:两条主线的交叉,以及大佬为什么大多按兵不动',
+      en: 'AI × stablecoins/RWA: where two megatrends cross — and why the legends mostly sit out',
+    },
+    description: {
+      zh: '稳定币约 3000 亿美元、月交易额超 3.4 万亿;RWA 链上规模约 276 亿美元。当自主智能体开始自己"付钱、结算",AI 与加密出现真实交叉——2025 年每 1 美元加密风投里有 40 美分投向也做 AI 的公司。但用 13F 共识视角看,传奇投资人对这条线大多克制。这本身就是一课。',
+      en: 'Stablecoins near $300B with $3.4T monthly volume; on-chain RWAs around $27.6B. As autonomous agents begin to pay and settle on their own, AI and crypto genuinely cross — in 2025, 40 cents of every crypto-VC dollar went to a company also building AI. Yet through the 13F consensus lens, the legends mostly hold back. That restraint is itself a lesson.',
+    },
+    keywords: ['稳定币 AI', 'RWA 代币化', 'AI 加密 交叉', 'stablecoins AI', 'RWA tokenization 2026'],
+    body: [
+      {
+        h: { zh: '交叉点在哪', en: 'Where the two actually cross' },
+        p: {
+          zh: 'AI 与加密的真实交叉,不在"AI 币"炒作,而在**支付与结算**:自主智能体要能自己付款、验证、协调经济活动,就需要可编程的美元(稳定币)与链上资产(RWA)。规模也真实:稳定币约 3000 亿美元、月交易额超 3.4 万亿;链上 RWA 约 276 亿美元,其中代币化美债最大(约 129 亿)。Circle 的 ARC、Coinbase 的 Echo 都在往这个方向走。',
+          en: 'The real AI–crypto crossing isn’t “AI coin” hype but payments and settlement: for autonomous agents to pay, verify, and coordinate economic activity, they need programmable dollars (stablecoins) and on-chain assets (RWAs). The scale is real: stablecoins near $300B with $3.4T monthly volume; on-chain RWAs ~$27.6B, led by tokenized U.S. Treasuries (~$12.9B). Circle’s ARC and Coinbase’s Echo both push in this direction.',
+        },
+      },
+      {
+        h: { zh: '为什么传奇投资人大多克制', en: 'Why the legends mostly hold back' },
+        p: {
+          zh: '这条线很性感,但把它放进"13F 共识"框架你会发现:本站收录的传奇投资人,几乎没有把加密/稳定币基础设施做成核心重仓——他们更愿意通过已上市、现金流清晰的名字(算力、云、变现端)间接受益。不是说这条线不重要,而是提醒你:叙事的热度,不等于经过验证的共识。',
+          en: 'The story is seductive, but put it in the 13F consensus frame and a pattern appears: the legends tracked here have almost none of crypto/stablecoin infrastructure as a core position — they prefer to benefit indirectly through listed, cash-flow-clear names (compute, cloud, monetization). Not that the theme doesn’t matter — a reminder that narrative heat isn’t the same as tested consensus.',
+        },
+      },
+      {
+        h: { zh: '把它当"雷达",而不是"重仓"', en: 'Treat it as radar, not a core bet' },
+        p: {
+          zh: '对普通投资者,合理的姿势是:把 AI × 稳定币/RWA 当成值得跟踪的"雷达信号",而不是照抄热度去重仓——尤其当大佬们还没用真金白银投票时。想检验你的组合里有多少是"经过共识验证"的,用免费的组合共识体检对照一下。教育用途,非投资建议。',
+          en: 'For most investors, the sensible stance is to treat AI × stablecoins/RWA as a radar signal worth tracking — not a core bet copied from hype, especially while the legends haven’t voted with real money. To check how much of your mix is “consensus-tested,” run it through the free Portfolio Consensus Check. Educational, not investment advice.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'a16z crypto — 6 trends for 2026: stablecoins, payments, RWA', url: 'https://a16zcrypto.com/posts/article/trends-stablecoins-rwa-tokenization-payments-finance/' },
+      { label: 'Coinbase Institutional — 2026 Crypto Market Outlook', url: 'https://www.coinbase.com/institutional/research-insights/research/market-intelligence/2026-crypto-market-outlook' },
+      { label: 'PYMNTS — Circle chases agentic growth to scale stablecoin infrastructure', url: 'https://www.pymnts.com/earnings/2026/circle-chases-agentic-growth-scale-stablecoin-infrastructure/' },
+    ],
+  },
 ];
 
 export function getInsight(slug: string): Insight | undefined {
