@@ -1,0 +1,82 @@
+name: Daily site optimization
+
+# Runs every day, autonomously, no human decision required:
+#   1) guard    — rebuild + lint + live health check (catches regressions daily)
+#   2) open-task — if no open daily task exists, open ONE @claude micro-optimization
+#                  task (a fresh sourced insight article on a trending query, or a
+#                  small SEO/interlink/copy fix). Self-throttling: never piles up.
+# Auto-executes where the Claude GitHub App is installed; otherwise the single
+# task waits (no spam). Content-only, sourced, educational — never a refactor.
+
+on:
+  schedule:
+    - cron: '17 3 * * *' # daily 03:17 UTC (~11:17 北京时间)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  guard:
+    name: Rebuild & live health
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - name: Live health check
+        run: |
+          BASE='https://ai-investing-compass.pages.dev'
+          fail=0
+          for p in /zh /en /zh/consensus /zh/insights /zh/tools/portfolio /llms.txt /rss.xml; do
+            code=$(curl -sS -m 20 -o /dev/null -w "%{http_code}" "$BASE$p" || echo 000)
+            echo "$code  $p"
+            [ "$code" = "200" ] || fail=1
+          done
+          echo "subscribe health:"; curl -sS -m 20 "$BASE/api/subscribe?health=1" || true; echo
+          if [ "$fail" != "0" ]; then echo "::warning::one or more key pages did not return 200"; fi
+
+  open-task:
+    name: Open today's optimization task
+    needs: guard
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            // Self-throttle: skip if a daily task is still open (avoid pile-up).
+            const { data: openIssues } = await github.rest.issues.listForRepo({
+              owner, repo, state: 'open', per_page: 100,
+            });
+            const marker = '每日优化';
+            if (openIssues.some((i) => (i.title || '').includes(marker))) {
+              core.notice('An open daily-optimize task already exists; skipping.');
+              return;
+            }
+            const today = new Date().toISOString().slice(0, 10);
+            const body = [
+              '@claude 执行今日站点优化(**自主完成,无需人工决策**)。写作前先加载项目 skills(.claude/skills/):seo / article-writing / brand-voice / content-engine。',
+              '',
+              '**从下列中选一项做**(优先内容,因为它带有机流量):',
+              '1. 往 `lib/content/insights.ts` 的 `insights` 数组追加 **1 篇双语溯源洞察文章**:选一个当下高意图搜索词或热点(如 AI 芯片自研 vs 英伟达、主权 AI、AI 医疗/药物、AI 广告、边缘 AI 等,勿与已有 slug 重复),body 为若干 {h,p} 小节,并填 `sources`(真实可访问链接,可用联网搜索核实)。数字必须可溯源、含免责声明、非投资建议。',
+              '2. 或做一处小的 SEO/内链/文案优化(如补 meta、加内链、修辞打磨),范围要小、可评审。',
+              '',
+              '完成后:`npm ci && npm run lint && npm run build` 必须通过;在新分支提交、开 PR 到 `main`,标题「每日优化 ' + today + '」,正文列出改动与来源。**CI 通过后开 PR 等待评审合并(不要自行合并到 main)**。',
+              '',
+              '红线:只动内容与小改,不重构站点结构;数字必须有出处;宁可不改,不可编造。',
+              '',
+              '---',
+              '_由 daily-optimize.yml 每日自动创建;自我限流:同时只保留一个未完成的当日任务。若未装 Claude GitHub App,可把本文粘进任意 Claude Code 会话执行。_',
+            ].join('\n');
+            const { data: issue } = await github.rest.issues.create({
+              owner, repo, title: `每日优化 ${today}`, body,
+            });
+            core.notice(`Opened daily optimization task #${issue.number}`);
