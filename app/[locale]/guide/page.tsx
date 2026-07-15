@@ -46,8 +46,8 @@ const steps: Step[] = [
     href: '/consensus',
     title: { zh: '对比持仓共识与分歧', en: 'Compare consensus and divergence' },
     body: {
-      zh: '哪些标的被多人共同持有（如亚马逊），哪些存在明显分歧（如英伟达有人加有人减）。',
-      en: 'Which names many hold in common (e.g. Amazon), and where they clearly disagree (e.g. Nvidia — some add, some trim).',
+      zh: '哪些标的被多人共同持有（如谷歌），哪些存在明显分歧（如英伟达、亚马逊——有人加仓有人清仓）。',
+      en: 'Which names many hold in common (e.g. Alphabet), and where they clearly disagree (e.g. Nvidia and Amazon — some add, some exit).',
     },
   },
   {

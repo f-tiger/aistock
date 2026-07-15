@@ -20,6 +20,52 @@ export type MarketUpdate = {
  */
 export const updates: MarketUpdate[] = [
   {
+    id: 'berkshire-great-pivot',
+    date: '2026-07-15',
+    title: { zh: '伯克希尔“世纪换仓”:清仓亚马逊,Alphabet 加仓 225%', en: 'Berkshire’s great pivot: Amazon exited, Alphabet boosted 225%' },
+    summary: {
+      zh: 'Q1 2026 13F 显示伯克希尔组合从 40 只砍到 26 只、15 项清仓:亚马逊被全部卖出,Alphabet 获加仓 225% 成为最明确的 AI 表态,苹果三季连减后本季不动(仍占 22%)。Abel 接棒后的伯克希尔正把 AI 敞口从电商/云集中到“搜索现金流 + 全栈 AI”。',
+      en: 'The Q1 2026 13F shows Berkshire cutting its book from 40 to 26 names with 15 full exits: Amazon sold entirely, Alphabet boosted 225% as its clearest AI statement, and Apple untouched (still 22%) after three quarters of trimming. Under Abel, Berkshire is concentrating AI exposure into search cash flow + full-stack AI.',
+    },
+    themeIds: ['applications', 'infrastructure'],
+    tickers: ['GOOGL', 'AMZN', 'AAPL'],
+    sources: [
+      { label: 'Seeking Alpha — Tracking Berkshire portfolio Q1 2026', url: 'https://seekingalpha.com/article/4905557-tracking-berkshire-hathaway-portfolio-q1-2026-update' },
+      { label: 'Forbes — Berkshire shifts as Abel reshapes the playbook', url: 'https://www.forbes.com/sites/bill_stone/2026/05/16/berkshire-portfolio-shifts-as-abel-reshapes-buffetts-playbook/' },
+    ],
+  },
+  {
+    id: 'hedge-funds-memory-rotation',
+    date: '2026-07-14',
+    title: { zh: '对冲基金转战“存储链”:半导体权重创纪录 10%,SanDisk 领衔 VIP 新贵', en: 'Hedge funds rotate into the memory chain: record 10% semis weight, SanDisk tops new VIP names' },
+    summary: {
+      zh: 'Goldman 对冲基金 VIP 榜 5 月末调仓:新进榜的人气股一半与 AI 相关,由 SanDisk、Lam Research、应用材料领衔;基金半导体权重升至历史新高约 10%、动量因子暴露达 90 分位。同季 Druckenmiller 清仓 Alphabet 转进 SNDK/STX/MU/AVGO——机构对“卖铲人”的定义正从 GPU 扩展到存储与设备。',
+      en: 'Goldman’s Hedge Fund VIP list rebalanced in late May: about half of the biggest popularity gainers are AI-linked, led by SanDisk, Lam Research and Applied Materials; hedge-fund semis weight hit a record ~10% with momentum exposure at the 90th percentile. The same quarter, Druckenmiller exited Alphabet for SNDK/STX/MU/AVGO — institutions are widening “picks and shovels” from GPUs to memory and equipment.',
+    },
+    themeIds: ['memory', 'compute'],
+    tickers: ['SNDK', 'MU', 'LRCX', 'AMAT', 'AVGO'],
+    sources: [
+      { label: 'Goldman Sachs — Hedge Fund Trend Monitor: All in on AI', url: 'https://www.cfsrating.com/media/uj4jftdo/hedge-fund-trend-monitor_-all-in-on-ai.pdf' },
+      { label: 'HedgeFundAlpha — hedge funds pile into AI infrastructure', url: 'https://hedgefundalpha.com/news/hedge-funds-ai-stocks/' },
+      { label: 'HeyGoTrade — Druckenmiller dumps GOOGL for storage names', url: 'https://www.heygotrade.com/en/news/billionaire-13f-druckenmiller-tepper-amzn-googl/' },
+    ],
+  },
+  {
+    id: 'sovereign-funds-ai-infra',
+    date: '2026-07-13',
+    title: { zh: '主权基金千亿美元入场:MGX 关账 490 亿美元 AI 基金', en: 'Sovereign wealth pours in: MGX closes a $49B AI fund' },
+    summary: {
+      zh: '主权基金 2025–26 已承诺约 1200 亿美元投向数据中心、晶圆厂与高性能计算网络;阿布扎比 MGX 于 7 月 1 日关账 490 亿美元 AI 基金,约三成资金用于“造国家队”。对二级市场的含义:AI 基建(电力、设备、存储)的资本开支下限被主权资金抬高,“AI×能源”正合并为同一个基建故事。',
+      en: 'Sovereign funds have committed ~$120B across 2025–26 to data centers, fabs and HPC networks; Abu Dhabi’s MGX closed a $49B AI fund on July 1, with roughly 30% of allocations aimed at building national champions. For public markets, sovereign capital raises the capex floor under AI infrastructure (power, equipment, storage) — AI and energy are merging into one infrastructure story.',
+    },
+    themeIds: ['energy', 'infrastructure', 'memory'],
+    tickers: ['GEV', 'TSM'],
+    sources: [
+      { label: 'Titan Investors — sovereign wealth funds commit $120B to AI buildout', url: 'https://titaninvestors.com/insights/sovereign-wealth-funds-ai-infrastructure-2026' },
+      { label: 'Forbes — how sovereign wealth funds are shaping AI', url: 'https://www.forbes.com/sites/kensilverstein/2026/06/14/how-sovereign-wealth-funds-are-shaping-ai-and-global-growth/' },
+    ],
+  },
+  {
     id: 'agentic-ai-enterprise',
     date: '2026-07-12',
     title: { zh: 'AI 智能体成企业软件新前沿:Agentforce ARR 增长约 330%', en: 'AI agents are enterprise software’s new frontier: Agentforce ARR up ~330%' },

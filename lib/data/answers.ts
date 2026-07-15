@@ -18,7 +18,14 @@ export function buildAnswers(): FaqItem[] {
 
   const buffett = investors.find((i) => i.slug === 'warren-buffett');
   const buffettAi = buffett
-    ? [...new Set(buffett.holdings.map((h) => h.ticker.trim()).filter((t) => !IGNORE.has(t)))]
+    ? [
+        ...new Set(
+          buffett.holdings
+            .filter((h) => (h.action ?? 'hold') !== 'exit')
+            .map((h) => h.ticker.trim())
+            .filter((t) => !IGNORE.has(t)),
+        ),
+      ]
     : [];
 
   const nvda = scores.find((s) => s.ticker === 'NVDA');
@@ -71,8 +78,8 @@ export function buildAnswers(): FaqItem[] {
         en: 'Nvidia vs Amazon — which do the legends prefer?',
       },
       a: {
-        zh: `按共识分,亚马逊 ${amzn?.score ?? '—'} 明显高于英伟达 ${nvda?.score ?? '—'}。原因是大佬对英伟达存在分歧(有人加仓、有人减持),而亚马逊是跨风格的强共识。分数反映的是披露动作,不是股价预测。`,
-        en: `By Consensus Score, Amazon at ${amzn?.score ?? '—'} sits clearly above Nvidia at ${nvda?.score ?? '—'}. The legends are split on Nvidia (some add, some trim) while Amazon is a cross-style consensus. The score reflects disclosed actions, not a price forecast.`,
+        zh: `按当前共识分,${(amzn?.score ?? 0) >= (nvda?.score ?? 0) ? `亚马逊 ${amzn?.score ?? '—'} 高于英伟达 ${nvda?.score ?? '—'}` : `英伟达 ${nvda?.score ?? '—'} 高于亚马逊 ${amzn?.score ?? '—'}`}。两只都是大佬间的分歧标的:有人重仓加码、也有人减持或清仓(如伯克希尔 2026Q1 清仓亚马逊、段永平大幅加仓英伟达)。分数反映的是披露动作,不是股价预测。`,
+        en: `By the current Consensus Score, ${(amzn?.score ?? 0) >= (nvda?.score ?? 0) ? `Amazon at ${amzn?.score ?? '—'} sits above Nvidia at ${nvda?.score ?? '—'}` : `Nvidia at ${nvda?.score ?? '—'} sits above Amazon at ${amzn?.score ?? '—'}`}. Both split the legends: some add heavily while others trim or exit (Berkshire exited Amazon in Q1 2026; Duan Yongping added sharply to Nvidia). The score reflects disclosed actions, not a price forecast.`,
       },
     },
   ];
