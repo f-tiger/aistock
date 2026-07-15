@@ -223,6 +223,77 @@ export const themes: AiTheme[] = [
     ],
   },
   {
+    id: 'memory',
+    name: { zh: 'AI 存储与内存', en: 'AI Memory & Storage' },
+    summary: {
+      zh: '2026 年机构资金的新共识：AI 数据中心把 HBM 内存与 NAND/硬盘存储推入紧缺周期。对冲基金半导体权重创历史新高（约 10%），Goldman VIP 榜新贵 SanDisk、Lam Research、应用材料全部来自这条链。',
+      en: 'The new institutional consensus of 2026: AI data centers have pushed HBM memory and NAND/HDD storage into a shortage cycle. Hedge-fund semiconductor weight hit a record ~10%, and the newest Goldman VIP names — SanDisk, Lam Research, Applied Materials — all sit on this chain.',
+    },
+    bullCase: [
+      {
+        zh: 'Druckenmiller 一季度清仓 Alphabet、转进 SanDisk/希捷/美光——大师级资金正把“卖铲人”定义从 GPU 扩展到存储。',
+        en: 'Druckenmiller exited Alphabet in Q1 and rotated into SanDisk/Seagate/Micron — top-tier money is widening “picks and shovels” from GPUs to storage.',
+      },
+      {
+        zh: 'HBM 供给被少数厂商垄断且长期签约锁定，涨价周期的盈利弹性大；设备商（LRCX/AMAT）则吃全行业扩产。',
+        en: 'HBM supply is concentrated among a few makers and locked by long-term contracts, giving big earnings torque in an up-cycle; equipment names (LRCX/AMAT) monetize industry-wide capacity growth.',
+      },
+    ],
+    risks: [
+      {
+        zh: '存储/内存是强周期行业：一旦供给追上或 AI 资本开支放缓，价格与盈利可能急速回落。',
+        en: 'Memory/storage is deeply cyclical: once supply catches up or AI capex slows, prices and earnings can fall fast.',
+      },
+      {
+        zh: '对冲基金持仓拥挤（动量因子处于 90 分位）——拥挤交易的退出往往剧烈。',
+        en: 'Hedge-fund positioning is crowded (momentum tilt at the 90th percentile) — exits from crowded trades tend to be violent.',
+      },
+    ],
+    stocks: [
+      {
+        ticker: 'MU',
+        name: { zh: '美光科技', en: 'Micron' },
+        role: { zh: 'HBM 内存三巨头之一', en: 'One of three HBM memory makers' },
+        bull: { zh: 'HBM 紧缺 + Tepper/Druckenmiller 同时加仓。', en: 'HBM shortage; added by both Tepper and Druckenmiller.' },
+        risk: { zh: '内存价格周期反转风险。', en: 'Memory-price cycle reversal.' },
+      },
+      {
+        ticker: 'SNDK',
+        name: { zh: 'SanDisk', en: 'SanDisk' },
+        role: { zh: 'NAND 闪存', en: 'NAND flash' },
+        bull: { zh: 'Goldman VIP 榜人气增幅第一；Druckenmiller 新建仓。', en: 'Top popularity gainer on the Goldman VIP list; new Druckenmiller stake.' },
+        risk: { zh: '分拆新股波动大、历史短。', en: 'Recently spun off — volatile, short history.' },
+      },
+      {
+        ticker: 'STX',
+        name: { zh: '希捷科技', en: 'Seagate' },
+        role: { zh: '数据中心硬盘', en: 'Data-center HDDs' },
+        bull: { zh: 'AI 冷数据存储需求外溢到大容量硬盘。', en: 'AI cold-data storage demand spills into high-capacity HDDs.' },
+        risk: { zh: '技术替代（QLC NAND）与企业开支波动。', en: 'Substitution risk (QLC NAND) and enterprise-spend swings.' },
+      },
+      {
+        ticker: 'LRCX',
+        name: { zh: 'Lam Research', en: 'Lam Research' },
+        role: { zh: '刻蚀/沉积设备', en: 'Etch/deposition equipment' },
+        bull: { zh: '存储扩产的最大设备受益者之一；Coatue 前五重仓。', en: 'Prime equipment beneficiary of memory capex; Coatue top-5.' },
+        risk: { zh: '设备订单强周期、对华出口管制。', en: 'Cyclical orders; China export controls.' },
+      },
+      {
+        ticker: 'AMAT',
+        name: { zh: '应用材料', en: 'Applied Materials' },
+        role: { zh: '半导体设备平台', en: 'Semicap equipment platform' },
+        bull: { zh: '覆盖逻辑+存储全链扩产；Coatue 前五重仓。', en: 'Spans logic + memory capacity growth; Coatue top-5.' },
+        risk: { zh: '同上：周期与地缘。', en: 'Same: cycles and geopolitics.' },
+      },
+    ],
+    asOf: '2026-07',
+    sources: [
+      { label: 'Goldman Sachs — Hedge Fund Trend Monitor: All in on AI', url: 'https://www.cfsrating.com/media/uj4jftdo/hedge-fund-trend-monitor_-all-in-on-ai.pdf' },
+      { label: 'HeyGoTrade — Druckenmiller rotates into SNDK/STX/MU', url: 'https://www.heygotrade.com/en/news/billionaire-13f-druckenmiller-tepper-amzn-googl/' },
+      { label: 'HedgeFundAlpha — hedge funds pile into AI, semis at record 10% weight', url: 'https://hedgefundalpha.com/news/hedge-funds-ai-stocks/' },
+    ],
+  },
+  {
     id: 'energy',
     name: { zh: 'AI 能源与电力', en: 'AI Energy & Power' },
     summary: {
@@ -251,6 +322,13 @@ export const themes: AiTheme[] = [
     ],
     stocks: [
       {
+        ticker: 'GEV',
+        name: { zh: 'GE Vernova', en: 'GE Vernova' },
+        role: { zh: '燃气轮机 / 电网设备', en: 'Gas turbines / grid equipment' },
+        bull: { zh: '数据中心电力缺口的直接受益者；Coatue 前五重仓。', en: 'Direct beneficiary of the data-center power gap; a Coatue top-5 holding.' },
+        risk: { zh: '订单周期长、估值已计入高预期。', en: 'Long order cycles; high expectations already priced in.' },
+      },
+      {
         ticker: 'theme',
         name: { zh: '核电 / 电网 / 冷却', en: 'Nuclear / Grid / Cooling' },
         role: { zh: 'AI 的能源底座', en: 'Energy base layer for AI' },
@@ -258,8 +336,10 @@ export const themes: AiTheme[] = [
         risk: { zh: '周期长、政策与技术不确定。', en: 'Long cycles, policy and tech uncertainty.' },
       },
     ],
-    asOf: '2026-06',
+    asOf: '2026-07',
     sources: [
+      { label: '13F.info — Coatue Q1 2026: GEV a top-5 holding', url: 'https://13f.info/manager/0001135730-coatue-management-llc' },
+      { label: 'Forbes — sovereign wealth funds shaping AI and global growth', url: 'https://www.forbes.com/sites/kensilverstein/2026/06/14/how-sovereign-wealth-funds-are-shaping-ai-and-global-growth/' },
       { label: 'TheStreet — Wood invests in X-Energy (nuclear)', url: 'https://www.thestreet.com/investing/cathie-wood-buys-another-72m-of-mega-cap-amazon-stock' },
     ],
   },

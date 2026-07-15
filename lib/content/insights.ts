@@ -20,6 +20,72 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: 'institutional-money-flows-2026-midyear',
+    date: '2026-07-15',
+    title: {
+      zh: '2026 年中机构风向报告:聪明钱正流向 AI 的哪些角落?',
+      en: 'Mid-2026 institutional flows report: where is smart money moving in AI?',
+    },
+    description: {
+      zh: '五个方向看清 2026 年中的机构资金:伯克希尔世纪换仓、对冲基金转战存储链、电力成为新算力、主权基金千亿入场、以及史上最鲜明的多空分歧。全部基于公开 13F 与公开报道,附出处。',
+      en: 'Five directions to read mid-2026 institutional money: Berkshire’s great pivot, hedge funds rotating into the memory chain, power as the new compute, sovereign funds’ $120B entry, and the starkest bull-bear split on record. All from public 13Fs and reporting, fully sourced.',
+    },
+    keywords: ['机构持仓 AI 2026', '13F 机构动向', '对冲基金 AI 股票', 'institutional AI stocks 2026', 'hedge fund 13F AI', 'smart money AI'],
+    body: [
+      {
+        h: { zh: '方向一:世纪换仓——从电商云到“全栈 AI”', en: 'Direction 1: the great pivot — from e-commerce cloud to full-stack AI' },
+        p: {
+          zh: 'Q1 2026 最重磅的 13F 信号来自伯克希尔:组合从 40 只砍到 26 只、15 项清仓,其中亚马逊被全部卖出,而 Alphabet 获加仓 225%,苹果原封不动(仍占约 22%)。Abel 时代的伯克希尔给出了它对 AI 最明确的一次表态——买“搜索现金流 + Gemini + 自研 TPU”的全栈组合,而不是为叙事付溢价。',
+          en: 'The heaviest 13F signal of Q1 2026 came from Berkshire: the book was cut from 40 to 26 names with 15 full exits — Amazon sold entirely — while Alphabet was boosted 225% and Apple left untouched (~22%). Abel-era Berkshire made its clearest AI statement yet: own the full stack of search cash flow + Gemini + in-house TPUs rather than pay up for narrative.',
+        },
+      },
+      {
+        h: { zh: '方向二:存储链成新“卖铲人”', en: 'Direction 2: the memory chain is the new picks-and-shovels' },
+        p: {
+          zh: 'Druckenmiller 一季度清仓全部 Alphabet,把资金转进 SanDisk、希捷、美光、博通与英特尔,科技敞口从 9.4% 翻倍到 18.4%。这不是孤例:Goldman 对冲基金 VIP 榜 5 月末调仓,人气增幅最大的股票约一半与 AI 相关、由 SanDisk/Lam Research/应用材料领衔,基金半导体权重创历史新高约 10%。机构对“卖铲人”的定义正在从 GPU 扩展到 HBM 内存、NAND 存储与半导体设备——那里供给更紧、拥挤度(曾经)更低。',
+          en: 'Druckenmiller dumped all his Alphabet in Q1 and rotated into SanDisk, Seagate, Micron, Broadcom and Intel, doubling tech exposure from 9.4% to 18.4%. He isn’t alone: Goldman’s Hedge Fund VIP rebalance in late May showed about half of the biggest popularity gainers were AI-linked — led by SanDisk, Lam Research and Applied Materials — with semis at a record ~10% of hedge-fund books. Institutions are widening “picks and shovels” from GPUs to HBM, NAND and semicap equipment, where supply is tighter and crowding was (until now) lower.',
+        },
+      },
+      {
+        h: { zh: '方向三:电力=新算力', en: 'Direction 3: power is the new compute' },
+        p: {
+          zh: '最能说明问题的是 Coatue 的前五大持仓:台积电、GE Vernova、Lam Research、应用材料、博通——一家燃气轮机/电网设备公司与四家半导体链公司并列。对机构而言,AI 与能源已合并成同一个基建故事:数据中心的电力缺口和 HBM 缺口一样,都是算力增长的刚性约束,也都值得用“上游供应商”来表达。',
+          en: 'Coatue’s top five says it all: TSMC, GE Vernova, Lam Research, Applied Materials, Broadcom — a gas-turbine/grid company sitting beside four semiconductor names. For institutions, AI and energy have merged into one infrastructure story: the data-center power gap, like the HBM gap, is a hard constraint on compute growth — and both are best expressed through upstream suppliers.',
+        },
+      },
+      {
+        h: { zh: '方向四:主权基金抬高资本开支的下限', en: 'Direction 4: sovereign funds raise the capex floor' },
+        p: {
+          zh: '2025–26 年,主权财富基金已承诺约 1200 亿美元投向数据中心、晶圆厂与高性能计算网络;阿布扎比 MGX 7 月 1 日关账 490 亿美元 AI 基金,约三成资金用于打造“国家队”。对二级市场投资者,这意味着 AI 基建的资本开支有了国家级资金托底——电力设备、半导体设备与存储的需求周期被拉长,但也要警惕由政府驱动的产能过剩。',
+          en: 'Across 2025–26, sovereign wealth funds have committed roughly $120B to data centers, fabs and HPC networks; Abu Dhabi’s MGX closed a $49B AI fund on July 1, with ~30% of allocations aimed at national champions. For public-market investors this puts nation-state money under the AI capex cycle — extending demand for power equipment, semicap and storage — though state-driven overcapacity is the risk to watch.',
+        },
+      },
+      {
+        h: { zh: '方向五:史上最鲜明的多空分歧', en: 'Direction 5: the starkest bull-bear split on record' },
+        p: {
+          zh: '一边是段永平把英伟达加仓 91% 至第三大重仓、新建特斯拉,Tepper 把亚马逊加到第一大重仓;另一边,Michael Burry 在清盘基金后,把个人组合约 80% 押在英伟达与 Palantir 的看跌期权上(名义约 11 亿美元)。机构内部对超大规模厂商的资本开支回报也存在真实分歧。当风格迥异的大师们出现如此极端的对立,分散、仓位纪律与安全边际比任何时候都重要——这正是共识分想量化的东西:不是谁对谁错,而是共识与分歧各在哪里。',
+          en: 'On one side, Duan Yongping added 91% to Nvidia (now his #3) and opened Tesla, while Tepper pushed Amazon to his #1. On the other, Michael Burry — after winding down his fund — put ~80% of his personal book into Nvidia and Palantir puts (~$1.1B notional). Institutions are also genuinely split on hyperscaler capex ROI. When style-diverse masters disagree this violently, diversification, position sizing and margin of safety matter more than ever — which is exactly what the Consensus Score quantifies: not who’s right, but where consensus and disagreement actually sit.',
+        },
+      },
+      {
+        h: { zh: '普通投资者怎么用这份报告', en: 'How to use this as an individual investor' },
+        p: {
+          zh: '三步:①在共识页看这些动作如何改变每只股票的罗盘共识分——伯克希尔清仓会拉低 Amazon 的分数,这就是信号;②用组合体检工具输入自己的持仓,看你与机构新方向的重合度;③记住 13F 有约 45 天滞后、不含空头与期权明细,它是研究起点而非抄作业清单。本文为教育内容、非投资建议,投资有风险。',
+          en: 'Three steps: (1) watch how these moves reshape each stock’s Consensus Score on the leaderboard — Berkshire’s exit pulls Amazon’s score down, and that is the signal; (2) run your own holdings through the Portfolio Check to see your overlap with the new institutional direction; (3) remember 13Fs lag ~45 days and omit shorts and option detail — a research starting point, not a copy-trade list. Educational content, not investment advice; investing carries risk.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'Seeking Alpha — Tracking Berkshire portfolio Q1 2026', url: 'https://seekingalpha.com/article/4905557-tracking-berkshire-hathaway-portfolio-q1-2026-update' },
+      { label: 'HeyGoTrade — Druckenmiller dumps GOOGL, Tepper doubles AMZN', url: 'https://www.heygotrade.com/en/news/billionaire-13f-druckenmiller-tepper-amzn-googl/' },
+      { label: 'Goldman Sachs — Hedge Fund Trend Monitor: All in on AI', url: 'https://www.cfsrating.com/media/uj4jftdo/hedge-fund-trend-monitor_-all-in-on-ai.pdf' },
+      { label: '13F.info — Coatue Management Q1 2026', url: 'https://13f.info/manager/0001135730-coatue-management-llc' },
+      { label: 'Titan Investors — sovereign funds commit $120B to AI buildout', url: 'https://titaninvestors.com/insights/sovereign-wealth-funds-ai-infrastructure-2026' },
+      { label: 'Sherwood — Burry’s $1.1B options bet against Nvidia & Palantir', url: 'https://sherwood.news/markets/michael-burry-big-short-discloses-1-1-billion-options-bet-against-nvidia-palantir-puts/' },
+      { label: '新浪财经 — 段永平最新持仓:清仓阿里、新进特斯拉、加仓英伟达', url: 'https://finance.sina.com.cn/wm/2026-05-20/doc-inhypnuh2605188.shtml' },
+    ],
+  },
+  {
     slug: 'buffett-ai-holdings-2026',
     date: '2026-07-12',
     title: {
