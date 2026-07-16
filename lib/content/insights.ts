@@ -20,6 +20,63 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: 'custom-ai-chips-vs-nvidia-2026',
+    date: '2026-07-16',
+    title: {
+      zh: 'AI 芯片自研潮:谁在蚕食英伟达?博通们的机会有多大',
+      en: 'The custom AI chip wave: who is eating into Nvidia, and how big is the Broadcom opportunity?',
+    },
+    description: {
+      zh: '谷歌 TPU、Meta MTIA、微软 Maia、OpenAI Titan——大厂自研芯片全面开花。2026 年 ASIC 出货增速(约 +45%)已近 GPU 的三倍,博通拿下约六成设计合作。用公开数据与大佬持仓看清这场攻防:英伟达的护城河还剩什么,自研链上谁在赚钱。',
+      en: 'Google TPU, Meta MTIA, Microsoft Maia, OpenAI Titan — hyperscaler custom silicon is everywhere. In 2026 ASIC shipment growth (~+45%) runs near triple that of GPUs, and Broadcom holds roughly 60% of design partnerships. Public data plus legendary-investor positioning show what remains of Nvidia’s moat and who profits on the custom chain.',
+    },
+    keywords: ['AI 芯片 自研', '博通 英伟达', '定制芯片 股票', 'custom AI chips stocks', 'Broadcom vs Nvidia', 'AI ASIC 2026', 'TPU MTIA Maia'],
+    body: [
+      {
+        h: { zh: '发生了什么:客户变成了对手', en: 'What happened: customers became competitors' },
+        p: {
+          zh: '英伟达最大的几家客户,正在变成它最有组织的对手。谷歌 TPU 已迭代多代,Meta 有 MTIA、微软有 Maia,而几乎全靠英伟达起家的 OpenAI 也与博通合作开发自研芯片(Titan 计划,目标 2027 年部署、算力超 1 吉瓦)。逻辑很直白:当推理成本成为 AI 业务的最大变量,“掌握芯片就是掌握经济学”。',
+          en: 'Nvidia’s biggest customers are becoming its most organized competitors. Google’s TPU is generations deep; Meta has MTIA and Microsoft has Maia; even OpenAI — built almost entirely on Nvidia — is developing custom silicon with Broadcom (the Titan program, targeting 2027 deployment at over a gigawatt of compute). The logic is blunt: when inference cost is the biggest variable in an AI business, owning the silicon means owning the economics.',
+        },
+      },
+      {
+        h: { zh: '数据:ASIC 增速已是 GPU 的近三倍', en: 'The data: ASIC growth near triple that of GPUs' },
+        p: {
+          zh: '行业跟踪数据显示,2026 年定制 ASIC 的 AI 服务器出货预计同比增长约 44.6%,而通用 GPU 约为 16.1%;ASIC 占 AI 服务器出货比例将升至约 27.8%。注意分寸:英伟达在训练端仍占九成以上、整体 AI 芯片市场仍约七成——自研芯片吃掉的主要是**推理**这块增量最大的蛋糕,而不是正面掀翻训练王座。',
+          en: 'Industry trackers put custom-ASIC AI-server shipment growth at ~44.6% YoY for 2026 versus ~16.1% for merchant GPUs, lifting ASICs to ~27.8% of AI-server shipments. Keep perspective: Nvidia still holds 90%+ of training and ~70% of the overall AI chip market — custom silicon is eating the fastest-growing slice, inference, rather than storming the training throne.',
+        },
+      },
+      {
+        h: { zh: '最大赢家不是某家大厂,而是“军火商”博通', en: 'The biggest winner isn’t a hyperscaler — it’s the arms dealer, Broadcom' },
+        p: {
+          zh: '大厂自研并不等于自己造芯片:设计合作、IP、网络与封装大多外包。博通在 AI 服务器 ASIC 设计合作中拿下约六成份额,手握约 730 亿美元 AI 订单积压,管理层预计 2026 财年 AI 半导体收入接近 560 亿美元(约为上年三倍)。换句话说,无论谷歌、Meta 还是 OpenAI 的芯片“成不成”,博通都先把设计费和产能赚到了——典型的卖铲人位置。Marvell 则是同一逻辑的第二供应商。',
+          en: 'Hyperscaler custom silicon doesn’t mean in-house fabrication: design partnerships, IP, networking and packaging are largely outsourced. Broadcom holds roughly 60% of AI-server ASIC design partnerships, carries a ~$73B AI backlog, and guides fiscal-2026 AI semiconductor revenue toward ~$56B (roughly tripling in a year). Whether Google’s, Meta’s or OpenAI’s chips “win” or not, Broadcom collects first — the classic picks-and-shovels seat. Marvell is the second source on the same logic.',
+        },
+      },
+      {
+        h: { zh: '大佬们已经投票:AVGO 进入共识榜', en: 'The legends have voted: AVGO enters the consensus board' },
+        p: {
+          zh: '这不是纸上推演——看 Q1 2026 13F:Druckenmiller 清仓 Alphabet 的同时**新建博通仓位**;Coatue 的前五大重仓里也有博通。在本站共识榜上,AVGO 首次作为独立标的入榜。而英伟达同季呈现“段永平加仓 91% vs Tepper/Coatue 减持”的典型分歧。共识分的意义正在于此:把这种攻防实时量化,而不是等叙事发酵。',
+          en: 'This isn’t theoretical — check the Q1 2026 13Fs: Druckenmiller opened a Broadcom position in the same quarter he exited Alphabet, and Broadcom sits in Coatue’s top five. On our consensus board AVGO now appears as a standalone name, while Nvidia shows the classic split — Duan Yongping adding 91% versus Tepper and Coatue trimming. That is exactly what the Consensus Score quantifies in real time, before the narrative catches up.',
+        },
+      },
+      {
+        h: { zh: '投资者该怎么想:三个检查点', en: 'How to think about it: three checkpoints' },
+        p: {
+          zh: '①别把“自研潮”当英伟达的讣告:CUDA 生态、训练端垄断与整机柜方案仍是深护城河,估值才是真正的辩论点;②自研链的确定性排序大致是:设计伙伴(AVGO/MRVL)> 代工与设备(TSM/LRCX/AMAT)> 某一颗自研芯片的成败;③警惕周期:ASIC 订单与大厂资本开支强相关,一旦 AI capex 收缩,增速神话同样会反转。本文为教育内容、非投资建议,数字均有出处、可能随季度更新。',
+          en: 'First, don’t read the custom wave as Nvidia’s obituary: the CUDA ecosystem, training dominance and rack-scale systems remain deep moats — valuation is the real debate. Second, the custom chain’s certainty ranking is roughly design partners (AVGO/MRVL) > foundry & equipment (TSM/LRCX/AMAT) > any single chip’s success. Third, respect the cycle: ASIC orders track hyperscaler capex, and if AI capex contracts the growth story reverses just as fast. Educational content, not investment advice; all figures are sourced and may change quarterly.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'Tom’s Hardware — The custom AI ASIC state of play (May 2026)', url: 'https://www.tomshardware.com/tech-industry/semiconductors/custom-ai-asics-examined-from-broadcom-to-mtia' },
+      { label: 'TechTimes — Broadcom forecasts $56B as custom silicon demand surges', url: 'https://www.techtimes.com/articles/317846/20260605/nvidia-not-only-ai-chip-winner-broadcom-forecasts-56-billion-custom-silicon-demand-surges.htm' },
+      { label: 'Introl — Custom silicon inflection 2026: hyperscaler ASICs vs Nvidia', url: 'https://introl.com/blog/custom-silicon-inflection-2026-hyperscaler-asics-nvidia-gpu' },
+      { label: 'InvestorPlace — The rise of custom AI chips is breaking Nvidia’s grip', url: 'https://investorplace.com/hypergrowthinvesting/2026/04/the-rise-of-custom-ai-chips-is-breaking-nvidias-grip/' },
+      { label: 'HeyGoTrade — Q1 2026 13F: Druckenmiller opens AVGO', url: 'https://www.heygotrade.com/en/news/billionaire-13f-druckenmiller-tepper-amzn-googl/' },
+    ],
+  },
+  {
     slug: 'institutional-money-flows-2026-midyear',
     date: '2026-07-15',
     title: {
