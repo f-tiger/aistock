@@ -10,7 +10,8 @@ name: Daily site optimization
 
 on:
   schedule:
-    - cron: '0 4 * * *' # daily 04:00 UTC = 北京时间中午 12:00
+    # GitHub cron 为尽力而为,整点最拥挤、延迟可达数小时;错开分钟可显著提高准时率
+    - cron: '48 3 * * *' # daily 03:48 UTC ≈ 北京时间中午 12:00 前后触发
   workflow_dispatch:
 
 permissions:
