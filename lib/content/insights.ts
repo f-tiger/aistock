@@ -20,6 +20,63 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: 'ai-drug-discovery-stocks-2026',
+    date: '2026-07-17',
+    title: {
+      zh: 'AI 制药 2026:15–20 款 AI 药物冲刺三期临床,普通投资者怎么参与?',
+      en: 'AI drug discovery in 2026: 15–20 AI-born drugs race into Phase III — how can ordinary investors participate?',
+    },
+    description: {
+      zh: '2026 年是 AI 制药"验证之年":15–20 个 AI 设计/发现的药物项目预计进入关键三期临床,Isomorphic Labs 融资 21 亿美元,礼来、诺华重金下注。拆解公开市场的参与路径——从 Tempus(ARK 增持)到 Recursion、再到"卖铲人"英伟达——以及这条赛道独有的风险。',
+      en: 'For AI drug discovery, 2026 is the year of validation: 15–20 AI-designed or AI-discovered programs are expected to enter pivotal Phase III trials, Isomorphic Labs raised $2.1B, and Lilly and Novartis are betting big. We map the public-market entry points — from Tempus (an ARK add) to Recursion to the picks-and-shovels play, Nvidia — plus the risks unique to this lane.',
+    },
+    keywords: ['AI 制药 股票', 'AI 药物发现', 'Tempus 股票', 'AI drug discovery stocks', 'Isomorphic Labs', 'AI biotech 2026'],
+    body: [
+      {
+        h: { zh: '为什么 2026 是 AI 制药的"验证之年"', en: 'Why 2026 is AI pharma’s year of validation' },
+        p: {
+          zh: '过去十年,"AI 设计药物"更多停留在论文与种子轮;2026 年它第一次要面对最硬的裁判——关键三期临床。行业跟踪显示,今年预计有 15–20 个 AI 设计或 AI 发现的药物项目进入三期;DeepMind 系的 Isomorphic Labs(AlphaFold 团队创立)5 月完成 21 亿美元融资,创始人 Hassabis 公开承诺年内让首个 AI 设计药物进入一期临床。数据一旦兑现,估值逻辑会从"讲故事"切换到"看管线"。',
+          en: 'For a decade, “AI-designed drugs” lived mostly in papers and seed rounds; in 2026 they face the hardest referee — pivotal Phase III trials. Industry trackers expect 15–20 AI-designed or AI-discovered programs to enter Phase III this year; DeepMind spinout Isomorphic Labs (born from the AlphaFold team) closed a $2.1B raise in May, and founder Demis Hassabis has publicly committed to putting its first AI-designed candidate into Phase 1 within the year. When data lands, the valuation logic flips from narrative to pipeline.',
+        },
+      },
+      {
+        h: { zh: '大药厂已经用钱投票', en: 'Big pharma has already voted with its wallet' },
+        p: {
+          zh: '礼来是最激进的:与 Isomorphic 的合作里程碑总额超 17 亿美元,另与英伟达签下高达 10 亿美元的 AI 基础设施合作;诺华与 Isomorphic 的合作约 12 亿美元并在 2025 年扩容。对制药巨头,AI 的账很好算——传统一款新药平均要 10 年、20 多亿美元,若 AI 能把临床前周期从数年压到 18 个月上下,节省的不只是钱,更是专利窗口。',
+          en: 'Eli Lilly is the most aggressive: over $1.7B in milestones with Isomorphic plus an up-to-$1B AI-infrastructure commitment with Nvidia; Novartis has ~$1.2B with Isomorphic, expanded in 2025. The math is easy for big pharma — a traditional drug averages 10 years and $2B+, so if AI compresses preclinical work toward ~18 months, the saving is not just money but patent runway.',
+        },
+      },
+      {
+        h: { zh: '公开市场的参与路径:三层', en: 'Public-market entry points: three layers' },
+        p: {
+          zh: '最纯的标的多数未上市(Isomorphic、Chai 等),公开市场大致分三层:①**数据与临床匹配层**——Tempus AI(TEM):用基因组+临床数据做精准医疗匹配,ARK 在 Q1 2026 继续增持,是本站收录大佬中唯一的 AI 医疗直接持仓;②**AI 药物管线层**——Recursion(RXRX)、Schrödinger(SDGR)、Relay(RLAY)及 2026 年新上市的 Generate、Eikon,弹性最大、风险也最大;③**卖铲人层**——英伟达(为多家药厂提供 AI 算力与 BioNeMo 平台)与云厂商,确定性最高但"含药量"最低。',
+          en: 'The purest names are mostly private (Isomorphic, Chai), so public exposure comes in three layers: (1) the data & trial-matching layer — Tempus AI (TEM), matching patients via genomic + clinical data; ARK kept adding in Q1 2026, making it the only direct AI-healthcare holding among our tracked legends; (2) the AI-pipeline layer — Recursion (RXRX), Schrödinger (SDGR), Relay (RLAY) and 2026 IPOs Generate and Eikon — maximum torque, maximum risk; (3) the picks-and-shovels layer — Nvidia (compute plus the BioNeMo platform for pharma) and the clouds — highest certainty, lowest “drug content.”',
+        },
+      },
+      {
+        h: { zh: '这条赛道独有的风险', en: 'Risks unique to this lane' },
+        p: {
+          zh: '与芯片或云不同,AI 制药的成败最终由生物学与监管裁决:①三期失败率天然高,AI 到目前为止改善的是**速度与成本**,尚未证明能系统性提高**成功率**;②多数公司常年亏损、依赖融资,利率与风偏一收紧就会被杀估值;③平台型收入(数据服务、软件)与管线型收入(里程碑、分成)混在一起,估值极易被误读。仓位上宜按"高风险卫星"处理,而非核心持仓。',
+          en: 'Unlike chips or cloud, AI pharma is ultimately judged by biology and regulators: Phase III failure rates are inherently high, and so far AI has demonstrably improved speed and cost, not yet success rates; most names are loss-making and financing-dependent, so valuations get crushed whenever rates or risk appetite tighten; and platform revenue (data, software) blends with pipeline revenue (milestones, royalties), making valuations easy to misread. Size it as a high-risk satellite, not a core holding.',
+        },
+      },
+      {
+        h: { zh: '用共识数据校准热情', en: 'Calibrate enthusiasm with consensus data' },
+        p: {
+          zh: '值得注意的分寸感:8 位传奇投资人里,目前只有 Cathie Wood 直接持有 AI 医疗标的(TEM)——机构共识远未形成,这既意味着早期机会,也意味着缺乏"聪明钱验证"。对照之下,存储链、电力这些方向已有多位大佬真金白银进场。把 TEM 放进组合体检工具,可以直观看到它与强共识标的的差距。本文为教育内容、非投资建议,投资有风险。',
+          en: 'Note the proportion: among our eight tracked legends, only Cathie Wood directly holds an AI-healthcare name (TEM) — institutional consensus hasn’t formed, which means both early-mover opportunity and a lack of smart-money validation. By contrast, the memory chain and power already have multiple legends invested with real money. Run TEM through the Portfolio Check to see its gap versus strong-consensus names. Educational content, not investment advice; investing carries risk.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'IntuitionLabs — Isomorphic Labs $2.1B Series B analysis', url: 'https://intuitionlabs.ai/articles/isomorphic-labs-series-b-ai-drug-discovery' },
+      { label: 'AIM Media House — 2026 is the year AI drug discovery meets clinical reality', url: 'https://aimmediahouse.com/ai-lifesciences/2026-is-the-year-ai-drug-discovery-meets-clinical-reality' },
+      { label: 'MarketWise — 6 AI drug discovery stocks to play the Isomorphic trade', url: 'https://marketwise.com/investing/ai-drug-discovery-stocks-isomorphic-labs/' },
+      { label: 'Vision Life Sciences — AI drug discovery companies: the 2026 power list', url: 'https://visionlifesciences.com/insights/ai-drug-discovery-companies' },
+      { label: 'Seeking Alpha — ARK Invest Q1 2026 13F (TEM added)', url: 'https://seekingalpha.com/article/4903557-tracking-cathie-woods-ark-invest-13f-portfolio-q1-2026-update' },
+    ],
+  },
+  {
     slug: 'custom-ai-chips-vs-nvidia-2026',
     date: '2026-07-16',
     title: {
