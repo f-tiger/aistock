@@ -38,6 +38,16 @@
 
 > 全自动化的开关:在仓库安装 **Claude GitHub App**(github.com/apps/claude)。装上后,每周/每季 Issue 中的 @claude 会自动执行内容生产并开 PR;人工只剩「合并 PR + 把草稿贴到平台」。
 
+## 执行器:Claude Code 定时 Routine(2026-07-19 起)
+
+实践发现 GitHub Actions 只负责**开 Issue**,若 Claude GitHub App 未自动执行,任务会一直挂着(如 #43、#34)。因此补上真正的执行器——Claude Code Remote 定时 Routine:
+
+- **Routine**:`aistock daily optimize (AI 投资罗盘)`,ID `trig_01Berm2foBw6eX5AU2AFUgy1`
+- **节奏**:每天 UTC 14:05(北京 22:05),紧跟 daily-optimize.yml(UTC 13:48)开出当日 Issue 之后
+- **行为**:认领最旧的未完成「每日优化 / 周内容运营」Issue 并按其正文执行;若无 open Issue 则自选一项微优化(洞察文章或小 SEO 修缮)。验收 `npm ci && npm run lint && npm run build`,当日新分支开 PR 到 `main`,在 Issue 评论 PR 链接并关闭 Issue。不自行合并。
+- **自我限流**:daily-optimize.yml 的「同时只保留一个未完成任务」逻辑保持不变;Routine 每天最多产出一个 PR。
+- **管理**:在 claude.ai 的 Routines 界面或任意 Claude Code 会话中用 `list_triggers` / `update_trigger` / `delete_trigger` 管理。
+
 ## 运营节奏日历
 
 | 频率 | 触发 | 执行者 | 动作 | 产物 |
