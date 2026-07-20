@@ -20,6 +20,38 @@ export type MarketUpdate = {
  */
 export const updates: MarketUpdate[] = [
   {
+    id: 'memory-bear-market',
+    date: '2026-07-17',
+    title: { zh: '存储股一周入熊:美光/三星/海力士距高点均超 -20%', en: 'Memory stocks enter a bear market: Micron, Samsung and SK Hynix all down 20%+ from highs' },
+    summary: {
+      zh: '7/13–17 一周,存储链从"最热交易"变成熊市:SanDisk 周一单日 -12.6%、周四再 -8%,7/17 收 $1354.82(自 6 月峰值 $2000+ 回撤约 -35%);美光 7/17 收 $848.95;美光/三星/海力士及 Roundhill 存储 ETF 距近期高点均超 -20%。刚上市一周的 SK 海力士 ADR(SKHY)从 7/14 杠杆 ETF 上市日 +19% 的冲高一路回落至 $154.03,距 $149 发行价仅 3.4%。触发因素以获利了结为主——此前美光年内一度 +244%、SanDisk +640%,而 TrendForce 预计 3Q26 合约价涨幅收窄至 DRAM +13–18%、NAND +10–15%(前两季为 +90–95%、+58–63%)。',
+      en: 'In the week of July 13–17 the memory chain went from hottest trade to bear market: SanDisk fell 12.6% on Monday and another 8% Thursday to close at $1,354.82 on 7/17 (roughly -35% from its $2,000+ June peak); Micron closed at $848.95; Micron, Samsung, SK Hynix and the Roundhill Memory ETF are all 20%+ below recent highs. SKHY — SK Hynix’s ADR, public for just a week — faded from a +19% spike on 7/14 (the day its leveraged ETFs launched) to $154.03, only 3.4% above the $149 IPO price. Profit-taking is the main driver: Micron was up as much as 244% YTD and SanDisk 640%, while TrendForce sees 3Q26 contract-price gains slowing to +13–18% for DRAM and +10–15% for NAND (vs +90–95% and +58–63% the prior two quarters).',
+    },
+    themeIds: ['memory', 'compute'],
+    tickers: ['MU', 'SNDK', 'SKHY', 'WDC'],
+    sources: [
+      { label: 'Yahoo Finance — Micron, Samsung, SK Hynix drag memory stocks into a bear market', url: 'https://finance.yahoo.com/markets/article/micron-samsung-sk-hynix-just-dragged-memory-stocks-into-a-bear-market-154549356.html' },
+      { label: '24/7 Wall St — traders take profits in memory stocks (7/15)', url: 'https://247wallst.com/investing/2026/07/15/sk-hynix-drops-5-sandisk-slides-6-western-digital-slips-4-as-traders-take-profits-in-memory-stocks/' },
+      { label: 'TrendForce — 3Q26 memory contract-price outlook (7/3)', url: 'https://www.trendforce.com/presscenter/news/20260703-13134.html' },
+      { label: 'stockanalysis.com — SNDK price history', url: 'https://stockanalysis.com/stocks/sndk/' },
+    ],
+  },
+  {
+    id: 'wood-buys-ai-dip',
+    date: '2026-07-16',
+    title: { zh: 'Cathie Wood 越跌越买:大跌中加仓 CoreWeave,ARK 三成仓位押在 5 只 AI 股', en: 'Cathie Wood buys the dip: adding CoreWeave in the sell-off, with 30% of ARK in 5 AI stocks' },
+    summary: {
+      zh: '当存储与 AI 算力股回调时,ARK 选择加仓:Wood 在 7 月中旬的抛售中继续买入正在下跌的 AI 云算力公司 CoreWeave。最新统计显示 ARK 约 30.4% 的仓位集中在 5 只 AI 股——特斯拉、SpaceX、Alphabet、AMD、亚马逊。在 8 位大佬的谱系里,Wood 依旧是"跌了就加"的最激进多头,与同周 Druckenmiller 系存储新仓的大幅回撤形成鲜明对照(其 Q1 转仓 SNDK/STX/MU,见 7/14 条目)。',
+      en: 'As memory and AI-compute names corrected, ARK leaned in: Wood kept buying CoreWeave through the mid-July sell-off. Roughly 30.4% of Ark Invest’s portfolio now sits in five AI stocks — Tesla, SpaceX, Alphabet, AMD and Amazon. Among the eight tracked investors Wood remains the most aggressive buy-the-dip bull, a sharp contrast with the drawdown in Druckenmiller’s new memory positions the same week (he rotated into SNDK/STX/MU in Q1 — see the 7/14 entry).',
+    },
+    themeIds: ['compute', 'applications'],
+    tickers: ['CRWV', 'TSLA', 'GOOGL', 'AMD', 'AMZN'],
+    sources: [
+      { label: 'The Motley Fool — Cathie Wood is doubling down on this AI stock during the sell-off (7/13)', url: 'https://www.fool.com/investing/2026/07/13/cathie-wood-is-doubling-down-on-this-ai-stock-duri/' },
+      { label: 'The Motley Fool — 30% of Cathie Wood’s portfolio in 5 AI stocks (7/16)', url: 'https://www.fool.com/investing/2026/07/16/30-of-cathie-woods-portfolio-is-invested-in-these/' },
+    ],
+  },
+  {
     id: 'berkshire-great-pivot',
     date: '2026-07-15',
     title: { zh: '伯克希尔“世纪换仓”:清仓亚马逊,Alphabet 加仓 225%', en: 'Berkshire’s great pivot: Amazon exited, Alphabet boosted 225%' },
