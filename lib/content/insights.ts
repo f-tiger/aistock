@@ -786,6 +786,63 @@ export const insights: Insight[] = [
       { label: 'The Motley Fool — Cathie Wood doubling down during the sell-off (2026-07-13)', url: 'https://www.fool.com/investing/2026/07/13/cathie-wood-is-doubling-down-on-this-ai-stock-duri/' },
     ],
   },
+  {
+    slug: 'sovereign-ai-stocks-2026',
+    date: '2026-07-21',
+    title: {
+      zh: '主权 AI:各国"自建国家队",普通投资者怎么找到受益标的?',
+      en: 'Sovereign AI: nations are building “national champions” — how do ordinary investors find the beneficiaries?',
+    },
+    description: {
+      zh: '英伟达 2026 财年"主权 AI"营收翻三倍至超 300 亿美元;阿布扎比 MGX 关账 490 亿美元基金,沙特 HUMAIN 背靠约 9250 亿美元主权基金、与英伟达签下最多 60 万块 GPU。当国家而非企业成为买家,资本开支下限被抬高——我们拆解这条"二阶"主线的受益链条、以及 13F 里传奇投资人是否也在下注。',
+      en: 'Nvidia’s “sovereign AI” revenue tripled to over $30B in FY2026; Abu Dhabi’s MGX closed a $49B fund and Saudi Arabia’s HUMAIN — backed by a ~$925B sovereign fund — signed for up to 600,000 Nvidia GPUs. When nations, not just companies, become buyers, the capex floor rises. We map this second-order theme’s beneficiary chain — and whether the legends’ 13Fs are betting on it too.',
+    },
+    keywords: ['主权 AI', '主权 AI 股票', 'sovereign AI stocks', 'Nvidia 主权 AI', 'HUMAIN 沙特 AI', 'MGX 基金', 'sovereign AI 2026'],
+    body: [
+      {
+        h: { zh: '什么是"主权 AI",为什么它突然重要', en: 'What “sovereign AI” is, and why it suddenly matters' },
+        p: {
+          zh: '"主权 AI"指一个国家用自己的基础设施、数据与人才,建设并掌控本国的 AI 算力与模型,而不是完全依赖别国的云。驱动力是双重的:一是把 AI 视作国家安全与经济主权的一部分,二是海湾国家用石油美元寻找"后石油时代"的增长引擎。它的市场含义不在于某个新赛道,而在于**买家变了**——当国家而非企业下单,采购规模与资本开支的下限被系统性抬高。英伟达 2026 财年"主权 AI"营收同比翻三倍、超过 300 亿美元,约占其全年营收的 13.9%,就是这个变化的第一个财务证据(数据截至英伟达 FY2026 财报)。',
+          en: 'Sovereign AI means a nation building and controlling its own AI compute, data, and talent on its own infrastructure, rather than depending entirely on foreign clouds. Two forces drive it: treating AI as part of national security and economic sovereignty, and Gulf states using petrodollars to find a post-oil growth engine. The market implication isn’t a shiny new sector — it’s that the buyer changed: when nations, not companies, place the orders, procurement scale and the capex floor rise systematically. Nvidia’s sovereign-AI revenue tripling year over year to over $30B in FY2026 — about 13.9% of annual revenue — is the first financial evidence of that shift (as of Nvidia’s FY2026 results).',
+        },
+      },
+      {
+        h: { zh: '钱有多大:海湾三大主权玩家', en: 'How big the money is: the Gulf’s three sovereign players' },
+        p: {
+          zh: '规模是真实的,且已落到合同上:阿布扎比 MGX 于 2026 年 7 月 1 日关账 **490 亿美元** AI 基金,横跨从模型实验室到数据中心的全栈;沙特 **HUMAIN** 背靠约 **9250 亿美元** 的公共投资基金(PIF),2025 年 11 月与英伟达达成协议、三年内最多采购 **60 万块 GPU**,并与英伟达/AMD/AWS/高通签下约 **230 亿美元** 合作(含与 AMD 的 100 亿美元合资、500 兆瓦算力)。更宏观地看,主权基金 2025 年向 AI 与数字基建投入约 **660 亿美元**,2025–26 累计承诺跨过 **1200 亿美元**。这些数字的共同点:它们是"承诺"与"合同",不是市场情绪,回撤时也不会随股价一起消失。',
+          en: 'The scale is real and already contractual: Abu Dhabi’s MGX closed a **$49B** AI fund on July 1, 2026, spanning the full stack from model labs to data centers; Saudi Arabia’s **HUMAIN**, backed by the ~**$925B** Public Investment Fund (PIF), agreed in November 2025 to buy up to **600,000** Nvidia GPUs over three years and signed ~**$23B** of deals with Nvidia/AMD/AWS/Qualcomm (including a $10B AMD joint venture for 500MW of compute). More broadly, sovereign funds deployed ~**$66B** into AI and digital infrastructure in 2025, with cumulative commitments crossing **$120B** across 2025–26. What these figures share: they are commitments and contracts, not sentiment — they don’t vanish with the share price on a drawdown.',
+        },
+      },
+      {
+        h: { zh: '受益链条:谁真正收到这些订单', en: 'The beneficiary chain: who actually receives these orders' },
+        p: {
+          zh: '主权 AI 的公开市场纯玩家很少,因为核心执行方(G42、HUMAIN)未上市。所以受益要顺着"卖铲人"链条找:① **算力芯片**——英伟达是最大受益方,其 GPU 覆盖全球被追踪主权 AI 基建项目的约 **52%**,AMD 通过沙特合资分一杯羹;② **电力与冷却**——主权数据中心把电力需求抬高,能源与电气设备是二阶受益;③ **基建与设备**——晶圆代工(台积电)、网络设备。识别的关键不是"谁喊了主权 AI",而是"谁的财报里真出现了主权订单"——英伟达是目前唯一把它单列进营收结构的公司。',
+          en: 'Listed pure-plays are scarce because the core operators (G42, HUMAIN) are private. So follow the picks-and-shovels chain: ① **compute silicon** — Nvidia is the biggest beneficiary, its GPUs powering ~**52%** of tracked sovereign-AI infrastructure projects globally, with AMD taking a slice via the Saudi JV; ② **power and cooling** — sovereign data centers lift electricity demand, making energy and electrical equipment second-order beneficiaries; ③ **infrastructure and equipment** — foundry (TSMC) and networking gear. The key to identification isn’t “who name-dropped sovereign AI” but “whose financials actually show sovereign orders” — Nvidia is so far the only company breaking it out as a revenue line.',
+        },
+      },
+      {
+        h: { zh: '风险:集中、地缘与"讲故事"折价', en: 'Risks: concentration, geopolitics, and the storytelling discount' },
+        p: {
+          zh: '这条主线有三重风险要诚实标注:一是**集中风险**——如果 52% 的项目都靠英伟达,那"主权 AI"对二级市场的敞口高度重叠于一只票,分散有限;二是**地缘风险**——GPU 出口许可是政治变量,沙特/阿联酋的主权 AI 计划仍高度依赖美国技术与出口批准,政策一变节奏就变;三是**"故事"折价**——"主权 AI"是极易被滥用的营销词,很多公司会往自己身上贴,但真正收到国家订单的凤毛麟角。用 13F 视角做交叉验证:本站追踪的传奇投资人里,对"主权 AI"最直接的下注仍是通过英伟达等已上市、现金流清晰的名字间接实现,而非小盘"概念股"。',
+          en: 'Three risks deserve honest labeling. First, **concentration**: if ~52% of projects run on Nvidia, then public-market exposure to “sovereign AI” overlaps heavily with a single stock — diversification is limited. Second, **geopolitics**: GPU export licenses are a political variable; Saudi/UAE sovereign-AI plans still lean heavily on US technology and export approvals, and a policy shift changes the cadence. Third, the **storytelling discount**: “sovereign AI” is an easily abused marketing phrase — many firms will pin it on themselves, but few actually receive state orders. Cross-check with the 13F lens: among the legends tracked here, the most direct sovereign-AI bet still runs through listed, cash-flow-clear names like Nvidia rather than small-cap “concept stocks.”',
+        },
+      },
+      {
+        h: { zh: '用共识分把"主题热度"翻译成"验证过的仓位"', en: 'Use consensus to translate theme heat into tested positions' },
+        p: {
+          zh: '主权 AI 是典型的"二阶主线":逻辑漂亮、数字很大,但从叙事到受益标的之间隔着好几层。对普通投资者,合理的姿势是把它当"资本开支下限的证据"——它告诉你 AI 基建的需求有主权资金托底,而不是给你一份可以照抄的买入清单。想知道这条链条上的核心名字(英伟达、AMD、台积电等)在 8 位传奇投资人里的真实共识度,用本站的罗盘共识分(0–100,方法论公开)对照一下,再决定权重。免责声明:本文仅供教育与信息参考,不构成投资建议;所有数字均标注截至日期并附来源,市场有风险,决策需独立判断。',
+          en: 'Sovereign AI is a classic second-order theme: the logic is elegant and the numbers are huge, but several layers separate the narrative from the beneficiaries. For most investors, the sensible stance is to treat it as evidence of a capex floor — it tells you AI-infrastructure demand has sovereign money underneath it, not a buy list to copy. To see the real consensus on this chain’s core names (Nvidia, AMD, TSMC and others) across the eight tracked legends, check them against our Compass Consensus Score (0–100, methodology public) before sizing. Disclaimer: educational and informational only, not investment advice; every figure carries an as-of date and a source. Markets are risky; judge independently.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'AOL / The Motley Fool — Nvidia earnings call: sovereign AI’s 300%+ annual growth', url: 'https://www.aol.com/finance/nvidia-earnings-call-nvidias-ai-112000775.html' },
+      { label: 'Forbes — Abu Dhabi’s $49B AI fund and its sovereign rivals (MGX, HUMAIN, GIC)', url: 'https://www.forbes.com/sites/guneyyildiz/2026/07/03/abu-dhabis-49-billion-ai-fund-and-its-sovereign-rivals/' },
+      { label: 'Silicon Canals — Saudi and UAE sovereign AI plans still rely on Nvidia and US tech', url: 'https://siliconcanals.com/sc-n-saudi-and-uae-sovereign-ai-plans-still-rely-on-nvidia-and-us-technology/' },
+      { label: 'CNAS — Sovereign AI Index (Nvidia powers ~52% of tracked projects)', url: 'https://interactives.cnas.org/reports/sovereign-ai-index/' },
+      { label: 'Fortune — The Gulf states are betting big on AI: who’s investing where', url: 'https://fortune.com/2026/06/09/gulf-states-betting-big-on-ai-investment/' },
+    ],
+  },
 ];
 
 export function getInsight(slug: string): Insight | undefined {
