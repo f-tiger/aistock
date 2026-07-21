@@ -728,6 +728,64 @@ export const insights: Insight[] = [
       { label: 'PYMNTS — Circle chases agentic growth to scale stablecoin infrastructure', url: 'https://www.pymnts.com/earnings/2026/circle-chases-agentic-growth-scale-stablecoin-infrastructure/' },
     ],
   },
+  {
+    slug: 'ai-memory-stocks-correction-2026',
+    date: '2026-07-20',
+    title: {
+      zh: '存储股一周入熊:AI 内存行情见顶了,还是黄金坑?',
+      en: 'Memory stocks fell into a bear market in a week: is the AI memory trade over, or is this the dip?',
+    },
+    description: {
+      zh: '7 月 13–17 一周,美光/三星/海力士距高点均超 -20%,SanDisk 自 6 月峰值回撤约 -35%,刚上市的 SK 海力士 ADR 距发行价仅 3.4%。用数据拆解这轮大跌:导火索是什么、基本面(合约价)变了没有、上季度刚集体转进存储的聪明钱现在处境如何、以及接下来该盯哪三个信号。',
+      en: 'In the week of July 13–17, Micron, Samsung and SK Hynix all fell 20%+ below recent highs, SanDisk dropped ~35% from its June peak, and the freshly listed SK Hynix ADR sat just 3.4% above its IPO price. We break down the sell-off with data: what triggered it, whether fundamentals (contract prices) actually changed, where the smart money that piled into memory last quarter now stands, and the three signals to watch next.',
+    },
+    keywords: ['存储芯片股 大跌', '美光 股票', 'SanDisk 股票 下跌', 'SK海力士 ADR', 'memory stocks bear market', 'Micron stock drop 2026', 'HBM cycle'],
+    body: [
+      {
+        h: { zh: '一周之内,从最热交易到熊市', en: 'From hottest trade to bear market in one week' },
+        p: {
+          zh: '7 月 13 日周一,SanDisk 单日 -12.6% 拉开序幕;7 月 15 日海力士 ADR -5%、SanDisk -6%、西部数据 -4%;7 月 16 日 SanDisk 再 -8%。到 7 月 17 日收盘:SanDisk $1,354.82(自 6 月 $2,000+ 峰值约 -35%)、美光 $848.95,美光/三星/海力士与 Roundhill 存储 ETF 距近期收盘高点均超 -20%——按通行定义,存储板块正式进入熊市。刚在 7 月 10 日以 $149 上市、首日收 $168 的 SK 海力士 ADR(SKHY),也从 7 月 14 日 +19% 的冲高回落到 $154.03(数据截至 2026-07-17 收盘)。',
+          en: 'Monday July 13 set the tone with SanDisk down 12.6% in a day; on July 15 the SK Hynix ADR fell 5%, SanDisk 6% and Western Digital 4%; on July 16 SanDisk dropped another 8%. By the July 17 close: SanDisk at $1,354.82 (~-35% from its $2,000+ June peak), Micron at $848.95, and Micron, Samsung, SK Hynix and the Roundhill Memory ETF all more than 20% below recent closing highs — a bear market by the common definition. SKHY, which IPO’d at $149 on July 10 and closed its first day at $168, faded from a +19% spike on July 14 to $154.03 (data as of the 2026-07-17 close).',
+        },
+      },
+      {
+        h: { zh: '导火索:不是坏消息,是"没有更好的消息"', en: 'The trigger: not bad news — the absence of better news' },
+        p: {
+          zh: '这轮下跌没有单一的公司级利空。更合理的解释是三层放大器叠加:第一,获利盘太厚——大跌前美光年内一度 +244%、SanDisk +640%,任何风吹草动都会触发锁盈;第二,事件催化剂用尽——海力士 ADR 上市、两倍杠杆 ETF 挂牌(7/14 当天 SKHY 一度 +19%)这类"注意力事件"落地后,边际买家减少;第三,增速预期降档——TrendForce 7 月 3 日报告预计 3Q26 DRAM 合约价环比 +13–18%、NAND +10–15%,仍在涨,但相比 1Q 的 +90–95% 和 2Q 的 +58–63% 明显减速,官方归因是"消费端客户的价格承受力见顶"。',
+          en: 'There was no single company-level negative. A better read is three amplifiers stacking: first, heavy embedded gains — Micron was up as much as 244% YTD and SanDisk 640% before the fall, so any wobble invites profit-taking; second, exhausted catalysts — attention events like the SK Hynix ADR listing and the launch of 2x leveraged ETFs (SKHY briefly +19% that day) came and went, thinning marginal buyers; third, a downshift in growth expectations — TrendForce’s July 3 report sees 3Q26 contract prices up 13–18% QoQ for DRAM and 10–15% for NAND: still rising, but a clear deceleration from +90–95% in Q1 and +58–63% in Q2, which TrendForce attributes to consumer customers hitting their price-tolerance limit.',
+        },
+      },
+      {
+        h: { zh: '聪明钱的尴尬位置:上季度刚集体转进存储', en: 'Smart money’s awkward seat: it rotated into memory just last quarter' },
+        p: {
+          zh: '这轮大跌最有信息量的地方,是它砸在了机构刚建好的仓上。Q1 2026 13F 显示,Druckenmiller 清仓 Alphabet、转进 SanDisk/希捷/美光;Goldman 对冲基金 VIP 榜 5 月末调仓后,基金半导体权重升至历史新高约 10%,新进人气股由 SanDisk、Lam Research 领衔。拥挤交易的数学是双向的:上行时动量互相抬轿,回撤时也互相踩踏。另一面,也有人把回调当入场:Cathie Wood 在 7 月中旬的抛售中继续加仓 CoreWeave。而估值确实在快速消化——Benzinga 统计,大跌后美光与 SanDisk 已跻身纳指 100 前瞻市盈率最低的一批股票。',
+          en: 'The most informative thing about this sell-off is where it landed: on positions institutions had only just built. Q1 2026 13Fs show Druckenmiller exiting Alphabet for SanDisk/Seagate/Micron; after Goldman’s Hedge Fund VIP list rebalanced in late May, hedge-fund semis weight hit a record ~10%, with SanDisk and Lam Research leading the new favorites. Crowded-trade math cuts both ways: momentum lifts together on the way up and tramples together on the way down. On the other side, some treated the correction as an entry: Cathie Wood kept adding CoreWeave through the mid-July sell-off. And valuations are compressing fast — per Benzinga, Micron and SanDisk now rank among the cheapest Nasdaq-100 stocks on forward P/E.',
+        },
+      },
+      {
+        h: { zh: '两种剧本,三个信号', en: 'Two scripts, three signals' },
+        p: {
+          zh: '剧本 A(周期见顶):合约价增速三连降是顶部结构的第一块多米诺,后面跟着 4Q 转负与盈利下修——若如此,现在的"便宜"是价值陷阱。剧本 B(健康回调):AI 服务器对 HBM/企业级 SSD 的需求未变,合约价只是从"暴涨"回到"上涨",供给纪律仍在——若如此,这是 2023 年以来最大的一次上车机会。分辨两者,不用猜,盯三个可证伪的信号:① 8 月起的月度合约价数据是否延续正增长;② 9 月下旬美光财报是否下修 HBM 指引(这是最硬的一票);③ SKHY 能否守住 $149 发行价——破发意味着一级市场定价也被二级市场否决。',
+          en: 'Script A (cycle top): three straight quarters of decelerating contract-price growth is the first domino of a topping structure, followed by negative QoQ in Q4 and earnings cuts — in which case today’s “cheap” is a value trap. Script B (healthy reset): AI-server demand for HBM and enterprise SSDs is intact, contract prices merely downshifted from surging to rising, and supply discipline holds — in which case this is the best entry since 2023. You don’t have to guess which script is playing: watch three falsifiable signals — ① whether monthly contract-price data from August stays positive; ② whether Micron’s late-September earnings cut HBM guidance (the hardest vote); ③ whether SKHY holds its $149 IPO price — a break would mean the secondary market has overruled the primary-market pricing too.',
+        },
+      },
+      {
+        h: { zh: '用共识分而不是情绪做决定', en: 'Decide with consensus, not emotion' },
+        p: {
+          zh: '大跌周的信息噪音最大,这正是回到慢变量的时候:13F 是季度数据,它不会告诉你明天的价格,但能告诉你哪些票是大佬真金白银的共识、哪些只是散户情绪。本站的罗盘共识分(0–100,方法论公开)把 8 位传奇投资人的持仓动作量化成每只 AI 股的一个分数——去共识榜看看存储三杰(MU/SNDK/STX)在大跌后处于什么位置,再决定你的下一步。免责声明:本文仅供教育与信息参考,不构成投资建议;所有数字均标注截至日期并附来源,市场有风险,决策需独立判断。',
+          en: 'Sell-off weeks have the worst signal-to-noise — exactly when slow variables help. 13Fs are quarterly: they won’t tell you tomorrow’s price, but they do tell you which names carry real-money consensus from legendary investors and which run on retail emotion. Our Compass Consensus Score (0–100, methodology public) turns the eight tracked investors’ position changes into a single score per AI stock — check where the memory trio (MU/SNDK/STX) sits on the consensus board after the drop before you act. Disclaimer: this article is educational and informational only, not investment advice; every figure carries an as-of date and a source. Markets are risky; judge independently.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'Yahoo Finance — Micron, Samsung, SK Hynix drag memory stocks into a bear market', url: 'https://finance.yahoo.com/markets/article/micron-samsung-sk-hynix-just-dragged-memory-stocks-into-a-bear-market-154549356.html' },
+      { label: '24/7 Wall St — traders take profits in memory stocks (2026-07-15)', url: 'https://247wallst.com/investing/2026/07/15/sk-hynix-drops-5-sandisk-slides-6-western-digital-slips-4-as-traders-take-profits-in-memory-stocks/' },
+      { label: 'TrendForce — 3Q26 memory contract-price outlook (2026-07-03)', url: 'https://www.trendforce.com/presscenter/news/20260703-13134.html' },
+      { label: 'Benzinga — Micron, SanDisk now among cheapest Nasdaq-100 stocks on forward P/E', url: 'https://www.benzinga.com/markets/tech/26/07/60534664/micron-sandisk-cheapest-nasdaq-100-stocks-forward-pe' },
+      { label: '24/7 Wall St — SK Hynix ADR soars 19% as leveraged ETFs launch (2026-07-14)', url: 'https://247wallst.com/investing/2026/07/14/sk-hynix-adr-soars-19-as-leveraged-etfs-launch-lifting-micron-sandisk-western-digital/' },
+      { label: 'The Motley Fool — Cathie Wood doubling down during the sell-off (2026-07-13)', url: 'https://www.fool.com/investing/2026/07/13/cathie-wood-is-doubling-down-on-this-ai-stock-duri/' },
+    ],
+  },
 ];
 
 export function getInsight(slug: string): Insight | undefined {
