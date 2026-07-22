@@ -843,6 +843,65 @@ export const insights: Insight[] = [
       { label: 'Fortune — The Gulf states are betting big on AI: who’s investing where', url: 'https://fortune.com/2026/06/09/gulf-states-betting-big-on-ai-investment/' },
     ],
   },
+  {
+    slug: 'ai-advertising-stocks-2026',
+    date: '2026-07-22',
+    title: {
+      zh: 'AI 广告股 2026:AppLovin 猛涨、Trade Desk 掉队,谁在把 AI 变成广告现金流?',
+      en: 'AI advertising stocks in 2026: AppLovin surges, Trade Desk stumbles — who turns AI into ad cash flow?',
+    },
+    description: {
+      zh: 'AppLovin 一季度营收 +59%、AI 广告引擎单日拉涨 27%;Meta 广告收入 +33% 至 550 亿美元、8 百万广告主用上 AI 创意工具;Alphabet 广告 773 亿美元。同一条"AI 变现广告"主线,却分化成猛涨与掉队两组。用 13F 共识视角拆解:哪些是真现金流,哪些只是拥挤交易。',
+      en: 'AppLovin’s revenue rose 59% and its AI ad engine drove a 27% single-day jump; Meta’s ad revenue climbed 33% to $55B with 8M advertisers using AI creative tools; Alphabet’s ads hit $77.3B. One “AI-monetizes-advertising” theme, yet it split into surgers and laggards. We use the 13F consensus lens to separate real cash flow from crowded trades.',
+    },
+    keywords: ['AI 广告 股票', 'AppLovin 股票', 'AI 广告股', 'Meta AI 广告', 'The Trade Desk', 'AI advertising stocks', 'AppLovin APP stock 2026'],
+    body: [
+      {
+        h: { zh: '为什么"AI 广告"是 AI 里最快见到现金的一条线', en: 'Why AI advertising is the fastest AI line to real cash' },
+        p: {
+          zh: '在 AI 的所有落地场景里,广告是最快把"模型能力"变成"财报收入"的一条:更好的定向、更好的创意生成、更高的转化,直接对应更高的广告单价和更多的广告主预算。2026 年一季度的数字已经把这句话坐实——Meta 广告收入 550.2 亿美元、同比 +33%(广告展示量 +19%、单价 +12%),超 800 万广告主已在用它至少一项 AI 广告创意工具(半年前是 400 万);Alphabet 广告收入 773 亿美元(去年同期 669 亿),搜索与 YouTube 拉动整体营收 +22% 至 1099 亿美元。当一项技术能直接抬高广告单价,它就不再是"故事",而是现金流(数据截至各公司 2026Q1 财报)。',
+          en: 'Of all AI use cases, advertising is the fastest at turning model capability into reported revenue: better targeting, better creative generation, higher conversion map directly to higher ad prices and bigger advertiser budgets. Q1 2026 numbers make the point concrete — Meta’s ad revenue was $55.02B, up 33% YoY (impressions +19%, price per ad +12%), with over 8 million advertisers using at least one of its AI ad-creative tools (up from 4 million half a year earlier); Alphabet’s ad revenue hit $77.3B (from $66.9B a year ago), with Search and YouTube lifting total revenue 22% to $109.9B. When a technology lifts ad prices directly, it stops being a story and becomes cash flow (as of each company’s Q1 2026 results).',
+        },
+      },
+      {
+        h: { zh: 'AppLovin:这轮 AI 广告最锋利的纯玩家', en: 'AppLovin: the sharpest pure-play of this AI-ad cycle' },
+        p: {
+          zh: '如果说 Meta/Alphabet 是"广告巨头顺便吃到 AI 红利",AppLovin(APP)则是这轮最锋利的纯玩家:2026 年一季度营收 18.4 亿美元、同比 +59%,超预期并触发单日 +27% 暴涨;其 Axon 自助广告平台 2025 年 10 月起以邀请制试点,2026 年 6 月向全球广告主全面开放。Jefferies 对 30 家电商广告主的调研显示,AppLovin 是 2026 年广告网络里份额增长最大的一家,占广告主总支出的比例升 169 个基点至 11%——它抢的正是"传统平台"的钱。这是"AI 让小平台也能做精准广告"的活样本。',
+          en: 'If Meta/Alphabet are ad giants incidentally harvesting AI upside, AppLovin (APP) is this cycle’s sharpest pure-play: Q1 2026 revenue of $1.84B, up 59% YoY, beating estimates and triggering a 27% single-day surge; its self-serve Axon Ads platform ran invite-only from October 2025 and opened to all global advertisers in June 2026. A Jefferies survey of 30 e-commerce advertisers found AppLovin gained the most share of any ad network in 2026, rising 169 basis points to 11% of total ad spend — share taken straight from incumbents. It’s a live sample of “AI lets a smaller platform do precision advertising too.”',
+        },
+      },
+      {
+        h: { zh: '掉队的一边:同一主线为什么分化', en: 'The laggard side: why one theme splits' },
+        p: {
+          zh: '但"AI 广告"不是雨露均沾。The Trade Desk(TTD)是这批广告软件公司里最弱的一个——营收增速放缓、利润率走弱,估值被打到很低。Meta 与 Alphabet 虽然自身收入猛增,却在"份额"上被 AppLovin 等抢走一部分(Jefferies 把这归因于广告主分散下注,而非预算削减)。这条主线的分化告诉你一件事:AI 是放大器,不是保证金——它放大执行力强者的优势,也放大掉队者的劣势。同一个"AI 广告"标签下,买对具体公司比买对主题重要得多。',
+          en: 'But AI advertising is not evenly distributed. The Trade Desk (TTD) is the weakest of the ad-software names — slowing revenue growth and softening margins, with the valuation beaten down to a low multiple. Meta and Alphabet, despite booming own revenue, ceded some share to AppLovin and others (Jefferies attributes this to advertiser diversification rather than budget cuts). The split delivers one lesson: AI is an amplifier, not a guarantee — it magnifies the edge of strong operators and the disadvantage of laggards. Under the same “AI advertising” label, picking the right company matters far more than picking the theme.',
+        },
+      },
+      {
+        h: { zh: '13F 视角:AppLovin 是共识,还是拥挤交易?', en: 'The 13F lens: is AppLovin consensus or a crowded trade?' },
+        p: {
+          zh: '这正是"共识分"该出场的地方。AppLovin 一季度 13F 呈现的是"高度分歧"而非"一致看多":最近一季 695 家机构加仓、998 家减仓;Coatue 减持约 41%,而 Fidelity(FMR)加仓约 19.9%、Capital International 加仓约 187.8%——同一只票,顶级机构在对赌。这种"分歧型"结构与 Meta/Alphabet 那种"稳态共识"完全不同:后者是八位大佬里反复出现的名字,前者更像高 Beta 的主题弹性仓。对普通投资者,分清"共识重仓"与"分歧博弈",比追单日涨幅重要得多。',
+          en: 'This is exactly where a consensus score earns its keep. AppLovin’s Q1 2026 13Fs show high disagreement, not unanimity: in the latest quarter 695 institutions added while 998 trimmed; Coatue cut ~41%, while Fidelity (FMR) added ~19.9% and Capital International added ~187.8% — top institutions taking opposite sides of the same stock. That “dispersion” structure is nothing like the steady consensus around Meta/Alphabet, which recur as names across the tracked legends; AppLovin looks more like a high-beta thematic position. For most investors, distinguishing “consensus core” from “dispersed bet” matters far more than chasing a single-day pop.',
+        },
+      },
+      {
+        h: { zh: '把主题热度翻译成仓位:先看共识,再看弹性', en: 'Translate theme heat into positions: consensus first, beta second' },
+        p: {
+          zh: 'AI 广告是 2026 年少数"已被财报证明"的 AI 变现主线,但它内部的分化提醒你:主题对了,标的不一定对。合理的做法是分两层看——底仓放"稳态共识"的现金流巨头(广告收入可验证、被多位大佬持有),弹性仓再考虑 AppLovin 这类高增长但分歧大的纯玩家,并对其单日暴涨保持敬畏。想知道这几个名字(Meta、Alphabet、AppLovin、亚马逊广告)在 8 位传奇投资人里的真实共识度,用本站的罗盘共识分(0–100,方法论公开)对照一下再定权重。免责声明:本文仅供教育与信息参考,不构成投资建议;所有数字均标注截至日期并附来源,市场有风险,决策需独立判断。',
+          en: 'AI advertising is one of the few AI-monetization lines already proven by earnings in 2026 — but its internal split is the warning: right theme, not necessarily right stock. A sensible approach is two-tiered — a core in steady-consensus cash-flow giants (verifiable ad revenue, held by multiple legends), and only then a thematic-beta sleeve for high-growth-but-contested pure-plays like AppLovin, with due respect for its single-day swings. To see the real consensus on these names (Meta, Alphabet, AppLovin, Amazon ads) across the eight tracked legends, check them against our Compass Consensus Score (0–100, methodology public) before sizing. Disclaimer: educational and informational only, not investment advice; every figure carries an as-of date and a source. Markets are risky; judge independently.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'PPC Land — Meta Q1 2026: $56.3B revenue as AI tools double advertiser adoption', url: 'https://ppc.land/meta-q1-2026-56-3b-revenue-as-ai-tools-double-advertiser-adoption/' },
+      { label: 'Storyboard18 — Alphabet ads hit $77B, Meta surges 33%, Amazon crosses $70B run rate', url: 'https://www.storyboard18.com/amp/how-it-works/ad-engines-power-big-tech-alphabet-ads-hit-77-billion-meta-surges-33-amazon-crosses-70-billion-run-rate-96705.htm' },
+      { label: 'TIKR — AppLovin’s AI advertising engine delivered 59% revenue growth', url: 'https://www.tikr.com/blog/applovins-ai-advertising-engine-just-delivered-59-revenue-growth-heres-the-catch' },
+      { label: 'IndexBox — Advertising software Q1 2026: AppLovin, PubMatic, The Trade Desk', url: 'https://www.indexbox.io/blog/applovin-and-rivals-advertising-software-q1-2026-review/' },
+      { label: 'Digiday — AppLovin’s AI-fueled surge and The Trade Desk’s stumble', url: 'https://digiday.com/marketing/ad-tech-briefing-applovins-ai-fueled-surge-and-the-trade-desks-stumble-show-where-investors-are-placing-their-bets/' },
+      { label: 'HedgeFollow — APP 13F hedge fund & institutional ownership', url: 'https://hedgefollow.com/stocks/APP' },
+      { label: 'eMarketer via The Next Web — Meta set to overtake Google in digital ad revenue in 2026', url: 'https://thenextweb.com/news/meta-surpass-google-digital-ad-revenue-emarketer-2026' },
+    ],
+  },
 ];
 
 export function getInsight(slug: string): Insight | undefined {
