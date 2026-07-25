@@ -902,6 +902,64 @@ export const insights: Insight[] = [
       { label: 'eMarketer via The Next Web — Meta set to overtake Google in digital ad revenue in 2026', url: 'https://thenextweb.com/news/meta-surpass-google-digital-ad-revenue-emarketer-2026' },
     ],
   },
+  {
+    slug: 'edge-ai-stocks-2026',
+    date: '2026-07-23',
+    title: {
+      zh: '边缘 AI 股 2026:当"大脑离开数据中心",谁在收这笔"通行税"?',
+      en: 'Edge AI stocks in 2026: as the brain leaves the data center, who collects the toll?',
+    },
+    description: {
+      zh: '边缘 AI(把推理放到设备本地)2026 年市场约 300 亿美元、奔向 2033 年千亿级;on-device 推理约 250–350 亿美元。苹果智能、英伟达 Jetson、高通 Dragonwing 背后,Arm 架构像"通行税"无处不在。用 13F 共识视角拆解这条从云走向端的主线:谁是卖铲人,谁只是蹭概念。',
+      en: 'Edge AI (running inference on the device itself) is a ~$30B market in 2026 heading toward $100B+ by 2033; on-device inference alone is ~$25–35B. Behind Apple Intelligence, Nvidia’s Jetson and Qualcomm’s Dragonwing, Arm’s architecture sits like a toll everywhere. We use the 13F consensus lens to separate the real picks-and-shovels from the concept-chasers as AI moves from cloud to edge.',
+    },
+    keywords: ['边缘 AI 股票', '端侧 AI', 'on-device AI', 'edge AI stocks', 'Qualcomm 边缘 AI', 'Arm 股票', 'Nvidia Jetson', 'edge AI 2026'],
+    body: [
+      {
+        h: { zh: '边缘 AI 是什么,为什么 2026 突然被重估', en: 'What edge AI is, and why it’s being repriced in 2026' },
+        p: {
+          zh: '过去两年 AI 的叙事几乎全是"云"——大模型跑在仓库级数据中心里。2026 年的新变量是"端":把推理放到手机、汽车、机器人、工业设备本地跑(on-device inference),换来更低延迟、更好隐私、更少的云依赖。市场规模已不是小数目:多家研究机构给出的 2026 年边缘 AI 市场约 300 亿美元(Grand View 约 300 亿→2033 年 1187 亿;另有口径 375 亿、CAGR 21–29% 不等),其中"设备本地推理"一项约 250–350 亿美元。约 70% 的新 IoT 设备已搭载来自英特尔或高通的 AI 芯片。当"大脑离开数据中心",一条与云 AI 并行的新供需曲线被打开(数据截至各机构 2026 年报告)。',
+          en: 'For two years the AI story was almost entirely “cloud” — big models running in warehouse-scale data centers. The new variable in 2026 is the “edge”: running inference locally on phones, cars, robots and industrial gear (on-device inference) for lower latency, better privacy and less cloud dependence. The size is no longer trivial: research firms put the 2026 edge-AI market around $30B (Grand View: ~$30B → $118.7B by 2033; other reads cite $37.5B, with CAGRs of 21–29%), of which on-device inference alone is ~$25–35B. About 70% of new IoT devices already ship with AI chips from Intel or Qualcomm. As the brain leaves the data center, a new supply-demand curve opens alongside cloud AI (as of 2026 research reports).',
+        },
+      },
+      {
+        h: { zh: 'Arm:这条主线上最像"通行税"的名字', en: 'Arm: the name that most resembles a toll on this theme' },
+        p: {
+          zh: '边缘 AI 最有意思的结构是:它不像云 AI 那样赢家高度集中于英伟达一家,而是分散在无数设备里——但正因为分散,反而催生了一个"通吃层":Arm。Arm 不造芯片,它定义所有人都要遵循的蓝图:英伟达的 Jetson、高通的 Dragonwing、NXP 的 S32、Ambarella 的 CVflow,核心里几乎都坐着 Arm 的架构;它的 Neoverse 平台还在数据中心 CPU 里扩张。换句话说,不管终端这场仗谁赢,Arm 都能按授权收一笔"通行税"。这是边缘 AI 里最接近"卖铲人中的卖铲人"的位置。',
+          en: 'The most interesting structure in edge AI is that, unlike cloud AI where the winner concentrates in Nvidia, it fragments across countless devices — and precisely because it fragments, it creates a “take-everything layer”: Arm. Arm doesn’t make chips; it defines the blueprint everyone follows: Nvidia’s Jetson, Qualcomm’s Dragonwing, NXP’s S32, Ambarella’s CVflow — nearly all have an Arm core inside; its Neoverse platform is also expanding in data-center CPUs. In other words, whoever wins the device war, Arm collects a licensing toll. It’s the closest thing to a picks-and-shovels-of-the-picks-and-shovels position in edge AI.',
+        },
+      },
+      {
+        h: { zh: '高通与英伟达:一个赌转型,一个赌 TAM 扩张', en: 'Qualcomm and Nvidia: one bets on the pivot, one on TAM expansion' },
+        p: {
+          zh: '两家旗舰各有一条边缘 AI 逻辑,但风险不同。高通(QCOM)FY2025 营收约 440 亿美元,FY2026 市场预期约 426 亿(受内存短缺与苹果自研基带过渡拖累);它把边缘 AI 当"去手机化"的转型抓手——把 FY2029 非手机业务目标上调至 400 亿美元(约为原目标 2 倍),并进军数据中心。风险是"为转型期权提前付费":故事对,兑现需要时间。英伟达则相反——它已是云 AI 赢家,Jetson 让边缘 AI 成为其 TAM 的"增量扩张"而非"生存转型";Aptiv 因深化与英伟达的边缘 AI 合作单日 +25.7%,是这条链条外溢的样本。同一主线,高通是"困境反转弹性",英伟达是"赢家继续扩边界"。',
+          en: 'Each flagship has an edge-AI logic, but the risk differs. Qualcomm (QCOM) had ~$44B revenue in FY2025, with FY2026 consensus around $42.6B (dragged by memory shortages and Apple’s in-house modem transition); it treats edge AI as the lever for its “beyond-handsets” pivot — raising its FY2029 non-handset target to $40B (~2x the prior target) and pushing into data centers. The risk is “paying early for the optionality of a pivot”: right story, but realization takes time. Nvidia is the opposite — already the cloud-AI winner, its Jetson makes edge AI an incremental TAM expansion rather than a survival pivot; Aptiv jumped 25.7% in a day on a deepened Nvidia edge-AI partnership, a sample of the chain’s spillover. Same theme: Qualcomm is “turnaround beta,” Nvidia is “the winner extending its border.”',
+        },
+      },
+      {
+        h: { zh: '风险:早期、分散、易被"概念化"', en: 'Risks: early, fragmented, and easily “conceptualized”' },
+        p: {
+          zh: '边缘 AI 的风险画像和主权 AI 有几分像,但更碎。一是**早期与波动**:它是把 AI 部署进物理世界,充满"考验信念的时刻",收入兑现比云 AI 慢;二是**分散带来的证伪难度**:没有一个像"英伟达数据中心营收"那样清晰的单一验证指标,概念容易被贴到大量二三线公司身上;三是**周期错配**:高通这类正受内存短缺、客户自研拖累,边缘 AI 的长期故事无法对冲短期业绩逆风。对普通投资者,越是"分散又性感"的主题,越要用共识做筛子——避免把"边缘 AI 概念股"当成"边缘 AI 现金流"。',
+          en: 'Edge AI’s risk profile rhymes with sovereign AI but is more fragmented. First, early and volatile: it’s AI deployed into the physical world, full of conviction-testing moments, with revenue realizing slower than cloud AI. Second, fragmentation makes falsification hard: there’s no single clean metric like “Nvidia data-center revenue,” so the concept gets pinned on many second- and third-tier names. Third, cycle mismatch: names like Qualcomm face memory shortages and customer in-sourcing today, and a long-term edge-AI story can’t hedge near-term earnings headwinds. For most investors, the more a theme is “fragmented yet sexy,” the more you should use consensus as a sieve — don’t mistake “edge-AI concept stocks” for “edge-AI cash flow.”',
+        },
+      },
+      {
+        h: { zh: '把"端侧故事"翻译成仓位:先找通行税,再看弹性', en: 'Translate the on-device story into positions: find the toll first, then the beta' },
+        p: {
+          zh: '边缘 AI 大概率是接下来几年真实的增量赛道,但它的分散特性决定了"选层"比"选票"更重要:最稳的一层是"通行税"型基础设施(架构/IP、across-the-board 受益者),其次才是押具体赢家的弹性仓,而对纯"概念股"保持敬畏。想知道这条链条的核心名字(Arm、英伟达、高通、苹果)在 8 位传奇投资人里的真实共识度,用本站的罗盘共识分(0–100,方法论公开)对照一下,再决定各层权重。免责声明:本文仅供教育与信息参考,不构成投资建议;所有数字均标注截至日期并附来源,市场有风险,决策需独立判断。',
+          en: 'Edge AI is likely a real incremental arena for the next few years, but its fragmentation means choosing the layer matters more than picking the stock: the steadiest layer is toll-type infrastructure (architecture/IP, across-the-board beneficiaries), then a thematic-beta sleeve on specific winners, with due respect for pure concept stocks. To see the real consensus on this chain’s core names (Arm, Nvidia, Qualcomm, Apple) across the eight tracked legends, check them against our Compass Consensus Score (0–100, methodology public) before weighting each layer. Disclaimer: educational and informational only, not investment advice; every figure carries an as-of date and a source. Markets are risky; judge independently.',
+        },
+      },
+    ],
+    sources: [
+      { label: 'Grand View Research — Edge AI market size & forecast 2026-2033', url: 'https://www.grandviewresearch.com/industry-analysis/edge-ai-market-report' },
+      { label: 'MarketsandMarkets — Edge AI hardware / chipset market 2026', url: 'https://www.marketsandmarkets.com/Market-Reports/edge-ai-hardware-market-158498281.html' },
+      { label: 'Qualcomm — Q2 FY2026 earnings release ($10.6B revenue)', url: 'https://s204.q4cdn.com/645488518/files/doc_financials/2026/q2/FY2026-2nd-Quarter-Earnings-Release.pdf' },
+      { label: 'Qualcomm IR — data-center diversification, FY2029 non-handset target', url: 'https://investor.qualcomm.com/news-events/press-releases/news-details/2026/Qualcomm-Accelerates-Diversification-with-Comprehensive-Strategy-for-Data-Center-and-Sees-Multiple-Inflection-Points-Over-the-Next-3-to-5-Years/default.aspx' },
+      { label: '24/7 Wall St — Edge AI could become a real TAM expansion story for Nvidia', url: 'https://247wallst.com/investing/2026/07/01/edge-ai-could-become-a-real-tam-expansion-story-for-nvidia/' },
+      { label: 'Yahoo Finance — Aptiv up 25.7% after deepening Nvidia edge-AI partnership', url: 'https://finance.yahoo.com/markets/stocks/articles/aptiv-aptv-25-7-deepening-043125601.html' },
+    ],
+  },
 ];
 
 export function getInsight(slug: string): Insight | undefined {
