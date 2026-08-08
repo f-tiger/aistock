@@ -5,6 +5,7 @@ import { investors } from '@/lib/data/investors';
 import { getStocks } from '@/lib/data/stocks';
 import { getPairs } from '@/lib/data/pairs';
 import { insights } from '@/lib/content/insights';
+import snapshot from '@/lib/data/market-snapshot.json';
 
 // Required for `output: 'export'` — emit a static sitemap.xml at build.
 export const dynamic = 'force-static';
@@ -16,8 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     for (const path of staticPaths) {
       entries.push({
         url: `${siteUrl}/${locale}${path}`,
-        changeFrequency: path === '/news' ? 'weekly' : 'monthly',
+        changeFrequency: path === '/news' ? 'weekly' : path === '/market' ? 'daily' : 'monthly',
         priority: path === '' ? 1 : 0.7,
+        // 行情快照每日刷新 → /market 的 lastmod 跟着快照日期走(真实变更,非假新鲜)
+        ...(path === '/market' && snapshot.asOf ? { lastModified: snapshot.asOf } : {}),
       });
     }
     for (const inv of investors) {
