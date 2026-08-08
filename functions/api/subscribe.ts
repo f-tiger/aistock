@@ -109,14 +109,14 @@ async function sendWelcome(env: Env, email: string, locale: string): Promise<voi
     ? `<div style="font-family:system-ui,sans-serif;line-height:1.6">
          <h2>欢迎加入 AI 投资罗盘 🧭</h2>
          <p>你已订阅季度 13F 更新。每季度大佬持仓变化 + 罗盘共识分变动,一封邮件讲清楚。</p>
-         <p>先试试免费的 <a href="https://ai-investing-compass.pages.dev/zh/tools/portfolio">组合共识体检</a>,
+         <p>先试试免费的 <a href="https://compass.agiscorecard.com/zh/tools/portfolio">组合共识体检</a>,
          看看传奇投资人和你的持仓有多大共识。</p>
          <p style="color:#888;font-size:13px">仅供教育与信息参考,不构成投资建议。随时可退订。</p>
        </div>`
     : `<div style="font-family:system-ui,sans-serif;line-height:1.6">
          <h2>Welcome to AI Investing Compass 🧭</h2>
          <p>You're subscribed to quarterly 13F updates — how the legends moved plus Consensus Score changes, in one email.</p>
-         <p>Try the free <a href="https://ai-investing-compass.pages.dev/en/tools/portfolio">Portfolio Consensus Check</a>
+         <p>Try the free <a href="https://compass.agiscorecard.com/en/tools/portfolio">Portfolio Consensus Check</a>
          to see how much the legends agree with your holdings.</p>
          <p style="color:#888;font-size:13px">For education and information only; not investment advice. Unsubscribe anytime.</p>
        </div>`;

@@ -3,7 +3,7 @@
 // Protocol: https://www.indexnow.org/documentation
 import { readFileSync } from 'node:fs';
 
-const HOST = 'ai-investing-compass.pages.dev';
+const HOST = 'compass.agiscorecard.com';
 const KEY = '8b43c7b04531396479c2d5ad2da4073f'; // must match public/<key>.txt
 const KEY_URL = `https://${HOST}/${KEY}.txt`;
 

@@ -93,7 +93,7 @@ export default async function AnswersPage({ params }: { params: Promise<{ locale
         <img src="/badge.svg" width={320} height={64} alt="AI Conviction Index badge" className="mt-4" />
         <div className="mt-4 overflow-x-auto rounded-lg border border-white/10 bg-ink-950 p-3">
           <code className="whitespace-pre text-xs text-slate-300">
-            {`[![AI Conviction Index](https://ai-investing-compass.pages.dev/badge.svg)](https://ai-investing-compass.pages.dev/${loc}/consensus)`}
+            {`[![AI Conviction Index](https://compass.agiscorecard.com/badge.svg)](https://compass.agiscorecard.com/${loc}/consensus)`}
           </code>
         </div>
       </section>

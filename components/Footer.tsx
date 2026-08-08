@@ -17,6 +17,16 @@ export default function Footer({ locale }: { locale: Locale }) {
           ))}
         </nav>
         <Disclaimer locale={locale} variant="long" />
+        <div className="text-sm text-slate-400">
+          {locale === 'zh' ? '同网络：' : 'Part of the AGI Scorecard network: '}
+          <a href="https://agiscorecard.com" className="text-slate-300 underline decoration-slate-600 underline-offset-2 transition hover:text-white">
+            {locale === 'zh' ? 'AGI 记分牌（预言追踪）' : 'AGI Scorecard (prediction tracking)'}
+          </a>
+          <span className="mx-2 text-slate-600">·</span>
+          <a href="https://invest.agiscorecard.com" className="text-slate-300 underline decoration-slate-600 underline-offset-2 transition hover:text-white">
+            {locale === 'zh' ? 'SunWatch 行情台' : 'SunWatch market console'}
+          </a>
+        </div>
         <div className="flex flex-col items-start justify-between gap-3 text-sm text-slate-400 sm:flex-row sm:items-center">
           <div>
             <span className="font-semibold text-slate-200">{dict.brand[locale]}</span>
