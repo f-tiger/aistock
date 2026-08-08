@@ -75,6 +75,13 @@ jobs:
         run: |
           api="https://api.cloudflare.com/client/v4"
           auth="Authorization: Bearer $CLOUDFLARE_API_TOKEN"
+          # 本仓的 CLOUDFLARE_ACCOUNT_ID secret 为空(2026-08-08 部署日志实测),
+          # wrangler 能从 token 推断账号但裸 API 不能——所以自己反查。
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            CLOUDFLARE_ACCOUNT_ID=$(curl -s "$api/accounts" -H "$auth" | python3 -c "import json,sys;r=json.load(sys.stdin).get('result') or [];print(r[0]['id'] if r else '')")
+            echo "derived account id: ${CLOUDFLARE_ACCOUNT_ID:0:6}…"
+          fi
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then echo "no account id derivable — skip"; exit 0; fi
           echo "== attach domain to Pages project =="
           curl -s -X POST "$api/accounts/$CLOUDFLARE_ACCOUNT_ID/pages/projects/ai-investing-compass/domains" \
             -H "$auth" -H "Content-Type: application/json" \
