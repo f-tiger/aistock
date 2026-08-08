@@ -53,12 +53,27 @@ jobs:
         with:
           script: |
             const { owner, repo } = context.repo;
-            // Self-throttle: skip if a daily task is still open (avoid pile-up).
             const { data: openIssues } = await github.rest.issues.listForRepo({
               owner, repo, state: 'open', per_page: 100,
             });
             const marker = '每日优化';
-            if (openIssues.some((i) => (i.title || '').includes(marker))) {
+            // 防死锁(2026-08-08 实测教训:#52 卡了两周,自限流从此再不开新任务):
+            // 超过 3 天没人执行的旧任务自动关闭——内容优化是可选增强,
+            // 站点数据新鲜度已由 daily-refresh.yml 确定性保障,不等任何 Agent。
+            const staleMs = 3 * 86400000;
+            for (const i of openIssues) {
+              if ((i.title || '').includes(marker) && Date.now() - new Date(i.created_at).getTime() > staleMs) {
+                await github.rest.issues.createComment({ owner, repo, issue_number: i.number,
+                  body: '超时 3 天未执行,自动关闭防止队列死锁。站点数据新鲜度由 daily-refresh.yml 每日确定性保障;本内容任务作废,明天会开新的。' });
+                await github.rest.issues.update({ owner, repo, issue_number: i.number, state: 'closed', state_reason: 'not_planned' });
+                core.notice(`Closed stale daily task #${i.number}`);
+              }
+            }
+            // Self-throttle: skip if a (fresh) daily task is still open (avoid pile-up).
+            const { data: stillOpen } = await github.rest.issues.listForRepo({
+              owner, repo, state: 'open', per_page: 100,
+            });
+            if (stillOpen.some((i) => (i.title || '').includes(marker))) {
               core.notice('An open daily-optimize task already exists; skipping.');
               return;
             }

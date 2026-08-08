@@ -7,6 +7,7 @@ import { provider } from '@/lib/data/provider';
 import StockTable from '@/components/StockTable';
 import AsOfBadge from '@/components/AsOfBadge';
 import Disclaimer from '@/components/Disclaimer';
+import MarketPulse from '@/components/MarketPulse';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -42,6 +43,8 @@ export default async function MarketPage({ params }: { params: Promise<{ locale:
           <Disclaimer locale={loc} />
         </div>
       </header>
+
+      <MarketPulse locale={loc} />
 
       {/* in-page theme nav */}
       <nav className="mt-8 flex flex-wrap gap-2">
