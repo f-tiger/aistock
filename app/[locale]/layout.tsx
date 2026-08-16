@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { locales, isLocale, type Locale } from '@/lib/i18n/config';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import SubscribeSlideIn from '@/components/SubscribeSlideIn';
 import HtmlLang from '@/components/HtmlLang';
 
 export const dynamicParams = false;
@@ -27,6 +28,7 @@ export default async function LocaleLayout({
       <Navbar locale={loc} />
       <main className="flex-1">{children}</main>
       <Footer locale={loc} />
+      <SubscribeSlideIn locale={loc} />
     </div>
   );
 }
