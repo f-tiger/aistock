@@ -114,8 +114,10 @@ jobs:
           fail=0
           for path in "/zh/track-record" "/en/track-record" "/llms.txt"; do
             ok=0
-            for i in $(seq 1 12); do
-              body=$(curl -sS --max-time 20 "https://compass.agiscorecard.com$path" || true)
+            for i in $(seq 1 10); do
+              # -L 是必须的:next.config.mjs 开了 trailingSlash,/zh/track-record 会 308
+              # 到 /zh/track-record/。第一版漏了它,于是在一个完全健康的站点上红了 15 分钟。
+              body=$(curl -sSL --max-time 15 "https://compass.agiscorecard.com$path" || true)
               case "$path" in
                 */track-record) needle="Druckenmiller\|德鲁肯米勒" ;;
                 *) needle="Copy-Homework Scorecard" ;;
@@ -123,6 +125,6 @@ jobs:
               if printf '%s' "$body" | grep -q "$needle"; then ok=1; break; fi
               sleep 5
             done
-            if [ "$ok" = 1 ]; then echo "✅ $path"; else echo "❌ $path 未在 60s 内出现预期内容"; fail=1; fi
+            if [ "$ok" = 1 ]; then echo "✅ $path"; else echo "❌ $path 未在 ~50s 内出现预期内容"; fail=1; fi
           done
           exit $fail
