@@ -104,3 +104,25 @@ jobs:
         if: steps.token.outputs.present == 'true'
         continue-on-error: true
         run: node scripts/indexnow.mjs
+
+      # 部署后自检:新页真的在线上活着,而不是只在本地 build 里存在。
+      # 只做正确性校验、不产生外部副作用,符合「push 路径只留校验/构建/部署/自检」。
+      # Pages 传播有延迟,所以重试而不是一次判死(2026-08-11 在姊妹仓踩过一次)。
+      - name: Smoke-test the live site
+        if: steps.token.outputs.present == 'true'
+        run: |
+          fail=0
+          for path in "/zh/track-record" "/en/track-record" "/llms.txt"; do
+            ok=0
+            for i in $(seq 1 12); do
+              body=$(curl -sS --max-time 20 "https://compass.agiscorecard.com$path" || true)
+              case "$path" in
+                */track-record) needle="Druckenmiller\|德鲁肯米勒" ;;
+                *) needle="Copy-Homework Scorecard" ;;
+              esac
+              if printf '%s' "$body" | grep -q "$needle"; then ok=1; break; fi
+              sleep 5
+            done
+            if [ "$ok" = 1 ]; then echo "✅ $path"; else echo "❌ $path 未在 60s 内出现预期内容"; fail=1; fi
+          done
+          exit $fail
