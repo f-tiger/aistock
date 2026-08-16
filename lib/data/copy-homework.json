@@ -1,5 +1,489 @@
 {
   "generated": "2026-08-16",
   "method": "Buy each manager's AI-stock basket at the CLOSE OF ITS 13F FILING DATE (not quarter end — a 13F is public ~45 days late, so the filing-date price is the first price a real person could actually pay), weighted as filed, hold until the next filing, repeat. Prices: Stooq daily closes. Holdings: SEC EDGAR primary filings. Past results do not predict future returns; not investment advice.",
-  "investors": []
+  "investors": [
+    {
+      "slug": "stanley-druckenmiller",
+      "name": "德鲁肯米勒",
+      "entityName": "Duquesne Family Office LLC",
+      "cik": "0001536411",
+      "from": "2024-08-14",
+      "to": "2026-08-14",
+      "quarters": 8,
+      "cumulativeReturn": 187.2,
+      "benchmarkQQQ": 59.6,
+      "legs": [
+        {
+          "from": "2024-08-14",
+          "to": "2024-11-14",
+          "ret": 0.23353340914368792,
+          "holdings": 7,
+          "coverage": 100
+        },
+        {
+          "from": "2024-11-14",
+          "to": "2025-02-14",
+          "ret": -0.013390307892240157,
+          "holdings": 7,
+          "coverage": 100
+        },
+        {
+          "from": "2025-02-14",
+          "to": "2025-05-15",
+          "ret": -0.039754642167687045,
+          "holdings": 9,
+          "coverage": 100
+        },
+        {
+          "from": "2025-05-15",
+          "to": "2025-08-15",
+          "ret": 0.2250927411035755,
+          "holdings": 5,
+          "coverage": 100
+        },
+        {
+          "from": "2025-08-15",
+          "to": "2025-11-14",
+          "ret": 0.24526772931411717,
+          "holdings": 5,
+          "coverage": 100
+        },
+        {
+          "from": "2025-11-14",
+          "to": "2026-02-17",
+          "ret": 0.20694025402259753,
+          "holdings": 6,
+          "coverage": 100
+        },
+        {
+          "from": "2026-02-17",
+          "to": "2026-05-15",
+          "ret": 0.24469459001603372,
+          "holdings": 3,
+          "coverage": 100
+        },
+        {
+          "from": "2026-05-15",
+          "to": "2026-08-14",
+          "ret": 0.07228154271236246,
+          "holdings": 8,
+          "coverage": 100
+        }
+      ]
+    },
+    {
+      "slug": "cathie-wood",
+      "name": "木头姐",
+      "entityName": "ARK Investment Management LLC",
+      "cik": "0001697748",
+      "from": "2024-07-26",
+      "to": "2026-08-14",
+      "quarters": 8,
+      "cumulativeReturn": 170,
+      "benchmarkQQQ": 59.6,
+      "legs": [
+        {
+          "from": "2024-07-26",
+          "to": "2024-10-31",
+          "ret": 0.21322166569006637,
+          "holdings": 10,
+          "coverage": 100
+        },
+        {
+          "from": "2024-10-31",
+          "to": "2025-02-04",
+          "ret": 0.6150072221803534,
+          "holdings": 11,
+          "coverage": 100
+        },
+        {
+          "from": "2025-02-04",
+          "to": "2025-05-07",
+          "ret": -0.17020119337779796,
+          "holdings": 11,
+          "coverage": 100
+        },
+        {
+          "from": "2025-05-07",
+          "to": "2025-07-30",
+          "ret": 0.24388955697585965,
+          "holdings": 11,
+          "coverage": 100
+        },
+        {
+          "from": "2025-07-30",
+          "to": "2025-11-12",
+          "ret": 0.23402468731621687,
+          "holdings": 11,
+          "coverage": 100
+        },
+        {
+          "from": "2025-11-12",
+          "to": "2026-02-11",
+          "ret": -0.08951646266632501,
+          "holdings": 11,
+          "coverage": 100
+        },
+        {
+          "from": "2026-02-11",
+          "to": "2026-05-12",
+          "ret": 0.18135501807811616,
+          "holdings": 11,
+          "coverage": 100
+        },
+        {
+          "from": "2026-05-12",
+          "to": "2026-08-14",
+          "ret": 0.005691490263856655,
+          "holdings": 12,
+          "coverage": 100
+        }
+      ]
+    },
+    {
+      "slug": "david-tepper",
+      "name": "泰珀",
+      "entityName": "Appaloosa LP",
+      "cik": "0001656456",
+      "from": "2024-08-14",
+      "to": "2026-08-14",
+      "quarters": 8,
+      "cumulativeReturn": 108.2,
+      "benchmarkQQQ": 59.6,
+      "legs": [
+        {
+          "from": "2024-08-14",
+          "to": "2024-11-14",
+          "ret": 0.12704431549040704,
+          "holdings": 10,
+          "coverage": 100
+        },
+        {
+          "from": "2024-11-14",
+          "to": "2025-02-10",
+          "ret": 0.04557573656207792,
+          "holdings": 10,
+          "coverage": 100
+        },
+        {
+          "from": "2025-02-10",
+          "to": "2025-05-15",
+          "ret": -0.05060783781442536,
+          "holdings": 10,
+          "coverage": 100
+        },
+        {
+          "from": "2025-05-15",
+          "to": "2025-08-14",
+          "ret": 0.1975232940843324,
+          "holdings": 11,
+          "coverage": 100
+        },
+        {
+          "from": "2025-08-14",
+          "to": "2025-11-13",
+          "ret": 0.09336725842662284,
+          "holdings": 9,
+          "coverage": 100
+        },
+        {
+          "from": "2025-11-13",
+          "to": "2026-02-17",
+          "ret": 0.020322712420179048,
+          "holdings": 9,
+          "coverage": 100
+        },
+        {
+          "from": "2026-02-17",
+          "to": "2026-05-15",
+          "ret": 0.31294304883344953,
+          "holdings": 9,
+          "coverage": 100
+        },
+        {
+          "from": "2026-05-15",
+          "to": "2026-08-14",
+          "ret": 0.06089510764667259,
+          "holdings": 10,
+          "coverage": 100
+        }
+      ]
+    },
+    {
+      "slug": "philippe-laffont",
+      "name": "Laffont",
+      "entityName": "COATUE MANAGEMENT LLC",
+      "cik": "0001135730",
+      "from": "2024-08-14",
+      "to": "2026-08-14",
+      "quarters": 8,
+      "cumulativeReturn": 86,
+      "benchmarkQQQ": 59.6,
+      "legs": [
+        {
+          "from": "2024-08-14",
+          "to": "2024-11-14",
+          "ret": 0.16698755436364668,
+          "holdings": 13,
+          "coverage": 100
+        },
+        {
+          "from": "2024-11-14",
+          "to": "2025-02-14",
+          "ret": 0.07815109212733132,
+          "holdings": 13,
+          "coverage": 100
+        },
+        {
+          "from": "2025-02-14",
+          "to": "2025-05-15",
+          "ret": -0.04433510441443873,
+          "holdings": 13,
+          "coverage": 100
+        },
+        {
+          "from": "2025-05-15",
+          "to": "2025-08-14",
+          "ret": 0.2135141433159215,
+          "holdings": 12,
+          "coverage": 100
+        },
+        {
+          "from": "2025-08-14",
+          "to": "2025-11-14",
+          "ret": 0.04161342574855041,
+          "holdings": 11,
+          "coverage": 100
+        },
+        {
+          "from": "2025-11-14",
+          "to": "2026-02-17",
+          "ret": 0.015353781319651812,
+          "holdings": 12,
+          "coverage": 100
+        },
+        {
+          "from": "2026-02-17",
+          "to": "2026-05-15",
+          "ret": 0.18317880644194048,
+          "holdings": 13,
+          "coverage": 100
+        },
+        {
+          "from": "2026-05-15",
+          "to": "2026-08-14",
+          "ret": 0.018957408211949845,
+          "holdings": 11,
+          "coverage": 100
+        }
+      ]
+    },
+    {
+      "slug": "bill-ackman",
+      "name": "阿克曼",
+      "entityName": "Pershing Square Capital Management, L.P.",
+      "cik": "0001336528",
+      "from": "2024-05-15",
+      "to": "2026-05-15",
+      "quarters": 8,
+      "cumulativeReturn": 79.7,
+      "benchmarkQQQ": 58.3,
+      "legs": [
+        {
+          "from": "2024-05-15",
+          "to": "2024-08-14",
+          "ret": -0.0693057246824672,
+          "holdings": 1,
+          "coverage": 100
+        },
+        {
+          "from": "2024-08-14",
+          "to": "2024-11-14",
+          "ret": 0.09629602853957131,
+          "holdings": 1,
+          "coverage": 100
+        },
+        {
+          "from": "2024-11-14",
+          "to": "2025-02-14",
+          "ret": 0.05616963985307932,
+          "holdings": 1,
+          "coverage": 100
+        },
+        {
+          "from": "2025-02-14",
+          "to": "2025-05-15",
+          "ret": -0.11381063643099676,
+          "holdings": 1,
+          "coverage": 100
+        },
+        {
+          "from": "2025-05-15",
+          "to": "2025-08-14",
+          "ret": 0.2392392242734631,
+          "holdings": 1,
+          "coverage": 100
+        },
+        {
+          "from": "2025-08-14",
+          "to": "2025-11-14",
+          "ret": 0.23062486768518478,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2025-11-14",
+          "to": "2026-02-17",
+          "ret": 0.017770972238206194,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2026-02-17",
+          "to": "2026-05-15",
+          "ret": 0.21246601492011585,
+          "holdings": 3,
+          "coverage": 100
+        }
+      ]
+    },
+    {
+      "slug": "duan-yongping",
+      "name": "段永平",
+      "entityName": "H&H International Investment, LLC",
+      "cik": "0001759760",
+      "from": "2024-08-14",
+      "to": "2026-08-14",
+      "quarters": 8,
+      "cumulativeReturn": 39.6,
+      "benchmarkQQQ": 59.6,
+      "legs": [
+        {
+          "from": "2024-08-14",
+          "to": "2024-11-14",
+          "ret": 0.03466845886652465,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2024-11-14",
+          "to": "2025-02-14",
+          "ret": 0.07186949278705601,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2025-02-14",
+          "to": "2025-05-15",
+          "ret": -0.13304556162877298,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2025-05-15",
+          "to": "2025-08-14",
+          "ret": 0.10878579346645581,
+          "holdings": 5,
+          "coverage": 100
+        },
+        {
+          "from": "2025-08-14",
+          "to": "2025-11-14",
+          "ret": 0.1740275640342597,
+          "holdings": 5,
+          "coverage": 100
+        },
+        {
+          "from": "2025-11-14",
+          "to": "2026-02-17",
+          "ret": -0.02520782980696536,
+          "holdings": 5,
+          "coverage": 100
+        },
+        {
+          "from": "2026-02-17",
+          "to": "2026-05-19",
+          "ret": 0.143761670047285,
+          "holdings": 6,
+          "coverage": 100
+        },
+        {
+          "from": "2026-05-19",
+          "to": "2026-08-14",
+          "ret": 0.00016752793250659863,
+          "holdings": 9,
+          "coverage": 100
+        }
+      ]
+    },
+    {
+      "slug": "warren-buffett",
+      "name": "巴菲特",
+      "entityName": "BERKSHIRE HATHAWAY INC",
+      "cik": "0001067983",
+      "from": "2024-08-14",
+      "to": "2026-08-14",
+      "quarters": 8,
+      "cumulativeReturn": 37.3,
+      "benchmarkQQQ": 59.6,
+      "legs": [
+        {
+          "from": "2024-08-14",
+          "to": "2024-11-14",
+          "ret": 0.035221027532646956,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2024-11-14",
+          "to": "2025-02-14",
+          "ret": 0.07316867306900178,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2025-02-14",
+          "to": "2025-05-15",
+          "ret": -0.1334975689857265,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2025-05-15",
+          "to": "2025-08-14",
+          "ret": 0.10278163002827527,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2025-08-14",
+          "to": "2025-11-14",
+          "ret": 0.16566759148283877,
+          "holdings": 2,
+          "coverage": 100
+        },
+        {
+          "from": "2025-11-14",
+          "to": "2026-02-17",
+          "ret": -0.02609128102041914,
+          "holdings": 3,
+          "coverage": 100
+        },
+        {
+          "from": "2026-02-17",
+          "to": "2026-05-15",
+          "ret": 0.15457783084769036,
+          "holdings": 3,
+          "coverage": 100
+        },
+        {
+          "from": "2026-05-15",
+          "to": "2026-08-14",
+          "ret": -0.013087475180658866,
+          "holdings": 2,
+          "coverage": 100
+        }
+      ]
+    }
+  ]
 }
