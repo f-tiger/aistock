@@ -28,7 +28,7 @@ jobs:
               body: [
                 '@claude 13F 披露截止日已过,请执行季度深度更新(规范见 docs/operations.md),完成后开 PR、不要自行合并:',
                 '',
-                '- [ ] 核对 8 位投资人的最新 13F(HedgeFollow / 公开报道),更新 `lib/data/investors.ts`(holdings/thesis/asOf/sources)',
+                '- [ ] **先跑 `edgar-13f.yml`**(或等它按季自动跑完),拿 `lib/data/13f-edgar.json` 里的**逐笔申报原文**更新 `lib/data/investors.ts`;媒体报道只用于补叙事,**持仓数字一律以原文为准**。读数前先看 docs/operations.md 的「13F 数据源」四条注意事项(聚合、CUSIP、单位、主体核对)',
                 '- [ ] 更新 `lib/data/updates.ts`(本季 2–4 条要闻,附来源)',
                 '- [ ] 检查 `lib/data/themes.ts` 数据点是否过期(份额/资本开支预测等)',
                 '- [ ] 按 `content/templates/` 产出本季内容(共识复盘长文 + 分歧解读 + 小红书 + X thread),存入 `content/drafts/<年-月>/`',
