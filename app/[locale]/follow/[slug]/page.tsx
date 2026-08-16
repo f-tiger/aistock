@@ -16,8 +16,16 @@ import LiveQuote from '@/components/LiveQuote';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import BrokerCTA from '@/components/BrokerCTA';
 import Disclaimer from '@/components/Disclaimer';
+import homework from '@/lib/data/copy-homework.json';
 
 export const dynamicParams = false;
+
+type HomeworkRow = { slug: string; from: string; to: string; quarters: number; cumulativeReturn: number; benchmarkQQQ: number | null };
+
+/** 这位大佬的 AI 持仓过去真赚了多少 —— 抄作业成绩单里的那一行。 */
+function scoreRow(slug: string): HomeworkRow | undefined {
+  return (homework.investors as HomeworkRow[]).find((r) => r.slug === slug);
+}
 
 const IGNORE = new Set(['—', 'theme', '']);
 
@@ -90,6 +98,35 @@ export default async function FollowPage({ params }: { params: Promise<{ locale:
           <Disclaimer locale={loc} />
         </div>
       </header>
+
+      {/* 「持有什么」上面先回答「抄了赚没赚」—— 这是读者真正想知道的那一个数。 */}
+      {(() => {
+        const hw = scoreRow(slug);
+        if (!hw) return null;
+        const sign = (n: number) => `${n > 0 ? '+' : ''}${n.toFixed(1)}%`;
+        return (
+          <Link
+            href={`/${loc}/track-record`}
+            className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-xl border border-accent/25 bg-accent/5 p-4 transition hover:border-accent/50"
+          >
+            <span className="text-sm text-slate-300">
+              {loc === 'zh' ? '照着申报日收盘价抄这份作业' : 'Copying this sleeve at each filing-date close'}
+            </span>
+            <span
+              className={`text-2xl font-bold tabular-nums ${hw.cumulativeReturn > 0 ? 'text-emerald-400' : 'text-rose-400'}`}
+            >
+              {sign(hw.cumulativeReturn)}
+            </span>
+            <span className="text-xs text-slate-500">
+              {hw.from} → {hw.to}
+              {hw.benchmarkQQQ != null && ` · QQQ ${sign(hw.benchmarkQQQ)}`}
+            </span>
+            <span className="text-xs font-medium text-accent">
+              {loc === 'zh' ? '看完整成绩单 →' : 'See the full scorecard →'}
+            </span>
+          </Link>
+        );
+      })()}
 
       <div className="mt-8 grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
         {/* sleeve score */}

@@ -1,6 +1,7 @@
 import { computeScores, scoreBand, convictionIndex } from '@/lib/data/score';
-import { investors } from '@/lib/data/investors';
+import { investors, getInvestor } from '@/lib/data/investors';
 import { siteUrl } from '@/lib/site';
+import homework from '@/lib/data/copy-homework.json';
 
 // Emit a static /llms.txt at build. This is the emerging convention for making a
 // site legible and citable to AI answer engines (ChatGPT, Perplexity, Claude,
@@ -33,6 +34,16 @@ export function GET() {
     })
     .join('\n');
 
+  // 抄作业成绩单:本站独有的一手计算(SEC 申报原文 + 申报日复权收盘),
+  // 带日期的统计数字是被 AI 答案引擎引用率最高的内容形态之一 —— 所以完整列出。
+  const homeworkLines = (homework.investors as { slug: string; from: string; to: string; quarters: number; cumulativeReturn: number; benchmarkQQQ: number | null }[])
+    .map((r) => {
+      const nm = getInvestor(r.slug)?.name.en ?? r.slug;
+      const bench = r.benchmarkQQQ == null ? 'n/a' : `${r.benchmarkQQQ > 0 ? '+' : ''}${r.benchmarkQQQ}%`;
+      return `- ${nm}: ${r.cumulativeReturn > 0 ? '+' : ''}${r.cumulativeReturn}% cumulative over ${r.quarters} rebalances, ${r.from} to ${r.to} (QQQ over the same window: ${bench}).`;
+    })
+    .join('\n');
+
   const body = `# AI Investing Compass (AI 投资罗盘)
 
 > A bilingual (Chinese/English), education-focused reference that tracks how ${investors.length} legendary investors position in AI stocks and distills their disclosed 13F actions into the Compass Consensus Score (CCS) — a transparent 0–100 score per stock, refreshed each 13F season. Educational analytics from public filings; not investment advice.
@@ -54,7 +65,13 @@ ${scoreLines}
 ## Legendary investors tracked
 ${investorLines}
 
+## Copy-Homework Scorecard (original data, as of ${homework.generated})
+What you would have made copying each legend's AI sleeve straight off their SEC 13F filings. Every basket is bought at the CLOSE OF ITS FILING DATE — not quarter end, which is a price no one could have traded, since a 13F is public ~45 days late — held until the next filing, priced on adjusted closes. AI-related holdings only, re-weighted to 100%: this is the return of that slice, not of the manager's whole book, and a 13F cannot show shorts, option hedges, non-US listings or cash. Past results do not predict future returns; not investment advice.
+${homeworkLines}
+Full table with quarter-by-quarter legs: ${siteUrl}/en/track-record
+
 ## Key pages
+- Copy-Homework Scorecard (what copying each legend actually returned): ${siteUrl}/en/track-record
 - Consensus leaderboard: ${siteUrl}/en/consensus
 - This quarter's moves (buys & sells): ${siteUrl}/en/moves
 - AI investing insights (articles): ${siteUrl}/en/insights

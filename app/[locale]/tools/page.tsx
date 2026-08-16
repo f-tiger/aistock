@@ -28,6 +28,12 @@ export default async function ToolsHubPage({ params }: { params: Promise<{ local
 
   const tools = [
     {
+      href: `/${loc}/track-record`,
+      title: dict.homework.title[loc],
+      tagline: dict.homework.intro[loc],
+      badge: loc === 'zh' ? '新' : 'New',
+    },
+    {
       href: `/${loc}/tools/portfolio`,
       title: dict.tools.portfolioTitle[loc],
       tagline: dict.tools.portfolioTagline[loc],

@@ -279,6 +279,49 @@ const dict = {
     fullProfile: { zh: '查看 TA 的完整逻辑与来源', en: 'See full thesis & sources' },
     view: { zh: '跟投 TA', en: 'Copy this legend' },
   },
+  homework: {
+    title: { zh: '抄作业成绩单', en: 'The Copy-Homework Scorecard' },
+    nav: { zh: '抄作业成绩单', en: 'Scorecard' },
+    intro: {
+      zh: '所有 13F 网站都告诉你「大佬持有什么」。这一页回答另一个问题:如果你照着申报文件抄了 TA 的 AI 持仓,过去两年赚了多少?',
+      en: 'Every 13F site tells you what the legends hold. This page answers a different question: if you had copied their AI sleeve straight off the filing, what would you have made?',
+    },
+    methodTitle: { zh: '为什么这份成绩单跟别人的不一样', en: 'Why this scorecard differs from the rest' },
+    methodBody: {
+      zh: '13F 有 45 天滞后。用季度末价格回测等于假装你能穿越——曲线好看,但没有一个真人拿得到那个价。这里一律用申报当天的收盘价建仓,持到下一次申报日换仓,复权收盘计价(拆股、分红都算进去)。这是一个普通人当天打开 EDGAR、照着买,真能拿到的结果。',
+      en: 'A 13F is public ~45 days late. Backtesting at quarter-end prices pretends you could time-travel — the curve looks great and nobody could have traded it. Here every basket is bought at the close of its filing date, held until the next filing, priced on adjusted closes (splits and dividends included). This is what a real person opening EDGAR that day could actually have got.',
+    },
+    caveatTitle: { zh: '这个数字不是什么', en: 'What this number is not' },
+    caveats: {
+      zh: '①只算 AI 相关持仓,权重按申报值重新归一——这是这套 AI 切片的收益,不是这位投资人整个组合的收益。②13F 不含做空、期权对冲、非美股与现金,所以它看不见对冲。③哪些标的算「AI」是本站的编辑判断,换一套口径数字会变。④单期价格覆盖不足 50% 的直接跳过,不硬凑。',
+      en: '① AI-related holdings only, re-weighted to 100% — this is the return of that AI slice, not of the manager’s whole book. ② A 13F excludes shorts, option hedges, non-US listings and cash, so hedges are invisible here. ③ Which names count as “AI” is this site’s editorial call; a different lens gives different numbers. ④ Any quarter with under 50% price coverage is skipped rather than fudged.',
+    },
+    thInvestor: { zh: '投资人', en: 'Investor' },
+    thWindow: { zh: '回测区间', en: 'Window' },
+    thQuarters: { zh: '换仓', en: 'Rebalances' },
+    thReturn: { zh: '累计收益', en: 'Cumulative' },
+    thBench: { zh: '同期 QQQ', en: 'QQQ, same window' },
+    thExcess: { zh: '超额', en: 'Excess' },
+    legsTitle: { zh: '逐期明细', en: 'Quarter by quarter' },
+    legHoldings: { zh: '只', en: 'names' },
+    beat: { zh: '跑赢 QQQ', en: 'Beat QQQ' },
+    lost: { zh: '跑输 QQQ', en: 'Lagged QQQ' },
+    copyThis: { zh: '抄这份作业', en: 'Copy this sleeve' },
+    empty: {
+      zh: '本期没有可回测的结果——数据源或申报解析出了问题。宁可空着,也不编数字。',
+      en: 'No computable results this run — a data source or filing parse failed. We leave it blank rather than invent numbers.',
+    },
+    warn: {
+      zh: '过去的收益不预示未来。这是对公开申报的事后计算,不是荐股,也不是任何形式的收益承诺。',
+      en: 'Past results do not predict future returns. This is an after-the-fact calculation on public filings — not a recommendation, and not a promise of any return.',
+    },
+    subTitle: { zh: '下一份作业什么时候更新?', en: 'When does the next homework drop?' },
+    subBody: {
+      zh: '13F 一年只申报 4 次,新持仓在申报日当天才存在。留个邮箱,下一次申报落地、这份成绩单重算时,我发一封给你。',
+      en: 'A 13F lands four times a year, and the new holdings exist only from the filing date. Leave an email and I’ll send one when the next filing lands and this scorecard recomputes.',
+    },
+    source: { zh: '持仓来自 SEC EDGAR 申报原文(逐笔,按 CUSIP 合并);价格为 Yahoo Finance 复权日线。', en: 'Holdings from SEC EDGAR primary filings (line-by-line, merged by CUSIP); prices are Yahoo Finance adjusted daily closes.' },
+  },
   disclaimer: {
     short: {
       zh: '仅供教育与信息参考，不构成投资建议。',

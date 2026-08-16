@@ -7,6 +7,7 @@ export type NavLink = { href: string; label: string };
 export function primaryLinks(locale: Locale): NavLink[] {
   const base = `/${locale}`;
   return [
+    { href: `${base}/track-record`, label: dict.homework.nav[locale] },
     { href: `${base}/consensus`, label: dict.nav.consensus[locale] },
     { href: `${base}/moves`, label: dict.nav.moves[locale] },
     { href: `${base}/tools`, label: dict.nav.tools[locale] },
