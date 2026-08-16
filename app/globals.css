@@ -117,3 +117,18 @@ body {
     scroll-behavior: auto;
   }
 }
+
+/* ---- 嵌入模式 (?embed=1) --------------------------------------------- */
+/* 外站 iframe 只要工具本体:导航、页脚、方法论、订阅全部收起,背景透明化,
+   让它贴合宿主页面。标记由页面里的同步小脚本在首屏绘制前打上。 */
+.embed-mode body {
+  background-image: none;
+}
+.embed-mode header,
+.embed-mode footer,
+.embed-mode [data-embed-hide] {
+  display: none !important;
+}
+.embed-mode .container-page {
+  @apply px-3 py-4;
+}

@@ -321,6 +321,31 @@ const dict = {
       en: 'A 13F lands four times a year, and the new holdings exist only from the filing date. Leave an email and I’ll send one when the next filing lands and this scorecard recomputes.',
     },
     source: { zh: '持仓来自 SEC EDGAR 申报原文(逐笔,按 CUSIP 合并);价格为 Yahoo Finance 复权日线。', en: 'Holdings from SEC EDGAR primary filings (line-by-line, merged by CUSIP); prices are Yahoo Finance adjusted daily closes.' },
+    calcTitle: { zh: '如果当时我抄了,今天多少钱?', en: 'What if I had copied them — how much today?' },
+    calcIntro: {
+      zh: '选几位大佬、选一个申报日开始、填入本金。全部在你的浏览器里算,不发送任何数据。多选时本金等额分配,各自复利。',
+      en: 'Pick one or more legends, pick a filing date to start, enter a stake. It all runs in your browser — nothing is sent anywhere. With several picked, the stake is split evenly and each sleeve compounds on its own.',
+    },
+    calcWho: { zh: '抄谁的作业', en: 'Whose homework' },
+    calcFrom: { zh: '从哪一次申报开始', en: 'Start at which filing' },
+    calcAmount: { zh: '本金(美元)', en: 'Stake (USD)' },
+    calcEnd: { zh: '今天值', en: 'Worth today' },
+    calcBench: { zh: '同期买 QQQ', en: 'Same stake in QQQ' },
+    calcVs: {
+      zh: '{from} → {to} 这段时间,这么抄比同期买 QQQ {word} {diff}。',
+      en: 'Over {from} → {to}, copying this way ended up {diff} {word} the same stake in QQQ.',
+    },
+    calcMore: { zh: '多赚了', en: 'ahead of' },
+    calcLess: { zh: '少赚了', en: 'behind' },
+    calcEmpty: { zh: '先选至少一位投资人。所选起点之后没有申报期时,这里也会空着——不会拿更早的数据凑。', en: 'Pick at least one investor. This also stays empty when no filing falls after the chosen start date — earlier data is never borrowed to fill the gap.' },
+    calcShare: { zh: '复制这个结果的链接', en: 'Copy a link to this result' },
+    calcFine: {
+      zh: '每一期都用申报当天的收盘价换仓,复权计价。只算 AI 相关持仓、按申报权重归一,不是这几位的完整组合收益;13F 也看不见做空与期权对冲。过去的收益不预示未来,这不是荐股。',
+      en: 'Every quarter is rebalanced at that filing’s closing price, on adjusted closes. AI-related holdings only, re-weighted as filed — not these managers’ whole-portfolio returns, and a 13F cannot show shorts or option hedges. Past results do not predict future returns; not a recommendation.',
+    },
+    embedTitle: { zh: '把这个计算器放到你的页面上', en: 'Embed this calculator on your page' },
+    embedNote: { zh: '复制这段 HTML。嵌入版会自动更新——13F 一年重算 4 次。', en: 'Copy this HTML. The embed updates itself — the backtest recomputes four times a year, at each 13F season.' },
+    embedCopy: { zh: '复制嵌入代码', en: 'Copy embed code' },
   },
   disclaimer: {
     short: {

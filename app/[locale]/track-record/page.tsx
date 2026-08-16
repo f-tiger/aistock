@@ -9,8 +9,11 @@ import ShareBar from '@/components/ShareBar';
 import NewsletterSignup from '@/components/NewsletterSignup';
 import Disclaimer from '@/components/Disclaimer';
 import homework from '@/lib/data/copy-homework.json';
+import HomeworkCalculator from '@/components/HomeworkCalculator';
+import EmbedCode from '@/components/EmbedCode';
+import { siteUrl } from '@/lib/site';
 
-type Leg = { from: string; to: string; ret: number; holdings: number; coverage: number };
+type Leg = { from: string; to: string; ret: number; holdings: number; coverage: number; bench: number | null };
 type Row = {
   slug: string;
   name: string;
@@ -56,6 +59,13 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
 
   return (
     <div className="container-page py-12">
+      {/* ?embed=1 时在首屏绘制前就打上标记,否则外站会先闪一下完整页面再收起来。 */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html:
+            "try{if(/[?&]embed=1/.test(location.search))document.documentElement.classList.add('embed-mode')}catch(e){}",
+        }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -79,7 +89,33 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
         />
       )}
 
-      <header className="max-w-3xl">
+      {/* 站规(2026-07-26):每个可交互工具必须带 WebApplication JSON-LD。 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebApplication',
+            name: t.title[loc],
+            url: `${siteUrl}/${loc}/track-record`,
+            applicationCategory: 'FinanceApplication',
+            operatingSystem: 'Any (web browser)',
+            isAccessibleForFree: true,
+            offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
+            inLanguage: loc === 'zh' ? 'zh-CN' : 'en',
+            featureList: [
+              'Backtest each legend\u2019s AI sleeve at 13F filing-date closes',
+              'Pick any filing date as the start and any stake',
+              'Blend several investors into one basket',
+              'QQQ benchmark computed over the same window',
+              'Shareable result links and an embeddable iframe',
+            ],
+            isPartOf: { '@type': 'WebSite', name: 'AI Investing Compass', url: siteUrl },
+          }),
+        }}
+      />
+
+      <header className="max-w-3xl" data-embed-hide>
         <h1 className="section-title">{t.title[loc]}</h1>
         <p className="mt-3 text-lg text-slate-300">{t.intro[loc]}</p>
         <p className="mt-3 text-sm text-slate-500">
@@ -91,10 +127,18 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
       </header>
 
       {/* 方法论放在表格之前,而不是脚注里:这套算法本身就是这一页的卖点。 */}
-      <section className="mt-8 max-w-3xl rounded-xl border border-accent/25 bg-accent/5 p-5">
+      <section className="mt-8 max-w-3xl rounded-xl border border-accent/25 bg-accent/5 p-5" data-embed-hide>
         <h2 className="text-base font-bold text-white">{t.methodTitle[loc]}</h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-300">{t.methodBody[loc]}</p>
       </section>
+
+      {rows.length > 0 && (
+        <HomeworkCalculator
+          locale={loc}
+          asOf={homework.generated}
+          rows={rows.map((r) => ({ slug: r.slug, label: label(r), from: r.from, to: r.to, legs: r.legs }))}
+        />
+      )}
 
       {rows.length === 0 ? (
         <p className="mt-8 rounded-xl border border-white/10 bg-white/5 p-5 text-sm text-slate-300">{t.empty[loc]}</p>
@@ -194,17 +238,24 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
       )}
 
       {/* 反面说明必须和数字同屏,不能藏在页脚:一个只写好消息的回测页不值得信。 */}
-      <section className="mt-10 max-w-3xl rounded-xl border border-white/10 bg-white/5 p-5">
+      <section className="mt-10 max-w-3xl rounded-xl border border-white/10 bg-white/5 p-5" data-embed-hide>
         <h2 className="text-base font-bold text-white">{t.caveatTitle[loc]}</h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-400">{t.caveats[loc]}</p>
         <p className="mt-3 text-xs text-slate-500">{t.source[loc]}</p>
       </section>
 
-      <div className="mt-6 max-w-3xl">
+      <div className="mt-6 max-w-3xl" data-embed-hide>
         <Disclaimer locale={loc} variant="long" />
       </div>
 
-      <section className="mt-10 max-w-2xl">
+      {/* 嵌入是唯一不需要站长动手的外链引擎——每一次嵌入都是一个分发节点。 */}
+      <section className="mt-10 max-w-3xl" data-embed-hide>
+        <h2 className="text-lg font-bold text-white">{t.embedTitle[loc]}</h2>
+        <p className="mt-2 text-sm text-slate-400">{t.embedNote[loc]}</p>
+        <EmbedCode locale={loc} src={`${siteUrl}/${loc}/track-record/?embed=1`} label={t.embedCopy[loc]} />
+      </section>
+
+      <section className="mt-10 max-w-2xl" data-embed-hide>
         <h2 className="text-lg font-bold text-white">{t.subTitle[loc]}</h2>
         <p className="mt-2 text-sm text-slate-400">{t.subBody[loc]}</p>
         <div className="mt-4">
@@ -213,6 +264,18 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
       </section>
 
       <p className="mt-8 text-xs text-slate-500">{t.warn[loc]}</p>
+
+      {/* 嵌入版的品牌回链——每个嵌入都是一个指回本页的分发节点。 */}
+      <p className="mt-4 hidden text-xs text-slate-400 [.embed-mode_&]:block">
+        <a
+          href={`${siteUrl}/${loc}/track-record?utm_source=widget`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="link-accent font-medium"
+        >
+          {t.title[loc]} · AI Investing Compass →
+        </a>
+      </p>
     </div>
   );
 }
