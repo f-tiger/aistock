@@ -1,9 +1,15 @@
-name: EDGAR reachability probe (one-off)
+name: One-off reachability probe
 
-# 一次性验证:GitHub runner 能否直连 EDGAR 并解析逐笔 13F。
-# 本仓公开 → Actions 免费,单次约 1 分钟。验证完即决定是否建常设管线。
+# 一次性验证 runner 能直连哪些外部数据源(EDGAR、免费日线源…)。
+# 沙箱出网被代理挡住,runner 是唯一能回答这个问题的机器。
+# 本仓公开 → Actions 免费,单次约 1 分钟;仅手动触发,无计划任务、无月成本。
 on:
   workflow_dispatch:
+    inputs:
+      script:
+        description: 'scripts/ 下要跑的探针文件名'
+        default: 'edgar-probe.mjs'
+        required: true
 
 jobs:
   probe:
@@ -12,4 +18,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
-      - run: node scripts/edgar-probe.mjs
+      - run: node "scripts/${{ inputs.script }}"
