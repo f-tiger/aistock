@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-08-15",
+  "asOf": "2026-08-16",
   "source": "Yahoo Finance",
   "quotes": {
     "AAPL": {
@@ -9,15 +9,6 @@
       "low52": 224.9,
       "offHighPct": -10.04,
       "fromLowPct": 36.03,
-      "currency": "USD"
-    },
-    "AMAT": {
-      "price": 507.18,
-      "changePct": -5.12,
-      "high52": 723,
-      "low52": 156.25,
-      "offHighPct": -29.85,
-      "fromLowPct": 224.6,
       "currency": "USD"
     },
     "AMD": {
@@ -47,40 +38,13 @@
       "fromLowPct": 35.7,
       "currency": "USD"
     },
-    "BABA": {
-      "price": 123.81,
-      "changePct": 1.35,
-      "high52": 189.34,
-      "low52": 94.81,
-      "offHighPct": -34.61,
-      "fromLowPct": 30.59,
-      "currency": "USD"
-    },
-    "BRK.B": {
-      "price": 504.03,
-      "changePct": -0.57,
-      "high52": 529.42,
-      "low52": 465.4,
-      "offHighPct": -4.8,
-      "fromLowPct": 8.3,
-      "currency": "USD"
-    },
-    "CRWV": {
-      "price": 105.26,
-      "changePct": -0.97,
-      "high52": 143.08,
-      "low52": 60.82,
-      "offHighPct": -26.43,
-      "fromLowPct": 73.07,
-      "currency": "USD"
-    },
-    "GEV": {
-      "price": 1063.25,
-      "changePct": 1.32,
-      "high52": 1174.86,
-      "low52": 547.96,
-      "offHighPct": -9.5,
-      "fromLowPct": 94.04,
+    "BAC": {
+      "price": 64.49,
+      "changePct": 0.62,
+      "high52": 64.81,
+      "low52": 46.72,
+      "offHighPct": -0.49,
+      "fromLowPct": 38.04,
       "currency": "USD"
     },
     "GOOGL": {
@@ -99,6 +63,15 @@
       "low52": 97.03,
       "offHighPct": -23.3,
       "fromLowPct": 242.53,
+      "currency": "USD"
+    },
+    "META": {
+      "price": 589.85,
+      "changePct": -0.86,
+      "high52": 785.23,
+      "low52": 525.72,
+      "offHighPct": -24.88,
+      "fromLowPct": 12.2,
       "currency": "USD"
     },
     "MSFT": {
@@ -126,15 +99,6 @@
       "low52": 165.17,
       "offHighPct": -4.49,
       "fromLowPct": 36.32,
-      "currency": "USD"
-    },
-    "PDD": {
-      "price": 84.79,
-      "changePct": 0.74,
-      "high52": 138.13,
-      "low52": 73.3,
-      "offHighPct": -38.62,
-      "fromLowPct": 15.68,
       "currency": "USD"
     },
     "PLTR": {
@@ -189,15 +153,6 @@
       "low52": 227.33,
       "offHighPct": -10.73,
       "fromLowPct": 87.55,
-      "currency": "USD"
-    },
-    "UBER": {
-      "price": 75.95,
-      "changePct": 0.09,
-      "high52": 100.1,
-      "low52": 65.94,
-      "offHighPct": -24.13,
-      "fromLowPct": 15.18,
       "currency": "USD"
     }
   }
