@@ -343,6 +343,15 @@ const dict = {
       zh: '每一期都用申报当天的收盘价换仓,复权计价。只算 AI 相关持仓、按申报权重归一,不是这几位的完整组合收益;13F 也看不见做空与期权对冲。过去的收益不预示未来,这不是荐股。',
       en: 'Every quarter is rebalanced at that filing’s closing price, on adjusted closes. AI-related holdings only, re-weighted as filed — not these managers’ whole-portfolio returns, and a 13F cannot show shorts or option hedges. Past results do not predict future returns; not a recommendation.',
     },
+    tgBtn: { zh: '这份作业更新时通知我 →', en: 'Tell me when this homework updates →' },
+    tgNote: {
+      zh: '一次点击，不用邮箱、不用密码、不用注册。13F 一年只落地 4 次;下一次这几位的新申报出来、这份成绩单重算时,机器人会给你发一条,带回你这份选择的永久链接。除此之外只有一条每日免费行情预告,不会有别的。',
+      en: 'One tap — no email, no password, no account. A 13F lands four times a year; when the next filing from these investors arrives and this scorecard recomputes, the bot sends one message with a permanent link back to this exact selection. Besides that you get one free daily market preview, and nothing else.',
+    },
+    tgLong: {
+      zh: '这份选择太长，装不进 Telegram 的链接（上限 64 字符）。少选几位再绑定——盯住一份被悄悄截断的选择，比不盯更糟。',
+      en: 'This selection is too long for a Telegram start link (64-character limit). Pick fewer investors and bind that — watching a silently truncated selection would be worse than not watching at all.',
+    },
     embedTitle: { zh: '把这个计算器放到你的页面上', en: 'Embed this calculator on your page' },
     embedNote: { zh: '复制这段 HTML。嵌入版会自动更新——13F 一年重算 4 次。', en: 'Copy this HTML. The embed updates itself — the backtest recomputes four times a year, at each 13F season.' },
     embedCopy: { zh: '复制嵌入代码', en: 'Copy embed code' },

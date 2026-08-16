@@ -5,6 +5,7 @@
   "description": "AI Investing Compass — a bilingual, education-focused hub for AI market trends, legendary investors' AI bets, and long-term investing.",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node -e \"require('fs').copyFileSync('lib/data/copy-homework.json','public/copy-homework.json')\"",
     "build": "next build",
     "start": "next start",
     "lint": "eslint ."

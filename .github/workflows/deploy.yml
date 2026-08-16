@@ -112,7 +112,7 @@ jobs:
         if: steps.token.outputs.present == 'true'
         run: |
           fail=0
-          for path in "/zh/track-record" "/en/track-record" "/llms.txt"; do
+          for path in "/zh/track-record" "/en/track-record" "/llms.txt" "/copy-homework.json"; do
             ok=0
             for i in $(seq 1 10); do
               # -L 是必须的:next.config.mjs 开了 trailingSlash,/zh/track-record 会 308
@@ -120,6 +120,8 @@ jobs:
               body=$(curl -sSL --max-time 15 "https://compass.agiscorecard.com$path" || true)
               case "$path" in
                 */track-record) needle="Druckenmiller\|德鲁肯米勒" ;;
+                # bot 靠这份 JSON 判断「新 13F 落地了没有」——它掉了,绑定的承诺就断了
+                */copy-homework.json) needle="cumulativeReturn" ;;
                 *) needle="Copy-Homework Scorecard" ;;
               esac
               if printf '%s' "$body" | grep -q "$needle"; then ok=1; break; fi

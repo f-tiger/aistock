@@ -33,3 +33,6 @@ next-env.d.ts
 
 # verification artifacts
 /screenshots/
+
+# 由 prebuild 从 lib/data/ 复制而来——不进版本库,否则两份会漂移
+public/copy-homework.json

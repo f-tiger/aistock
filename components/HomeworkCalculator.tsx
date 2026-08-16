@@ -8,6 +8,27 @@ export type Leg = { from: string; to: string; ret: number; holdings: number; cov
 export type Row = { slug: string; label: string; from: string; to: string; legs: Leg[] };
 
 /**
+ * 两字母短码。存在的唯一理由:Telegram 的 start 载荷上限 64 字符,
+ * 而 slug 拼起来(stanley-druckenmiller…)一个人就快用完了。
+ * 这张表只存在于本仓 —— bot 那边不需要它,它只负责把收到的短码原样拼回链接,
+ * 所以这里加人不需要同时改另一个仓库。
+ */
+const CODE: Record<string, string> = {
+  'warren-buffett': 'wb',
+  'cathie-wood': 'cw',
+  'stanley-druckenmiller': 'sd',
+  'bill-ackman': 'ba',
+  'duan-yongping': 'dy',
+  'david-tepper': 'dt',
+  'philippe-laffont': 'pl',
+  'michael-burry': 'mb',
+};
+const SLUG: Record<string, string> = Object.fromEntries(Object.entries(CODE).map(([k, v]) => [v, k]));
+// Telegram 的 start 载荷上限。全选 8 位也只有 34 字符,所以这条守卫今天不可能触发——
+// 留着是因为它便宜且正确:名单一旦变长,宁可让按钮消失,也不能去盯一份被悄悄截断的选择。
+const TG_MAX = 64;
+
+/**
  * 「如果我从那时候开始抄，今天多少钱」——把榜单变成工具的那一步。
  *
  * 全部在浏览器里算，没有任何请求：数据是构建时烘进页面的申报日回测结果。
@@ -53,8 +74,10 @@ export default function HomeworkCalculator({
   useEffect(() => {
     try {
       const q = new URLSearchParams(window.location.search);
+      // 两种写法都收:?who=<slug>-_-<slug>(页面自己写的)和 ?w=sd-cw(Telegram 回链)
       const who = (q.get('who') || '').split('-_-').filter(Boolean);
-      const valid = who.filter((w) => rows.some((r) => r.slug === w));
+      const short = (q.get('w') || '').split('-').filter(Boolean).map((c) => SLUG[c]).filter(Boolean);
+      const valid = [...who, ...short].filter((w) => rows.some((r) => r.slug === w));
       const f = q.get('from');
       const a = Number(q.get('amt'));
       setUi((u) => ({
@@ -265,6 +288,44 @@ export default function HomeworkCalculator({
               </tbody>
             </table>
           </div>
+
+          {/* 绑定 = 这个工具唯一能兑现的「订阅」。邮件发不出去(没有 ESP 密钥),
+              Telegram 能发,所以承诺只写在这条路径上。文案只答应 bot 那边
+              notifyHomework() 真的会做的事:下一次 13F 落地、成绩单重算时的一条消息。 */}
+          {(() => {
+            const codes = result.per.map((p) => CODE[p.slug]).filter(Boolean);
+            const payload = `h_${codes.join('-')}_${start.replace(/-/g, '')}`;
+            if (codes.length !== result.per.length) return null;
+            return (
+              <div className="mt-5 rounded-xl border border-white/10 bg-ink-900/50 p-4">
+                {payload.length <= TG_MAX ? (
+                  <>
+                    <a
+                      href={`https://t.me/sunwatchBot?start=${payload}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => {
+                        try {
+                          (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag?.('event', 'tool_click', {
+                            location: 'homework_tg_watch',
+                            label: codes.join('-'),
+                          });
+                        } catch {
+                          /* 统计失败不影响绑定 */
+                        }
+                      }}
+                      className="btn-primary"
+                    >
+                      {t.tgBtn[locale]}
+                    </a>
+                    <p className="mt-3 text-xs leading-relaxed text-slate-400">{t.tgNote[locale]}</p>
+                  </>
+                ) : (
+                  <p className="text-xs leading-relaxed text-slate-400">{t.tgLong[locale]}</p>
+                )}
+              </div>
+            );
+          })()}
 
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <button type="button" onClick={copyLink} className="pill transition hover:border-accent/50 hover:text-white">
