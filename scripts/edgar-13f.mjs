@@ -1,21 +1,25 @@
 #!/usr/bin/env node
-// 从 EDGAR 抓取 8 位投资者最近一期 13F 的**逐笔持仓原文**,落成 JSON 提交回仓库。
+// 从 EDGAR 抓取投资者最近一期 13F 的**逐笔持仓原文**,落成 JSON 提交回仓库。
 //
-// 为什么必须是原文:本仓硬规则「持仓只能来自逐笔申报,定性表态永不充当持仓」。
-// 会话沙箱够不到 sec.gov(代理 403),GitHub runner 可以——2026-08-16 已实测
-// 拉到 ARK 的 Q2 191 条持仓。本仓公开,Actions 免费。
+// 硬规则:持仓只能来自逐笔申报,定性表态永不充当持仓。会话沙箱够不到 sec.gov
+// (代理 403),GitHub runner 可以。本仓公开,Actions 免费。
 //
-// 两条已知坑,都在下面处理掉:
-// ① informationTable 文件名各家不同(伯克希尔就不叫这个名)——不靠文件名猜,
-//    改为逐个 .xml 拉下来看内容里有没有 <infoTable>,内容说了算。
-// ② SEC 要求带可识别 UA,且限速 10 req/s——这里保守到 ~3 req/s。
+// 首跑(2026-08-16)暴露的三个坑,全部在此修掉——每一条都写清为什么:
+// ① 标签命名空间:上一版正则误写成 `\\w`(字面反斜杠+w),导致带 <ns1:nameOfIssuer>
+//    的申报一行都匹配不上,段永平那家被算成 0 条持仓。空结果长得像"这季清仓了",
+//    这种错最危险,所以现在对 0 条结果一律标记 suspect 并保留诊断信息。
+// ② 金额单位:2023 年起 SEC 要求按美元报,此前按千美元;仍有申报人沿用旧写法
+//    (德鲁肯米勒 95 条持仓报出 1000 万美元)。不靠猜年份——用监管门槛判定:
+//    13F 只有管理规模 ≥1 亿美元才需申报,所以总额低于 1 亿必然是千美元单位。
+// ③ 主体核对:上一版从搜索页 <title> 抓公司名,拿到的是 "Company Search Feed"
+//    这种页面标题,等于没核对。改为以 submissions JSON 里的 entity name 为准——
+//    那是这份申报自己声明的主体,拿错 CIK 会立刻暴露,而不是静默抓来别人的持仓。
 import { writeFileSync } from 'node:fs';
 
 const UA = { 'User-Agent': 'AGI Scorecard Research (contact: https://agiscorecard.com/about)' };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const THIRTEEN_F_THRESHOLD_USD = 100_000_000;   // 13F 申报门槛,用作单位判定的锚
 
-// CIK 只写我已核实过的两个;其余留空由 EDGAR 按名字解析,并把解析到的公司名
-// 打出来供人核对——宁可留空,不可写错(写错会静默抓来别人的持仓)。
 const TARGETS = [
   { slug: 'warren-buffett',        firm: 'Berkshire Hathaway Inc',        cik: '0001067983' },
   { slug: 'cathie-wood',           firm: 'ARK Investment Management LLC', cik: '0001697748' },
@@ -28,77 +32,91 @@ const TARGETS = [
 ];
 
 async function get(url, json = false) {
-  await sleep(340);                                   // ~3 req/s,远低于 SEC 上限
+  await sleep(340);                                   // ~3 req/s,远低于 SEC 的 10/s 上限
   const r = await fetch(url, { headers: UA, signal: AbortSignal.timeout(25000) });
   if (!r.ok) throw new Error(`HTTP ${r.status} ${url.slice(0, 70)}`);
   return json ? r.json() : r.text();
 }
 
+// 命名空间可选,大小写不敏感。这一行是上一版的 bug 源头,现在只写一处、全局复用。
+const tag = (s, t) => (s.match(new RegExp('<(?:\\w+:)?' + t + '>([^<]*)<', 'i')) || [])[1] || '';
+
 async function resolveCik(firm) {
-  const u = `https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=${encodeURIComponent(firm)}`
-          + `&type=13F-HR&dateb=&owner=include&count=5&output=atom`;
+  const u = 'https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company='
+          + encodeURIComponent(firm) + '&type=13F-HR&dateb=&owner=include&count=5&output=atom';
   const xml = await get(u);
-  const cik = (xml.match(/CIK=(\d{10})/) || xml.match(/<cik>(\d+)<\/cik>/i) || [])[1];
-  const name = (xml.match(/<conformed-name>([^<]+)</i) || xml.match(/<title>([^<]+)</i) || [])[1];
-  return cik ? { cik: cik.padStart(10, '0'), name: (name || '').trim() } : null;
+  const m = xml.match(/CIK=(\d{10})/);
+  return m ? m[1] : null;
 }
 
-const tag = (s, t) => (s.match(new RegExp(`<(?:\\\\w+:)?${t}>([^<]*)<`, 'i')) || [])[1] || '';
-
 async function holdingsFor(cik) {
-  const sub = await get(`https://data.sec.gov/submissions/CIK${cik}.json`, true);
+  const sub = await get('https://data.sec.gov/submissions/CIK' + cik + '.json', true);
   const rec = sub.filings.recent;
   const i = rec.form.findIndex((f) => f === '13F-HR');
   if (i < 0) throw new Error('no 13F-HR on file');
   const acc = rec.accessionNumber[i].replace(/-/g, '');
-  const dir = `https://www.sec.gov/Archives/edgar/data/${Number(cik)}/${acc}`;
-  const idx = await get(`${dir}/index.json`, true);
+  const dir = 'https://www.sec.gov/Archives/edgar/data/' + Number(cik) + '/' + acc;
+  const idx = await get(dir + '/index.json', true);
 
-  // 不靠文件名猜:逐个 xml 看内容,谁含 <infoTable> 谁就是持仓表。
-  let xml = null;
+  // 不靠文件名猜持仓表(各家命名不同):逐个 xml 看内容里有没有 infoTable,内容说了算。
+  let xml = null, tried = [];
   for (const it of idx.directory.item.filter((x) => /\.xml$/i.test(x.name))) {
-    const body = await get(`${dir}/${it.name}`);
-    if (/<(?:\w+:)?infoTable>/i.test(body)) { xml = body; break; }
+    const body = await get(dir + '/' + it.name);
+    tried.push(it.name);
+    if (/<(?:\w+:)?infoTable[\s>]/i.test(body)) { xml = body; break; }
   }
-  if (!xml) throw new Error('no informationTable in any xml of the filing');
+  if (!xml) throw new Error('no informationTable among: ' + tried.join(', ').slice(0, 90));
 
-  const blocks = xml.match(/<(?:\w+:)?infoTable>[\s\S]*?<\/(?:\w+:)?infoTable>/gi) || [];
+  const blocks = xml.match(/<(?:\w+:)?infoTable[\s>][\s\S]*?<\/(?:\w+:)?infoTable>/gi) || [];
   const rows = blocks.map((b) => ({
     issuer: tag(b, 'nameOfIssuer'),
     cusip: tag(b, 'cusip'),
-    valueUsd: Number(tag(b, 'value')) || 0,     // 注:2023 起 SEC 已改为按美元报,不再是千美元
+    raw: Number(tag(b, 'value')) || 0,
     shares: Number(tag(b, 'sshPrnamt')) || 0,
     cls: tag(b, 'titleOfClass'),
   })).filter((r) => r.issuer);
 
-  const total = rows.reduce((a, r) => a + r.valueUsd, 0);
-  rows.sort((a, b) => b.valueUsd - a.valueUsd);
+  // 单位判定:低于 13F 申报门槛 → 该申报按千美元报,统一折算成美元。
+  const rawTotal = rows.reduce((a, r) => a + r.raw, 0);
+  const inThousands = rawTotal > 0 && rawTotal < THIRTEEN_F_THRESHOLD_USD;
+  const mult = inThousands ? 1000 : 1;
+  const out = rows.map((r) => ({ issuer: r.issuer, cusip: r.cusip, cls: r.cls,
+                                 shares: r.shares, valueUsd: r.raw * mult }));
+  const total = rawTotal * mult;
+  out.sort((a, b) => b.valueUsd - a.valueUsd);
+
   return {
     filedAt: rec.filingDate[i], periodEnd: rec.reportDate[i],
-    accession: rec.accessionNumber[i], sourceUrl: `${dir}/`,
-    positions: rows.length, totalValueUsd: total,
-    top: rows.slice(0, 25).map((r) => ({ ...r, pct: total ? Math.round((r.valueUsd / total) * 1000) / 10 : 0 })),
+    accession: rec.accessionNumber[i], sourceUrl: dir + '/',
+    positions: out.length, totalValueUsd: total,
+    valueUnitAsFiled: inThousands ? 'thousands (converted)' : 'usd',
+    // 0 条持仓看起来像「清仓了」,但更可能是解析没覆盖到某种格式——必须自曝而非静默。
+    suspect: out.length === 0 ? 'zero positions parsed — verify manually before use' : null,
+    xmlFilesTried: out.length === 0 ? tried : undefined,
+    top: out.slice(0, 25).map((r) => ({ ...r, pct: total ? Math.round((r.valueUsd / total) * 1000) / 10 : 0 })),
   };
 }
 
-const out = { generated: new Date().toISOString().slice(0, 10), note: 'Line-by-line SEC 13F holdings, fetched from EDGAR primary filings. Values in USD as filed.', investors: {} };
+const out = { generated: new Date().toISOString().slice(0, 10),
+  note: 'Line-by-line SEC 13F holdings from EDGAR primary filings. entityName is the filer as declared in its own submissions record — check it matches the intended investor before using.',
+  investors: {} };
 let ok = 0;
 for (const t of TARGETS) {
   try {
-    let cik = t.cik, resolved = null;
-    if (!cik) {
-      resolved = await resolveCik(t.firm);
-      if (!resolved) throw new Error(`CIK unresolved for "${t.firm}"`);
-      cik = resolved.cik;
-    }
+    const cik = t.cik || await resolveCik(t.firm);
+    if (!cik) throw new Error('CIK unresolved for "' + t.firm + '"');
+    const sub = await get('https://data.sec.gov/submissions/CIK' + cik + '.json', true);
     const h = await holdingsFor(cik);
-    out.investors[t.slug] = { firm: t.firm, cik, resolvedName: resolved?.name || null, ...h };
-    console.log(`✅ ${t.slug.padEnd(22)} CIK ${cik}${resolved ? ` (解析到: ${resolved.name})` : ''} · ${h.periodEnd} · ${h.positions} 条 · $${(h.totalValueUsd/1e9).toFixed(1)}B · 首位 ${h.top[0]?.issuer}`);
+    out.investors[t.slug] = { firm: t.firm, cik, entityName: sub.name, cikSource: t.cik ? 'verified' : 'resolved', ...h };
+    const flag = h.suspect ? ' ⚠️ ' + h.suspect : '';
+    console.log('✅ ' + t.slug.padEnd(22) + ' [' + sub.name + '] ' + h.periodEnd + ' · ' + h.positions
+      + ' 条 · $' + (h.totalValueUsd / 1e9).toFixed(2) + 'B (' + h.valueUnitAsFiled + ') · 首位 '
+      + (h.top[0]?.issuer || '—') + flag);
     ok++;
   } catch (e) {
-    out.investors[t.slug] = { firm: t.firm, error: String(e.message).slice(0, 120) };
-    console.log(`❌ ${t.slug.padEnd(22)} ${e.message}`);
+    out.investors[t.slug] = { firm: t.firm, error: String(e.message).slice(0, 140) };
+    console.log('❌ ' + t.slug.padEnd(22) + ' ' + e.message);
   }
 }
 writeFileSync('lib/data/13f-edgar.json', JSON.stringify(out, null, 2) + '\n');
-console.log(`\n${ok}/${TARGETS.length} 家取得逐笔持仓 → lib/data/13f-edgar.json`);
+console.log('\n' + ok + '/' + TARGETS.length + ' 家取得逐笔持仓 → lib/data/13f-edgar.json');
