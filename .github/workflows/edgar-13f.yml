@@ -19,10 +19,13 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
       - run: node scripts/edgar-13f.mjs
+      # 同一次运行里顺带回测「抄作业」收益:持仓来源相同(EDGAR),不新增计划任务、
+      # 不新增月成本。价格来自 Stooq 公开日线,无密钥。
+      - run: node scripts/copy-homework.mjs
       - name: Commit if changed
         run: |
           git config user.name 'Claude'
           git config user.email 'noreply@anthropic.com'
-          git add lib/data/13f-edgar.json
-          git diff --cached --quiet || git commit -m "chore: 13F line-by-line refresh from EDGAR"
+          git add lib/data/13f-edgar.json lib/data/copy-homework.json
+          git diff --cached --quiet || git commit -m "chore: 13F line-by-line refresh + copy-homework backtest from EDGAR"
           git push
