@@ -2632,7 +2632,164 @@
     },
     "duan-yongping": {
       "firm": "H&H International Investment",
-      "error": "HTTP 503 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=H%2"
+      "cik": "0001759760",
+      "entityName": "H&H International Investment, LLC",
+      "cikSource": "resolved",
+      "filedAt": "2026-08-14",
+      "periodEnd": "2026-06-30",
+      "accession": "0001759760-26-000007",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1759760/000175976026000007/",
+      "lineItems": 18,
+      "positions": 18,
+      "totalValueUsd": 19100584155,
+      "valueUnitAsFiled": "usd",
+      "suspect": null,
+      "holdings": [
+        {
+          "issuer": "APPLE INC",
+          "cusip": "037833100",
+          "valueUsd": 7841281858,
+          "shares": 27098707,
+          "lines": 1,
+          "pct": 41.1
+        },
+        {
+          "issuer": "BERKSHIRE HATHAWAY INC DEL",
+          "cusip": "084670702",
+          "valueUsd": 4618447581,
+          "shares": 9229696,
+          "lines": 1,
+          "pct": 24.2
+        },
+        {
+          "issuer": "PDD HOLDINGS INC",
+          "cusip": "722304102",
+          "valueUsd": 1908685330,
+          "shares": 25022094,
+          "lines": 1,
+          "pct": 10
+        },
+        {
+          "issuer": "TESLA INC",
+          "cusip": "88160R101",
+          "valueUsd": 1421796240,
+          "shares": 3380400,
+          "lines": 1,
+          "pct": 7.4
+        },
+        {
+          "issuer": "NVIDIA CORPORATION",
+          "cusip": "67066G104",
+          "valueUsd": 1256700261,
+          "shares": 6280675,
+          "lines": 1,
+          "pct": 6.6
+        },
+        {
+          "issuer": "ALPHABET INC",
+          "cusip": "02079K107",
+          "valueUsd": 695565438,
+          "shares": 1968600,
+          "lines": 1,
+          "pct": 3.6
+        },
+        {
+          "issuer": "OCCIDENTAL PETE CORP",
+          "cusip": "674599105",
+          "valueUsd": 498401055,
+          "shares": 10261500,
+          "lines": 1,
+          "pct": 2.6
+        },
+        {
+          "issuer": "MICROSOFT CORP",
+          "cusip": "594918104",
+          "valueUsd": 281294382,
+          "shares": 754100,
+          "lines": 1,
+          "pct": 1.5
+        },
+        {
+          "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+          "cusip": "G25457105",
+          "valueUsd": 190691340,
+          "shares": 701200,
+          "lines": 1,
+          "pct": 1
+        },
+        {
+          "issuer": "UNITEDHEALTH GROUP INC",
+          "cusip": "91324P102",
+          "valueUsd": 166085748,
+          "shares": 399600,
+          "lines": 1,
+          "pct": 0.9
+        },
+        {
+          "issuer": "DISNEY WALT CO",
+          "cusip": "254687106",
+          "valueUsd": 164260250,
+          "shares": 1706600,
+          "lines": 1,
+          "pct": 0.9
+        },
+        {
+          "issuer": "ALIBABA GROUP HLDG LTD",
+          "cusip": "01609W102",
+          "valueUsd": 28928372,
+          "shares": 301400,
+          "lines": 1,
+          "pct": 0.2
+        },
+        {
+          "issuer": "CIRCLE INTERNET GROUP INC",
+          "cusip": "172573107",
+          "valueUsd": 12526000,
+          "shares": 200000,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "PALANTIR TECHNOLOGIES INC",
+          "cusip": "69608A108",
+          "valueUsd": 7000200,
+          "shares": 60000,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "SYNOPSYS INC",
+          "cusip": "871607107",
+          "valueUsd": 4460700,
+          "shares": 10000,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "SNOWFLAKE INC",
+          "cusip": "833445109",
+          "valueUsd": 2545000,
+          "shares": 10000,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "TEMPUS AI INC",
+          "cusip": "88023B103",
+          "valueUsd": 1158600,
+          "shares": 20000,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "INNODATA INC",
+          "cusip": "457642205",
+          "valueUsd": 755800,
+          "shares": 10000,
+          "lines": 1,
+          "pct": 0
+        }
+      ]
     },
     "david-tepper": {
       "firm": "Appaloosa",
