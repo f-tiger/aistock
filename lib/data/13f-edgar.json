@@ -1,216 +1,219 @@
 {
   "generated": "2026-08-16",
-  "note": "Line-by-line SEC 13F holdings, fetched from EDGAR primary filings. Values in USD as filed.",
+  "note": "Line-by-line SEC 13F holdings from EDGAR primary filings. entityName is the filer as declared in its own submissions record — check it matches the intended investor before using.",
   "investors": {
     "warren-buffett": {
       "firm": "Berkshire Hathaway Inc",
       "cik": "0001067983",
-      "resolvedName": null,
+      "entityName": "BERKSHIRE HATHAWAY INC",
+      "cikSource": "verified",
       "filedAt": "2026-08-14",
       "periodEnd": "2026-06-30",
       "accession": "0001193125-26-352200",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1067983/000119312526352200/",
       "positions": 89,
       "totalValueUsd": 299253556246,
+      "valueUnitAsFiled": "usd",
+      "suspect": null,
       "top": [
         {
           "issuer": "AMERICAN EXPRESS CO",
           "cusip": "025816109",
-          "valueUsd": 50419898471,
-          "shares": 149061045,
           "cls": "COM",
+          "shares": 149061045,
+          "valueUsd": 50419898471,
           "pct": 16.8
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K305",
-          "valueUsd": 23523689772,
-          "shares": 65824467,
           "cls": "CAP STK CL A",
+          "shares": 65824467,
+          "valueUsd": 23523689772,
           "pct": 7.9
         },
         {
           "issuer": "APPLE INC",
           "cusip": "037833100",
-          "valueUsd": 23341172315,
-          "shares": 80664820,
           "cls": "COM",
+          "shares": 80664820,
+          "valueUsd": 23341172315,
           "pct": 7.8
         },
         {
           "issuer": "COCA COLA CO",
           "cusip": "191216100",
-          "valueUsd": 22976876186,
-          "shares": 282722729,
           "cls": "COM",
+          "shares": 282722729,
+          "valueUsd": 22976876186,
           "pct": 7.7
         },
         {
           "issuer": "APPLE INC",
           "cusip": "037833100",
-          "valueUsd": 17808079008,
-          "shares": 61542988,
           "cls": "COM",
+          "shares": 61542988,
+          "valueUsd": 17808079008,
           "pct": 6
         },
         {
           "issuer": "BANK OF AMER CORP",
           "cusip": "060505104",
-          "valueUsd": 17595909185,
-          "shares": 308808515,
           "cls": "COM",
+          "shares": 308808515,
+          "valueUsd": 17595909185,
           "pct": 5.9
         },
         {
           "issuer": "OCCIDENTAL PETE CORP",
           "cusip": "674599105",
-          "valueUsd": 12868205304,
-          "shares": 264941431,
           "cls": "COM",
+          "shares": 264941431,
+          "valueUsd": 12868205304,
           "pct": 4.3
         },
         {
           "issuer": "CHUBB LIMITED",
           "cusip": "H1467J104",
-          "valueUsd": 11670066615,
-          "shares": 34249183,
           "cls": "COM",
+          "shares": 34249183,
+          "valueUsd": 11670066615,
           "pct": 3.9
         },
         {
           "issuer": "APPLE INC",
           "cusip": "037833100",
-          "valueUsd": 10047736640,
-          "shares": 34724000,
           "cls": "COM",
+          "shares": 34724000,
+          "valueUsd": 10047736640,
           "pct": 3.4
         },
         {
           "issuer": "CHEVRON CORPORATION",
           "cusip": "166764100",
-          "valueUsd": 9655809914,
-          "shares": 58251749,
           "cls": "COM",
+          "shares": 58251749,
+          "valueUsd": 9655809914,
           "pct": 3.2
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K107",
-          "valueUsd": 9606489032,
-          "shares": 27188433,
           "cls": "CAP STK CL C",
+          "shares": 27188433,
+          "valueUsd": 9606489032,
           "pct": 3.2
         },
         {
           "issuer": "KRAFT HEINZ CO",
           "cusip": "500754106",
-          "valueUsd": 7691494401,
-          "shares": 325634818,
           "cls": "COM",
+          "shares": 325634818,
+          "valueUsd": 7691494401,
           "pct": 2.6
         },
         {
           "issuer": "BANK OF AMER CORP",
           "cusip": "060505104",
-          "valueUsd": 7163525600,
-          "shares": 125720000,
           "cls": "COM",
+          "shares": 125720000,
+          "valueUsd": 7163525600,
           "pct": 2.4
         },
         {
           "issuer": "COCA COLA CO",
           "cusip": "191216100",
-          "valueUsd": 6524615664,
-          "shares": 80283200,
           "cls": "COM",
+          "shares": 80283200,
+          "valueUsd": 6524615664,
           "pct": 2.2
         },
         {
           "issuer": "MOODYS CORP",
           "cusip": "615369105",
-          "valueUsd": 5717548850,
-          "shares": 12623750,
           "cls": "COM",
+          "shares": 12623750,
+          "valueUsd": 5717548850,
           "pct": 1.9
         },
         {
           "issuer": "MOODYS CORP",
           "cusip": "615369105",
-          "valueUsd": 5423231470,
-          "shares": 11973928,
           "cls": "COM",
+          "shares": 11973928,
+          "valueUsd": 5423231470,
           "pct": 1.8
         },
         {
           "issuer": "DELTA AIR LINES INC",
           "cusip": "247361702",
-          "valueUsd": 5368591200,
-          "shares": 57320000,
           "cls": "COM NEW",
+          "shares": 57320000,
+          "valueUsd": 5368591200,
           "pct": 1.8
         },
         {
           "issuer": "APPLE INC",
           "cusip": "037833100",
-          "valueUsd": 4494339520,
-          "shares": 15532000,
           "cls": "COM",
+          "shares": 15532000,
+          "valueUsd": 4494339520,
           "pct": 1.5
         },
         {
           "issuer": "APPLE INC",
           "cusip": "037833100",
-          "valueUsd": 4187617920,
-          "shares": 14472000,
           "cls": "COM",
+          "shares": 14472000,
+          "valueUsd": 4187617920,
           "pct": 1.4
         },
         {
           "issuer": "DAVITA INC",
           "cusip": "23918K108",
-          "valueUsd": 3331328308,
-          "shares": 14973608,
           "cls": "COM",
+          "shares": 14973608,
+          "valueUsd": 3331328308,
           "pct": 1.1
         },
         {
           "issuer": "SIRIUSXM HOLDINGS INC",
           "cusip": "829933100",
-          "valueUsd": 3214608586,
-          "shares": 108822227,
           "cls": "COMMON STOCK",
+          "shares": 108822227,
+          "valueUsd": 3214608586,
           "pct": 1.1
         },
         {
           "issuer": "DAVITA INC",
           "cusip": "23918K108",
-          "valueUsd": 3093940590,
-          "shares": 13906601,
           "cls": "COM",
+          "shares": 13906601,
+          "valueUsd": 3093940590,
           "pct": 1
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K305",
-          "valueUsd": 2394379000,
-          "shares": 6700000,
           "cls": "CAP STK CL A",
+          "shares": 6700000,
+          "valueUsd": 2394379000,
           "pct": 0.8
         },
         {
           "issuer": "CHEVRON CORPORATION",
           "cusip": "166764100",
-          "valueUsd": 2234059905,
-          "shares": 13477678,
           "cls": "COM",
+          "shares": 13477678,
+          "valueUsd": 2234059905,
           "pct": 0.7
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K305",
-          "valueUsd": 2233562500,
-          "shares": 6250000,
           "cls": "CAP STK CL A",
+          "shares": 6250000,
+          "valueUsd": 2233562500,
           "pct": 0.7
         }
       ]
@@ -218,212 +221,215 @@
     "cathie-wood": {
       "firm": "ARK Investment Management LLC",
       "cik": "0001697748",
-      "resolvedName": null,
+      "entityName": "ARK Investment Management LLC",
+      "cikSource": "verified",
       "filedAt": "2026-08-14",
       "periodEnd": "2026-06-30",
       "accession": "0001104659-26-096910",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1697748/000110465926096910/",
       "positions": 191,
       "totalValueUsd": 15402788184,
+      "valueUnitAsFiled": "usd",
+      "suspect": null,
       "top": [
         {
           "issuer": "Tesla Inc",
           "cusip": "88160R101",
-          "valueUsd": 1160772073,
-          "shares": 2759800,
           "cls": "Common Stock",
+          "shares": 2759800,
+          "valueUsd": 1160772073,
           "pct": 7.5
         },
         {
           "issuer": "Advanced Micro Devices Inc",
           "cusip": "007903107",
-          "valueUsd": 822826048,
-          "shares": 1416443,
           "cls": "Common Stock",
+          "shares": 1416443,
+          "valueUsd": 822826048,
           "pct": 5.3
         },
         {
           "issuer": "Space Exploration Technologies Corp",
           "cusip": "84615Q103",
-          "valueUsd": 765113281,
-          "shares": 4478013,
           "cls": "Common Stock",
+          "shares": 4478013,
+          "valueUsd": 765113281,
           "pct": 5
         },
         {
           "issuer": "Tempus AI Inc",
           "cusip": "88023B103",
-          "valueUsd": 580611200,
-          "shares": 10022634,
           "cls": "Common Stock",
+          "shares": 10022634,
+          "valueUsd": 580611200,
           "pct": 3.8
         },
         {
           "issuer": "Robinhood Markets Inc",
           "cusip": "770700102",
-          "valueUsd": 525069168,
-          "shares": 5236031,
           "cls": "Common Stock",
+          "shares": 5236031,
+          "valueUsd": 525069168,
           "pct": 3.4
         },
         {
           "issuer": "CRISPR Therapeutics AG",
           "cusip": "H17182108",
-          "valueUsd": 515999631,
-          "shares": 9460939,
           "cls": "Common Stock",
+          "shares": 9460939,
+          "valueUsd": 515999631,
           "pct": 3.4
         },
         {
           "issuer": "Shopify Inc",
           "cusip": "82509L107",
-          "valueUsd": 474523465,
-          "shares": 4155925,
           "cls": "Common Stock",
+          "shares": 4155925,
+          "valueUsd": 474523465,
           "pct": 3.1
         },
         {
           "issuer": "Twist Bioscience Corp",
           "cusip": "90184D100",
-          "valueUsd": 468083756,
-          "shares": 4549803,
           "cls": "Common Stock",
+          "shares": 4549803,
+          "valueUsd": 468083756,
           "pct": 3
         },
         {
           "issuer": "10X Genomics Inc",
           "cusip": "88025U109",
-          "valueUsd": 383517223,
-          "shares": 10003057,
           "cls": "Common Stock",
+          "shares": 10003057,
+          "valueUsd": 383517223,
           "pct": 2.5
         },
         {
           "issuer": "Amazon.com Inc",
           "cusip": "023135106",
-          "valueUsd": 379241133,
-          "shares": 1591177,
           "cls": "Common Stock",
+          "shares": 1591177,
+          "valueUsd": 379241133,
           "pct": 2.5
         },
         {
           "issuer": "Palantir Technologies Inc",
           "cusip": "69608A108",
-          "valueUsd": 374777381,
-          "shares": 3212286,
           "cls": "Common Stock",
+          "shares": 3212286,
+          "valueUsd": 374777381,
           "pct": 2.4
         },
         {
           "issuer": "Alphabet Inc",
           "cusip": "02079K107",
-          "valueUsd": 368641312,
-          "shares": 1043334,
           "cls": "Common Stock",
+          "shares": 1043334,
+          "valueUsd": 368641312,
           "pct": 2.4
         },
         {
           "issuer": "Coinbase Global Inc",
           "cusip": "19260Q107",
-          "valueUsd": 367129713,
-          "shares": 2511319,
           "cls": "Common Stock",
+          "shares": 2511319,
+          "valueUsd": 367129713,
           "pct": 2.4
         },
         {
           "issuer": "ROBLOX Corp",
           "cusip": "771049103",
-          "valueUsd": 351615103,
-          "shares": 6465890,
           "cls": "Common Stock",
+          "shares": 6465890,
+          "valueUsd": 351615103,
           "pct": 2.3
         },
         {
           "issuer": "Beam Therapeutics Inc",
           "cusip": "07373V105",
-          "valueUsd": 351260447,
-          "shares": 10234862,
           "cls": "Common Stock",
+          "shares": 10234862,
+          "valueUsd": 351260447,
           "pct": 2.3
         },
         {
           "issuer": "Teradyne Inc",
           "cusip": "880770102",
-          "valueUsd": 311971420,
-          "shares": 644782,
           "cls": "Common Stock",
+          "shares": 644782,
+          "valueUsd": 311971420,
           "pct": 2
         },
         {
           "issuer": "Intellia Therapeutics Inc",
           "cusip": "45826J105",
-          "valueUsd": 285536575,
-          "shares": 16875684,
           "cls": "Common Stock",
+          "shares": 16875684,
+          "valueUsd": 285536575,
           "pct": 1.9
         },
         {
           "issuer": "Circle Internet Group Inc",
           "cusip": "172573107",
-          "valueUsd": 285477674,
-          "shares": 4558162,
           "cls": "Common Stock",
+          "shares": 4558162,
+          "valueUsd": 285477674,
           "pct": 1.9
         },
         {
           "issuer": "NVIDIA Corp",
           "cusip": "67066G104",
-          "valueUsd": 276373746,
-          "shares": 1381247,
           "cls": "Common Stock",
+          "shares": 1381247,
+          "valueUsd": 276373746,
           "pct": 1.8
         },
         {
           "issuer": "CoreWeave Inc",
           "cusip": "21873S108",
-          "valueUsd": 264496911,
-          "shares": 2657192,
           "cls": "Common Stock",
+          "shares": 2657192,
+          "valueUsd": 264496911,
           "pct": 1.7
         },
         {
           "issuer": "Deere &amp; Co",
           "cusip": "244199105",
-          "valueUsd": 249307586,
-          "shares": 393025,
           "cls": "Common Stock",
+          "shares": 393025,
+          "valueUsd": 249307586,
           "pct": 1.6
         },
         {
           "issuer": "Block Inc",
           "cusip": "852234103",
-          "valueUsd": 235445950,
-          "shares": 3097973,
           "cls": "Common Stock",
+          "shares": 3097973,
+          "valueUsd": 235445950,
           "pct": 1.5
         },
         {
           "issuer": "Kratos Defense &amp; Security Solutions Inc.",
           "cusip": "50077B207",
-          "valueUsd": 232974116,
-          "shares": 4672566,
           "cls": "Common Stock",
+          "shares": 4672566,
+          "valueUsd": 232974116,
           "pct": 1.5
         },
         {
           "issuer": "Taiwan Semiconductor Manufacturing Company Ltd",
           "cusip": "874039100",
-          "valueUsd": 230325325,
-          "shares": 482286,
           "cls": "ADR",
+          "shares": 482286,
+          "valueUsd": 230325325,
           "pct": 1.5
         },
         {
           "issuer": "Natera Inc",
           "cusip": "632307104",
-          "valueUsd": 186989592,
-          "shares": 688855,
           "cls": "Common Stock",
+          "shares": 688855,
+          "valueUsd": 186989592,
           "pct": 1.2
         }
       ]
@@ -431,212 +437,215 @@
     "stanley-druckenmiller": {
       "firm": "Duquesne Family Office LLC",
       "cik": "0001536411",
-      "resolvedName": "Duquesne Family Office LLC",
+      "entityName": "Duquesne Family Office LLC",
+      "cikSource": "resolved",
       "filedAt": "2026-08-14",
       "periodEnd": "2026-06-30",
       "accession": "0001536411-26-000006",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1536411/000153641126000006/",
       "positions": 95,
-      "totalValueUsd": 5210856,
+      "totalValueUsd": 5210856000,
+      "valueUnitAsFiled": "thousands (converted)",
+      "suspect": null,
       "top": [
         {
           "issuer": "Natera Inc",
           "cusip": "632307104",
-          "valueUsd": 864923,
-          "shares": 3186306,
           "cls": "COM",
+          "shares": 3186306,
+          "valueUsd": 864923000,
           "pct": 16.6
         },
         {
           "issuer": "Taiwan Semiconductor Manufac",
           "cusip": "874039100",
-          "valueUsd": 281613,
-          "shares": 589680,
           "cls": "SPONSORED ADS",
+          "shares": 589680,
+          "valueUsd": 281613000,
           "pct": 5.4
         },
         {
           "issuer": "Stmicroelectronics N V",
           "cusip": "861012102",
-          "valueUsd": 232375,
-          "shares": 3102880,
           "cls": "NY REGISTRY",
+          "shares": 3102880,
+          "valueUsd": 232375000,
           "pct": 4.5
         },
         {
           "issuer": "Invesco Exchange Traded Fd T",
           "cusip": "46137V357",
-          "valueUsd": 174684,
-          "shares": 821000,
           "cls": "S&amp;P500 EQL WGT",
+          "shares": 821000,
+          "valueUsd": 174684000,
           "pct": 3.4
         },
         {
           "issuer": "Insmed Inc",
           "cusip": "457669307",
-          "valueUsd": 151900,
-          "shares": 1424690,
           "cls": "COM PAR $.01",
+          "shares": 1424690,
+          "valueUsd": 151900000,
           "pct": 2.9
         },
         {
           "issuer": "Ishares Inc",
           "cusip": "464286400",
-          "valueUsd": 145866,
-          "shares": 4228000,
           "cls": "MSCI BRAZIL ETF",
+          "shares": 4228000,
+          "valueUsd": 145866000,
           "pct": 2.8
         },
         {
           "issuer": "Insmed Inc",
           "cusip": "457669307",
-          "valueUsd": 143937,
-          "shares": 1350000,
           "cls": "COM PAR $.01",
+          "shares": 1350000,
+          "valueUsd": 143937000,
           "pct": 2.8
         },
         {
           "issuer": "Ypf Sociedad Anonima",
           "cusip": "984245100",
-          "valueUsd": 142726,
-          "shares": 3138897,
           "cls": "SPON ADR CL D",
+          "shares": 3138897,
+          "valueUsd": 142726000,
           "pct": 2.7
         },
         {
           "issuer": "Amazon Com Inc",
           "cusip": "023135106",
-          "valueUsd": 129085,
-          "shares": 541600,
           "cls": "COM",
+          "shares": 541600,
+          "valueUsd": 129085000,
           "pct": 2.5
         },
         {
           "issuer": "Bbb Foods Inc",
           "cusip": "G0896C103",
-          "valueUsd": 120915,
-          "shares": 2901733,
           "cls": "CL A COM",
+          "shares": 2901733,
+          "valueUsd": 120915000,
           "pct": 2.3
         },
         {
           "issuer": "Alphabet Inc",
           "cusip": "02079K305",
-          "valueUsd": 120184,
-          "shares": 336300,
           "cls": "CAP STK CL A",
+          "shares": 336300,
+          "valueUsd": 120184000,
           "pct": 2.3
         },
         {
           "issuer": "Ishares Inc",
           "cusip": "464286400",
-          "valueUsd": 118548,
-          "shares": 3436170,
           "cls": "MSCI BRAZIL ETF",
+          "shares": 3436170,
+          "valueUsd": 118548000,
           "pct": 2.3
         },
         {
           "issuer": "Seagate Technology Hldngs Pl",
           "cusip": "G7997R103",
-          "valueUsd": 117730,
-          "shares": 122000,
           "cls": "ORD SHS",
+          "shares": 122000,
+          "valueUsd": 117730000,
           "pct": 2.3
         },
         {
           "issuer": "Fox Corp",
           "cusip": "35137L105",
-          "valueUsd": 114992,
-          "shares": 2204600,
           "cls": "CL A COM",
+          "shares": 2204600,
+          "valueUsd": 114992000,
           "pct": 2.2
         },
         {
           "issuer": "Amazon Com Inc",
           "cusip": "023135106",
-          "valueUsd": 109470,
-          "shares": 459300,
           "cls": "COM",
+          "shares": 459300,
+          "valueUsd": 109470000,
           "pct": 2.1
         },
         {
           "issuer": "United Airls Hldgs Inc",
           "cusip": "910047109",
-          "valueUsd": 108084,
-          "shares": 794795,
           "cls": "COM",
+          "shares": 794795,
+          "valueUsd": 108084000,
           "pct": 2.1
         },
         {
           "issuer": "Sea Ltd",
           "cusip": "81141R100",
-          "valueUsd": 105404,
-          "shares": 1099905,
           "cls": "SPONSORD ADS",
+          "shares": 1099905,
+          "valueUsd": 105404000,
           "pct": 2
         },
         {
           "issuer": "Cdw Corp",
           "cusip": "12514G108",
-          "valueUsd": 104629,
-          "shares": 743950,
           "cls": "COM",
+          "shares": 743950,
+          "valueUsd": 104629000,
           "pct": 2
         },
         {
           "issuer": "Newamsterdam Pharma Company",
           "cusip": "N62509109",
-          "valueUsd": 104047,
-          "shares": 3070146,
           "cls": "ORDINARY SHARES",
+          "shares": 3070146,
+          "valueUsd": 104047000,
           "pct": 2
         },
         {
           "issuer": "Ishares Tr",
           "cusip": "464287655",
-          "valueUsd": 99149,
-          "shares": 330000,
           "cls": "RUSSELL 2000 ETF",
+          "shares": 330000,
+          "valueUsd": 99149000,
           "pct": 1.9
         },
         {
           "issuer": "Sandisk Corp",
           "cusip": "80004C200",
-          "valueUsd": 79353,
-          "shares": 34900,
           "cls": "COM",
+          "shares": 34900,
+          "valueUsd": 79353000,
           "pct": 1.5
         },
         {
           "issuer": "Revolution Medicines Inc",
           "cusip": "76155X100",
-          "valueUsd": 74835,
-          "shares": 399587,
           "cls": "COM",
+          "shares": 399587,
+          "valueUsd": 74835000,
           "pct": 1.4
         },
         {
           "issuer": "State Str Spdr S&amp;P 500 Etf T",
           "cusip": "78462F103",
-          "valueUsd": 67209,
-          "shares": 90000,
           "cls": "TR UNIT",
+          "shares": 90000,
+          "valueUsd": 67209000,
           "pct": 1.3
         },
         {
           "issuer": "Bitdeer Technologies Group",
           "cusip": "G11448100",
-          "valueUsd": 64670,
-          "shares": 4074993,
           "cls": "CL A ORD SHS",
+          "shares": 4074993,
+          "valueUsd": 64670000,
           "pct": 1.2
         },
         {
           "issuer": "Crh Plc",
           "cusip": "G25508105",
-          "valueUsd": 59230,
-          "shares": 553555,
           "cls": "ORD",
+          "shares": 553555,
+          "valueUsd": 59230000,
           "pct": 1.1
         }
       ]
@@ -644,100 +653,103 @@
     "bill-ackman": {
       "firm": "Pershing Square Capital Management",
       "cik": "0001336528",
-      "resolvedName": "Pershing Square Capital Management, L.P.",
+      "entityName": "Pershing Square Capital Management, L.P.",
+      "cikSource": "resolved",
       "filedAt": "2026-05-15",
       "periodEnd": "2026-03-31",
       "accession": "0001172661-26-002336",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1336528/000117266126002336/",
       "positions": 11,
       "totalValueUsd": 13714299861,
+      "valueUnitAsFiled": "usd",
+      "suspect": null,
       "top": [
         {
           "issuer": "BROOKFIELD CORP",
           "cusip": "11271J107",
-          "valueUsd": 2415946008,
-          "shares": 59697208,
           "cls": "CL A LTD VT SH",
+          "shares": 59697208,
+          "valueUsd": 2415946008,
           "pct": 17.6
         },
         {
           "issuer": "AMAZON COM INC",
           "cusip": "023135106",
-          "valueUsd": 2385104083,
-          "shares": 11451981,
           "cls": "COM",
+          "shares": 11451981,
+          "valueUsd": 2385104083,
           "pct": 17.4
         },
         {
           "issuer": "UBER TECHNOLOGIES INC",
           "cusip": "90353T100",
-          "valueUsd": 2154934398,
-          "shares": 29958771,
           "cls": "COM",
+          "shares": 29958771,
+          "valueUsd": 2154934398,
           "pct": 15.7
         },
         {
           "issuer": "MICROSOFT CORP",
           "cusip": "594918104",
-          "valueUsd": 2092970053,
-          "shares": 5654078,
           "cls": "COM",
+          "shares": 5654078,
+          "valueUsd": 2092970053,
           "pct": 15.3
         },
         {
           "issuer": "RESTAURANT BRANDS INTL INC",
           "cusip": "76131D103",
-          "valueUsd": 1673501194,
-          "shares": 22645483,
           "cls": "COM",
+          "shares": 22645483,
+          "valueUsd": 1673501194,
           "pct": 12.2
         },
         {
           "issuer": "META PLATFORMS INC",
           "cusip": "30303M102",
-          "valueUsd": 1522358404,
-          "shares": 2660861,
           "cls": "CL A",
+          "shares": 2660861,
+          "valueUsd": 1522358404,
           "pct": 11.1
         },
         {
           "issuer": "HOWARD HUGHES HOLDINGS INC",
           "cusip": "44267T102",
-          "valueUsd": 1192581569,
-          "shares": 18852064,
           "cls": "COM",
+          "shares": 18852064,
+          "valueUsd": 1192581569,
           "pct": 8.7
         },
         {
           "issuer": "SEAPORT ENTMT GROUP INC",
           "cusip": "812215200",
-          "valueUsd": 107910794,
-          "shares": 5023780,
           "cls": "COMMON STOCK",
+          "shares": 5023780,
+          "valueUsd": 107910794,
           "pct": 0.8
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K107",
-          "valueUsd": 89421720,
-          "shares": 311726,
           "cls": "CAP STK CL C",
+          "shares": 311726,
+          "valueUsd": 89421720,
           "pct": 0.7
         },
         {
           "issuer": "HERTZ GLOBAL HLDGS INC",
           "cusip": "42806J700",
-          "valueUsd": 70261595,
-          "shares": 15241127,
           "cls": "COM NEW",
+          "shares": 15241127,
+          "valueUsd": 70261595,
           "pct": 0.5
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K305",
-          "valueUsd": 9310043,
-          "shares": 32376,
           "cls": "CAP STK CL A",
+          "shares": 32376,
+          "valueUsd": 9310043,
           "pct": 0.1
         }
       ]
@@ -745,224 +757,375 @@
     "duan-yongping": {
       "firm": "H&H International Investment",
       "cik": "0001759760",
-      "resolvedName": "H&amp;H International Investment, LLC",
+      "entityName": "H&H International Investment, LLC",
+      "cikSource": "resolved",
       "filedAt": "2026-08-14",
       "periodEnd": "2026-06-30",
       "accession": "0001759760-26-000007",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1759760/000175976026000007/",
-      "positions": 0,
-      "totalValueUsd": 0,
-      "top": []
+      "positions": 18,
+      "totalValueUsd": 19100584155,
+      "valueUnitAsFiled": "usd",
+      "suspect": null,
+      "top": [
+        {
+          "issuer": "APPLE INC",
+          "cusip": "037833100",
+          "cls": "COM",
+          "shares": 27098707,
+          "valueUsd": 7841281858,
+          "pct": 41.1
+        },
+        {
+          "issuer": "BERKSHIRE HATHAWAY INC DEL",
+          "cusip": "084670702",
+          "cls": "CL B NEW",
+          "shares": 9229696,
+          "valueUsd": 4618447581,
+          "pct": 24.2
+        },
+        {
+          "issuer": "PDD HOLDINGS INC",
+          "cusip": "722304102",
+          "cls": "SPONSORED ADS",
+          "shares": 25022094,
+          "valueUsd": 1908685330,
+          "pct": 10
+        },
+        {
+          "issuer": "TESLA INC",
+          "cusip": "88160R101",
+          "cls": "COM",
+          "shares": 3380400,
+          "valueUsd": 1421796240,
+          "pct": 7.4
+        },
+        {
+          "issuer": "NVIDIA CORPORATION",
+          "cusip": "67066G104",
+          "cls": "COM",
+          "shares": 6280675,
+          "valueUsd": 1256700261,
+          "pct": 6.6
+        },
+        {
+          "issuer": "ALPHABET INC",
+          "cusip": "02079K107",
+          "cls": "CAP STK CL C",
+          "shares": 1968600,
+          "valueUsd": 695565438,
+          "pct": 3.6
+        },
+        {
+          "issuer": "OCCIDENTAL PETE CORP",
+          "cusip": "674599105",
+          "cls": "COM",
+          "shares": 10261500,
+          "valueUsd": 498401055,
+          "pct": 2.6
+        },
+        {
+          "issuer": "MICROSOFT CORP",
+          "cusip": "594918104",
+          "cls": "COM",
+          "shares": 754100,
+          "valueUsd": 281294382,
+          "pct": 1.5
+        },
+        {
+          "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
+          "cusip": "G25457105",
+          "cls": "ORDINARY SHARES",
+          "shares": 701200,
+          "valueUsd": 190691340,
+          "pct": 1
+        },
+        {
+          "issuer": "UNITEDHEALTH GROUP INC",
+          "cusip": "91324P102",
+          "cls": "COM",
+          "shares": 399600,
+          "valueUsd": 166085748,
+          "pct": 0.9
+        },
+        {
+          "issuer": "DISNEY WALT CO",
+          "cusip": "254687106",
+          "cls": "COM",
+          "shares": 1706600,
+          "valueUsd": 164260250,
+          "pct": 0.9
+        },
+        {
+          "issuer": "ALIBABA GROUP HLDG LTD",
+          "cusip": "01609W102",
+          "cls": "SPONSORED ADS",
+          "shares": 301400,
+          "valueUsd": 28928372,
+          "pct": 0.2
+        },
+        {
+          "issuer": "CIRCLE INTERNET GROUP INC",
+          "cusip": "172573107",
+          "cls": "COM CL A",
+          "shares": 200000,
+          "valueUsd": 12526000,
+          "pct": 0.1
+        },
+        {
+          "issuer": "PALANTIR TECHNOLOGIES INC",
+          "cusip": "69608A108",
+          "cls": "CL A",
+          "shares": 60000,
+          "valueUsd": 7000200,
+          "pct": 0
+        },
+        {
+          "issuer": "SYNOPSYS INC",
+          "cusip": "871607107",
+          "cls": "COM",
+          "shares": 10000,
+          "valueUsd": 4460700,
+          "pct": 0
+        },
+        {
+          "issuer": "SNOWFLAKE INC",
+          "cusip": "833445109",
+          "cls": "COM SHS",
+          "shares": 10000,
+          "valueUsd": 2545000,
+          "pct": 0
+        },
+        {
+          "issuer": "TEMPUS AI INC",
+          "cusip": "88023B103",
+          "cls": "CL A",
+          "shares": 20000,
+          "valueUsd": 1158600,
+          "pct": 0
+        },
+        {
+          "issuer": "INNODATA INC",
+          "cusip": "457642205",
+          "cls": "COM NEW",
+          "shares": 10000,
+          "valueUsd": 755800,
+          "pct": 0
+        }
+      ]
     },
     "david-tepper": {
       "firm": "Appaloosa",
       "cik": "0001656456",
-      "resolvedName": "Company Search Feed",
+      "entityName": "Appaloosa LP",
+      "cikSource": "resolved",
       "filedAt": "2026-08-14",
       "periodEnd": "2026-06-30",
       "accession": "0001656456-26-000003",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1656456/000165645626000003/",
       "positions": 27,
       "totalValueUsd": 7725383349,
+      "valueUnitAsFiled": "usd",
+      "suspect": null,
       "top": [
         {
           "issuer": "AMAZON COM INC",
           "cusip": "023135106",
-          "valueUsd": 1191700000,
-          "shares": 5000000,
           "cls": "COM",
+          "shares": 5000000,
+          "valueUsd": 1191700000,
           "pct": 15.4
         },
         {
           "issuer": "MICRON TECHNOLOGY INC",
           "cusip": "595112103",
-          "valueUsd": 1125432750,
-          "shares": 975000,
           "cls": "COM",
+          "shares": 975000,
+          "valueUsd": 1125432750,
           "pct": 14.6
         },
         {
           "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
           "cusip": "874039100",
-          "valueUsd": 787990500,
-          "shares": 1650000,
           "cls": "SPONSORED ADS",
+          "shares": 1650000,
+          "valueUsd": 787990500,
           "pct": 10.2
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K107",
-          "valueUsd": 653660500,
-          "shares": 1850000,
           "cls": "CAP STK CL C",
+          "shares": 1850000,
+          "valueUsd": 653660500,
           "pct": 8.5
         },
         {
           "issuer": "UBER TECHNOLOGIES INC",
           "cusip": "90353T100",
-          "valueUsd": 555204163,
-          "shares": 7694071,
           "cls": "COM",
+          "shares": 7694071,
+          "valueUsd": 555204163,
           "pct": 7.2
         },
         {
           "issuer": "ISHARES INC",
           "cusip": "464286772",
-          "valueUsd": 489607500,
-          "shares": 2425000,
           "cls": "MSCI STH KOR ETF",
+          "shares": 2425000,
+          "valueUsd": 489607500,
           "pct": 6.3
         },
         {
           "issuer": "META PLATFORMS INC",
           "cusip": "30303M102",
-          "valueUsd": 380220750,
-          "shares": 675000,
           "cls": "CL A",
+          "shares": 675000,
+          "valueUsd": 380220750,
           "pct": 4.9
         },
         {
           "issuer": "VISTRA CORP",
           "cusip": "92840M102",
-          "valueUsd": 351408597,
-          "shares": 2215272,
           "cls": "COM",
+          "shares": 2215272,
+          "valueUsd": 351408597,
           "pct": 4.5
         },
         {
           "issuer": "NVIDIA CORPORATION",
           "cusip": "67066G104",
-          "valueUsd": 305137250,
-          "shares": 1525000,
           "cls": "COM",
+          "shares": 1525000,
+          "valueUsd": 305137250,
           "pct": 3.9
         },
         {
           "issuer": "NRG ENERGY INC",
           "cusip": "629377508",
-          "valueUsd": 257065600,
-          "shares": 1760000,
           "cls": "COM NEW",
+          "shares": 1760000,
+          "valueUsd": 257065600,
           "pct": 3.3
         },
         {
           "issuer": "APPLE INC",
           "cusip": "037833100",
-          "valueUsd": 241615600,
-          "shares": 835000,
           "cls": "COM",
+          "shares": 835000,
+          "valueUsd": 241615600,
           "pct": 3.1
         },
         {
           "issuer": "ALIBABA GROUP HLDG LTD",
           "cusip": "01609W102",
-          "valueUsd": 191960000,
-          "shares": 2000000,
           "cls": "SPONSORED ADS",
+          "shares": 2000000,
+          "valueUsd": 191960000,
           "pct": 2.5
         },
         {
           "issuer": "BOEING CO",
           "cusip": "097023105",
-          "valueUsd": 173176000,
-          "shares": 800000,
           "cls": "COM",
+          "shares": 800000,
+          "valueUsd": 173176000,
           "pct": 2.2
         },
         {
           "issuer": "LAM RESEARCH CORP",
           "cusip": "512807306",
-          "valueUsd": 165748725,
-          "shares": 382500,
           "cls": "COM NEW",
+          "shares": 382500,
+          "valueUsd": 165748725,
           "pct": 2.1
         },
         {
           "issuer": "BAIDU INC",
           "cusip": "056752108",
-          "valueUsd": 148005550,
-          "shares": 1295000,
           "cls": "SPON ADR REP A",
+          "shares": 1295000,
+          "valueUsd": 148005550,
           "pct": 1.9
         },
         {
           "issuer": "AMERICAN AIRLINES GROUP INC",
           "cusip": "02376R102",
-          "valueUsd": 135525000,
-          "shares": 7500000,
           "cls": "COM",
+          "shares": 7500000,
+          "valueUsd": 135525000,
           "pct": 1.8
         },
         {
           "issuer": "ADVANCED MICRO DEVICES INC",
           "cusip": "007903107",
-          "valueUsd": 114729725,
-          "shares": 197500,
           "cls": "COM",
+          "shares": 197500,
+          "valueUsd": 114729725,
           "pct": 1.5
         },
         {
           "issuer": "COREWEAVE INC",
           "cusip": "21873S108",
-          "valueUsd": 107328806,
-          "shares": 1078248,
           "cls": "COM CL A",
+          "shares": 1078248,
+          "valueUsd": 107328806,
           "pct": 1.4
         },
         {
           "issuer": "ASML HLDG NV",
           "cusip": "N07059210",
-          "valueUsd": 99472000,
-          "shares": 50000,
           "cls": "N Y REGISTRY SHS",
+          "shares": 50000,
+          "valueUsd": 99472000,
           "pct": 1.3
         },
         {
           "issuer": "BROADCOM INC",
           "cusip": "11135F101",
-          "valueUsd": 56662500,
-          "shares": 150000,
           "cls": "COM",
+          "shares": 150000,
+          "valueUsd": 56662500,
           "pct": 0.7
         },
         {
           "issuer": "QUALCOMM INC",
           "cusip": "747525103",
-          "valueUsd": 46197500,
-          "shares": 250000,
           "cls": "COM",
+          "shares": 250000,
+          "valueUsd": 46197500,
           "pct": 0.6
         },
         {
           "issuer": "SPACE EXPLORATION TECHN CORP",
           "cusip": "84615Q103",
-          "valueUsd": 38443500,
-          "shares": 225000,
           "cls": "CLASS A COM STK",
+          "shares": 225000,
+          "valueUsd": 38443500,
           "pct": 0.5
         },
         {
           "issuer": "ENERGY TRANSFER L P",
           "cusip": "29273V100",
-          "valueUsd": 30135510,
-          "shares": 1576125,
           "cls": "COM UT LTD PTN",
+          "shares": 1576125,
+          "valueUsd": 30135510,
           "pct": 0.4
         },
         {
           "issuer": "MPLX LP",
           "cusip": "55336V100",
-          "valueUsd": 28303572,
-          "shares": 502460,
           "cls": "COM UNIT REP LTD",
+          "shares": 502460,
+          "valueUsd": 28303572,
           "pct": 0.4
         },
         {
           "issuer": "WHIRLPOOL CORP",
           "cusip": "963320106",
-          "valueUsd": 28185300,
-          "shares": 715000,
           "cls": "COM",
+          "shares": 715000,
+          "valueUsd": 28185300,
           "pct": 0.4
         }
       ]
@@ -970,212 +1133,215 @@
     "philippe-laffont": {
       "firm": "Coatue Management",
       "cik": "0001135730",
-      "resolvedName": "COATUE MANAGEMENT LLC",
+      "entityName": "COATUE MANAGEMENT LLC",
+      "cikSource": "resolved",
       "filedAt": "2026-08-14",
       "periodEnd": "2026-06-30",
       "accession": "0000919574-26-005478",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1135730/000091957426005478/",
       "positions": 211,
       "totalValueUsd": 48629053706,
+      "valueUnitAsFiled": "usd",
+      "suspect": null,
       "top": [
         {
           "issuer": "LAM RESEARCH CORP",
           "cusip": "512807306",
-          "valueUsd": 2080299031,
-          "shares": 4800727,
           "cls": "COM NEW",
+          "shares": 4800727,
+          "valueUsd": 2080299031,
           "pct": 4.3
         },
         {
           "issuer": "SPACE EXPLORATION TECHN CORP",
           "cusip": "84615Q103",
-          "valueUsd": 1958896231,
-          "shares": 11464920,
           "cls": "CLASS A COM STK",
+          "shares": 11464920,
+          "valueUsd": 1958896231,
           "pct": 4
         },
         {
           "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
           "cusip": "874039100",
-          "valueUsd": 1649077387,
-          "shares": 3453059,
           "cls": "SPONSORED ADS",
+          "shares": 3453059,
+          "valueUsd": 1649077387,
           "pct": 3.4
         },
         {
           "issuer": "AMAZON COM INC",
           "cusip": "023135106",
-          "valueUsd": 1546348490,
-          "shares": 6487994,
           "cls": "COM",
+          "shares": 6487994,
+          "valueUsd": 1546348490,
           "pct": 3.2
         },
         {
           "issuer": "MICRON TECHNOLOGY INC",
           "cusip": "595112103",
-          "valueUsd": 1491474269,
-          "shares": 1292114,
           "cls": "COM",
+          "shares": 1292114,
+          "valueUsd": 1491474269,
           "pct": 3.1
         },
         {
           "issuer": "GE VERNOVA INC",
           "cusip": "36828A101",
-          "valueUsd": 1476593419,
-          "shares": 1256825,
           "cls": "COM",
+          "shares": 1256825,
+          "valueUsd": 1476593419,
           "pct": 3
         },
         {
           "issuer": "CEREBRAS SYSTEMS INC",
           "cusip": "15675D103",
-          "valueUsd": 1354562482,
-          "shares": 6129242,
           "cls": "COM CL A",
+          "shares": 6129242,
+          "valueUsd": 1354562482,
           "pct": 2.8
         },
         {
           "issuer": "TAIWAN SEMICONDUCTOR MANUFAC",
           "cusip": "874039100",
-          "valueUsd": 1237588748,
-          "shares": 2591429,
           "cls": "SPONSORED ADS",
+          "shares": 2591429,
+          "valueUsd": 1237588748,
           "pct": 2.5
         },
         {
           "issuer": "APPLIED MATLS INC",
           "cusip": "038222105",
-          "valueUsd": 1133060295,
-          "shares": 1567165,
           "cls": "COM",
+          "shares": 1567165,
+          "valueUsd": 1133060295,
           "pct": 2.3
         },
         {
           "issuer": "HUT 8 CORP",
           "cusip": "44812J104",
-          "valueUsd": 1121603127,
-          "shares": 9715476,
           "cls": "COM",
+          "shares": 9715476,
+          "valueUsd": 1121603127,
           "pct": 2.3
         },
         {
           "issuer": "MICRON TECHNOLOGY INC",
           "cusip": "595112103",
-          "valueUsd": 1118553182,
-          "shares": 969040,
           "cls": "COM",
+          "shares": 969040,
+          "valueUsd": 1118553182,
           "pct": 2.3
         },
         {
           "issuer": "BROADCOM INC",
           "cusip": "11135F101",
-          "valueUsd": 1107711078,
-          "shares": 2932392,
           "cls": "COM",
+          "shares": 2932392,
+          "valueUsd": 1107711078,
           "pct": 2.3
         },
         {
           "issuer": "LAM RESEARCH CORP",
           "cusip": "512807306",
-          "valueUsd": 1079113032,
-          "shares": 2490280,
           "cls": "COM NEW",
+          "shares": 2490280,
+          "valueUsd": 1079113032,
           "pct": 2.2
         },
         {
           "issuer": "APPLIED MATLS INC",
           "cusip": "038222105",
-          "valueUsd": 1055791839,
-          "shares": 1460293,
           "cls": "COM",
+          "shares": 1460293,
+          "valueUsd": 1055791839,
           "pct": 2.2
         },
         {
           "issuer": "META PLATFORMS INC",
           "cusip": "30303M102",
-          "valueUsd": 1026225943,
-          "shares": 1821843,
           "cls": "CL A",
+          "shares": 1821843,
+          "valueUsd": 1026225943,
           "pct": 2.1
         },
         {
           "issuer": "MICROSOFT CORP",
           "cusip": "594918104",
-          "valueUsd": 925095941,
-          "shares": 2480017,
           "cls": "COM",
+          "shares": 2480017,
+          "valueUsd": 925095941,
           "pct": 1.9
         },
         {
           "issuer": "EATON CORP PLC",
           "cusip": "G29183103",
-          "valueUsd": 829570842,
-          "shares": 1946801,
           "cls": "SHS",
+          "shares": 1946801,
+          "valueUsd": 829570842,
           "pct": 1.7
         },
         {
           "issuer": "NVIDIA CORPORATION",
           "cusip": "67066G104",
-          "valueUsd": 811072418,
-          "shares": 4053538,
           "cls": "COM",
+          "shares": 4053538,
+          "valueUsd": 811072418,
           "pct": 1.7
         },
         {
           "issuer": "AMAZON COM INC",
           "cusip": "023135106",
-          "valueUsd": 743079292,
-          "shares": 3117728,
           "cls": "COM",
+          "shares": 3117728,
+          "valueUsd": 743079292,
           "pct": 1.5
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K305",
-          "valueUsd": 734548662,
-          "shares": 2055429,
           "cls": "CAP STK CL A",
+          "shares": 2055429,
+          "valueUsd": 734548662,
           "pct": 1.5
         },
         {
           "issuer": "GE VERNOVA INC",
           "cusip": "36828A101",
-          "valueUsd": 677158758,
-          "shares": 576374,
           "cls": "COM",
+          "shares": 576374,
+          "valueUsd": 677158758,
           "pct": 1.4
         },
         {
           "issuer": "ALPHABET INC",
           "cusip": "02079K305",
-          "valueUsd": 657538286,
-          "shares": 1839937,
           "cls": "CAP STK CL A",
+          "shares": 1839937,
+          "valueUsd": 657538286,
           "pct": 1.4
         },
         {
           "issuer": "CONSTELLATION ENERGY CORP",
           "cusip": "21037T109",
-          "valueUsd": 652150822,
-          "shares": 2625723,
           "cls": "COM",
+          "shares": 2625723,
+          "valueUsd": 652150822,
           "pct": 1.3
         },
         {
           "issuer": "SPACE EXPLORATION TECHN CORP",
           "cusip": "84615Q103",
-          "valueUsd": 632805639,
-          "shares": 3703650,
           "cls": "CLASS A COM STK",
+          "shares": 3703650,
+          "valueUsd": 632805639,
           "pct": 1.3
         },
         {
           "issuer": "LAM RESEARCH CORP",
           "cusip": "512807306",
-          "valueUsd": 598209465,
-          "shares": 1380494,
           "cls": "COM NEW",
+          "shares": 1380494,
+          "valueUsd": 598209465,
           "pct": 1.2
         }
       ]
@@ -1183,76 +1349,79 @@
     "michael-burry": {
       "firm": "Scion Asset Management",
       "cik": "0001649339",
-      "resolvedName": "Scion Asset Management, LLC",
+      "entityName": "Scion Asset Management, LLC",
+      "cikSource": "resolved",
       "filedAt": "2025-11-03",
       "periodEnd": "2025-09-30",
       "accession": "0001649339-25-000007",
       "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1649339/000164933925000007/",
       "positions": 8,
       "totalValueUsd": 1381198076,
+      "valueUnitAsFiled": "usd",
+      "suspect": null,
       "top": [
         {
           "issuer": "PALANTIR TECHNOLOGIES INC",
           "cusip": "69608A108",
-          "valueUsd": 912100000,
-          "shares": 5000000,
           "cls": "CL A",
+          "shares": 5000000,
+          "valueUsd": 912100000,
           "pct": 66
         },
         {
           "issuer": "NVIDIA CORPORATION",
           "cusip": "67066G104",
-          "valueUsd": 186580000,
-          "shares": 1000000,
           "cls": "COM",
+          "shares": 1000000,
+          "valueUsd": 186580000,
           "pct": 13.5
         },
         {
           "issuer": "PFIZER INC",
           "cusip": "717081103",
-          "valueUsd": 152880000,
-          "shares": 6000000,
           "cls": "COM",
+          "shares": 6000000,
+          "valueUsd": 152880000,
           "pct": 11.1
         },
         {
           "issuer": "HALLIBURTON CO",
           "cusip": "406216101",
-          "valueUsd": 61500000,
-          "shares": 2500000,
           "cls": "COM",
+          "shares": 2500000,
+          "valueUsd": 61500000,
           "pct": 4.5
         },
         {
           "issuer": "MOLINA HEALTHCARE INC",
           "cusip": "60855R100",
-          "valueUsd": 23920000,
-          "shares": 125000,
           "cls": "COM",
+          "shares": 125000,
+          "valueUsd": 23920000,
           "pct": 1.7
         },
         {
           "issuer": "LULULEMON ATHLETICA INC",
           "cusip": "550021109",
-          "valueUsd": 17793000,
-          "shares": 100000,
           "cls": "COM",
+          "shares": 100000,
+          "valueUsd": 17793000,
           "pct": 1.3
         },
         {
           "issuer": "SLM CORP",
           "cusip": "78442P106",
-          "valueUsd": 13287895,
-          "shares": 480054,
           "cls": "COM",
+          "shares": 480054,
+          "valueUsd": 13287895,
           "pct": 1
         },
         {
           "issuer": "BRUKER CORP",
           "cusip": "116794207",
-          "valueUsd": 13137181,
-          "shares": 48334,
           "cls": "6.375 PREF SER A",
+          "shares": 48334,
+          "valueUsd": 13137181,
           "pct": 1
         }
       ]
