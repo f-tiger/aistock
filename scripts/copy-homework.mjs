@@ -53,18 +53,25 @@ async function get(url, json = false) {
 
 const tag = (s, t) => (s.match(new RegExp('<(?:\\w+:)?' + t + '>([^<]*)<', 'i')) || [])[1] || '';
 
-// Stooq 公开日线 CSV,无需密钥。返回 { 'YYYY-MM-DD': close }
+// 日线:Yahoo chart API,公开、无需密钥。用**复权收盘**(adjclose),拆股和分红都算进去,
+// 否则一次 10:1 拆股会凭空变成 -90% 收益。
+// (原计划用 Stooq CSV,runner 上被 JS 校验页挡住 —— 200 但返回 HTML,scripts/price-probe.mjs
+//  的一次性探针查出来的。别再换回去。)
 const priceCache = new Map();
 async function prices(sym) {
   if (priceCache.has(sym)) return priceCache.get(sym);
   let map = null;
   try {
-    const csv = await get(`https://stooq.com/q/d/l/?s=${sym.toLowerCase()}.us&i=d`);
-    if (csv.startsWith('Date')) {
+    const j = JSON.parse(await get(
+      `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(sym)}?range=10y&interval=1d`));
+    const r = j.chart?.result?.[0];
+    const ts = r?.timestamp || [];
+    const px = r?.indicators?.adjclose?.[0]?.adjclose || r?.indicators?.quote?.[0]?.close || [];
+    if (ts.length && ts.length === px.length) {
       map = new Map();
-      for (const line of csv.trim().split('\n').slice(1)) {
-        const c = line.split(',');
-        if (c.length >= 5) map.set(c[0], Number(c[4]));
+      for (let i = 0; i < ts.length; i++) {
+        const v = px[i];
+        if (v != null && Number.isFinite(v)) map.set(new Date(ts[i] * 1000).toISOString().slice(0, 10), v);
       }
       if (map.size < 100) map = null;
     }
@@ -136,10 +143,10 @@ for (const t of TARGETS) {
     if (filings.length < 3) throw new Error('too few filings');
     filings.reverse();                                    // 由旧到新
 
-    const legs = [];
+    const legs = [], skipped = { noBasket: 0, thinCoverage: 0 };
     for (let i = 0; i < filings.length - 1; i++) {
       const b = await basketOf(cik, filings[i].acc);
-      if (!b || !b.weights.length) continue;
+      if (!b || !b.weights.length) { skipped.noBasket++; continue; }
       const d0 = filings[i].filed, d1 = filings[i + 1].filed;
       let ret = 0, used = 0;
       for (const { t: sym, w } of b.weights) {
@@ -147,10 +154,13 @@ for (const t of TARGETS) {
         const a = closeOnOrAfter(p, d0), z = closeOnOrAfter(p, d1);
         if (a && z && a > 0) { ret += w * (z / a - 1); used += w; }
       }
-      if (used < 0.5) continue;                           // 覆盖率不足则跳过,不硬凑
+      if (used < 0.5) { skipped.thinCoverage++; continue; } // 覆盖率不足则跳过,不硬凑
       legs.push({ from: d0, to: d1, ret: ret / used, holdings: b.weights.length, coverage: Math.round(used * 100) });
     }
-    if (!legs.length) throw new Error('no computable legs');
+    // 失败时必须说清是哪一环坏了:持仓没解析出来,还是价格拿不到。
+    // (首轮 7 位全挂,日志只写「no computable legs」,查因多花了一次 runner 往返。)
+    if (!legs.length) throw new Error(
+      `no computable legs — 无持仓 ${skipped.noBasket} 期 / 价格覆盖不足 ${skipped.thinCoverage} 期`);
 
     const cum = legs.reduce((a, l) => a * (1 + l.ret), 1) - 1;
     const q0 = closeOnOrAfter(qqq, legs[0].from), q1 = closeOnOrAfter(qqq, legs[legs.length - 1].to);
