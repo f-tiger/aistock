@@ -31,11 +31,23 @@ const TARGETS = [
   { slug: 'michael-burry',         firm: 'Scion Asset Management' },
 ];
 
+// SEC 偶发 5xx(2026-08-16 实测:同一个 CIK 解析请求上一轮成功、下一轮 503)。
+// 瞬时故障不该让一整家投资者的数据消失,退避重试三次;4xx 是真错误,不重试。
 async function get(url, json = false) {
-  await sleep(340);                                   // ~3 req/s,远低于 SEC 的 10/s 上限
-  const r = await fetch(url, { headers: UA, signal: AbortSignal.timeout(25000) });
-  if (!r.ok) throw new Error(`HTTP ${r.status} ${url.slice(0, 70)}`);
-  return json ? r.json() : r.text();
+  let last;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    await sleep(340 + attempt * 1200);                // ~3 req/s 起步,重试时进一步退避
+    try {
+      const r = await fetch(url, { headers: UA, signal: AbortSignal.timeout(25000) });
+      if (r.ok) return json ? r.json() : r.text();
+      if (r.status < 500 && r.status !== 429) throw new Error(`HTTP ${r.status} ${url.slice(0, 70)}`);
+      last = new Error(`HTTP ${r.status} ${url.slice(0, 70)}`);
+    } catch (e) {
+      if (String(e.message).startsWith('HTTP 4')) throw e;
+      last = e;
+    }
+  }
+  throw last;
 }
 
 // 命名空间可选,大小写不敏感。这一行是上一版的 bug 源头,现在只写一处、全局复用。
