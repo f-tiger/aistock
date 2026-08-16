@@ -124,7 +124,7 @@ async function basketOf(cik, acc) {
 }
 
 const out = { generated: new Date().toISOString().slice(0, 10), method:
-  'Buy each manager\'s AI-stock basket at the CLOSE OF ITS 13F FILING DATE (not quarter end — a 13F is public ~45 days late, so the filing-date price is the first price a real person could actually pay), weighted as filed, hold until the next filing, repeat. Prices: Stooq daily closes. Holdings: SEC EDGAR primary filings. Past results do not predict future returns; not investment advice.',
+  'Buy each manager\'s AI-stock basket at the CLOSE OF ITS 13F FILING DATE (not quarter end — a 13F is public ~45 days late, so the filing-date price is the first price a real person could actually pay), weighted as filed, hold until the next filing, repeat. Prices: Yahoo Finance adjusted daily closes. Holdings: SEC EDGAR primary filings. Past results do not predict future returns; not investment advice.',
   investors: [] };
 
 // 基准:QQQ 同期
@@ -155,7 +155,11 @@ for (const t of TARGETS) {
         if (a && z && a > 0) { ret += w * (z / a - 1); used += w; }
       }
       if (used < 0.5) { skipped.thinCoverage++; continue; } // 覆盖率不足则跳过,不硬凑
-      legs.push({ from: d0, to: d1, ret: ret / used, holdings: b.weights.length, coverage: Math.round(used * 100) });
+      // 逐期也记 QQQ:没有它,「从任意一期开始抄」就算不出同期对照,
+      // 页面上的计算器只能拿全程基准糊弄——那等于编数字。
+      const qa = closeOnOrAfter(qqq, d0), qz = closeOnOrAfter(qqq, d1);
+      legs.push({ from: d0, to: d1, ret: ret / used, holdings: b.weights.length,
+        coverage: Math.round(used * 100), bench: qa && qz && qa > 0 ? qz / qa - 1 : null });
     }
     // 失败时必须说清是哪一环坏了:持仓没解析出来,还是价格拿不到。
     // (首轮 7 位全挂,日志只写「no computable legs」,查因多花了一次 runner 往返。)
