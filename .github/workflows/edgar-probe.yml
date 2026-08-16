@@ -1,0 +1,15 @@
+name: EDGAR reachability probe (one-off)
+
+# 一次性验证:GitHub runner 能否直连 EDGAR 并解析逐笔 13F。
+# 本仓公开 → Actions 免费,单次约 1 分钟。验证完即决定是否建常设管线。
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: node scripts/edgar-probe.mjs
