@@ -80,20 +80,34 @@ async function holdingsFor(cik) {
   const rawTotal = rows.reduce((a, r) => a + r.raw, 0);
   const inThousands = rawTotal > 0 && rawTotal < THIRTEEN_F_THRESHOLD_USD;
   const mult = inThousands ? 1000 : 1;
-  const out = rows.map((r) => ({ issuer: r.issuer, cusip: r.cusip, cls: r.cls,
-                                 shares: r.shares, valueUsd: r.raw * mult }));
+  const lines = rows.map((r) => ({ issuer: r.issuer, cusip: r.cusip, cls: r.cls,
+                                   shares: r.shares, valueUsd: r.raw * mult }));
   const total = rawTotal * mult;
-  out.sort((a, b) => b.valueUsd - a.valueUsd);
+
+  // 13F 的 informationTable 是按「标的 × 股份类别 × 投资经理 × 管理权」逐行报的,
+  // 同一只股票会拆成多行(伯克希尔的苹果就出现在三行里)。直接取前几行当持仓是错的,
+  // 必须先聚合。按 CUSIP 聚合而不是按名字——名字有 "COCA COLA CO"/"CHEVRON CORPORATION"
+  // 这类写法差异,做字符串归一化只会把名字改烂(试过一版,聚出了 "COCALA")。
+  const byCusip = new Map();
+  for (const r of lines) {
+    const k = r.cusip || r.issuer;
+    const cur = byCusip.get(k) || { issuer: r.issuer, cusip: r.cusip, valueUsd: 0, shares: 0, lines: 0 };
+    cur.valueUsd += r.valueUsd; cur.shares += r.shares; cur.lines += 1;
+    byCusip.set(k, cur);
+  }
+  const holdings = [...byCusip.values()].sort((a, b) => b.valueUsd - a.valueUsd)
+    .map((h) => ({ ...h, pct: total ? Math.round((h.valueUsd / total) * 1000) / 10 : 0 }));
 
   return {
     filedAt: rec.filingDate[i], periodEnd: rec.reportDate[i],
     accession: rec.accessionNumber[i], sourceUrl: dir + '/',
-    positions: out.length, totalValueUsd: total,
+    lineItems: lines.length,          // 申报里的原始行数
+    positions: holdings.length,       // 去重后的真实持仓数
+    totalValueUsd: total,
     valueUnitAsFiled: inThousands ? 'thousands (converted)' : 'usd',
-    // 0 条持仓看起来像「清仓了」,但更可能是解析没覆盖到某种格式——必须自曝而非静默。
-    suspect: out.length === 0 ? 'zero positions parsed — verify manually before use' : null,
-    xmlFilesTried: out.length === 0 ? tried : undefined,
-    top: out.slice(0, 25).map((r) => ({ ...r, pct: total ? Math.round((r.valueUsd / total) * 1000) / 10 : 0 })),
+    suspect: holdings.length === 0 ? 'zero positions parsed — verify manually before use' : null,
+    xmlFilesTried: holdings.length === 0 ? tried : undefined,
+    holdings,                         // 全量,聚合后
   };
 }
 
@@ -110,8 +124,8 @@ for (const t of TARGETS) {
     out.investors[t.slug] = { firm: t.firm, cik, entityName: sub.name, cikSource: t.cik ? 'verified' : 'resolved', ...h };
     const flag = h.suspect ? ' ⚠️ ' + h.suspect : '';
     console.log('✅ ' + t.slug.padEnd(22) + ' [' + sub.name + '] ' + h.periodEnd + ' · ' + h.positions
-      + ' 条 · $' + (h.totalValueUsd / 1e9).toFixed(2) + 'B (' + h.valueUnitAsFiled + ') · 首位 '
-      + (h.top[0]?.issuer || '—') + flag);
+      + ' 只(' + h.lineItems + ' 行) · $' + (h.totalValueUsd / 1e9).toFixed(2) + 'B (' + h.valueUnitAsFiled + ') · 首位 '
+      + (h.holdings[0]?.issuer || '—') + ' ' + (h.holdings[0]?.pct ?? 0) + '%' + flag);
     ok++;
   } catch (e) {
     out.investors[t.slug] = { firm: t.firm, error: String(e.message).slice(0, 140) };
