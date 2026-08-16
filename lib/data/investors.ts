@@ -18,8 +18,8 @@ export const investors: Investor[] = [
     stance: 'cautious',
     styleTag: 'value',
     summary: {
-      zh: '2026 年一季度上演“世纪换仓”：清仓亚马逊、把 Alphabet 加仓 225%，苹果原封不动——伯克希尔的 AI 敞口正从电商/云转向“搜索 + 全栈 AI”。',
-      en: 'Q1 2026 brought the “great pivot”: Berkshire exited Amazon entirely and boosted Alphabet by 225%, while leaving Apple untouched — shifting its AI exposure from e-commerce/cloud toward search + full-stack AI.',
+      zh: 'Q2 2026 结束连续 14 个季度净卖出、转为净买入约 198 亿美元；Alphabet 再获约 170 亿美元增持，跃居第三大重仓（约 366 亿美元、占组合 9.4%）——AI 全栈押注在继任者 Abel 手上继续加码。',
+      en: 'Q2 2026 ended a 14-quarter net-selling streak with ~$19.8B of net buying; Alphabet got another ~$17B, vaulting to the #3 holding (~$36.6B, 9.4% of the book) — the full-stack AI bet is compounding under Abel.',
     },
     thesis: [
       {
@@ -31,18 +31,22 @@ export const investors: Investor[] = [
         en: 'The 225% Alphabet increase is Berkshire’s clearest AI statement: search cash flow + Gemini + in-house TPUs — full-stack AI still valued below pure-play AI names.',
       },
       {
-        zh: '苹果连续三季减持后本季不动（仍占 22%、第一大重仓），亚马逊则被彻底清仓——纪律是估值与确定性，不是叙事。',
-        en: 'After three straight quarters of trimming, Apple was left unchanged (still 22%, the #1 holding) while Amazon was fully exited — the discipline is valuation and certainty, not narrative.',
+        zh: 'Q2 转折点：结束 14 个季度的净卖出、净买入约 198 亿美元，同时回购自家股票约 45 亿美元；新进 D.R. Horton、增持 Delta/Lennar/纽约时报，清仓 Constellation Brands——买的是有现金流的实体，不是叙事。',
+        en: 'The Q2 turn: 14 quarters of net selling ended with ~$19.8B of net buying plus ~$4.5B of buybacks; new D.R. Horton, added Delta/Lennar/NYT, exited Constellation Brands — buying cash-flowing businesses, not narratives.',
       },
     ],
     holdings: [
-      { ticker: 'AAPL', name: { zh: '苹果', en: 'Apple' }, note: { zh: '第一大重仓（约 22%），本季未动', en: '#1 holding (~22%), unchanged this quarter' }, action: 'hold' },
-      { ticker: 'GOOGL', name: { zh: '谷歌', en: 'Alphabet' }, note: { zh: '加仓 225%，最明确的 AI 押注', en: 'Added 225% — the clearest AI bet' }, action: 'add' },
-      { ticker: 'AMZN', name: { zh: '亚马逊', en: 'Amazon' }, note: { zh: '全部清仓', en: 'Fully exited' }, action: 'exit' },
+      { ticker: 'AAPL', name: { zh: '苹果', en: 'Apple' }, note: { zh: '第一大重仓（22.0%），连续两季未动', en: '#1 holding (22.0%), unchanged for a second quarter' }, action: 'hold' },
+      { ticker: 'GOOGL', name: { zh: '谷歌', en: 'Alphabet' }, note: { zh: 'Q2 再增持约 170 亿美元 → 第三大重仓（约 366 亿），两季连续加码的 AI 押注', en: 'Another ~$17B added in Q2 → #3 holding (~$36.6B); the AI bet, doubled down two quarters running' }, action: 'add' },
+      { ticker: 'AMZN', name: { zh: '亚马逊', en: 'Amazon' }, note: { zh: 'Q1 已全部清仓，Q2 未回补', en: 'Fully exited in Q1; not rebought in Q2' }, action: 'exit' },
+      { ticker: 'BAC', name: { zh: '美国银行', en: 'Bank of America' }, note: { zh: 'Q2 继续减持（仍占 9.2%）', en: 'Trimmed again in Q2 (still 9.2%)' }, action: 'exit' },
     ],
     themeIds: ['applications', 'infrastructure'],
-    asOf: '2026-03-31 (Q1 2026 13F)',
+    asOf: '2026-06-30 (Q2 2026 13F, filed 2026-08-14)',
     sources: [
+      { label: 'CNBC — Berkshire adds $17 billion to Alphabet stake (2026-08-15)', url: 'https://www.cnbc.com/2026/08/15/berkshire-adds-17-billion-to-alphabet-stake.html' },
+      { label: 'Forbes — Berkshire Hathaway turns buyer as Buffett backs Alphabet (2026-08-15)', url: 'https://www.forbes.com/sites/bill_stone/2026/08/15/berkshire-hathaway-turns-buyer-as-buffett-backs-alphabet/' },
+      { label: 'Seeking Alpha — Tracking Berkshire portfolio Q2 2026', url: 'https://seekingalpha.com/article/4936983-tracking-berkshire-hathaway-portfolio-q2-2026-update' },
       { label: 'Seeking Alpha — Tracking Berkshire portfolio Q1 2026', url: 'https://seekingalpha.com/article/4905557-tracking-berkshire-hathaway-portfolio-q1-2026-update' },
       { label: 'MarketMinute — Berkshire slashes Apple-era caution, bets on Alphabet AI', url: 'https://markets.financialcontent.com/wral/article/marketminute-2026-1-1-the-great-pivot-berkshire-hathaway-slashes-apple-stake-to-bet-on-alphabets-ai-future' },
       { label: 'Forbes — Berkshire portfolio shifts as Abel reshapes the playbook', url: 'https://www.forbes.com/sites/bill_stone/2026/05/16/berkshire-portfolio-shifts-as-abel-reshapes-buffetts-playbook/' },
