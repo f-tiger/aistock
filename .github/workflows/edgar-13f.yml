@@ -20,7 +20,8 @@ jobs:
         with: { node-version: 22 }
       - run: node scripts/edgar-13f.mjs
       # 同一次运行里顺带回测「抄作业」收益:持仓来源相同(EDGAR),不新增计划任务、
-      # 不新增月成本。价格来自 Stooq 公开日线,无密钥。
+      # 不新增月成本。价格来自 Yahoo 复权日线(query1.finance.yahoo.com),无密钥。
+      # 勿换回 Stooq——它在 runner 上返回 JS 校验页,已实测(见 CLAUDE.md)。
       - run: node scripts/copy-homework.mjs
       - name: Commit if changed
         run: |
