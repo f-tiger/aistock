@@ -130,6 +130,15 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
       <section className="mt-8 max-w-3xl rounded-xl border border-accent/25 bg-accent/5 p-5" data-embed-hide>
         <h2 className="text-base font-bold text-white">{t.methodTitle[loc]}</h2>
         <p className="mt-2 text-sm leading-relaxed text-slate-300">{t.methodBody[loc]}</p>
+        {/* 同一套回测的判定页在主站(AGI Scorecard 投资板块):方法、四条反面说明与完整表格。读者相关的站内互链。 */}
+        <p className="mt-3 text-sm">
+          <a
+            href={loc === 'zh' ? 'https://agiscorecard.com/zh/does-copying-13f-work' : 'https://agiscorecard.com/does-copying-13f-work'}
+            className="text-accent underline decoration-accent/40 underline-offset-2 hover:text-white"
+          >
+            {loc === 'zh' ? '抄 13F 作业到底赚不赚钱？方法、反面说明与完整表格 →' : 'Does copying 13F filings actually work? Method, caveats and the full table →'}
+          </a>
+        </p>
       </section>
 
       {rows.length > 0 && (
