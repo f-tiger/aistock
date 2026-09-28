@@ -21,6 +21,8 @@ type Row = {
   cik: string;
   from: string;
   to: string;
+  entryDate?: string;
+  exitDate?: string;
   quarters: number;
   cumulativeReturn: number;
   benchmarkQQQ: number | null;
@@ -183,7 +185,7 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
                     <tr key={r.slug} className="border-b border-white/5">
                       <td className="py-3 pr-4 font-semibold text-white">{label(r)}</td>
                       <td className="py-3 pr-4 text-xs text-slate-400">
-                        {r.from} → {r.to}
+                        {r.entryDate ?? r.from} → {r.exitDate ?? r.to}
                       </td>
                       <td className="py-3 pr-4 text-right text-slate-400">{r.quarters}</td>
                       <td className={`py-3 pr-4 text-right font-bold ${tone(r.cumulativeReturn)}`}>

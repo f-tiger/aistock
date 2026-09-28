@@ -299,7 +299,7 @@ const dict = {
     thInvestor: { zh: '投资人', en: 'Investor' },
     thWindow: { zh: '回测区间', en: 'Window' },
     thQuarters: { zh: '换仓', en: 'Rebalances' },
-    thReturn: { zh: '累计收益', en: 'Cumulative' },
+    thReturn: { zh: '历史毛收益', en: 'Gross return' },
     thBench: { zh: '同期 QQQ', en: 'QQQ, same window' },
     thExcess: { zh: '超额', en: 'Excess' },
     legsTitle: { zh: '逐期明细', en: 'Quarter by quarter' },

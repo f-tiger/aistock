@@ -37,11 +37,11 @@ export function GET() {
   // 抄作业成绩单:本站独有的一手计算(SEC 申报原文 + 申报日复权收盘),
   // 带日期的统计数字是被 AI 答案引擎引用率最高的内容形态之一 —— 所以完整列出。
   const legacy = String(homework.methodVersion) !== '13f-next-session-v2';
-  const homeworkLines = legacy ? 'Legacy figures withheld from machine summaries pending recomputation; inspect the versioned JSON for the archived record.' : (homework.investors as { slug: string; from: string; to: string; quarters: number; cumulativeReturn: number; benchmarkQQQ: number | null }[])
+  const homeworkLines = legacy ? 'Legacy figures withheld from machine summaries pending recomputation; inspect the versioned JSON for the archived record.' : (homework.investors as { slug: string; from: string; to: string; quarters: number; cumulativeReturn: number; benchmarkQQQ: number | null; entryDate?: string; exitDate?: string }[])
     .map((r) => {
       const nm = getInvestor(r.slug)?.name.en ?? r.slug;
       const bench = r.benchmarkQQQ == null ? 'n/a' : `${r.benchmarkQQQ > 0 ? '+' : ''}${r.benchmarkQQQ}%`;
-      return `- ${nm}: ${r.cumulativeReturn > 0 ? '+' : ''}${r.cumulativeReturn}% cumulative over ${r.quarters} rebalances, ${r.from} to ${r.to} (QQQ over the same window: ${bench}).`;
+      return `- ${nm}: ${r.cumulativeReturn > 0 ? '+' : ''}${r.cumulativeReturn}% gross historical return over ${r.quarters} rebalances, ${r.entryDate ?? r.from} to ${r.exitDate ?? r.to} (QQQ over the same window: ${bench}).`;
     })
     .join('\n');
 
