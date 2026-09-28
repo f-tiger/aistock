@@ -1,6 +1,6 @@
 {
   "generated": "2026-08-16",
-  "method": "Buy each manager's AI-stock basket at the CLOSE OF ITS 13F FILING DATE (not quarter end — a 13F is public ~45 days late, so the filing-date price is the first price a real person could actually pay), weighted as filed, hold until the next filing, repeat. Prices: Yahoo Finance adjusted daily closes. Holdings: SEC EDGAR primary filings. Past results do not predict future returns; not investment advice.",
+  "method": "Legacy historical calculation, awaiting recomputation. Filing-day closes, possible option rows and incomplete-price handling make these figures unsuitable as evidence of achievable investment returns.",
   "investors": [
     {
       "slug": "stanley-druckenmiller",
@@ -541,5 +541,17 @@
         }
       ]
     }
-  ]
+  ],
+  "methodVersion": "legacy-filing-close-v1",
+  "validation": {
+    "status": "legacy-unverified",
+    "reviewedOn": "2026-09-28",
+    "liveReturnsVerified": false,
+    "issues": [
+      "same-day filing close can precede disclosure",
+      "option rows were not excluded",
+      "missing prices and skipped quarters can bias the result"
+    ],
+    "nextMethod": "13f-next-session-v2"
+  }
 }

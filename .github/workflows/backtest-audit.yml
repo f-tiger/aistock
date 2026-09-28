@@ -1,0 +1,23 @@
+name: Recompute 13F methodology audit
+on:
+  pull_request:
+    paths: ['scripts/copy-homework.mjs', 'scripts/homework-method.mjs', '.github/workflows/backtest-audit.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  recompute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: 22}
+      - run: node --test scripts/homework-method.test.mjs
+      - run: node scripts/copy-homework.mjs
+      - name: Preserve reviewable public-data calculation
+        run: node -e "console.log('BACKTEST_AUDIT_JSON='+JSON.stringify(require('./lib/data/copy-homework.json')))"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-13f-simulation
+          path: lib/data/copy-homework.json

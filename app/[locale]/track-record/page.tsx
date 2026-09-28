@@ -13,7 +13,7 @@ import HomeworkCalculator from '@/components/HomeworkCalculator';
 import EmbedCode from '@/components/EmbedCode';
 import { siteUrl } from '@/lib/site';
 
-type Leg = { from: string; to: string; ret: number; holdings: number; coverage: number; bench: number | null };
+type Leg = { from: string; to: string; ret: number; holdings: number; coverage: number; bench: number | null; entryDate?: string; exitDate?: string };
 type Row = {
   slug: string;
   name: string;
@@ -28,6 +28,7 @@ type Row = {
 };
 
 const rows = homework.investors as Row[];
+const legacy = String(homework.methodVersion) !== '13f-next-session-v2';
 
 const pct = (n: number) => `${n > 0 ? '+' : ''}${n.toFixed(1)}%`;
 const tone = (n: number) => (n > 0 ? 'text-emerald-400' : n < 0 ? 'text-rose-400' : 'text-slate-300');
@@ -43,8 +44,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: dict.homework.title[loc],
     description:
       loc === 'zh'
-        ? '抄大佬的 AI 作业,过去两年真的赚了吗?用 13F 申报当天的收盘价回测——不是穿越价——逐期给出累计收益与同期 QQQ 对照。'
-        : 'Does copying the legends’ AI holdings actually make money? Backtested at each 13F’s filing-date close — not a price you could never have got — with QQQ as the benchmark.',
+        ? '复核公开 13F 的 AI 持仓历史模拟：数据版本、申报与执行时点、价格覆盖及同期 QQQ 对照。'
+        : 'Audit historical AI-sleeve simulations: method version, filing and execution dates, price coverage and matched QQQ benchmark.',
     alternates: localeAlternates(loc, '/track-record'),
   };
 }
@@ -76,7 +77,7 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
           ]),
         }}
       />
-      {rows.length > 0 && (
+      {!legacy && rows.length > 0 && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -104,7 +105,7 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
             offers: { '@type': 'Offer', price: 0, priceCurrency: 'USD' },
             inLanguage: loc === 'zh' ? 'zh-CN' : 'en',
             featureList: [
-              'Backtest each legend\u2019s AI sleeve at 13F filing-date closes',
+              'Inspect versioned historical AI-sleeve simulations',
               'Pick any filing date as the start and any stake',
               'Blend several investors into one basket',
               'QQQ benchmark computed over the same window',
@@ -139,6 +140,15 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
             {loc === 'zh' ? '抄 13F 作业到底赚不赚钱？方法、反面说明与完整表格 →' : 'Does copying 13F filings actually work? Method, caveats and the full table →'}
           </a>
         </p>
+      </section>
+
+      <section className="mt-6 rounded-xl border border-amber-400/50 bg-amber-400/10 p-5" role="note">
+        <h2 className="font-bold text-white">{loc === 'zh' ? (legacy ? '旧版快照 · 待重算' : '历史模拟 · 非实盘收益') : (legacy ? 'Legacy snapshot · recomputation pending' : 'Historical simulation · not live returns')}</h2>
+        <p className="mt-2 text-sm text-slate-300">{loc === 'zh'
+          ? (legacy ? '下方数值来自旧版：可能使用披露前的申报日收盘价、混入期权记录、跳过缺失数据。保留供审计，不能用来证明可赚到这些收益。' : '已采用次交易日收盘、期权过滤和完整价格覆盖。仍受当前选股名单、申报权重及未扣交易成本等假设影响，尚未证明未来超额收益。')
+          : (legacy ? 'The figures below use the old method: same-day prices may precede disclosure, option rows may be included, and missing data were skipped. Retained for audit; they do not demonstrate achievable returns.' : 'Uses next-session closes, option filtering and complete price coverage. Current-universe selection, filed weights and excluded trading costs remain limitations; future excess returns are unproven.')}</p>
+        <p className="mt-2 text-xs text-slate-400">{homework.methodVersion} · {homework.generated}</p>
+        <a className="mt-2 inline-block text-sm text-accent underline" href="/copy-homework.json" download>{loc === 'zh' ? '下载带方法与状态的原始数据' : 'Download versioned data and status'}</a>
       </section>
 
       {rows.length > 0 && (
@@ -216,7 +226,7 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
                       {r.legs.map((l) => (
                         <tr key={l.from} className="border-t border-white/5">
                           <td className="py-1.5 pr-3 text-slate-400">
-                            {l.from} → {l.to}
+                            {l.entryDate ?? l.from} → {l.exitDate ?? l.to}
                           </td>
                           <td className={`py-1.5 pr-3 text-right font-medium ${tone(l.ret * 100)}`}>
                             {pct(l.ret * 100)}
@@ -288,3 +298,4 @@ export default async function TrackRecordPage({ params }: { params: Promise<{ lo
     </div>
   );
 }
+
