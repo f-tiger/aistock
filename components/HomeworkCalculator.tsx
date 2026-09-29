@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { Locale } from '@/lib/i18n/config';
 import dict from '@/lib/i18n/dictionaries';
 
-export type Leg = { from: string; to: string; ret: number; holdings: number; coverage: number; bench: number | null };
+export type Leg = { from: string; to: string; ret: number; holdings: number; coverage: number; bench: number | null; entryDate?: string; exitDate?: string };
 export type Row = { slug: string; label: string; from: string; to: string; legs: Leg[] };
 
 /**
@@ -127,7 +127,7 @@ export default function HomeworkCalculator({
         legs,
         mult: m,
         bench: benchKnown && legs.length ? b : null,
-        window: legs.length ? { from: legs[0].from, to: legs[legs.length - 1].to } : null,
+        window: legs.length ? { from: legs[0].entryDate ?? legs[0].from, to: legs[legs.length - 1].exitDate ?? legs[legs.length - 1].to } : null,
       };
     }).filter((p) => p.legs.length > 0);
 
@@ -342,3 +342,4 @@ export default function HomeworkCalculator({
     </section>
   );
 }
+

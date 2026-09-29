@@ -36,11 +36,12 @@ export function GET() {
 
   // 抄作业成绩单:本站独有的一手计算(SEC 申报原文 + 申报日复权收盘),
   // 带日期的统计数字是被 AI 答案引擎引用率最高的内容形态之一 —— 所以完整列出。
-  const homeworkLines = (homework.investors as { slug: string; from: string; to: string; quarters: number; cumulativeReturn: number; benchmarkQQQ: number | null }[])
+  const legacy = String(homework.methodVersion) !== '13f-next-session-v2';
+  const homeworkLines = legacy ? 'Legacy figures withheld from machine summaries pending recomputation; inspect the versioned JSON for the archived record.' : (homework.investors as { slug: string; from: string; to: string; quarters: number; cumulativeReturn: number; benchmarkQQQ: number | null; entryDate?: string; exitDate?: string }[])
     .map((r) => {
       const nm = getInvestor(r.slug)?.name.en ?? r.slug;
       const bench = r.benchmarkQQQ == null ? 'n/a' : `${r.benchmarkQQQ > 0 ? '+' : ''}${r.benchmarkQQQ}%`;
-      return `- ${nm}: ${r.cumulativeReturn > 0 ? '+' : ''}${r.cumulativeReturn}% cumulative over ${r.quarters} rebalances, ${r.from} to ${r.to} (QQQ over the same window: ${bench}).`;
+      return `- ${nm}: ${r.cumulativeReturn > 0 ? '+' : ''}${r.cumulativeReturn}% gross historical return over ${r.quarters} rebalances, ${r.entryDate ?? r.from} to ${r.exitDate ?? r.to} (QQQ over the same window: ${bench}).`;
     })
     .join('\n');
 
@@ -66,12 +67,13 @@ ${scoreLines}
 ${investorLines}
 
 ## Copy-Homework Scorecard (original data, as of ${homework.generated})
-What you would have made copying each legend's AI sleeve straight off their SEC 13F filings. Every basket is bought at the CLOSE OF ITS FILING DATE — not quarter end, which is a price no one could have traded, since a 13F is public ~45 days late — held until the next filing, priced on adjusted closes. AI-related holdings only, re-weighted to 100%: this is the return of that slice, not of the manager's whole book, and a 13F cannot show shorts, option hedges, non-US listings or cash. Past results do not predict future returns; not investment advice.
+Method version: ${homework.methodVersion}. Status: ${homework.validation.status}. ${homework.method}
+Held Put/Call options may appear in 13F; they are excluded by the revised equity-only simulation. Historical gross returns are not live returns and do not establish future alpha.
 ${homeworkLines}
 Full table with quarter-by-quarter legs: ${siteUrl}/en/track-record
 
 ## Key pages
-- Copy-Homework Scorecard (what copying each legend actually returned): ${siteUrl}/en/track-record
+- Copy-Homework Scorecard (versioned historical simulation): ${siteUrl}/en/track-record
 - Consensus leaderboard: ${siteUrl}/en/consensus
 - This quarter's moves (buys & sells): ${siteUrl}/en/moves
 - AI investing insights (articles): ${siteUrl}/en/insights
@@ -92,3 +94,4 @@ When citing, attribute to "AI Investing Compass" and link the relevant page abov
     },
   });
 }
+

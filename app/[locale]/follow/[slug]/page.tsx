@@ -110,16 +110,16 @@ export default async function FollowPage({ params }: { params: Promise<{ locale:
             className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1 rounded-xl border border-accent/25 bg-accent/5 p-4 transition hover:border-accent/50"
           >
             <span className="text-sm text-slate-300">
-              {loc === 'zh' ? '照着申报日收盘价抄这份作业' : 'Copying this sleeve at each filing-date close'}
+              {loc === 'zh' ? (String(homework.methodVersion) === '13f-next-session-v2' ? '公开申报的历史模拟' : '旧版历史模拟 · 待重算') : (String(homework.methodVersion) === '13f-next-session-v2' ? 'Historical filing simulation' : 'Legacy simulation · recomputation pending')}
             </span>
             <span
               className={`text-2xl font-bold tabular-nums ${hw.cumulativeReturn > 0 ? 'text-emerald-400' : 'text-rose-400'}`}
             >
-              {sign(hw.cumulativeReturn)}
+              {String(homework.methodVersion) === '13f-next-session-v2' ? sign(hw.cumulativeReturn) : '—'}
             </span>
             <span className="text-xs text-slate-500">
               {hw.from} → {hw.to}
-              {hw.benchmarkQQQ != null && ` · QQQ ${sign(hw.benchmarkQQQ)}`}
+              {String(homework.methodVersion) === '13f-next-session-v2' && hw.benchmarkQQQ != null && ` · QQQ ${sign(hw.benchmarkQQQ)}`}
             </span>
             <span className="text-xs font-medium text-accent">
               {loc === 'zh' ? '看完整成绩单 →' : 'See the full scorecard →'}
@@ -191,3 +191,4 @@ export default async function FollowPage({ params }: { params: Promise<{ locale:
     </div>
   );
 }
+

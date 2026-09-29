@@ -288,18 +288,18 @@ const dict = {
     },
     methodTitle: { zh: '为什么这份成绩单跟别人的不一样', en: 'Why this scorecard differs from the rest' },
     methodBody: {
-      zh: '13F 有 45 天滞后。用季度末价格回测等于假装你能穿越——曲线好看,但没有一个真人拿得到那个价。这里一律用申报当天的收盘价建仓,持到下一次申报日换仓,复权收盘计价(拆股、分红都算进去)。这是一个普通人当天打开 EDGAR、照着买,真能拿到的结果。',
-      en: 'A 13F is public ~45 days late. Backtesting at quarter-end prices pretends you could time-travel — the curve looks great and nobody could have traded it. Here every basket is bought at the close of its filing date, held until the next filing, priced on adjusted closes (splits and dividends included). This is what a real person opening EDGAR that day could actually have got.',
+      zh: '13F 是滞后的季度披露。新方法从申报日之后的首个完整交易日收盘换仓，排除 Put/Call 期权与本金类证券，仅用复权价格，并要求全部标的有同日价格、各期连续。结果是未扣成本、税费与滑点的历史模拟；页面会明确标注数据是否已按新方法重算。',
+      en: '13F is delayed quarterly disclosure. The revised method rebalances at the first completed session close after the filing date, excludes Put/Call and principal rows, and requires adjusted prices for every name on identical dates with contiguous periods. Returns are historical simulations before costs, taxes and slippage. The data status below identifies whether this snapshot has been recomputed.',
     },
     caveatTitle: { zh: '这个数字不是什么', en: 'What this number is not' },
     caveats: {
-      zh: '①只算 AI 相关持仓,权重按申报值重新归一——这是这套 AI 切片的收益,不是这位投资人整个组合的收益。②13F 不含做空、期权对冲、非美股与现金,所以它看不见对冲。③哪些标的算「AI」是本站的编辑判断,换一套口径数字会变。④单期价格覆盖不足 50% 的直接跳过,不硬凑。',
-      en: '① AI-related holdings only, re-weighted to 100% — this is the return of that AI slice, not of the manager’s whole book. ② A 13F excludes shorts, option hedges, non-US listings and cash, so hedges are invisible here. ③ Which names count as “AI” is this site’s editorial call; a different lens gives different numbers. ④ Any quarter with under 50% price coverage is skipped rather than fudged.',
+      zh: '①只研究本站当前 AI 名单的切片，存在选择与幸存者偏差；不是基金完整收益。②13F 可报告持有的 Put/Call，但不披露股票空头与卖出的期权，不能还原完整对冲。③使用季度末申报权重、原始 13F-HR；未完整重建修订和保密披露。④新版缺价格或缺季度即不生成该经理成绩；旧版快照仍有缺失数据偏差，须按状态阅读。',
+      en: '① Current editorial AI universe: selection and survivorship bias remain; this is not a full fund return. ② 13F may report held Put/Call options, but omits equity shorts and written options; full hedges cannot be reconstructed. ③ Report-period weights and original 13F-HR filings are used; amendments and confidential releases are not fully reconstructed. ④ The revised method omits a manager if any price or period is missing. Legacy snapshots retain missing-data bias; read their status.',
     },
     thInvestor: { zh: '投资人', en: 'Investor' },
     thWindow: { zh: '回测区间', en: 'Window' },
     thQuarters: { zh: '换仓', en: 'Rebalances' },
-    thReturn: { zh: '累计收益', en: 'Cumulative' },
+    thReturn: { zh: '历史毛收益', en: 'Gross return' },
     thBench: { zh: '同期 QQQ', en: 'QQQ, same window' },
     thExcess: { zh: '超额', en: 'Excess' },
     legsTitle: { zh: '逐期明细', en: 'Quarter by quarter' },
@@ -320,8 +320,8 @@ const dict = {
       zh: '13F 一年只申报 4 次,新持仓在申报日当天才存在。留个邮箱,下一次申报落地、这份成绩单重算时,我发一封给你。',
       en: 'A 13F lands four times a year, and the new holdings exist only from the filing date. Leave an email and I’ll send one when the next filing lands and this scorecard recomputes.',
     },
-    source: { zh: '持仓来自 SEC EDGAR 申报原文(逐笔,按 CUSIP 合并);价格为 Yahoo Finance 复权日线。', en: 'Holdings from SEC EDGAR primary filings (line-by-line, merged by CUSIP); prices are Yahoo Finance adjusted daily closes.' },
-    calcTitle: { zh: '如果当时我抄了,今天多少钱?', en: 'What if I had copied them — how much today?' },
+    source: { zh: '持仓来自 SEC EDGAR 原始申报，按发行人名称映射为编辑名单中的股票（Alphabet 两类股另按 CUSIP 区分）；价格为 Yahoo Finance 复权日线。', en: 'Holdings from SEC EDGAR original filings, mapped by issuer name to an editorial ticker list (Alphabet classes distinguished by CUSIP); Yahoo Finance adjusted daily closes.' },
+    calcTitle: { zh: '按该历史快照计算，期末是多少？', en: 'What is the simulated value at the snapshot end?' },
     calcIntro: {
       zh: '选几位大佬、选一个申报日开始、填入本金。全部在你的浏览器里算,不发送任何数据。多选时本金等额分配,各自复利。',
       en: 'Pick one or more legends, pick a filing date to start, enter a stake. It all runs in your browser — nothing is sent anywhere. With several picked, the stake is split evenly and each sleeve compounds on its own.',
@@ -329,7 +329,7 @@ const dict = {
     calcWho: { zh: '抄谁的作业', en: 'Whose homework' },
     calcFrom: { zh: '从哪一次申报开始', en: 'Start at which filing' },
     calcAmount: { zh: '本金(美元)', en: 'Stake (USD)' },
-    calcEnd: { zh: '今天值', en: 'Worth today' },
+    calcEnd: { zh: '快照期末值', en: 'Snapshot end value' },
     calcBench: { zh: '同期买 QQQ', en: 'Same stake in QQQ' },
     calcVs: {
       zh: '{from} → {to} 这段时间,这么抄比同期买 QQQ {word} {diff}。',
@@ -340,8 +340,8 @@ const dict = {
     calcEmpty: { zh: '先选至少一位投资人。所选起点之后没有申报期时,这里也会空着——不会拿更早的数据凑。', en: 'Pick at least one investor. This also stays empty when no filing falls after the chosen start date — earlier data is never borrowed to fill the gap.' },
     calcShare: { zh: '复制这个结果的链接', en: 'Copy a link to this result' },
     calcFine: {
-      zh: '每一期都用申报当天的收盘价换仓,复权计价。只算 AI 相关持仓、按申报权重归一,不是这几位的完整组合收益;13F 也看不见做空与期权对冲。过去的收益不预示未来,这不是荐股。',
-      en: 'Every quarter is rebalanced at that filing’s closing price, on adjusted closes. AI-related holdings only, re-weighted as filed — not these managers’ whole-portfolio returns, and a 13F cannot show shorts or option hedges. Past results do not predict future returns; not a recommendation.',
+      zh: '按页面所标方法版本与历史快照计算，未扣成本、税费及滑点。选择多位时各自起止日期可能不同，不代表同一可交易组合。历史模拟不是经理实盘收益，也不是未来回报预测。',
+      en: 'Uses the method version and historical snapshot shown on this page, before costs, taxes and slippage. Selected sleeves may have different start/end dates; their blend is not a single tradeable portfolio. Historical simulation is neither a manager live return nor a forecast.',
     },
     tgBtn: { zh: '这份作业更新时通知我 →', en: 'Tell me when this homework updates →' },
     tgNote: {
@@ -376,3 +376,4 @@ export function tr(value: Localized, locale: Locale): string {
 }
 
 export default dict;
+
