@@ -130,3 +130,7 @@ jobs:
             if [ "$ok" = 1 ]; then echo "✅ $path"; else echo "❌ $path 未在 ~50s 内出现预期内容"; fail=1; fi
           done
           exit $fail
+
+      - name: Verify private fleet account routes
+        if: steps.token.outputs.present == 'true'
+        run: node lib/fleet-account/verify-live.mjs compass.agiscorecard.com
