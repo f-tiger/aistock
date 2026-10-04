@@ -3,14 +3,15 @@ import dict from '@/lib/i18n/dictionaries';
 import type { Locale } from '@/lib/i18n/config';
 import { primaryLinks } from '@/lib/nav';
 import LocaleSwitcher from './LocaleSwitcher';
+import FleetAccount from './FleetAccount';
 
 export default function Navbar({ locale }: { locale: Locale }) {
   const base = `/${locale}`;
   const links = primaryLinks(locale);
 
   return (
-    <header className="sticky top-0 z-30 border-b border-white/10 bg-ink-950/80 backdrop-blur">
-      <nav className="container-page flex h-16 items-center justify-between gap-4">
+    <header data-fleet-header="fleet-header-20261004.1" className="sticky top-0 z-30 border-b border-white/10 bg-ink-950/80 backdrop-blur">
+      <nav className="container-page flex min-h-16 flex-wrap items-center justify-between gap-3 py-2">
         <Link href={base} className="flex items-center gap-2 font-bold text-white">
           <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-ink-950">AI</span>
           <span className="hidden sm:inline">{dict.brand[locale]}</span>
@@ -36,6 +37,7 @@ export default function Navbar({ locale }: { locale: Locale }) {
             {dict.nav.pro[locale]}
           </Link>
           <LocaleSwitcher locale={locale} />
+          <FleetAccount locale={locale} />
         </div>
       </nav>
 
