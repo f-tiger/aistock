@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-16",
+  "generated": "2026-11-15",
   "note": "Line-by-line SEC 13F holdings from EDGAR primary filings. entityName is the filer as declared in its own submissions record — check it matches the intended investor before using.",
   "investors": {
     "warren-buffett": {
@@ -256,1533 +256,1461 @@
       "cik": "0001697748",
       "entityName": "ARK Investment Management LLC",
       "cikSource": "verified",
-      "filedAt": "2026-08-14",
-      "periodEnd": "2026-06-30",
-      "accession": "0001104659-26-096910",
-      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1697748/000110465926096910/",
-      "lineItems": 191,
-      "positions": 190,
-      "totalValueUsd": 15402788184,
+      "filedAt": "2026-11-13",
+      "periodEnd": "2026-09-30",
+      "accession": "0001104659-26-126785",
+      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1697748/000110465926126785/",
+      "lineItems": 182,
+      "positions": 181,
+      "totalValueUsd": 17374380716,
       "valueUnitAsFiled": "usd",
       "suspect": null,
       "holdings": [
         {
           "issuer": "Tesla Inc",
           "cusip": "88160R101",
-          "valueUsd": 1160772073,
-          "shares": 2759800,
+          "valueUsd": 1196306136,
+          "shares": 3371681,
           "lines": 1,
-          "pct": 7.5
+          "pct": 6.9
         },
         {
-          "issuer": "Advanced Micro Devices Inc",
-          "cusip": "007903107",
-          "valueUsd": 822826048,
-          "shares": 1416443,
-          "lines": 1,
-          "pct": 5.3
-        },
-        {
-          "issuer": "Space Exploration Technologies Corp",
+          "issuer": "Space Exploration Technologies",
           "cusip": "84615Q103",
-          "valueUsd": 765113281,
-          "shares": 4478013,
+          "valueUsd": 1017764417,
+          "shares": 6746417,
           "lines": 1,
-          "pct": 5
+          "pct": 5.9
         },
         {
           "issuer": "Tempus AI Inc",
           "cusip": "88023B103",
-          "valueUsd": 580611200,
-          "shares": 10022634,
+          "valueUsd": 766382941,
+          "shares": 9357545,
           "lines": 1,
-          "pct": 3.8
-        },
-        {
-          "issuer": "Robinhood Markets Inc",
-          "cusip": "770700102",
-          "valueUsd": 525069168,
-          "shares": 5236031,
-          "lines": 1,
-          "pct": 3.4
-        },
-        {
-          "issuer": "CRISPR Therapeutics AG",
-          "cusip": "H17182108",
-          "valueUsd": 515999631,
-          "shares": 9460939,
-          "lines": 1,
-          "pct": 3.4
-        },
-        {
-          "issuer": "Shopify Inc",
-          "cusip": "82509L107",
-          "valueUsd": 474523465,
-          "shares": 4155925,
-          "lines": 1,
-          "pct": 3.1
+          "pct": 4.4
         },
         {
           "issuer": "Twist Bioscience Corp",
           "cusip": "90184D100",
-          "valueUsd": 468083756,
-          "shares": 4549803,
+          "valueUsd": 656640575,
+          "shares": 3398057,
           "lines": 1,
-          "pct": 3
-        },
-        {
-          "issuer": "10X Genomics Inc",
-          "cusip": "88025U109",
-          "valueUsd": 383517223,
-          "shares": 10003057,
-          "lines": 1,
-          "pct": 2.5
-        },
-        {
-          "issuer": "Amazon.com Inc",
-          "cusip": "023135106",
-          "valueUsd": 379241133,
-          "shares": 1591177,
-          "lines": 1,
-          "pct": 2.5
-        },
-        {
-          "issuer": "Palantir Technologies Inc",
-          "cusip": "69608A108",
-          "valueUsd": 374777381,
-          "shares": 3212286,
-          "lines": 1,
-          "pct": 2.4
-        },
-        {
-          "issuer": "Alphabet Inc",
-          "cusip": "02079K107",
-          "valueUsd": 368641312,
-          "shares": 1043334,
-          "lines": 1,
-          "pct": 2.4
-        },
-        {
-          "issuer": "Coinbase Global Inc",
-          "cusip": "19260Q107",
-          "valueUsd": 367129713,
-          "shares": 2511319,
-          "lines": 1,
-          "pct": 2.4
-        },
-        {
-          "issuer": "ROBLOX Corp",
-          "cusip": "771049103",
-          "valueUsd": 351615103,
-          "shares": 6465890,
-          "lines": 1,
-          "pct": 2.3
-        },
-        {
-          "issuer": "Beam Therapeutics Inc",
-          "cusip": "07373V105",
-          "valueUsd": 351260447,
-          "shares": 10234862,
-          "lines": 1,
-          "pct": 2.3
-        },
-        {
-          "issuer": "Teradyne Inc",
-          "cusip": "880770102",
-          "valueUsd": 311971420,
-          "shares": 644782,
-          "lines": 1,
-          "pct": 2
-        },
-        {
-          "issuer": "Intellia Therapeutics Inc",
-          "cusip": "45826J105",
-          "valueUsd": 285536575,
-          "shares": 16875684,
-          "lines": 1,
-          "pct": 1.9
-        },
-        {
-          "issuer": "Circle Internet Group Inc",
-          "cusip": "172573107",
-          "valueUsd": 285477674,
-          "shares": 4558162,
-          "lines": 1,
-          "pct": 1.9
+          "pct": 3.8
         },
         {
           "issuer": "NVIDIA Corp",
           "cusip": "67066G104",
-          "valueUsd": 276373746,
-          "shares": 1381247,
+          "valueUsd": 584932116,
+          "shares": 2561223,
           "lines": 1,
-          "pct": 1.8
+          "pct": 3.4
+        },
+        {
+          "issuer": "10X Genomics Inc",
+          "cusip": "88025U109",
+          "valueUsd": 566828112,
+          "shares": 6272998,
+          "lines": 1,
+          "pct": 3.3
+        },
+        {
+          "issuer": "Circle Internet Group Inc",
+          "cusip": "172573107",
+          "valueUsd": 563479299,
+          "shares": 6857482,
+          "lines": 1,
+          "pct": 3.2
+        },
+        {
+          "issuer": "CRISPR Therapeutics AG",
+          "cusip": "H17182108",
+          "valueUsd": 556344632,
+          "shares": 10056844,
+          "lines": 1,
+          "pct": 3.2
+        },
+        {
+          "issuer": "Coinbase Global Inc",
+          "cusip": "19260Q107",
+          "valueUsd": 545771189,
+          "shares": 2927800,
+          "lines": 1,
+          "pct": 3.1
+        },
+        {
+          "issuer": "Robinhood Markets Inc",
+          "cusip": "770700102",
+          "valueUsd": 517972160,
+          "shares": 4604197,
+          "lines": 1,
+          "pct": 3
+        },
+        {
+          "issuer": "Palantir Technologies Inc",
+          "cusip": "69608A108",
+          "valueUsd": 487773444,
+          "shares": 2607717,
+          "lines": 1,
+          "pct": 2.8
+        },
+        {
+          "issuer": "Shopify Inc",
+          "cusip": "82509L107",
+          "valueUsd": 466477128,
+          "shares": 3145496,
+          "lines": 1,
+          "pct": 2.7
+        },
+        {
+          "issuer": "Amazon.com Inc",
+          "cusip": "023135106",
+          "valueUsd": 422994246,
+          "shares": 1697749,
+          "lines": 1,
+          "pct": 2.4
+        },
+        {
+          "issuer": "Advanced Micro Devices Inc",
+          "cusip": "007903107",
+          "valueUsd": 413346374,
+          "shares": 675668,
+          "lines": 1,
+          "pct": 2.4
         },
         {
           "issuer": "CoreWeave Inc",
           "cusip": "21873S108",
-          "valueUsd": 264496911,
-          "shares": 2657192,
+          "valueUsd": 366812897,
+          "shares": 4210433,
           "lines": 1,
-          "pct": 1.7
-        },
-        {
-          "issuer": "Deere &amp; Co",
-          "cusip": "244199105",
-          "valueUsd": 249307586,
-          "shares": 393025,
-          "lines": 1,
-          "pct": 1.6
-        },
-        {
-          "issuer": "Block Inc",
-          "cusip": "852234103",
-          "valueUsd": 235445950,
-          "shares": 3097973,
-          "lines": 1,
-          "pct": 1.5
-        },
-        {
-          "issuer": "Kratos Defense &amp; Security Solutions Inc.",
-          "cusip": "50077B207",
-          "valueUsd": 232974116,
-          "shares": 4672566,
-          "lines": 1,
-          "pct": 1.5
-        },
-        {
-          "issuer": "Taiwan Semiconductor Manufacturing Company Ltd",
-          "cusip": "874039100",
-          "valueUsd": 230325325,
-          "shares": 482286,
-          "lines": 1,
-          "pct": 1.5
-        },
-        {
-          "issuer": "Natera Inc",
-          "cusip": "632307104",
-          "valueUsd": 186989592,
-          "shares": 688855,
-          "lines": 1,
-          "pct": 1.2
-        },
-        {
-          "issuer": "Illumina Inc",
-          "cusip": "452327109",
-          "valueUsd": 183744158,
-          "shares": 1045010,
-          "lines": 1,
-          "pct": 1.2
-        },
-        {
-          "issuer": "Cerebras Systems Inc",
-          "cusip": "15675D103",
-          "valueUsd": 168979473,
-          "shares": 764613,
-          "lines": 1,
-          "pct": 1.1
-        },
-        {
-          "issuer": "Rocket Lab Corp",
-          "cusip": "773121108",
-          "valueUsd": 165812192,
-          "shares": 1631207,
-          "lines": 1,
-          "pct": 1.1
-        },
-        {
-          "issuer": "Bullish",
-          "cusip": "G16910120",
-          "valueUsd": 158063147,
-          "shares": 6746186,
-          "lines": 1,
-          "pct": 1
-        },
-        {
-          "issuer": "Broadcom Inc",
-          "cusip": "11135F101",
-          "valueUsd": 153820556,
-          "shares": 407202,
-          "lines": 1,
-          "pct": 1
-        },
-        {
-          "issuer": "Recursion Pharmaceuticals Inc",
-          "cusip": "75629V104",
-          "valueUsd": 151709111,
-          "shares": 41337632,
-          "lines": 1,
-          "pct": 1
-        },
-        {
-          "issuer": "Archer Aviation Inc",
-          "cusip": "03945R102",
-          "valueUsd": 151189352,
-          "shares": 31963922,
-          "lines": 1,
-          "pct": 1
-        },
-        {
-          "issuer": "Absci Corp",
-          "cusip": "00091E109",
-          "valueUsd": 149803896,
-          "shares": 12925271,
-          "lines": 1,
-          "pct": 1
-        },
-        {
-          "issuer": "Veracyte Inc",
-          "cusip": "92337F107",
-          "valueUsd": 134841222,
-          "shares": 2295951,
-          "lines": 1,
-          "pct": 0.9
+          "pct": 2.1
         },
         {
           "issuer": "Meta Platforms Inc",
           "cusip": "30303M102",
-          "valueUsd": 134610910,
-          "shares": 238973,
+          "valueUsd": 355295103,
+          "shares": 489941,
           "lines": 1,
-          "pct": 0.9
+          "pct": 2
         },
         {
-          "issuer": "ARK 21Shares Bitcoin ETF",
-          "cusip": "040919102",
-          "valueUsd": 125605835,
-          "shares": 6454565,
+          "issuer": "Alphabet Inc",
+          "cusip": "02079K107",
+          "valueUsd": 348550865,
+          "shares": 1022923,
           "lines": 1,
-          "pct": 0.8
+          "pct": 2
         },
         {
-          "issuer": "L3Harris Technologies Inc",
-          "cusip": "502431109",
-          "valueUsd": 125296306,
-          "shares": 431179,
+          "issuer": "Block Inc",
+          "cusip": "852234103",
+          "valueUsd": 339846908,
+          "shares": 4621881,
           "lines": 1,
-          "pct": 0.8
+          "pct": 2
+        },
+        {
+          "issuer": "Beam Therapeutics Inc",
+          "cusip": "07373V105",
+          "valueUsd": 288641356,
+          "shares": 11805372,
+          "lines": 1,
+          "pct": 1.7
+        },
+        {
+          "issuer": "Broadcom Inc",
+          "cusip": "11135F101",
+          "valueUsd": 274672400,
+          "shares": 782119,
+          "lines": 1,
+          "pct": 1.6
+        },
+        {
+          "issuer": "Cerebras Systems Inc",
+          "cusip": "15675D103",
+          "valueUsd": 264522069,
+          "shares": 1489007,
+          "lines": 1,
+          "pct": 1.5
+        },
+        {
+          "issuer": "Teradyne Inc",
+          "cusip": "880770102",
+          "valueUsd": 259353089,
+          "shares": 646911,
+          "lines": 1,
+          "pct": 1.5
+        },
+        {
+          "issuer": "Bullish",
+          "cusip": "G16910120",
+          "valueUsd": 251173322,
+          "shares": 7199006,
+          "lines": 1,
+          "pct": 1.4
+        },
+        {
+          "issuer": "Rocket Lab Corp",
+          "cusip": "773121108",
+          "valueUsd": 247883675,
+          "shares": 3557458,
+          "lines": 1,
+          "pct": 1.4
         },
         {
           "issuer": "BitMine Immersion Technologies",
           "cusip": "09175A206",
-          "valueUsd": 117282236,
-          "shares": 8811588,
+          "valueUsd": 244470945,
+          "shares": 9249752,
           "lines": 1,
-          "pct": 0.8
+          "pct": 1.4
         },
         {
-          "issuer": "Personalis Inc",
-          "cusip": "71535D106",
-          "valueUsd": 110835941,
-          "shares": 8271339,
+          "issuer": "Taiwan Semiconductor Manufactu",
+          "cusip": "874039100",
+          "valueUsd": 242997815,
+          "shares": 532668,
           "lines": 1,
-          "pct": 0.7
+          "pct": 1.4
+        },
+        {
+          "issuer": "Illumina Inc",
+          "cusip": "452327109",
+          "valueUsd": 233116470,
+          "shares": 851785,
+          "lines": 1,
+          "pct": 1.3
+        },
+        {
+          "issuer": "Natera Inc",
+          "cusip": "632307104",
+          "valueUsd": 225726826,
+          "shares": 546144,
+          "lines": 1,
+          "pct": 1.3
+        },
+        {
+          "issuer": "Kratos Defense &amp; Security Solu",
+          "cusip": "50077B207",
+          "valueUsd": 224312131,
+          "shares": 5254442,
+          "lines": 1,
+          "pct": 1.3
+        },
+        {
+          "issuer": "Cloudflare Inc",
+          "cusip": "18915M107",
+          "valueUsd": 195576483,
+          "shares": 563167,
+          "lines": 1,
+          "pct": 1.1
+        },
+        {
+          "issuer": "Intellia Therapeutics Inc",
+          "cusip": "45826J105",
+          "valueUsd": 192058167,
+          "shares": 15925221,
+          "lines": 1,
+          "pct": 1.1
+        },
+        {
+          "issuer": "Recursion Pharmaceuticals Inc",
+          "cusip": "75629V104",
+          "valueUsd": 184796952,
+          "shares": 44745025,
+          "lines": 1,
+          "pct": 1.1
+        },
+        {
+          "issuer": "Archer Aviation Inc",
+          "cusip": "03945R102",
+          "valueUsd": 168096179,
+          "shares": 33822169,
+          "lines": 1,
+          "pct": 1
         },
         {
           "issuer": "GeneDx Holdings Corp",
           "cusip": "81663L200",
-          "valueUsd": 110539494,
-          "shares": 1610189,
+          "valueUsd": 138318822,
+          "shares": 1913123,
           "lines": 1,
-          "pct": 0.7
+          "pct": 0.8
         },
         {
-          "issuer": "BWX Technologies Inc",
-          "cusip": "05605H100",
-          "valueUsd": 107034337,
-          "shares": 549881,
+          "issuer": "Veracyte Inc",
+          "cusip": "92337F107",
+          "valueUsd": 136492485,
+          "shares": 2964650,
           "lines": 1,
-          "pct": 0.7
+          "pct": 0.8
         },
         {
-          "issuer": "AeroVironment Inc",
-          "cusip": "008073108",
-          "valueUsd": 100280355,
-          "shares": 607502,
+          "issuer": "ARK 21Shares Bitcoin ETF",
+          "cusip": "040919102",
+          "valueUsd": 135553266,
+          "shares": 4895387,
+          "lines": 1,
+          "pct": 0.8
+        },
+        {
+          "issuer": "Absci Corp",
+          "cusip": "00091E109",
+          "valueUsd": 128474441,
+          "shares": 11928917,
           "lines": 1,
           "pct": 0.7
         },
         {
           "issuer": "X-Energy Inc",
           "cusip": "98386P102",
-          "valueUsd": 99361493,
-          "shares": 5411846,
+          "valueUsd": 128389705,
+          "shares": 9054281,
           "lines": 1,
-          "pct": 0.6
+          "pct": 0.7
         },
         {
           "issuer": "Eli Lilly &amp; Co",
           "cusip": "532457108",
-          "valueUsd": 92660897,
-          "shares": 77254,
+          "valueUsd": 124776742,
+          "shares": 107838,
           "lines": 1,
-          "pct": 0.6
+          "pct": 0.7
         },
         {
-          "issuer": "Roku Inc",
-          "cusip": "77543R102",
-          "valueUsd": 82314834,
-          "shares": 595880,
+          "issuer": "Personalis Inc",
+          "cusip": "71535D106",
+          "valueUsd": 115903674,
+          "shares": 7119390,
           "lines": 1,
-          "pct": 0.5
+          "pct": 0.7
         },
         {
           "issuer": "Guardant Health Inc",
           "cusip": "40131M109",
-          "valueUsd": 75977634,
-          "shares": 506416,
+          "valueUsd": 108295449,
+          "shares": 607173,
+          "lines": 1,
+          "pct": 0.6
+        },
+        {
+          "issuer": "CareDx Inc",
+          "cusip": "14167L103",
+          "valueUsd": 104588493,
+          "shares": 1609054,
+          "lines": 1,
+          "pct": 0.6
+        },
+        {
+          "issuer": "BWX Technologies Inc",
+          "cusip": "05605H100",
+          "valueUsd": 103313618,
+          "shares": 754114,
+          "lines": 1,
+          "pct": 0.6
+        },
+        {
+          "issuer": "Deere &amp; Co",
+          "cusip": "244199105",
+          "valueUsd": 101874612,
+          "shares": 151701,
+          "lines": 1,
+          "pct": 0.6
+        },
+        {
+          "issuer": "L3Harris Technologies Inc",
+          "cusip": "502431109",
+          "valueUsd": 100160308,
+          "shares": 423010,
+          "lines": 1,
+          "pct": 0.6
+        },
+        {
+          "issuer": "AeroVironment Inc",
+          "cusip": "008073108",
+          "valueUsd": 88796764,
+          "shares": 624362,
           "lines": 1,
           "pct": 0.5
+        },
+        {
+          "issuer": "Crowdstrike Holdings Inc",
+          "cusip": "22788C105",
+          "valueUsd": 74472851,
+          "shares": 281295,
+          "lines": 1,
+          "pct": 0.4
+        },
+        {
+          "issuer": "Schrodinger Inc/United States",
+          "cusip": "80810D103",
+          "valueUsd": 73740830,
+          "shares": 2374906,
+          "lines": 1,
+          "pct": 0.4
         },
         {
           "issuer": "DoorDash Inc",
           "cusip": "25809K105",
-          "valueUsd": 70147050,
-          "shares": 380139,
+          "valueUsd": 71282927,
+          "shares": 388357,
           "lines": 1,
-          "pct": 0.5
+          "pct": 0.4
         },
         {
-          "issuer": "Snowflake Inc",
-          "cusip": "833445109",
-          "valueUsd": 68597731,
-          "shares": 269539,
+          "issuer": "Pacific Biosciences of Califor",
+          "cusip": "69404D108",
+          "valueUsd": 70507247,
+          "shares": 29749893,
           "lines": 1,
           "pct": 0.4
         },
         {
           "issuer": "Trimble Inc",
           "cusip": "896239100",
-          "valueUsd": 68155382,
-          "shares": 1331680,
+          "valueUsd": 66101912,
+          "shares": 1157449,
           "lines": 1,
           "pct": 0.4
         },
         {
           "issuer": "SoFi Technologies Inc",
           "cusip": "83406F102",
-          "valueUsd": 67102642,
-          "shares": 3742479,
+          "valueUsd": 64927656,
+          "shares": 4130258,
           "lines": 1,
           "pct": 0.4
         },
         {
-          "issuer": "Iridium Communications Inc",
-          "cusip": "46269C102",
-          "valueUsd": 66648948,
-          "shares": 1215113,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Joby Aviation Inc",
-          "cusip": "G65163100",
-          "valueUsd": 59713254,
-          "shares": 6694311,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Caterpillar Inc",
-          "cusip": "149123101",
-          "valueUsd": 59642919,
-          "shares": 56008,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Intuitive Machines Inc",
-          "cusip": "46125A100",
-          "valueUsd": 57740187,
-          "shares": 2699401,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "CareDx Inc",
-          "cusip": "14167L103",
-          "valueUsd": 55675622,
-          "shares": 1953531,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Figma Inc",
-          "cusip": "316841105",
-          "valueUsd": 55030051,
-          "shares": 3042015,
+          "issuer": "Compass Pathways Plc",
+          "cusip": "20451W101",
+          "valueUsd": 61025828,
+          "shares": 4905613,
           "lines": 1,
           "pct": 0.4
         },
         {
           "issuer": "Datadog Inc",
           "cusip": "23804L103",
-          "valueUsd": 54714133,
-          "shares": 210148,
+          "valueUsd": 58953059,
+          "shares": 215275,
           "lines": 1,
-          "pct": 0.4
+          "pct": 0.3
         },
         {
-          "issuer": "Cerus Corp",
-          "cusip": "157085101",
-          "valueUsd": 52361728,
-          "shares": 17932099,
+          "issuer": "ROBLOX Corp",
+          "cusip": "771049103",
+          "valueUsd": 58324453,
+          "shares": 1376551,
           "lines": 1,
           "pct": 0.3
         },
         {
           "issuer": "Toast Inc",
           "cusip": "888787108",
-          "valueUsd": 51742056,
-          "shares": 1859887,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Alphabet Inc",
-          "cusip": "02079K305",
-          "valueUsd": 50075399,
-          "shares": 140122,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Pacific Biosciences of California, Inc.",
-          "cusip": "69404D108",
-          "valueUsd": 50032778,
-          "shares": 29781416,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Compass Pathways Plc",
-          "cusip": "20451W101",
-          "valueUsd": 48845310,
-          "shares": 3451965,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Elbit Systems Ltd",
-          "cusip": "M3760D101",
-          "valueUsd": 47578572,
-          "shares": 62709,
+          "valueUsd": 57679229,
+          "shares": 1989625,
           "lines": 1,
           "pct": 0.3
         },
         {
           "issuer": "Adaptive Biotechnologies Corp",
           "cusip": "00650F109",
-          "valueUsd": 44837058,
-          "shares": 2090306,
+          "valueUsd": 55510311,
+          "shares": 1920772,
           "lines": 1,
           "pct": 0.3
         },
         {
-          "issuer": "Nurix Therapeutics Inc",
-          "cusip": "67080M103",
-          "valueUsd": 43502930,
-          "shares": 1793196,
+          "issuer": "Cerus Corp",
+          "cusip": "157085101",
+          "valueUsd": 48809050,
+          "shares": 20508004,
           "lines": 1,
           "pct": 0.3
         },
         {
-          "issuer": "Cloudflare Inc",
-          "cusip": "18915M107",
-          "valueUsd": 43101337,
-          "shares": 175723,
+          "issuer": "Intuitive Machines Inc",
+          "cusip": "46125A100",
+          "valueUsd": 48238384,
+          "shares": 3387527,
           "lines": 1,
           "pct": 0.3
         },
         {
           "issuer": "Butterfly Network Inc",
           "cusip": "124155102",
-          "valueUsd": 42819541,
-          "shares": 5085456,
+          "valueUsd": 47077779,
+          "shares": 5254216,
           "lines": 1,
           "pct": 0.3
         },
         {
-          "issuer": "Aurora Innovation Inc",
-          "cusip": "051774107",
-          "valueUsd": 41819087,
-          "shares": 6131831,
+          "issuer": "Rubrik Inc",
+          "cusip": "781154109",
+          "valueUsd": 45348893,
+          "shares": 396164,
           "lines": 1,
           "pct": 0.3
         },
         {
           "issuer": "MercadoLibre Inc",
           "cusip": "58733R102",
-          "valueUsd": 37417265,
-          "shares": 22044,
+          "valueUsd": 45244273,
+          "shares": 26175,
           "lines": 1,
-          "pct": 0.2
+          "pct": 0.3
+        },
+        {
+          "issuer": "Everpure Inc",
+          "cusip": "74624M102",
+          "valueUsd": 43960258,
+          "shares": 336139,
+          "lines": 1,
+          "pct": 0.3
+        },
+        {
+          "issuer": "Nurix Therapeutics Inc",
+          "cusip": "67080M103",
+          "valueUsd": 43924834,
+          "shares": 1852587,
+          "lines": 1,
+          "pct": 0.3
+        },
+        {
+          "issuer": "Freenome Inc",
+          "cusip": "35661P100",
+          "valueUsd": 43906384,
+          "shares": 2787707,
+          "lines": 1,
+          "pct": 0.3
         },
         {
           "issuer": "Alamar Biosciences Inc",
           "cusip": "010911105",
-          "valueUsd": 37220549,
-          "shares": 1373959,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Cameco Corp",
-          "cusip": "13321L108",
-          "valueUsd": 36829520,
-          "shares": 361570,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Teledyne Technologies Inc",
-          "cusip": "879360105",
-          "valueUsd": 36594804,
-          "shares": 54873,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Synopsys Inc",
-          "cusip": "871607107",
-          "valueUsd": 36257908,
-          "shares": 81283,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Symbotic Inc",
-          "cusip": "87151X101",
-          "valueUsd": 35813868,
-          "shares": 796749,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Schrodinger Inc",
-          "cusip": "80810D103",
-          "valueUsd": 35002797,
-          "shares": 2154018,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Baidu Inc",
-          "cusip": "056752108",
-          "valueUsd": 34508037,
-          "shares": 301934,
+          "valueUsd": 42258184,
+          "shares": 1240334,
           "lines": 1,
           "pct": 0.2
         },
         {
           "issuer": "Spotify Technology SA",
           "cusip": "L8681T102",
-          "valueUsd": 34484423,
-          "shares": 75108,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Everpure Inc",
-          "cusip": "74624M102",
-          "valueUsd": 31354638,
-          "shares": 397952,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "DraftKings Inc",
-          "cusip": "26142V105",
-          "valueUsd": 31040642,
-          "shares": 1228846,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Prime Medicine Inc",
-          "cusip": "74168J101",
-          "valueUsd": 30806875,
-          "shares": 8348746,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Rubrik Inc",
-          "cusip": "781154109",
-          "valueUsd": 29336399,
-          "shares": 365426,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Intuitive Surgical Inc",
-          "cusip": "46120E602",
-          "valueUsd": 27986730,
-          "shares": 70375,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Kodiak AI Inc",
-          "cusip": "500081104",
-          "valueUsd": 26163153,
-          "shares": 5150227,
+          "valueUsd": 41852529,
+          "shares": 85872,
           "lines": 1,
           "pct": 0.2
         },
         {
           "issuer": "Ionis Pharmaceuticals Inc",
           "cusip": "462222100",
-          "valueUsd": 23848064,
-          "shares": 300770,
+          "valueUsd": 41219180,
+          "shares": 923162,
+          "lines": 1,
+          "pct": 0.2
+        },
+        {
+          "issuer": "Arcturus Therapeutics Holdings",
+          "cusip": "03969T109",
+          "valueUsd": 40995387,
+          "shares": 2994550,
           "lines": 1,
           "pct": 0.2
         },
         {
           "issuer": "Gitlab Inc",
           "cusip": "37637K108",
-          "valueUsd": 23446979,
-          "shares": 767998,
+          "valueUsd": 38768861,
+          "shares": 820505,
           "lines": 1,
           "pct": 0.2
         },
         {
-          "issuer": "WeRide Inc",
-          "cusip": "950915108",
-          "valueUsd": 21783963,
-          "shares": 3742949,
+          "issuer": "Securitize Corp",
+          "cusip": "81517B101",
+          "valueUsd": 37696592,
+          "shares": 2583728,
           "lines": 1,
-          "pct": 0.1
+          "pct": 0.2
         },
         {
-          "issuer": "Generate Biomedicines Inc",
-          "cusip": "370920100",
-          "valueUsd": 21671492,
-          "shares": 1284617,
+          "issuer": "Joby Aviation Inc",
+          "cusip": "G65163100",
+          "valueUsd": 36544009,
+          "shares": 6040332,
           "lines": 1,
-          "pct": 0.1
+          "pct": 0.2
         },
         {
           "issuer": "Airbnb Inc",
           "cusip": "009066101",
-          "valueUsd": 21224619,
-          "shares": 148320,
+          "valueUsd": 35180613,
+          "shares": 218989,
           "lines": 1,
-          "pct": 0.1
+          "pct": 0.2
         },
         {
-          "issuer": "Arcturus Therapeutics Holdings",
-          "cusip": "03969T109",
-          "valueUsd": 19498987,
-          "shares": 2901635,
+          "issuer": "Synopsys Inc",
+          "cusip": "871607107",
+          "valueUsd": 32655730,
+          "shares": 75081,
           "lines": 1,
-          "pct": 0.1
+          "pct": 0.2
         },
         {
-          "issuer": "Oklo Inc",
-          "cusip": "02156V109",
-          "valueUsd": 19480209,
-          "shares": 372257,
+          "issuer": "Aurora Innovation Inc",
+          "cusip": "051774107",
+          "valueUsd": 31683803,
+          "shares": 5719098,
           "lines": 1,
-          "pct": 0.1
+          "pct": 0.2
         },
         {
-          "issuer": "Genius Sports Ltd",
-          "cusip": "G3934V109",
-          "valueUsd": 18578566,
-          "shares": 3065770,
+          "issuer": "Symbotic Inc",
+          "cusip": "87151X101",
+          "valueUsd": 31254518,
+          "shares": 742917,
           "lines": 1,
-          "pct": 0.1
+          "pct": 0.2
         },
         {
-          "issuer": "Crowdstrike Holdings Inc",
-          "cusip": "22788C105",
-          "valueUsd": 18029183,
-          "shares": 94500,
+          "issuer": "Elbit Systems Ltd",
+          "cusip": "M3760D101",
+          "valueUsd": 31221054,
+          "shares": 45778,
           "lines": 1,
-          "pct": 0.1
+          "pct": 0.2
         },
         {
-          "issuer": "HEICO Corp",
-          "cusip": "422806109",
-          "valueUsd": 17828022,
-          "shares": 50052,
+          "issuer": "Prime Medicine Inc",
+          "cusip": "74168J101",
+          "valueUsd": 30682919,
+          "shares": 10043509,
+          "lines": 1,
+          "pct": 0.2
+        },
+        {
+          "issuer": "Intuitive Surgical Inc",
+          "cusip": "46120E602",
+          "valueUsd": 30252865,
+          "shares": 74399,
+          "lines": 1,
+          "pct": 0.2
+        },
+        {
+          "issuer": "ARK Active Autocallable Income",
+          "cusip": "00214Q724",
+          "valueUsd": 29782301,
+          "shares": 1470005,
+          "lines": 1,
+          "pct": 0.2
+        },
+        {
+          "issuer": "Generate Biomedicines Inc",
+          "cusip": "370920100",
+          "valueUsd": 29509210,
+          "shares": 1964661,
+          "lines": 1,
+          "pct": 0.2
+        },
+        {
+          "issuer": "Cameco Corp",
+          "cusip": "13321L108",
+          "valueUsd": 29318294,
+          "shares": 338275,
+          "lines": 1,
+          "pct": 0.2
+        },
+        {
+          "issuer": "Caterpillar Inc",
+          "cusip": "149123101",
+          "valueUsd": 25968793,
+          "shares": 32029,
           "lines": 1,
           "pct": 0.1
         },
         {
           "issuer": "908 Devices Inc",
           "cusip": "65443P102",
-          "valueUsd": 17642905,
-          "shares": 2027920,
+          "valueUsd": 25850227,
+          "shares": 2094832,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "Snowflake Inc",
+          "cusip": "833445109",
+          "valueUsd": 24173127,
+          "shares": 71190,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "DraftKings Inc",
+          "cusip": "26142V105",
+          "valueUsd": 23445296,
+          "shares": 1233963,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "Figma Inc",
+          "cusip": "316841105",
+          "valueUsd": 22911190,
+          "shares": 1089971,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "WeRide Inc",
+          "cusip": "950915108",
+          "valueUsd": 21076383,
+          "shares": 3969187,
           "lines": 1,
           "pct": 0.1
         },
         {
           "issuer": "Netflix Inc",
           "cusip": "64110L106",
-          "valueUsd": 16055789,
-          "shares": 224871,
+          "valueUsd": 20109385,
+          "shares": 289011,
           "lines": 1,
           "pct": 0.1
         },
         {
           "issuer": "Pony AI Inc",
           "cusip": "732908108",
-          "valueUsd": 15376555,
-          "shares": 2212454,
+          "valueUsd": 20046643,
+          "shares": 3065236,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "Baidu Inc",
+          "cusip": "056752108",
+          "valueUsd": 18235490,
+          "shares": 209917,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "Oklo Inc",
+          "cusip": "02156V109",
+          "valueUsd": 16392752,
+          "shares": 442808,
           "lines": 1,
           "pct": 0.1
         },
         {
           "issuer": "Sea Ltd",
           "cusip": "81141R100",
-          "valueUsd": 15180586,
-          "shares": 158412,
+          "valueUsd": 16178274,
+          "shares": 166170,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "Genius Sports Ltd",
+          "cusip": "G3934V109",
+          "valueUsd": 15038935,
+          "shares": 2624596,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "NU Holdings Ltd/Cayman Islands",
+          "cusip": "G6683N103",
+          "valueUsd": 14941408,
+          "shares": 1180206,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "Scribe Therapeutics Inc",
+          "cusip": "811033109",
+          "valueUsd": 14483278,
+          "shares": 786921,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "Futu Holdings Ltd",
+          "cusip": "36118L106",
+          "valueUsd": 12948390,
+          "shares": 117127,
           "lines": 1,
           "pct": 0.1
         },
         {
           "issuer": "Garmin Ltd",
           "cusip": "H2906T109",
-          "valueUsd": 14651942,
-          "shares": 61682,
+          "valueUsd": 12110385,
+          "shares": 42220,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "HEICO Corp",
+          "cusip": "422806109",
+          "valueUsd": 11656058,
+          "shares": 38446,
+          "lines": 1,
+          "pct": 0.1
+        },
+        {
+          "issuer": "Kodiak AI Inc",
+          "cusip": "500081104",
+          "valueUsd": 10561261,
+          "shares": 5500657,
           "lines": 1,
           "pct": 0.1
         },
         {
           "issuer": "Klarna Group PLC",
           "cusip": "G5279N105",
-          "valueUsd": 14414948,
-          "shares": 712201,
+          "valueUsd": 9256829,
+          "shares": 747121,
           "lines": 1,
           "pct": 0.1
         },
         {
-          "issuer": "Strata Critical Medical Inc",
-          "cusip": "092667104",
-          "valueUsd": 14391606,
-          "shares": 2730855,
+          "issuer": "Teledyne Technologies Inc",
+          "cusip": "879360105",
+          "valueUsd": 8584541,
+          "shares": 14147,
           "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "NU Holdings Ltd",
-          "cusip": "G6683N103",
-          "valueUsd": 14315494,
-          "shares": 1071519,
-          "lines": 1,
-          "pct": 0.1
+          "pct": 0
         },
         {
           "issuer": "Etoro Group Ltd",
           "cusip": "G32089107",
-          "valueUsd": 12458508,
-          "shares": 315645,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "BioNTech SE",
-          "cusip": "09075V102",
-          "valueUsd": 12406622,
-          "shares": 133333,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Alibaba Group Holding Ltd",
-          "cusip": "01609W102",
-          "valueUsd": 11474896,
-          "shares": 119555,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Canton Strategic Holdings Inc",
-          "cusip": "432705309",
-          "valueUsd": 10314285,
-          "shares": 3657548,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "ARK Innovation ETF",
-          "cusip": "00214Q104",
-          "valueUsd": 8082373,
-          "shares": 100005,
-          "lines": 2,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Lockheed Martin Corp",
-          "cusip": "539830109",
-          "valueUsd": 7543065,
-          "shares": 14806,
+          "valueUsd": 8429703,
+          "shares": 328004,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "Quantum-Si Inc",
           "cusip": "74765K105",
-          "valueUsd": 6343448,
-          "shares": 7167738,
+          "valueUsd": 7910525,
+          "shares": 7393014,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Honeywell International Inc",
-          "cusip": "438516205",
-          "valueUsd": 5208362,
-          "shares": 23262,
+          "issuer": "Canton Strategic Holdings Inc",
+          "cusip": "432705309",
+          "valueUsd": 7711338,
+          "shares": 3246879,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Honeywell Aerospace Inc",
-          "cusip": "43849R105",
-          "valueUsd": 5142763,
-          "shares": 23262,
-          "lines": 1,
+          "issuer": "ARK Innovation ETF",
+          "cusip": "00214Q104",
+          "valueUsd": 6843226,
+          "shares": 76804,
+          "lines": 2,
           "pct": 0
         },
         {
-          "issuer": "SimilarWeb Ltd",
-          "cusip": "M84137104",
-          "valueUsd": 5116484,
-          "shares": 834663,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Zillow Group Inc",
-          "cusip": "98954M200",
-          "valueUsd": 4809164,
-          "shares": 152575,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "JFrog Ltd",
-          "cusip": "M6191J100",
-          "valueUsd": 4600436,
-          "shares": 50621,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Xometry Inc",
-          "cusip": "98423F109",
-          "valueUsd": 4444553,
-          "shares": 46048,
+          "issuer": "Lockheed Martin Corp",
+          "cusip": "539830109",
+          "valueUsd": 6371227,
+          "shares": 12511,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "Stratasys Ltd",
           "cusip": "M85548101",
-          "valueUsd": 4384261,
-          "shares": 512180,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "UroGen Pharma Ltd",
-          "cusip": "M96088105",
-          "valueUsd": 3735494,
-          "shares": 101508,
+          "valueUsd": 4472600,
+          "shares": 538219,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "Kaspi.KZ JSC",
           "cusip": "48581R205",
-          "valueUsd": 3597726,
-          "shares": 41525,
+          "valueUsd": 4097160,
+          "shares": 43559,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "PayPay Corp",
           "cusip": "70450C101",
-          "valueUsd": 3510635,
-          "shares": 244985,
+          "valueUsd": 4034759,
+          "shares": 256991,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Alpha Tau Medical Ltd",
-          "cusip": "M0740A108",
-          "valueUsd": 3485742,
-          "shares": 277086,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Velo3D Inc",
-          "cusip": "92259N302",
-          "valueUsd": 3417915,
-          "shares": 194753,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Valens Semiconductor Ltd",
-          "cusip": "M9607U115",
-          "valueUsd": 3192408,
-          "shares": 1412570,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "3D Systems Corp",
-          "cusip": "88554D205",
-          "valueUsd": 3119014,
-          "shares": 1032786,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Materialise NV",
-          "cusip": "57667T100",
-          "valueUsd": 3118995,
-          "shares": 419784,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Taboola.com Ltd",
-          "cusip": "M8744T106",
-          "valueUsd": 3014060,
-          "shares": 602812,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Proto Labs Inc",
-          "cusip": "743713109",
-          "valueUsd": 2886921,
-          "shares": 35418,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Mobileye Global Inc",
-          "cusip": "60741F104",
-          "valueUsd": 2721087,
-          "shares": 281104,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Pagaya Technologies Ltd",
-          "cusip": "M7S64L123",
-          "valueUsd": 2693755,
-          "shares": 147603,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Radware Ltd",
-          "cusip": "M81873107",
-          "valueUsd": 2662601,
-          "shares": 86280,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Tower Semiconductor Ltd",
-          "cusip": "M87915274",
-          "valueUsd": 2639241,
-          "shares": 10126,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Allot Ltd",
-          "cusip": "M0854Q105",
-          "valueUsd": 2587620,
-          "shares": 297726,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "TAT Technologies Ltd",
-          "cusip": "M8740S227",
-          "valueUsd": 2508930,
-          "shares": 52284,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Dentsply Sirona Inc",
-          "cusip": "24906P109",
-          "valueUsd": 2499058,
-          "shares": 235538,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "HP Inc",
-          "cusip": "40434L105",
-          "valueUsd": 2498286,
-          "shares": 113869,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Cellebrite DI Ltd",
-          "cusip": "M2197Q107",
-          "valueUsd": 2495476,
-          "shares": 170923,
+          "issuer": "Iridium Communications Inc",
+          "cusip": "46269C102",
+          "valueUsd": 3826060,
+          "shares": 79876,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "Riskified Ltd",
           "cusip": "M8216R109",
-          "valueUsd": 2463537,
-          "shares": 488797,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "RADCOM Ltd",
-          "cusip": "M81865111",
-          "valueUsd": 2456417,
-          "shares": 174214,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Ituran Location and Control Ltd",
-          "cusip": "M6158M104",
-          "valueUsd": 2448758,
-          "shares": 40137,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Monday.com Ltd",
-          "cusip": "M7S64H106",
-          "valueUsd": 2400959,
-          "shares": 33167,
+          "valueUsd": 3337047,
+          "shares": 421877,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "PTC Inc",
           "cusip": "69370C100",
-          "valueUsd": 2391377,
-          "shares": 21049,
+          "valueUsd": 3229566,
+          "shares": 23019,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "AudioCodes Ltd",
-          "cusip": "M15342104",
-          "valueUsd": 2385520,
-          "shares": 246438,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Autodesk Inc",
-          "cusip": "052769106",
-          "valueUsd": 2376979,
-          "shares": 12226,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Teva Pharmaceutical Industries",
-          "cusip": "881624209",
-          "valueUsd": 2325964,
-          "shares": 68653,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Microsoft Corp",
-          "cusip": "594918104",
-          "valueUsd": 2304145,
-          "shares": 6177,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Nova Ltd",
-          "cusip": "M7516K103",
-          "valueUsd": 2291207,
-          "shares": 4220,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Playtika Holding Corp",
-          "cusip": "72815L107",
-          "valueUsd": 2284095,
-          "shares": 614004,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Inmode Ltd",
-          "cusip": "M5425M103",
-          "valueUsd": 2240135,
-          "shares": 153224,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Oddity Tech Ltd",
-          "cusip": "M7518J104",
-          "valueUsd": 2220388,
-          "shares": 146754,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Brainsway Ltd",
-          "cusip": "10501L106",
-          "valueUsd": 2210175,
-          "shares": 142500,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Nayax Ltd",
-          "cusip": "M7S750159",
-          "valueUsd": 2163772,
-          "shares": 33306,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Check Point Software Technologies Ltd",
-          "cusip": "M22465104",
-          "valueUsd": 2117600,
-          "shares": 16112,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Fiverr International Ltd",
-          "cusip": "M4R82T106",
-          "valueUsd": 2085042,
-          "shares": 202039,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Perion Network Ltd",
-          "cusip": "M78673114",
-          "valueUsd": 2058365,
-          "shares": 211984,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Camtek Ltd",
-          "cusip": "M20791105",
-          "valueUsd": 1983702,
-          "shares": 12161,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Cognyte Software Ltd",
-          "cusip": "M25133105",
-          "valueUsd": 1982480,
-          "shares": 225795,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Kamada Ltd",
-          "cusip": "M6240T109",
-          "valueUsd": 1931485,
-          "shares": 263304,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Nice Ltd",
-          "cusip": "653656108",
-          "valueUsd": 1911030,
-          "shares": 21035,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "MediWound Ltd",
-          "cusip": "M68830112",
-          "valueUsd": 1860667,
-          "shares": 126576,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Nano Dimension Ltd",
-          "cusip": "63008G203",
-          "valueUsd": 1808872,
-          "shares": 1247498,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Compugen Ltd",
-          "cusip": "M25722105",
-          "valueUsd": 1683187,
-          "shares": 786536,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Gilat Satellite Networks Ltd",
-          "cusip": "M51474118",
-          "valueUsd": 1578579,
-          "shares": 118601,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Kaiser Aluminum Corp",
-          "cusip": "483007704",
-          "valueUsd": 1473094,
-          "shares": 7530,
+          "issuer": "Honeywell Aerospace Inc",
+          "cusip": "43849R105",
+          "valueUsd": 3094441,
+          "shares": 19968,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "Wix.com Ltd",
           "cusip": "M98068105",
-          "valueUsd": 1465995,
-          "shares": 32312,
+          "valueUsd": 2962956,
+          "shares": 41078,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Moog Inc",
-          "cusip": "615394202",
-          "valueUsd": 1464367,
-          "shares": 3455,
+          "issuer": "3D Systems Corp",
+          "cusip": "88554D205",
+          "valueUsd": 2960248,
+          "shares": 822291,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "GE Aerospace",
-          "cusip": "369604301",
-          "valueUsd": 1349165,
-          "shares": 3610,
+          "issuer": "Materialise NV",
+          "cusip": "57667T100",
+          "valueUsd": 2928573,
+          "shares": 342123,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Enlivex Ltd",
-          "cusip": "M4130Y106",
-          "valueUsd": 1310264,
-          "shares": 2382731,
+          "issuer": "Microsoft Corp",
+          "cusip": "594918104",
+          "valueUsd": 2919940,
+          "shares": 5693,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Silicom Ltd",
+          "cusip": "M84116108",
+          "valueUsd": 2877651,
+          "shares": 55022,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "HP Inc",
+          "cusip": "40434L105",
+          "valueUsd": 2843289,
+          "shares": 90898,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Autodesk Inc",
+          "cusip": "052769106",
+          "valueUsd": 2796838,
+          "shares": 13382,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Alpha Tau Medical Ltd",
+          "cusip": "M0740A108",
+          "valueUsd": 2749061,
+          "shares": 184377,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Teva Pharmaceutical Industries",
+          "cusip": "M8769Q102",
+          "valueUsd": 2735355,
+          "shares": 68295,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Proto Labs Inc",
+          "cusip": "743713109",
+          "valueUsd": 2717358,
+          "shares": 28649,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Oddity Tech Ltd",
+          "cusip": "M7518J104",
+          "valueUsd": 2472170,
+          "shares": 132485,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "JFrog Ltd",
+          "cusip": "M6191J100",
+          "valueUsd": 2443661,
+          "shares": 25182,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "AudioCodes Ltd",
+          "cusip": "M15342104",
+          "valueUsd": 2400768,
+          "shares": 224791,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Nice Ltd",
+          "cusip": "653656108",
+          "valueUsd": 2396311,
+          "shares": 21536,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "SimilarWeb Ltd",
+          "cusip": "M84137104",
+          "valueUsd": 2389234,
+          "shares": 307891,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Valens Semiconductor Ltd",
+          "cusip": "M9607U115",
+          "valueUsd": 2352081,
+          "shares": 1251107,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Xometry Inc",
+          "cusip": "98423F109",
+          "valueUsd": 2345391,
+          "shares": 22804,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Camtek Ltd/Israel",
+          "cusip": "M20791105",
+          "valueUsd": 2304531,
+          "shares": 14844,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Nano Dimension Ltd",
+          "cusip": "63008G203",
+          "valueUsd": 2294522,
+          "shares": 1461479,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Velo3D Inc",
+          "cusip": "92259N302",
+          "valueUsd": 2285778,
+          "shares": 209897,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "UroGen Pharma Ltd",
+          "cusip": "M96088105",
+          "valueUsd": 2204178,
+          "shares": 54250,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Allot Ltd",
+          "cusip": "M0854Q105",
+          "valueUsd": 2199445,
+          "shares": 259103,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Radware Ltd",
+          "cusip": "M81873107",
+          "valueUsd": 2172106,
+          "shares": 72865,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Pagaya Technologies Ltd",
+          "cusip": "M7S64L123",
+          "valueUsd": 2146675,
+          "shares": 123942,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Monday.com Ltd",
+          "cusip": "M7S64H106",
+          "valueUsd": 2139369,
+          "shares": 27267,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Cognyte Software Ltd",
+          "cusip": "M25133105",
+          "valueUsd": 2125452,
+          "shares": 244586,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Compugen Ltd",
+          "cusip": "M25722105",
+          "valueUsd": 2113123,
+          "shares": 887867,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Tower Semiconductor Ltd",
+          "cusip": "M87915274",
+          "valueUsd": 2091446,
+          "shares": 9196,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Sol-Gel Technologies Ltd",
+          "cusip": "M8694L137",
+          "valueUsd": 2090833,
+          "shares": 28148,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Check Point Software Technolog",
+          "cusip": "M22465104",
+          "valueUsd": 2067975,
+          "shares": 16112,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "MediWound Ltd",
+          "cusip": "M68830112",
+          "valueUsd": 2020293,
+          "shares": 146717,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Ituran Location and Control Lt",
+          "cusip": "M6158M104",
+          "valueUsd": 2017914,
+          "shares": 39397,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Inmode Ltd",
+          "cusip": "M5425M103",
+          "valueUsd": 1971727,
+          "shares": 139148,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Perion Network Ltd",
+          "cusip": "M78673114",
+          "valueUsd": 1958161,
+          "shares": 225335,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Gilat Satellite Networks Ltd",
+          "cusip": "M51474118",
+          "valueUsd": 1942268,
+          "shares": 196785,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Brainsway Ltd",
+          "cusip": "10501L106",
+          "valueUsd": 1938420,
+          "shares": 146850,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Nexxen International Ltd",
+          "cusip": "M8T80P204",
+          "valueUsd": 1890036,
+          "shares": 210004,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "TAT Technologies Ltd",
+          "cusip": "M8740S227",
+          "valueUsd": 1862396,
+          "shares": 51337,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "DENTSPLY SIRONA Inc",
+          "cusip": "24906P109",
+          "valueUsd": 1840461,
+          "shares": 207727,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Mobileye Global Inc",
+          "cusip": "60741F104",
+          "valueUsd": 1803138,
+          "shares": 243997,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Nova Ltd",
+          "cusip": "M7516K103",
+          "valueUsd": 1782706,
+          "shares": 4628,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "RADCOM Ltd",
+          "cusip": "M81865111",
+          "valueUsd": 1647414,
+          "shares": 159788,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Nayax Ltd",
+          "cusip": "M7S750159",
+          "valueUsd": 1603647,
+          "shares": 33575,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Fiverr International Ltd",
+          "cusip": "M4R82T106",
+          "valueUsd": 1590924,
+          "shares": 184562,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Cellebrite DI Ltd",
+          "cusip": "M2197Q107",
+          "valueUsd": 1565376,
+          "shares": 139021,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Taboola.com Ltd",
+          "cusip": "M8744T106",
+          "valueUsd": 1333930,
+          "shares": 397003,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Playtika Holding Corp",
+          "cusip": "72815L107",
+          "valueUsd": 1131266,
+          "shares": 528629,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "Lincoln Electric Holdings Inc",
           "cusip": "533900106",
-          "valueUsd": 1113283,
-          "shares": 4193,
+          "valueUsd": 1128434,
+          "shares": 4265,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Moog Inc",
+          "cusip": "615394202",
+          "valueUsd": 1049043,
+          "shares": 2750,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "AMETEK Inc",
           "cusip": "031100100",
-          "valueUsd": 1012761,
-          "shares": 4186,
+          "valueUsd": 1018170,
+          "shares": 4110,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Nano-X Imaging Ltd",
-          "cusip": "M70700105",
-          "valueUsd": 935672,
-          "shares": 806614,
+          "issuer": "Kaiser Aluminium Corp",
+          "cusip": "483007704",
+          "valueUsd": 998824,
+          "shares": 6897,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "GE Aerospace",
+          "cusip": "369604301",
+          "valueUsd": 967162,
+          "shares": 3097,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "Align Technology Inc",
           "cusip": "016255101",
-          "valueUsd": 887826,
-          "shares": 5264,
+          "valueUsd": 794628,
+          "shares": 5467,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Octave Intelligence PLC",
-          "cusip": "G22845104",
-          "valueUsd": 145021,
-          "shares": 8897,
+          "issuer": "Roku Inc",
+          "cusip": "77543R102",
+          "valueUsd": 698336,
+          "shares": 4586,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Materion Corp",
-          "cusip": "576690101",
-          "valueUsd": 135312,
-          "shares": 455,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Carpenter Technology Corp",
-          "cusip": "144285103",
-          "valueUsd": 109798,
-          "shares": 178,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "ATI Inc",
-          "cusip": "01741R102",
-          "valueUsd": 95988,
-          "shares": 487,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Jabil Inc",
-          "cusip": "466313103",
-          "valueUsd": 94443,
-          "shares": 245,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "3M Co",
-          "cusip": "88579Y101",
-          "valueUsd": 76098,
-          "shares": 470,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Avient Corp",
-          "cusip": "05368V106",
-          "valueUsd": 74474,
-          "shares": 2015,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "iShares Russell 1000 Growth ETF",
-          "cusip": "464287614",
-          "valueUsd": 70792,
-          "shares": 570,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "ARK Genomic Revolution ETF",
-          "cusip": "00214Q302",
-          "valueUsd": 69794,
-          "shares": 1659,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Kennametal Inc",
-          "cusip": "489170100",
-          "valueUsd": 69364,
-          "shares": 1979,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "Vanguard Growth ETF",
-          "cusip": "922908736",
-          "valueUsd": 66182,
-          "shares": 768,
+          "issuer": "Alibaba Group Holding Ltd",
+          "cusip": "01609W102",
+          "valueUsd": 504470,
+          "shares": 4691,
           "lines": 1,
           "pct": 0
         },
         {
           "issuer": "Grayscale Ethereum Staking Min",
           "cusip": "38964R203",
-          "valueUsd": 64328,
-          "shares": 4280,
+          "valueUsd": 100736,
+          "shares": 3952,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Dauch Corporation",
-          "cusip": "024061103",
-          "valueUsd": 34612,
-          "shares": 6386,
+          "issuer": "Materion Corp",
+          "cusip": "576690101",
+          "valueUsd": 91661,
+          "shares": 340,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "State Street SPDR S&amp;P Biotech ETF",
-          "cusip": "78464A870",
-          "valueUsd": 14822,
-          "shares": 94,
+          "issuer": "ATI Inc",
+          "cusip": "01741R102",
+          "valueUsd": 84094,
+          "shares": 444,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "iShares Expanded Tech-Software Sector ETF",
-          "cusip": "464287515",
-          "valueUsd": 5109,
-          "shares": 56,
+          "issuer": "3M Co",
+          "cusip": "88579Y101",
+          "valueUsd": 83552,
+          "shares": 509,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "State Street SPDR S&amp;P Capital Markets ETF",
-          "cusip": "78464A771",
-          "valueUsd": 2775,
-          "shares": 19,
+          "issuer": "Avient Corp",
+          "cusip": "05368V106",
+          "valueUsd": 80782,
+          "shares": 2007,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "State Street SPDR S&amp;P Health Care Equipment ETF",
-          "cusip": "78464A581",
-          "valueUsd": 1805,
-          "shares": 21,
+          "issuer": "Jabil Inc",
+          "cusip": "466313103",
+          "valueUsd": 71428,
+          "shares": 249,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "State Street SPDR S&amp;P Aerospace &amp; Defense ETF",
-          "cusip": "78464A631",
-          "valueUsd": 729,
-          "shares": 3,
+          "issuer": "Kennametal Inc",
+          "cusip": "489170100",
+          "valueUsd": 66091,
+          "shares": 2150,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "Fidelity MSCI Communication Services Index ETF",
-          "cusip": "316092873",
-          "valueUsd": 482,
-          "shares": 7,
+          "issuer": "Carpenter Technology Corp",
+          "cusip": "144285103",
+          "valueUsd": 57545,
+          "shares": 148,
           "lines": 1,
           "pct": 0
         },
         {
-          "issuer": "iShares U.S. Broker-Dealers &amp; Securities Exchanges ETF",
-          "cusip": "464288794",
-          "valueUsd": 424,
+          "issuer": "Alphabet Inc",
+          "cusip": "02079K305",
+          "valueUsd": 34752,
+          "shares": 101,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "Zillow Group Inc",
+          "cusip": "98954M200",
+          "valueUsd": 26045,
+          "shares": 960,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "iShares Russell 1000 Growth ET",
+          "cusip": "464287614",
+          "valueUsd": 5027,
+          "shares": 40,
+          "lines": 1,
+          "pct": 0
+        },
+        {
+          "issuer": "BioNTech SE",
+          "cusip": "09075V102",
+          "valueUsd": 237,
           "shares": 2,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "State Street SPDR S&amp;P 500 ETF Trust",
-          "cusip": "78462F103",
-          "valueUsd": 344,
-          "shares": 0,
           "lines": 1,
           "pct": 0
         }
@@ -1790,740 +1718,7 @@
     },
     "stanley-druckenmiller": {
       "firm": "Duquesne Family Office LLC",
-      "cik": "0001536411",
-      "entityName": "Duquesne Family Office LLC",
-      "cikSource": "resolved",
-      "filedAt": "2026-08-14",
-      "periodEnd": "2026-06-30",
-      "accession": "0001536411-26-000006",
-      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1536411/000153641126000006/",
-      "lineItems": 95,
-      "positions": 90,
-      "totalValueUsd": 5210856000,
-      "valueUnitAsFiled": "thousands (converted)",
-      "suspect": null,
-      "holdings": [
-        {
-          "issuer": "Natera Inc",
-          "cusip": "632307104",
-          "valueUsd": 864923000,
-          "shares": 3186306,
-          "lines": 1,
-          "pct": 16.6
-        },
-        {
-          "issuer": "Insmed Inc",
-          "cusip": "457669307",
-          "valueUsd": 295837000,
-          "shares": 2774690,
-          "lines": 2,
-          "pct": 5.7
-        },
-        {
-          "issuer": "Taiwan Semiconductor Manufac",
-          "cusip": "874039100",
-          "valueUsd": 281613000,
-          "shares": 589680,
-          "lines": 1,
-          "pct": 5.4
-        },
-        {
-          "issuer": "Ishares Inc",
-          "cusip": "464286400",
-          "valueUsd": 264414000,
-          "shares": 7664170,
-          "lines": 2,
-          "pct": 5.1
-        },
-        {
-          "issuer": "Amazon Com Inc",
-          "cusip": "023135106",
-          "valueUsd": 238555000,
-          "shares": 1000900,
-          "lines": 2,
-          "pct": 4.6
-        },
-        {
-          "issuer": "Stmicroelectronics N V",
-          "cusip": "861012102",
-          "valueUsd": 232375000,
-          "shares": 3102880,
-          "lines": 1,
-          "pct": 4.5
-        },
-        {
-          "issuer": "Invesco Exchange Traded Fd T",
-          "cusip": "46137V357",
-          "valueUsd": 190514000,
-          "shares": 895400,
-          "lines": 2,
-          "pct": 3.7
-        },
-        {
-          "issuer": "Ypf Sociedad Anonima",
-          "cusip": "984245100",
-          "valueUsd": 142726000,
-          "shares": 3138897,
-          "lines": 1,
-          "pct": 2.7
-        },
-        {
-          "issuer": "Cdw Corp",
-          "cusip": "12514G108",
-          "valueUsd": 139789000,
-          "shares": 993950,
-          "lines": 2,
-          "pct": 2.7
-        },
-        {
-          "issuer": "Bbb Foods Inc",
-          "cusip": "G0896C103",
-          "valueUsd": 120915000,
-          "shares": 2901733,
-          "lines": 1,
-          "pct": 2.3
-        },
-        {
-          "issuer": "Alphabet Inc",
-          "cusip": "02079K305",
-          "valueUsd": 120184000,
-          "shares": 336300,
-          "lines": 1,
-          "pct": 2.3
-        },
-        {
-          "issuer": "Seagate Technology Hldngs Pl",
-          "cusip": "G7997R103",
-          "valueUsd": 117730000,
-          "shares": 122000,
-          "lines": 1,
-          "pct": 2.3
-        },
-        {
-          "issuer": "Fox Corp",
-          "cusip": "35137L105",
-          "valueUsd": 114992000,
-          "shares": 2204600,
-          "lines": 1,
-          "pct": 2.2
-        },
-        {
-          "issuer": "United Airls Hldgs Inc",
-          "cusip": "910047109",
-          "valueUsd": 108084000,
-          "shares": 794795,
-          "lines": 1,
-          "pct": 2.1
-        },
-        {
-          "issuer": "Sea Ltd",
-          "cusip": "81141R100",
-          "valueUsd": 105404000,
-          "shares": 1099905,
-          "lines": 1,
-          "pct": 2
-        },
-        {
-          "issuer": "Newamsterdam Pharma Company",
-          "cusip": "N62509109",
-          "valueUsd": 104047000,
-          "shares": 3070146,
-          "lines": 1,
-          "pct": 2
-        },
-        {
-          "issuer": "Ishares Tr",
-          "cusip": "464287655",
-          "valueUsd": 99149000,
-          "shares": 330000,
-          "lines": 1,
-          "pct": 1.9
-        },
-        {
-          "issuer": "Sandisk Corp",
-          "cusip": "80004C200",
-          "valueUsd": 79353000,
-          "shares": 34900,
-          "lines": 1,
-          "pct": 1.5
-        },
-        {
-          "issuer": "Revolution Medicines Inc",
-          "cusip": "76155X100",
-          "valueUsd": 74835000,
-          "shares": 399587,
-          "lines": 1,
-          "pct": 1.4
-        },
-        {
-          "issuer": "State Str Spdr S&amp;P 500 Etf T",
-          "cusip": "78462F103",
-          "valueUsd": 67209000,
-          "shares": 90000,
-          "lines": 1,
-          "pct": 1.3
-        },
-        {
-          "issuer": "Bitdeer Technologies Group",
-          "cusip": "G11448100",
-          "valueUsd": 64670000,
-          "shares": 4074993,
-          "lines": 1,
-          "pct": 1.2
-        },
-        {
-          "issuer": "Crh Plc",
-          "cusip": "G25508105",
-          "valueUsd": 59230000,
-          "shares": 553555,
-          "lines": 1,
-          "pct": 1.1
-        },
-        {
-          "issuer": "Delta Air Lines Inc",
-          "cusip": "247361702",
-          "valueUsd": 56477000,
-          "shares": 603000,
-          "lines": 1,
-          "pct": 1.1
-        },
-        {
-          "issuer": "Tesla Inc",
-          "cusip": "88160R101",
-          "valueUsd": 52996000,
-          "shares": 126000,
-          "lines": 1,
-          "pct": 1
-        },
-        {
-          "issuer": "Fluor Corp",
-          "cusip": "343412102",
-          "valueUsd": 51457000,
-          "shares": 982200,
-          "lines": 1,
-          "pct": 1
-        },
-        {
-          "issuer": "D R Horton Inc",
-          "cusip": "23331A109",
-          "valueUsd": 48701000,
-          "shares": 299000,
-          "lines": 1,
-          "pct": 0.9
-        },
-        {
-          "issuer": "Coupang Inc",
-          "cusip": "22266T109",
-          "valueUsd": 46334000,
-          "shares": 2667485,
-          "lines": 1,
-          "pct": 0.9
-        },
-        {
-          "issuer": "Advanced Micro Devices Inc",
-          "cusip": "007903107",
-          "valueUsd": 42348000,
-          "shares": 72900,
-          "lines": 1,
-          "pct": 0.8
-        },
-        {
-          "issuer": "Palo Alto Networks Inc",
-          "cusip": "697435105",
-          "valueUsd": 39780000,
-          "shares": 116650,
-          "lines": 1,
-          "pct": 0.8
-        },
-        {
-          "issuer": "Cleveland-Cliffs Inc New",
-          "cusip": "185899101",
-          "valueUsd": 39590000,
-          "shares": 4216184,
-          "lines": 1,
-          "pct": 0.8
-        },
-        {
-          "issuer": "Hut 8 Corp",
-          "cusip": "44812J104",
-          "valueUsd": 36267000,
-          "shares": 314150,
-          "lines": 1,
-          "pct": 0.7
-        },
-        {
-          "issuer": "Caris Life Sciences Inc",
-          "cusip": "142152107",
-          "valueUsd": 33759000,
-          "shares": 1894450,
-          "lines": 1,
-          "pct": 0.6
-        },
-        {
-          "issuer": "Global X Fds",
-          "cusip": "37950E259",
-          "valueUsd": 30019000,
-          "shares": 328800,
-          "lines": 1,
-          "pct": 0.6
-        },
-        {
-          "issuer": "Fox Corp",
-          "cusip": "35137L204",
-          "valueUsd": 29631000,
-          "shares": 632600,
-          "lines": 1,
-          "pct": 0.6
-        },
-        {
-          "issuer": "Woodward Inc",
-          "cusip": "980745103",
-          "valueUsd": 28587000,
-          "shares": 67194,
-          "lines": 1,
-          "pct": 0.5
-        },
-        {
-          "issuer": "Meta Platforms Inc",
-          "cusip": "30303M102",
-          "valueUsd": 28165000,
-          "shares": 50000,
-          "lines": 1,
-          "pct": 0.5
-        },
-        {
-          "issuer": "Nuvation Bio Inc",
-          "cusip": "67080N101",
-          "valueUsd": 25786000,
-          "shares": 4539800,
-          "lines": 1,
-          "pct": 0.5
-        },
-        {
-          "issuer": "Protagonist Therapeutics Inc",
-          "cusip": "74366E102",
-          "valueUsd": 25607000,
-          "shares": 208900,
-          "lines": 1,
-          "pct": 0.5
-        },
-        {
-          "issuer": "Roku Inc",
-          "cusip": "77543R102",
-          "valueUsd": 25425000,
-          "shares": 184055,
-          "lines": 1,
-          "pct": 0.5
-        },
-        {
-          "issuer": "Cavco Inds Inc Del",
-          "cusip": "149568107",
-          "valueUsd": 24268000,
-          "shares": 39500,
-          "lines": 1,
-          "pct": 0.5
-        },
-        {
-          "issuer": "Adma Biologics Inc",
-          "cusip": "000899104",
-          "valueUsd": 23303000,
-          "shares": 2784110,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Hyperliquid Strategies Inc",
-          "cusip": "44916Y106",
-          "valueUsd": 23150000,
-          "shares": 2941500,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Rambus Inc Del",
-          "cusip": "750917106",
-          "valueUsd": 22964000,
-          "shares": 173000,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Rhythm Pharmaceuticals Inc",
-          "cusip": "76243J105",
-          "valueUsd": 22608000,
-          "shares": 203618,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Champion Homes Inc",
-          "cusip": "830830105",
-          "valueUsd": 22418000,
-          "shares": 254400,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Daktronics Inc",
-          "cusip": "234264109",
-          "valueUsd": 21968000,
-          "shares": 1123109,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Purecycle Technologies Inc",
-          "cusip": "74623V103",
-          "valueUsd": 21746000,
-          "shares": 2681415,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Southern Copper Corp",
-          "cusip": "84265V105",
-          "valueUsd": 21444000,
-          "shares": 123060,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Linde Plc",
-          "cusip": "G54950103",
-          "valueUsd": 21380000,
-          "shares": 41200,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Entegris Inc",
-          "cusip": "29362U104",
-          "valueUsd": 21277000,
-          "shares": 118300,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Teva Pharmaceutical Inds Ltd",
-          "cusip": "881624209",
-          "valueUsd": 21175000,
-          "shares": 624999,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Unity Software Inc",
-          "cusip": "91332U101",
-          "valueUsd": 21114000,
-          "shares": 738785,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Aeva Technologies Inc",
-          "cusip": "00835Q202",
-          "valueUsd": 20683000,
-          "shares": 720175,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Riot Platforms Inc",
-          "cusip": "767292105",
-          "valueUsd": 20666000,
-          "shares": 754800,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Qnity Electronics Inc",
-          "cusip": "74743L100",
-          "valueUsd": 20521000,
-          "shares": 125655,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Equinix Inc",
-          "cusip": "29444U700",
-          "valueUsd": 19232000,
-          "shares": 18450,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Lam Research Corp",
-          "cusip": "512807306",
-          "valueUsd": 18893000,
-          "shares": 43600,
-          "lines": 1,
-          "pct": 0.4
-        },
-        {
-          "issuer": "Definium Therapeutics Inc",
-          "cusip": "24477V105",
-          "valueUsd": 16774000,
-          "shares": 356600,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Belite Bio Inc Sponsored",
-          "cusip": "07782B104",
-          "valueUsd": 16338000,
-          "shares": 106100,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "10X Genomics Inc",
-          "cusip": "88025U109",
-          "valueUsd": 15455000,
-          "shares": 403100,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Wabtec",
-          "cusip": "929740108",
-          "valueUsd": 15258000,
-          "shares": 56595,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Eli Lilly &amp; Co",
-          "cusip": "532457108",
-          "valueUsd": 14849000,
-          "shares": 12380,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Xenon Pharmaceuticals Inc",
-          "cusip": "98420N105",
-          "valueUsd": 14402000,
-          "shares": 238600,
-          "lines": 1,
-          "pct": 0.3
-        },
-        {
-          "issuer": "Olema Pharmaceuticals Inc",
-          "cusip": "68062P106",
-          "valueUsd": 12345000,
-          "shares": 986827,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Repligen Corp",
-          "cusip": "759916109",
-          "valueUsd": 10560000,
-          "shares": 77400,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Rocket Cos Inc",
-          "cusip": "77311W101",
-          "valueUsd": 10272000,
-          "shares": 652220,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Baidu Inc",
-          "cusip": "056752108",
-          "valueUsd": 10080000,
-          "shares": 88200,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Arm Holdings Plc",
-          "cusip": "042068205",
-          "valueUsd": 9960000,
-          "shares": 28090,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Carvana Co",
-          "cusip": "146869102",
-          "valueUsd": 9939000,
-          "shares": 151000,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Reddit Inc",
-          "cusip": "75734B100",
-          "valueUsd": 9816000,
-          "shares": 56550,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Alcoa Corp",
-          "cusip": "013872106",
-          "valueUsd": 9679000,
-          "shares": 185640,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Thermo Fisher Scientific Inc",
-          "cusip": "883556102",
-          "valueUsd": 9626000,
-          "shares": 19200,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Danaher Corp Del",
-          "cusip": "235851102",
-          "valueUsd": 9581000,
-          "shares": 50300,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "F5 Inc",
-          "cusip": "315616102",
-          "valueUsd": 9151000,
-          "shares": 22000,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Vista Energy S.A.B. De C.V.",
-          "cusip": "92837L109",
-          "valueUsd": 8594000,
-          "shares": 134700,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Skeena Res Ltd New",
-          "cusip": "83056P715",
-          "valueUsd": 8003000,
-          "shares": 300200,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "Jbs N.V.",
-          "cusip": "N4732M103",
-          "valueUsd": 7772000,
-          "shares": 655900,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Monte Rosa Therapeutics Inc",
-          "cusip": "61225M102",
-          "valueUsd": 7202000,
-          "shares": 297600,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Relay Therapeutics Inc",
-          "cusip": "75943R102",
-          "valueUsd": 6530000,
-          "shares": 349000,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Dbv Technologies S A Sponsored",
-          "cusip": "23306J309",
-          "valueUsd": 6287000,
-          "shares": 383363,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Ccc Intelligent Solutions Hl",
-          "cusip": "12510Q100",
-          "valueUsd": 6042000,
-          "shares": 1170900,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Uwm Holdings Corporation",
-          "cusip": "91823B109",
-          "valueUsd": 5915000,
-          "shares": 2583000,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Navitas Semiconductor Corp",
-          "cusip": "63942X106",
-          "valueUsd": 5575000,
-          "shares": 311100,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Solstice Advanced Matls Inc",
-          "cusip": "83443Q103",
-          "valueUsd": 5540000,
-          "shares": 62525,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Ftai Aviation Ltd",
-          "cusip": "G3730V105",
-          "valueUsd": 5465000,
-          "shares": 20200,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Beam Therapeutics Inc",
-          "cusip": "07373V105",
-          "valueUsd": 5272000,
-          "shares": 153600,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Aurora Innovation Inc",
-          "cusip": "051774107",
-          "valueUsd": 4322000,
-          "shares": 633700,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Iren Limited",
-          "cusip": "Q4982L109",
-          "valueUsd": 3983000,
-          "shares": 87100,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Grupo Financiero Galicia S.A",
-          "cusip": "399909100",
-          "valueUsd": 2977000,
-          "shares": 59500,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "Wave Life Sciences Ltd",
-          "cusip": "Y95308105",
-          "valueUsd": 1005000,
-          "shares": 173000,
-          "lines": 1,
-          "pct": 0
-        }
-      ]
+      "error": "HTTP 503 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=Duq"
     },
     "bill-ackman": {
       "firm": "Pershing Square Capital Management",
@@ -2632,164 +1827,7 @@
     },
     "duan-yongping": {
       "firm": "H&H International Investment",
-      "cik": "0001759760",
-      "entityName": "H&H International Investment, LLC",
-      "cikSource": "resolved",
-      "filedAt": "2026-08-14",
-      "periodEnd": "2026-06-30",
-      "accession": "0001759760-26-000007",
-      "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1759760/000175976026000007/",
-      "lineItems": 18,
-      "positions": 18,
-      "totalValueUsd": 19100584155,
-      "valueUnitAsFiled": "usd",
-      "suspect": null,
-      "holdings": [
-        {
-          "issuer": "APPLE INC",
-          "cusip": "037833100",
-          "valueUsd": 7841281858,
-          "shares": 27098707,
-          "lines": 1,
-          "pct": 41.1
-        },
-        {
-          "issuer": "BERKSHIRE HATHAWAY INC DEL",
-          "cusip": "084670702",
-          "valueUsd": 4618447581,
-          "shares": 9229696,
-          "lines": 1,
-          "pct": 24.2
-        },
-        {
-          "issuer": "PDD HOLDINGS INC",
-          "cusip": "722304102",
-          "valueUsd": 1908685330,
-          "shares": 25022094,
-          "lines": 1,
-          "pct": 10
-        },
-        {
-          "issuer": "TESLA INC",
-          "cusip": "88160R101",
-          "valueUsd": 1421796240,
-          "shares": 3380400,
-          "lines": 1,
-          "pct": 7.4
-        },
-        {
-          "issuer": "NVIDIA CORPORATION",
-          "cusip": "67066G104",
-          "valueUsd": 1256700261,
-          "shares": 6280675,
-          "lines": 1,
-          "pct": 6.6
-        },
-        {
-          "issuer": "ALPHABET INC",
-          "cusip": "02079K107",
-          "valueUsd": 695565438,
-          "shares": 1968600,
-          "lines": 1,
-          "pct": 3.6
-        },
-        {
-          "issuer": "OCCIDENTAL PETE CORP",
-          "cusip": "674599105",
-          "valueUsd": 498401055,
-          "shares": 10261500,
-          "lines": 1,
-          "pct": 2.6
-        },
-        {
-          "issuer": "MICROSOFT CORP",
-          "cusip": "594918104",
-          "valueUsd": 281294382,
-          "shares": 754100,
-          "lines": 1,
-          "pct": 1.5
-        },
-        {
-          "issuer": "CREDO TECHNOLOGY GROUP HOLDI",
-          "cusip": "G25457105",
-          "valueUsd": 190691340,
-          "shares": 701200,
-          "lines": 1,
-          "pct": 1
-        },
-        {
-          "issuer": "UNITEDHEALTH GROUP INC",
-          "cusip": "91324P102",
-          "valueUsd": 166085748,
-          "shares": 399600,
-          "lines": 1,
-          "pct": 0.9
-        },
-        {
-          "issuer": "DISNEY WALT CO",
-          "cusip": "254687106",
-          "valueUsd": 164260250,
-          "shares": 1706600,
-          "lines": 1,
-          "pct": 0.9
-        },
-        {
-          "issuer": "ALIBABA GROUP HLDG LTD",
-          "cusip": "01609W102",
-          "valueUsd": 28928372,
-          "shares": 301400,
-          "lines": 1,
-          "pct": 0.2
-        },
-        {
-          "issuer": "CIRCLE INTERNET GROUP INC",
-          "cusip": "172573107",
-          "valueUsd": 12526000,
-          "shares": 200000,
-          "lines": 1,
-          "pct": 0.1
-        },
-        {
-          "issuer": "PALANTIR TECHNOLOGIES INC",
-          "cusip": "69608A108",
-          "valueUsd": 7000200,
-          "shares": 60000,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "SYNOPSYS INC",
-          "cusip": "871607107",
-          "valueUsd": 4460700,
-          "shares": 10000,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "SNOWFLAKE INC",
-          "cusip": "833445109",
-          "valueUsd": 2545000,
-          "shares": 10000,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "TEMPUS AI INC",
-          "cusip": "88023B103",
-          "valueUsd": 1158600,
-          "shares": 20000,
-          "lines": 1,
-          "pct": 0
-        },
-        {
-          "issuer": "INNODATA INC",
-          "cusip": "457642205",
-          "valueUsd": 755800,
-          "shares": 10000,
-          "lines": 1,
-          "pct": 0
-        }
-      ]
+      "error": "HTTP 503 https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&company=H%2"
     },
     "david-tepper": {
       "firm": "Appaloosa",
